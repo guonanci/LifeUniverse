@@ -1,0 +1,1340 @@
+// .5px line
+.hr.scale-half {
+  height: 1px;
+  transform: scaleY(.5);
+  transform-origin: 50% 100%;
+}
+
+.half-box-shadow {
+ box-shadow: 0 .5px 0 blue;
+}
+
+.halfline-gradient {
+  height: 1px;
+  background: linear-gradient(0deg, #fff, #000); // to top(0 deg), to right90, to bottom180, to left270
+}
+
+
+.container {
+  border-style: solid;
+  border-width: 1px;
+
+  margin-bottom: 10px;
+}
+.border-100 {
+  border-color: rgba(0, 0, 255, 1);
+}
+.border-75 {
+  border-color: rgba(0, 0, 255, .75);
+}
+.border-50 {
+  border-color: rgba(0, 0, 255, .5);
+}
+.border-25 {
+  border-color: rgba(0, 0, 255, .25);
+}
+
+.transform-origin {
+  transform-origin: left top 2cm; // inherit, initial, unset
+}
+
+
+
+// flex
+.flex-container {
+  display: flex; // inline-flex
+  flex-direction: row; // row-reverse, column, column-reverse
+  flex-wrap: nowrap wrap wrap-reverse; // nowrap means oneline
+  flex-flow: flex-direction flex-wrap (row nowrap);
+  justify-content: flex-start flex-end center space-between space-around; // 用来定义伸缩项目沿着主轴线的对齐方式。当一行上的所有
+  // 伸缩项目都不能伸缩或者可伸缩
+  // 但是已经达到其最大长度时，这一属性才会对多余的空间进行分配。当项目溢出某一行时，这一属性也会在项目的对齐上施加一些控制
+  // flex-start（默认值）：伸缩项目向一行的起始位置靠齐
+  // flex-end:
+  // center:
+  // space-between:
+  // space-around:
+  align-items: flex-start flex-end center baseline stretch
+}
+.flex-items {
+  order: integer;
+  flex-grow: 0; // define items stretch ability,
+  flex-shrink: 1;
+  flex-basis: auto;
+  flex: flex-grow flex-shrink flex-basis (none);
+}
+
+
+// flex layouts
+// sticky footer
+body {
+  min-width: 100vh;
+  display: flex;
+  flex-direction: column;
+  .article {
+    flex: auto;
+  }
+}
+
+// Fixed-Width Sidebar
+body {
+  min-width: 100vh;
+  display: flex;
+  flex-direction: column;
+  .content {
+    flex: auto;
+    display: flex;
+    .article {
+      flex: auto;
+    }
+  }
+}
+
+// Sidebar
+body {
+  min-height: 100vh;
+  display: flex;
+  .aside {
+    flex: none;
+  }
+  .content {
+    flex: auto;
+    display: flex;
+    flex-direction: column;
+    .article {
+      flex: auto;
+    }
+  }
+}
+// sticky header
+body {
+  min-width: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding-top: 60px;
+  .header {
+    height: 60px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    padding: 0;
+  }
+  .article {
+    flex: auto;
+  }
+}
+// sticky sidebar
+body {
+  height: 100vh;
+  display: flex;
+  .aside {
+    flex: none;
+    width: 200px;
+    overflow-y: scroll;
+    display: block;
+  }
+  .content {
+    flex: auto;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    .article {
+      flex: auto;
+    }
+  }
+}
+
+
+.mutiline-ellipsis {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+}
+// visibility: hidden; opacity: 0; display: none;
+
+
+
+// fonts: ali-iconfont + icomoon
+
+
+// Common Layouts: single column, 两列自适应，圣飞、双飞翼，伪等高，粘连
+// 单列布局：header, content, footer等宽；header、footer等宽，content略窄
+// <div class='header'></div>
+// <div class='content'></div>
+// <div class='footer'></div>
+.header, .footer {
+  margin: 0 auto;
+  min-width: 960px;
+  height: 100px;
+  background-color: aqua;
+}
+.content {
+  margin: 0 auto;
+  min-width: 960px;
+  height: 400px;
+  background-color: aquamarine;
+}
+// two columns auto-adapt
+.parent {
+  display: flex;
+  .right {
+    margin-left: 20px;
+    flex: 1;
+  }
+}
+.parent {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-gap: 20px;
+}
+// three columns layout
+// <article class='container'>
+//   <div class='center'>
+//     <h2>shengbei layout</h2>
+//   </div>
+//   <div class='left'></div>
+//   <div class='right'></div>
+// </article>
+.container {
+  padding-right: 220px;
+  padding-left: 220px;
+}
+.left {
+  float: left;
+  width: 200px;
+  height: 400px;
+  background: red;
+  margin-left: -100%;
+  position: relative;
+  left: -220px;
+}
+.center {
+  float: left;
+  width: 100%;
+  height: 500px;
+  background: yellow;
+}
+.right {
+  float: left;
+  width: 200px;
+  height: 400px;
+  background: blue;
+  margin-right: -200px;
+  position: relative;
+  right: -220px;
+}
+
+// fake same-height layout
+.center, .left, .right {
+  padding-bottom: 10000px;
+  margin-bottom: -10000px;
+}
+.container {
+  padding-right: 220px;
+  padding-left: 220px;
+  overflow: hidden;
+
+}
+// zhanlian layout
+// <div id='wrap'>
+//   <div class='main'>
+//     main <br />
+//     main <br />
+//     main <br />
+//   </div>
+// </div>
+// <div id='footer'>footer</div>
+
+html, body {
+  height: 100%;
+}
+#wrap {
+  min-height: 100%;
+  background: pink;
+  text-align: center;
+  overflow: hidden;
+  .main {
+    padding-bottom: 50px;
+  }
+}
+#footer {
+  height: 50px;
+  line-height: 50px;
+  background: deeppink;
+  text-align: center;
+  margin-top: -50px;
+}
+
+// Grid Layout
+// 只需要给container定义：display: grid，并设置grid-template-columns和行grid-template-rows的大小，然后利用grid-column和grid-row
+// 定义容器子元素grid-item项目的位置。与flexbox布局类似，一开始项目的排列顺序并不重要，可以放置在容器的任何位置，这也使得非常容易通过媒体查询
+// 重新排列你的项目。想象一下，定义整个页面的布局时，只需要几行CSS就可以完成页面重排以便适应各种屏幕宽度。
+// Grid Container, Grid Item, Grid Line，Grid Track, Grid Cell, Grid Area.
+// Grid Container Property: display, grid-template-columns, grid-template-rows, grid-template-areas, grid-column-gap,
+// grid-row-gap, justify-items, align-items, justify-content, align-content, grid-auto-columns, grid-auto-rows,
+// grid-auto-flow, grid
+.grid-container {
+  display: grid inline-grid subgrid; // block net, inline net, 如果网格容器本身是网格项（嵌套网格容器），此属性用来继承其父网格容器
+  // 的列、行大小
+  // 当元素设置了网格布局，column、float、clear、vertical-align属性无效
+  // 属性值
+  // track-size: 轨道大小，可以使用css长度，百分比或用分数（用fr单位）
+  // line-name: 网格线名字，你可以选择任何名字
+  // 当你设置行或列大小为auto时，网格会自动分配空间和网格线名称
+
+  // 设置行和列的大小，在行轨道或列轨道两边是网格线
+  grid-template-columns: 40px 50px auto 50px 40px;
+  grid-template-rows: 25% 100px auto;
+
+  grid-template-columns: [first] 40px [line2] 50px [line3] auto [col4-start] 50px [five] 40px [end];
+  grid-template-rows: [row1-start] 25% [row1-end row2-start] 25% [row2-end];
+  grid-template-columns: repeat(3, 20px [col-start]) 5%;
+  grid-template-columns: 1fr 50px 1fr 1fr; // average
+  grid-column-gap: 10px;
+  grid-row-gap: 15px;
+  grid-gap: grid-row-gap grid-column-gap;
+  justify-items: start end center stretch; // 垂直于列网格线对齐，适用于网格容器里的所有网格项
+  align-items: start;
+  justify-content: start end center stretch space-between space-around space-evenly; // 如果用像px非弹性单位定义的话，总网格区
+  // 域大小有可能小于网格容器，这时候可以设置网格的对齐方式（垂直于列网格线对齐）
+  grid-auto-columns: 60px; // 自动生成隐式网格轨道（列和行），当你定位网格项超出网格容器范围时，将自动创建隐式网格轨道，使用grid-auto-
+  // columns和grid-auto-rows来定义这些隐式轨道宽度
+  grid-auto-flow: row(default) column dense(先后顺序);
+
+
+  grid: none(set all props default value) grid-template-rows / grid-template-columns grid-auto-flow grid-auto-rows /
+  grid-auto-columns;
+}
+.item-a {
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+}
+.item-b {
+  grid-column: 5 / 6;
+  grid-row: 2 / 3;
+}
+.item-a {
+  grid-column: 1;
+  grid-row: 1 / 3;
+}
+.item-e {
+  grid-column: 5;
+  grid-row: 1 / 3;
+}
+// grid-items props: grid-column-start grid-column-end grid-row-start grid-row-end grid-column grid-row grid-area
+// justify-self align-self
+
+.item-a {
+  grid-column-start: 2;
+  grid-column-end: five;
+  grid-row-start: row1-start;
+  grid-row-end: 3;
+
+  grid-column: start-line / end-line  start-line / span number;
+  grid-area: name row-start / column-start; // 定义网格项名字，以便创建模块（容器属性grid-template-areas来定义模块）
+  justify-self: start end center stretch;
+}
+// The mix-blend-mode CSS property sets how an element's content should blend with the content of the element's parent
+// and the element's background.
+
+// use hyphen on css words，rather camelCase，make css selector work better，
+// and in .vue, .jsx, .js, .ts, .tsx file we use double-quotes to quote html attribute...remember, dont cross the lines.
+
+// If we could add style on one common class in current page, we shouldnt add `bgfff` to several same classes( common
+// class) in html
+
+// border-width, font-size set not `px`, rather than `vw`
+&:not(:first-child)
+&:not(:nth-child(3n)) {
+
+}
+
+// circle fan background-image: linear-gradient(...), linear-gradient(...)
+
+// The `linear-gradient()` css function creates an image consisting of a progressive transition between two or more
+// colors along a straight line. Its result is an object of the `<gradient>` data type, which is a special kind of
+// `<image>`.
+
+// As with any gradient, a linear gradient has no intrinsic dimensions; i.e., it has no natural or preferred size, nor a
+// preferred ratio. Its concrete size will match the size of the element it applies to.
+
+// To create a linear gradient that repeats so as to fill its container, use the `repeating-linear-gradient()` function
+// instead.
+
+// Because
+
+// big-screen vs small-screen desktop and mobile should both use `vw` or `%` unit to be responsive.
+
+
+// use px in 1100width-center-zone, and use vw in full-screen-pages
+
+
+// write html carefully, and
+
+// Be patient and careful about hot-reloading
+
+宁愿css写import也不愿写tsx-style
+
+bgColor background-color rather than bg background;
+
+了解比较复杂属性的默认值
+
+background-color
+background-position: 0% 0% top left top center top right center left center center center right bottom left bottom center bottom right x% y% xpos ypos;
+background-repeat: repeat repat-x/repeat-y/no-repeat/inherit
+background-origin: 规定背景图片的定位区域 规定background-position属性相对于什么位置来定位。padding-box border-box/content-box 边框盒 内边距盒 外边距盒
+background-clip背景的绘制区域 border-box padding-box content-box
+background-size: auto length/percentage/cover/contain;
+background-attachment: scroll背景图像会随着页面其余部分的滚动而移动。fixed inherit
+background: #ff0 url(some.png) no-repeat fixed center;
+
+
+.fz19 .fz23 这样的class不要再写了
+
+常见的宽高百分比 fw3 fw5等等倒是可以写写！！
+
+PC端所有样式采用px为单位，整个页面设置minWidth就好了，页面局部固定width就好了。font-size肯定不能用fw的。
+
+fw用得上的地方：水平方向、全屏布局的padding，margin
+
+如何写出高水平的react-scss-typescript代码？
+
+丽凯有个疑问，我现在看你的设计图的尺寸如果1比1实现会显得大，你是否考虑了版心设计（最小宽度1400px），是1比1实现还是大致10比9实现.
+
+69% building 816/823 modules 7 active ...s/library/modules/_to-absolute-index.jsYou did not set any plugins, parser, or stringifier. Right now, PostCSS does nothing. Pick plugins for your case on https://www.postcss.parts/ and use them in postcss.config.js.
+
+[at-loader] ./src/components/Table/Horizontal/index.tsx:21:44
+    TS2339: Property 'rowUnit' does not exist on type 'typeof import("/Users/nanci/bjhl/pro/qz-front/src/components/Table/Horizontal/index.scss")'.
+
+
+颜色大小写无所谓了，
+<img alt=""/> 闭合标签之前没有空格也可以，没有就统一没有吧
+
+
+重绘和回流
+
+
+float属性取值含义
+
+
+background推荐写到一个属性里去，所以尽量不要写background-color！！
+
+css 全局变量和局部变量都是--开头，-分隔单词
+
+
+
+ios fixed x-dialog光标错位问题可以采用scrollIntoView来解决？
+
+flex-wrapper: wrapper;
+
+:nth-child是从1开始算起的。
+
+flex布局容器和子项之间一定是父子关系，否则完全不起作用
+
+
+# stylelint
+second items: rule-empty-line-before
+block-closing-brace-empty-line-before
+
+
+.inlineOneLine {
+  height: 100px;
+  line-height: 100px;
+  text-align: center;
+}
+
+.divInner::before {
+  content: '';
+  width: 0;
+  height: 100%;
+  display: inline-block;
+  position: relative;
+  vertical-align: middle;
+  background: #f00;
+}
+
+margin is relative to horizontal width
+
+.redbox {
+  width: 30px;
+  height: 30px;
+  background: #f00;
+  top: calc(50% - 15px);
+  left: calc(50% - 15px);
+}
+
+// use hyphen to write css, in case you use camelCase with react
+
+<table>
+  <tr>
+    <td>
+      <div>Table Center with horizontal & vertical</div>
+    </td>
+  </tr>
+</table>
+
+<div class="like-table">
+  <div>Fake Table Center</div>
+</div>
+
+.like-table {
+  display: table-cell;
+}
+td, .like-table {
+  width: 150px;
+  height: 100px;
+  border: 1px solid #000;
+  vertical-align: middle;
+}
+td div, .like-table div {
+  width: 100px;
+  height: 50px;
+  margin: 0 auto;
+  color: #ffffff;
+  font-size: 12px;
+  line-height: 50px;
+  text-align: center;
+  background: #c00;
+}
+.like-table div {
+  background: #069;
+}
+
+.use-transform {
+  width: 200px;
+  height: 200px;
+  border: 1px solid #000;
+  div {
+    position: relative;
+    width: 100px;
+    height: 50px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #095;
+  }
+}
+
+.use-absolute {
+  position: relative;
+  width: 200px;
+  height: 150px;
+  border: 1px solid #000;
+  div {
+    position: absolute;
+    width: 100px;
+    height: 50px;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    background: #f60;
+  }
+}
+// BFC: block formatting context. In page, one render district has own rendering rules to decide how own sub elements
+// position, and relation with other brother elements and work.
+
+// BFC features
+// Inner box will put vertically one by one
+// Two adjourning margin folds up
+// every sub element's margin box left, touch the container's border box left, even to the floating elements.
+// BFC districts wont coincide with float box
+// computing BFC height, float elements will join together.
+// text layer wont be covered by float element, instead surrounding with it
+
+// To make BFC
+// float: not none
+// overflow: not visible
+// display: table-cell table-caption inline-block flex inline-flex
+// position: absolute,fixed
+
+// BFC effects
+// Biggest: in page, there is one isolate container, elements in which wont influence with other other elements outside
+// the container
+// Fix margin coincide problem: two coincide box open bfc
+// Fix float cause height sinking: container box create a bfc
+// Text surround pic: left pic is div, right text container - p is a bfc
+
+
+
+// Compatibility
+
+// diff browsers have diff tab default margin and padding size,
+
+// a link: link/visited/hover/active
+* {
+  margin: 0;
+  padding: 0;
+}
+
+rule-empty-line-before
+unit-case
+
+// table style
+// border-collapse: collapse;
+// css 不区分大小写
+// BEM
+
+// 最好使用transform（）函数来创建元素的位移或者大小动画，尽量不要直接改变元素的width、height、left、top、bottom、right
+.ball {
+  left: 50px;
+  transition: 0.4s ease-out;
+}
+// wrong
+.ball.slide-out {
+  left: 500px;
+}
+// recommended
+.ball.slide-out {
+  transform: translateX(450px); // translate, rotate, scale functions have no compatibility problem
+
+}
+
+.movie-poster {
+  text-transform: uppercase;
+}
+
+// 移动端1px解决方案
+// 不同手机有不同像素密度。window对象中有一个devicePixelRatio属性，可以反映CSS中的像素与设备的像素比。 dpr=物理像素/独立像素
+// 1. .5px
+// JavaScript detect if browser can deal .5px border, if can then add a class to html element.
+if (devicePixelRatio && devicePixelRatio >= 2) {
+  var testElm = document.createElement('div')
+  testElm.style.border = '.5px solid transparent'
+  document.body.appendChild(testElm)
+  if (testElm.offsetHeight === 1) {
+    document.queySelector('html').classList.add('hairlines')
+  }
+  document.body.removeChild(testElm)
+}
+
+div {
+  border: 1px solid #bbb;
+}
+.hairlines div {
+  border-width: .5px;
+}
+// 2. border-image implementation
+// 3. background-image
+.background-image-1px {
+  background: url(../img/line.png) repeat-x left bottom;
+  -webkit-background-size: 100% 1px;
+  background-size: 100% 1px;
+}
+// 4. 多背景渐变实现
+// 5. box-shadow模拟边框
+// 6. viewport + rem实现
+// 7. 伪类 + transform实现 把原先元素的border去掉，然后利用:before或者:after重做border，并transform的scale缩小一半，原先的元素相对定位，
+// 新做的border绝对定位
+// single border
+.scale-1px {
+  position: relative;
+  border: none;
+}
+.scale-1px:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  background: #000;
+  width: 100%;
+  height: 1px;
+  transform: scaleY(.5);
+  -webkit-transform: scaleY(.5);
+  transform-origin: 0 0;
+  -webkit-transform-origin: 0 0;
+}
+
+// four borders
+.scale-1px {
+  position: relative;
+  margin-bottom: 20px;
+  border: none;
+}
+.scale-1px:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: 1px solid #000;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  width: 200%;
+  height: 200%;
+  transform: scale(.5);
+  -webkit-transform: scale(.5);
+  transform-origin: left top;
+  -webkit-transform-origin: left top;
+}
+
+if (devicePixelRatio && devicePixelRatio >= 2) {
+  document.querySelector('ul').className = 'scale-1px'
+}
+
+
+
+
+
+// top right bottom left
+
+
+
+// SCSS 中的变量配置，可以进行项目的颜色、字体大小统一更改（换肤），有利于后期项目的维护。
+
+// @import imports style file
+// scss中的@import规则在生成css文件时就把相关文件导入进来。这意味着所有相关的样式被归纳到了同一个css文件中，而无需发起额外的下载请求，在构建
+// 我们自己的组件库时推荐使用。
+@import "./base.scss";
+@import "./pagination.scss";
+@import "./dialog.scss";
+@import "./autocomplete.scss";
+@import "./dropDown.scss";
+@import "./dropDown-menu.scss";
+
+// 局部文件命名的使用
+// scss局部文件的文件名以下划线开头。这样，scss就不会在编译时单独编译这个文件输出css，而只把这个文件用作导入。
+mixins
+  _admin-content.scss
+  _admin-head.scss
+  _admin-left.scss
+  _admin-operate.scss
+  ...
+
+// 父选择器标识符 & 实现BEM命名规范
+// scss的嵌套和父选择器标识符 &能解决BEM命名的冗长，且使样式可读性更高。
+.el-input {
+  display: block;
+  &__inner {
+    text-align: center;
+  }
+}
+
+// @mixin混合器的使用
+// mixin混合器用来实现大段样式的重用，减少代码的冗余，且支持传参。
+@mixin btn-size($padding-vertical, $padding-horizontal, $fz, $border-radius) {
+  padding: $padding-vertical $padding-horizontal;
+  font-size: $fz;
+  border-radius: $border-radius;
+  &.is-round {
+    padding: $padding-vertical $padding-horizontal;
+  }
+}
+
+@include m(medium) {
+  @include btn-size($--btn-medium-padding-vertical, $--btn-medium-padding-horizontal, $--btn-medium-fz, $-btn-medium-border-radius);
+}
+@include m(small) {
+  @include btn-size($--btn-small-padding-vertical, $--btn-small-padding-horizontal, $--btn-small-fz, $-btn-small-border-radius);
+}
+
+// @extend 指令的使用
+// 使用@extend 产生DRY CSS风格的代码
+// @mixin主要的优势就是它能够接受参数。如果想传递参数，你会很自然地选择@mixin而不是@extend
+// @extend功能、模块复用，比如上下、左右等对称关系的公共样式；@mixin函数复用，css行内、块级基本样式划分
+
+.common-mod {
+  height: 250px;
+  width: 50%;
+  background-color: #fff;
+  text-align: center;
+}
+.show-mod--right {
+  @extend .common-mod;
+  float: right;
+}
+.show-mod--left {
+  @extend .common-mod;
+  float: right;
+}
+// #{}差值的使用
+@mixin home-content($class, $leftPercent) {
+  .#{$class} {
+    position: relative;
+    left: $leftPercent;
+    background-color: #fff;
+    overflow-x: hidden;
+    overflow-y: hidden;
+
+    &--left {
+      margin-left: 160px;
+    }
+    &--noleft {
+      margin-left: 0;
+    }
+  }
+}
+// each遍历、map数据类型、@mixin/@include混合器、#{}插值 结合使用
+// 可通过each遍历、map数据类型、@mixin/@include 混合器、#{}插值结合使用，从而减少冗余代码，使代码更精简。
+
+$img-list: (
+  (xlsImg, $papers-excel),
+  (xlsxImg, $papers-excel),
+  (gifImg, $papers-gif),
+  (jpgImg, $papers-jpg),
+  (mp3Img, $papers-mp3),
+  (mp4Img, $papers-mp4),
+  (docImg, $papers-word),
+  (docxImg, $papers-word),
+  (rarImg, $papers-zip),
+  (zipImg, $papers-zip),
+  (unknownImg, $papers-unknown),
+);
+@each $label, $val in $img-list {
+  .com-hwIcon__#{$label} {
+    @include commonImg($val);
+  }
+}
+// scss自带函数的应用，
+// 从而进行相关的计算，例如mix函数的使用：
+@include m(text) {
+  &:hover,
+  &:focus {
+    color: mix($--color-white, $--color-primary, $--btn-hover-tint-percent);
+    border-color: transparent;
+    background-color: transparent;
+  }
+  &:active {
+    color: mix($--color-black, $--color-primary, $--btn-hover-shade-percent);
+    border-color: transparent;
+    background-color: transparent;
+  }
+
+}
+
+// gulp-sass的使用
+// gulp-sass插件能实时检测scss代码检查其语法错误并将其编译成css代码，帮助开发人员检查scss语法的准确性，且其是否符合我们的期望，相关配置如下：
+gulp.task('gulpsass', function () {
+  return gulp.src('src/stylcomponents/hwIcon.scss')
+    .pipe(gulpsass().on('error', gulpsass.logError))
+    .pipe(gulp.dest('src/style/dest'))
+})
+
+// flex
+// none = 0 0 auto(flex-grow flex-shrink flex-basis) 用来指定扩展比率， 即剩余空间是正值时此【flex子项】相对于【flex容器】里其他
+//【flex子项】能分配到的空间比例， 在【flex】属性中该值如果被省略则默认值是1.
+// 每个flex子项的flex-grow默认值是1， flex-grow反映了flex容器扩展时每个flex子项扩展的比例分配。
+// flex-shrink 在收缩的时候收缩比率会以伸缩基准值加权。
+// flex-basis 指定伸缩基准值，即在根据伸缩比率计算出剩余空间的分布之前， 【flex子项】长度的起始数值。（0%），flex属性中该值如果被指定为auto
+// ，则伸缩基准值的计算值是自身的width设置，如果自身的宽度没有定义，则长度取决于内容。
+
+// http://css.doyoe.com/ css手册
+
+// 水平垂直居中
+// dadson width and height is constant
+.dad {
+  position: relative;
+}
+.son {
+  position: absolute;
+  margin: auto;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.dad {
+  display: flex; // inline-flex
+  justify-content: center;
+  align-items: center;
+}
+
+// flex containers(wrapper, subitems), flex-axises(main start, main end, cross start, cross end)
+
+// wrapper properties: flex-direction(row, row-reverse column...) flex-wrap(如果一条轴线排不下，如何换行， nowrap， wrap，
+// wrap-reverse） flex-row（<flex-direction> || <flex-wrap>）.justify-content(flex-start, flex-end, center, space-between
+// , space-around) align-items(stretch-subitem height not set or auto to fill the whole container， flex-start, flex-end, center, baseline(items text-of-first-line baseline保持对齐)
+
+// subitems properties: order(0), flex-grow(0, 就算存在剩余空间也不会去放大），flex-shrink， flex-basis定义了在分配多余空间之前，
+// 子项目占据的主轴空间。浏览器根据这个属性，计算主轴是否有多余空间。它的默认值为auto，即项目的本来大小。它可以设为跟width，height属性一样的
+// 值如350px，则项目将占据固定空间。
+
+// flex （flex-grow 0， flex-shrink 1，flex-basis auto）auto（1， 1， auto） none（0 0 auto）建议优先写flex，而不是分别写
+// flex-grow，flex-shrink，flex-basis。align-self允许单个项目有与其他项目不一样的对齐方式，可覆盖align-items属性，默认值为auto表示继承wrapper的align-items。
+
+html {
+  box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit,
+  margin: 0;
+  padding: 0;
+}
+
+// :not()
+.nav li {
+  border: 1px solid #666;
+}
+.nav li:last-child {
+  border: none;
+}
+.nav li:not(:last-child) { // a more readable css selector
+  border: 1px solid #666;
+}
+
+body {
+  line-height: 1.5; // You dont need to add line-height to each <p>, <h*>, et al. Separately, Instead, add it to body
+}
+
+a:focus,
+button:focus,
+input:focus,
+select:focus,
+textarea:focus {
+  box-shadow: noen;
+  outline: #000 dotted 2px;
+  outline-offset: .05em; // Make focus for form elements stand out and consistent then a browser's default implementation
+}
+
+// Vertically-Center Anything
+// flexbox
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+body {
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-flex;
+  display: flex;
+}
+// CSS Grid
+body {
+  display: grid;
+  height: 100vh;
+  margin: 0;
+  place-items: center center;
+}
+
+// Centering
+// https://css-tricks.com/centering-css-complete-guide/
+
+// Horizontally
+// inline or inline-* elements(texts or links)
+.center-children {
+  text-align: center;
+}
+// a block level element, and has a set width(otherwise it would be full width)
+.center-me {
+  margin: 0 auto;
+}
+// more than one block level element
+// flexbox
+
+// Vertically
+// is it inline or inline-* elements
+
+// a single line
+.link {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+// or
+.center-txt-trick {
+  height: 100px;
+  line-height: 100px;
+}
+
+// multiple lines
+// table
+// table-cell
+
+// or flexbox
+.flex-center-vertically {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+// pseudo-element
+.ghost-center {
+  position: relative;
+}
+.ghost-center::before {
+  content: ' ';
+  display: inline-block;
+  height: 100%;
+  width: 1%;
+  vertical-align: middle;
+}
+.ghost-center p {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+// a block-level element
+// know the height of the element
+.parent {
+  position: relative;
+}
+.child {
+  position: absolute;
+  top: 50%;
+  height: 100px;
+  margin-top: -50px; // box-sizing: content-box
+}
+// the element of unknown height
+.parent {
+  position: relative;
+}
+.child {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+// table style
+main {
+  position: relative;
+  display: table;
+}
+main div {
+  display: table-cell;
+  vertical-align: middle;
+}
+// flexbox
+.parent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+// Both Horizontally and Vertically
+// The element of fixed width and height
+.parent {
+  position: relative;
+}
+.child {
+  position: absolute;
+  width: 300px;
+  height: 100px;
+  padding: 20px;
+  top: 50%;
+  left: 50%;
+  margin: -70px 0 0 -170px;
+}
+// the element of unknown width and height or known width and height
+// need to div
+// https://developer.mozilla.org/en-US/docs/Web/CSS/left#Values
+// left-values:
+// <length>
+// A negative, null, or positive <length> that represents:
+// for absolutely positioned elements, the distance to the left edge of the containing block.
+// for relatively positioned elements, the distance that the element is moved to the right of its normal position.
+// <percentage>
+// A <percentage> of the containing block's width.
+// auto
+// Specifies ...
+.outter {
+  display: inline-block; /* or float: left */
+  position: relative;
+  left: 50%;
+}
+.inner {
+  position: relative;
+  left: -50%;
+}
+// the element of unknown width and height
+.parent {
+  position: relative;
+}
+.child {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+// flexbox
+.parent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+// grid
+body, html {
+  height: 100%;
+  display: grid;
+}
+span { // thing to center
+  margin: auto;
+}
+
+// Comma-Separated Lists
+ul > li:not(:last-child)::after {
+  content: ',';
+}
+
+// select all items except the first 3 and display them
+// p:nth-child(n)匹配同样父元素下的第n个子元素， 不论子元素类型
+li:not(:nth-child(-n+3)) { // 第一个子元素下标是1(nth-child从1开始计数，n从0开始计数
+  display: block;
+}
+p:nth-child(odd) {
+  background: #f00;
+}
+p:nth-child(even) {
+  background: #f00;
+}
+// p:nth-of-type(n)匹配同样父元素下的第n个同样类型的子元素
+// Use SVG for Icons
+.logo {
+  background: url('logo.svg');
+}
+
+// Intrinsic Ratio Boxes
+// Using 20% for padding makes the height of the box equal to 20% of its width. No matter the width of the viewport, the
+// child div will keep its aspect ratio(100% / 20% = 5 : 1)
+.container {
+  height: 0;
+  padding-bottom: 20%; // relative to .container's parent's width
+  position: relative;
+}
+.container div {
+  border: 2px dashed #ddd;
+  height: 100%;
+  left: 0;
+  top: 0;
+  width: 100%;
+  position: absolute;
+}
+
+video[autoplay]:not([muted]) {
+  display: none;
+}
+
+// To avoid mobile browsers(iOS Safari, et al.) from zooming in on HTML form elements when a <select> drop-down is tapped
+// , add `font-size` to the selector rule:
+input[type="text"],
+input[type="number"],
+select,
+textarea {
+  font-size: 16px;
+}
+
+.btn-disabled {
+  opacity: .5;
+  pointer-events: none;
+}
+
+// padding more often used than margin
+// 我们在还原设计稿的时候， 知道属于同一个BFC的两个相邻Box的margin会重叠。还有个bug“” 第一个子元素的margin-top会加在父元素上（最后一个子元
+// 素的margin-bottom也是这样）。这是因为所有毗邻的两个或者多个盒元素的margin将会合并为一个margin共享。毗邻的定义为：同级或者嵌套的盒元素，
+// 并且他们之间没有非空内容，padding或者border分隔。
+
+// position: fixed 降级问题
+// 我们都会把position：fixed用于吸顶。但是如果其父元素中有使用transform，那么fixed就会降级为absolute， 那么什么情况下fixed和absolute
+// 效果是一样的呢， 即当使用fixed的直接父元素的高度和屏幕的高度相同时fixed和absolute的表现效果会一样。如果这个直接父元素内存在滚动就加上overflow-y:auto
+
+// 移动端适配（合理使用px em rem %）
+// 比较小的图案
+// 比如我们画一个5px的圆，使用rem的话会发现在一些机型上图案不圆，会呈现椭圆形。这是因为rem转px有精度丢失
+// 那么使用px配合dpr：
+// less @size建议取双数
+@mixin circle($size, $bgColor) {
+  width: $size;
+  height: $size;
+  background: $bgColor;
+  [data-dpr="1"] & {
+    width: $size * .5;
+    height: $size * .5;
+  }
+  [data-dpr="3"] & {
+    width: $size * 1.5;
+    height: $size * 1.5;
+  }
+}
+
+// 1px 细线
+
+// line-height => em.
+// 首行缩进2个字符
+.indent {
+  text-indent: 2em;
+}
+// 我们知道rem单位设计的弹性布局， 是需要在头部加载一段脚本来进行监听分辨率的变化来动态改变根元素字体大小，使得CSS和js耦合
+// 那么我们可以用一下vw vh的解决方案去解决耦合：
+$vm_fz: 75;
+@function rem($px) {
+  @return ($px / $vm_fz) * 1rem;
+}
+$vm_design: 750;
+html {
+  font-size: ($vm_fz / ($vm_design / 2)) * 100vw;
+  @media screen and (max-width: 320px) {
+    font-size: 64px;
+  }
+  @media screen and (min-width: 540px) {
+    font-size: 108px;
+  }
+}
+body {
+  max-width: 540px;
+  min-width: 320px;
+}
+
+// variable
+// sass
+$direction: left;
+// less
+// @direction: left;
+// css
+:root {
+  --blue_color: #3388ff;
+  --main_bg_color: #fafafa;
+}
+.div1 {
+  background: var(--main_bg_color);
+}
+
+// 使用mixin归类重复样式要比一个元素上写很多class强
+
+
+.font-description {
+  @include font-des-style(24px, #fff, 1.5em);
+  @include line-clamp(2);
+}
+// multiple lines ellipsis
+@mixin line-clamp($clamp: 2) {
+  text-overflow: -o-ellipsis-lastline;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: $clamp;
+  /*! autoprefixer: off */
+  -webkit-box-orient: vertical;
+  /* autoprefixer: on */
+}
+@mixin font-des-style($fS, $color, $lH, $tA: left) {
+  font-size: $fS;
+  color: $color;
+  line-height: $lH;
+  text-align: $tA;
+}
+
+// 1px
+// box-shadow 仔细看看得出来是shadow不是border。
+// transform + pseudo-element 全机型兼容，可以圆角，但缺点是用了after伪元素，可能影响清楚浮动
+// plan A
+.border-top-1px {
+  position: relative;
+  &::after {
+    content: '';
+    position: absolute;
+    background: #e5e5e5;
+    display: block;
+    width: 100%;
+    height: 1px;
+    transform: scale(1, .5); // x y
+    top: 0;
+    left: 0;
+  }
+}
+.border-all-1px {
+  position: relative;
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200%;
+    height: 200%;
+    transform: scale(.5);
+    transform-origin: left top;
+    box-sizing: border-box;
+    border: 1px solid #e5e5e5;
+    border-radius: 4px;
+  }
+}
+// plan B
+// magic.less
+// 设置viewport的scale值（viewport+rem+js，适合全新项目）
+// magic.html
+
+// 从HTML元素继承box-sizing
+// 在大多数情况下我们在设置元素的border和padding时并不希望改变元素的width，height，这时候我们可以设置box-sizing：border-box；
+// 我们不希望每次都重写一遍，而是希望继承而来：
+html {
+  box-sizing: border-box;
+}
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+// 内联首屏关键CSS
+
+
+// css selectors
+// #my-id, .my-classname, div, h1 + p(紧邻同胞) h1 ~ p(CSS3，一般同胞，h1后所有的p) ，ul > li(子选择器) li a(后代选择器)， *，
+// a[rel-"external"](属性选择器)，a:hover li:nth-child(伪类选择器) div::after(伪元素选择器）
+
+// pseudo-elements： ::after, ::before, ::first-letter, ::first-line, ::selection,
+// pseudo-classes： :active, :hover, :visited, :any, :any-link, :checked, :default, :defined, :dir(), :disabled, :empty,
+// :enable, :first, :first-child, :fullscreen, :focus...
+section * a { // 任何作为section孙子元素而不是直接子元素的a标签
+  font-size: 1.3em;
+}
+
+哪些属性可继承？
+所有元素可继承：visibility cursor；内联元素可继承：letter-spacing，word-spacing，white-space，line-height，color，font，font-family
+，font-size，font-style，font-variant（把段落设置成小型大写字母字体），font-weight，text-decoration，text-transform（控制文本中的字
+母的大小写），direction。
+块状元素可继承：text-indent text-align;列表元素可继承：list-style list-style-type，list-style-position,list-style-image
+表格元素可继承：border-collapse 1.separate默认值，边框会被分开。不会忽略border-spacing和empty-cells属性.2.collapse 如果可能，边框会
+合并为一个单一的边框，会忽略border-spacing和empty-cells属性。3. inherit 规定应该从父元素继承border-collapse属性的值。
+
+不可继承的属性 ：display，position，left，right，top，bottom，z-index，height，min-height,max-height,width,min-width,max-width,
+padding,border,margin,background，overflow，float，clear vertical-align table-layout: automatic,fixed,inherit,page-break-after
+page-break-before unicode-bidi
+
+CSS优先级算法：
+优先级就近原则，同权重情况下样式定义最近者为准；载入样式以最后载入的定位为准。优先级为：
+// 同权重下，权限由高到低
+
+47.为什么要初始化CSS样式。
+
+因为浏览器的兼容问题，不同浏览器对有些标签的默认值是不同的，如果没对CSS初始化往往会出现浏览器之间的页面显示差异。
+
+CSS3有哪些新特性？
+CSS3实现圆角border-radius，阴影box-shadow，对文字加特效text-shadow，线性渐变gradient，旋转transform：rotate(9deg) scale(0.85, 0.90)
+ translate(0px, -30px) skew(-9deg, 0deg); //旋转，缩放，定位，倾斜增加了更多的CSS选择器 多背景rgba在CSS3中唯一引入的伪元素是::selection
+ 媒体查询，多栏布局border-image
+ box-shadow x偏移量 y偏移量 阴影模糊半径 阴影扩散半径 阴影颜色
+ . box-shadow {
+   box-shadow: 100px 5px 10px 20px rgba(0, 0, 255, .2);
+   box-shadow: 100px -16px teal;
+   box-shadow: inset 5em 1em gold;
+   box-shadow: 3px 3px red, -1em 0 .4em olive;
+ }
+
+ 解释下CSS sprites，以及你要如何在页面或网站中使用它。CSS Sprites其实就是把网页中一些背景图片整合到一张图片文件中，再利用css的background-image，
+ background-repeat，background-position的组合进行背景定位，background-position可以用梳子能精确的定位出背景图片的位置。这样可以减少很多
+ 图片请求的开销，因为请求耗时比较长；请求虽然可以并发，但是也有限制，一般浏览器都是6个。对于未来而言就不需要这样做了，因为有了http2.
+
+
+
+//  17、display:none与visibility：hidden的区别？
+
+display：none 不显示对应的元素，在文档布局中不再分配空间（回流+重绘）
+visibility：hidden 隐藏对应元素，在文档布局中仍保留原来的空间（重绘）
+
+
+.fixed-navbar-top- {
+  &role-line { // right
+  // &span { // wrong
+      color: #000;
+      font-size: 12px;
+      width: 150px;
+  }
+  &choose-icon {
+      vertical-align: middle;
+      width: 16px;
+      height: 16px;
+  }
+}
+采用BMC的方式命名最好，不会有类名冲突~vue的scope-生成hash也很不错
+
+自定义单条border长度百分比以及相对位置：https://www.cnblogs.com/weibo806/p/8023431.html

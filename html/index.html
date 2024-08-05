@@ -1,0 +1,84 @@
+<div class='wrapper'>
+  <h1>听妈妈的话 - 周杰伦</h1>
+  <div class='main'>
+    <canvas id='canvas' />
+    <video src='../source/mv.mp4' id='video' controls width='720' height='480' />
+  </div>
+  <div class='content'>
+    <input id='text' />
+    <input type='button' value='fa barrage' id='btn' />
+    <input type='color' id='color' />
+    <input type='range' id='range' max='40' min='20' />
+  </div>
+</div>
+<script>
+  let data = [
+    { value: 'Jay Chou, I Love You~', time: 5, color: 'red', speed: 1, fontSize: 22, opacity: .5 },
+    { value: 'Jay Chou, You Love Me~', time: 5, color: 'yellow', speed: 1, fontSize: 22, opacity: .5 },
+  ]
+  const doc = document, canvas = doc.getElementById('canvas'), video = doc.getElementById('video'),
+  $text = doc.getElementById('text'), $btn = doc.getElementById('btn'), $color = doc.getElementById('color'),
+  $range = doc.getElementById('range')
+  // create Barrage class, to instance
+  // Object-oriented to make canvas render barrage, easy to reuse and add methods.
+  class CanvasBarrage {
+    constructor (canvas, video, opts = {}) {
+      if (!canvas || !video) return
+
+      this.video = video
+      this.canvas = canvas
+      this.canvas.width = video.width
+      this.canvas.height = video.height
+      // get ctx, and operate ctx
+      this.ctx = canvas.getContext('2d')
+
+      const defOpts = {
+        color: '#e91e63',
+        speed: 1.5,
+        opacity: .5,
+        fontSize: 20,
+        data: []
+      }
+      // 合并对象并全部挂载到this实例上
+      Object.assign(this, defOpts, opts)
+
+      this.isPaused = true
+      // get all barrage msg
+      this.barrage = this.data.map(item => new Barrage(item, this))
+      // render
+      this.render()
+      console.log(this)
+    }
+    // render barrage
+    render () {
+      // todo
+    }
+  }
+  const canvasBarrage = new CanvasBarrage(canvas, video { data })
+</script>
+
+能用section就用section，不要用div；能用h1h2h3h4h5h6就用这些标签，不要用p标签。
+
+a:link
+a:visited
+a:hover
+a:active
+
+e.preventDefault();
+href="javascript:void(0);
+
+手机端上 图片长时间点击会选中图片，如何处理?
+
+onselect=function() {
+return false
+}
+
+video标签的几个属性：
+
+src：视频的URL poster：视频封面，没有播放时显示的图片 preload：预加载 autoplay：自动播放 loop：循环播放 controls：浏览器自带的控制条
+width：视频宽度 height：视频高度
+
+常见的视频编码格式有几种?视频格式有几种?
+
+视频格式：MPEG-1、MPEG-2和MPEG4 、AVI 、RM、ASF和WMV格式
+视频编码格式：H.264、MPEG-4、MPEG-2、WMA-HD以及VC-1

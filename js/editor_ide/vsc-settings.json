@@ -1,0 +1,309 @@
+{
+
+    "workbench.settings.editor": "json",
+
+    "files.autoSave": "onFocusChange",
+
+    "editor.fontSize": 16,
+
+    "eslint.alwaysShowStatus": true,
+
+    "eslint.format.enable": true,
+
+    "prettier.configPath": ".prettierrc.js",
+
+    "prettier.endOfLine": "lf",
+
+    "prettier.printWidth": 110,
+
+    "prettier.requireConfig": true,
+
+    "prettier.singleQuote": true,
+
+    "prettier.vueIndentScriptAndStyle": true,
+
+    "prettier.jsxSingleQuote": true,
+
+    "prettier.jsxBracketSameLine": true,
+
+    "editor.formatOnSave": true,
+
+    "javascript.updateImportsOnFileMove.enabled": "always",
+
+    "prettier.htmlWhitespaceSensitivity": "strict",
+
+    "files.associations": {
+
+      "*.md": "gitignore"
+
+    },
+
+    "search.exclude": {
+
+      "**/node_modules": true,
+
+      "**/bower_components": true,
+
+      "**/target": true,
+
+      "**/logs": true,
+
+    },
+
+    "vetur.format.defaultFormatter.html": "js-beautify-html",
+
+    "vetur.format.defaultFormatter.js": "prettier",
+
+    "vetur.format.defaultFormatterOptions": {
+
+      "js-beautify-html": {
+
+        "wrap_attributes": "force-aligned", //也可以设置为“auto”，效果会不一样
+
+        "wrap_line_length": 200,
+
+        "end_with_newline": false,
+
+        "semi": false,
+
+        "singleQuote": true
+
+      },
+
+      "prettier": {
+
+        "semi": false,
+
+        "singleQuote": true
+
+      }
+
+    },
+    "editor.maxTokenizationLineLength": 100000,
+    "emmet.syntaxProfiles": {
+      "xml": {
+        "attr_quotes": "single"
+      },
+      "html": {
+        "attr_quotes": "single"
+      },
+      "js": {
+        "attr_quotes": "single",
+        "self_closing_tag": false
+      },
+      "markdown": {
+        "attr_quotes": "single",
+        "self_closing_tag": false
+      },
+      "jsx": {
+        "attr_quotes": "single",
+        "self_closing_tag": true
+      },
+      "ts": {
+        "attr_quotes": "single",
+        "self_closing_tag": false
+      },
+      "tsx": {
+        "attr_quotes": "single",
+        "self_closing_tag": true
+      }
+    },
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "files.trimTrailingWhitespace": true,
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    "explorer.confirmDelete": false,
+    "git.confirmSync": false,
+    "editor.tabSize": 2,
+    "[javascript]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.rulers": [120],
+    "files.insertFinalNewline": true,
+    "editor.formatOnType": true,
+    "html.format.endWithNewline": true,
+    "editor.tabCompletion": "on",
+    "editor.formatOnSave": true,
+    "prettier.semi": false,
+    "prettier.singleQuote": true,
+    "prettier.tabWidth": 2,
+    "prettier.jsxBracketSameLine": true,
+    "prettier.jsxSingleQuote": true,
+    "sync.gist": "40477c66697fdbc434f9ed2d79e9928f",
+    "git.enableSmartCommit": true,
+    "editor.linkedEditing": true,
+    "files.associations": {
+      "*.cjson": "jsonc",
+      "*.wxss": "css",
+      "*.wxs": "javascript"
+    },
+    "emmet.includeLanguages": {
+      "wxml": "html"
+    },
+    "[markdown]": {
+      "editor.quickSuggestions": {
+        "other": true,
+        "comments": false,
+        "strings": true
+      }
+    },
+    "minapp-vscode.disableAutoConfig": true,
+    "explorer.confirmDragAndDrop": false,
+    "git.autofetch": true,
+    "workbench.startupEditor": "newUntitledFile",
+    "editor.codeActionsOnSave": null,
+    "auto-close-tag.disableOnLanguage": ["typescript", "markdown", "javascript"],
+    "terminal.integrated.fontWeightBold": null,
+    "terminal.integrated.copyOnSelection": true,
+    "terminal.explorerKind": "external",
+    "terminal.integrated.automationShell.osx": "zsh",
+    "terminal.integrated.cursorBlinking": true,
+    "terminal.integrated.enableBell": true,
+    "terminal.integrated.sendKeybindingsToShell": true,
+    "terminal.integrated.shell.osx": "/bin/zsh",
+    "vim.normalModeKeyBindings": [
+      {
+        "before": [":"],
+        "commands": ["workbench.action.showCommands"]
+      },
+      {
+        "before": ["<leader>", "m"],
+        "commands": ["bookmarks.toggle"]
+      },
+      {
+        "before": ["<leader>", "b"],
+        "commands": ["bookmarks.list"]
+      }
+    ],
+    "vim.insertModeKeyBindings": [
+      {
+        "before": ["j", "j"],
+        "after": ["<Esc>"]
+      }
+    ],
+    "vim.normalModeKeyBindingsNonRecursive": [
+      {
+        "before": ["<leader>", "d"],
+        "after": ["d", "d"]
+      },
+      {
+        "before": ["Z", "Z"],
+        "commands": [":wq"]
+      },
+      {
+        "before": ["<C-n>"],
+        "commands": [":nohl"]
+      },
+
+      {
+        "before": ["Z", "Q"],
+        "commands": [":q!"]
+      },
+      {
+        "before": [":"],
+        "commands": ["workbench.action.showCommands"]
+      },
+      {
+        "before": ["£"],
+        "after": ["#"]
+      },
+      {
+        "before": ["<leader>", "m"],
+        "commands": ["bookmarks.toggle"]
+      },
+      {
+        "before": ["<leader>", "b"],
+        "commands": ["bookmarks.list"]
+      },
+      {
+        "before": ["<C-n>"],
+        "commands": [":nohl"]
+      },
+      {
+        "before": ["leader", "w"],
+        "commands": ["workbench.action.files.save"]
+      }
+    ],
+    "vim.operatorPendingModeKeyBindings": [
+      {
+        "before": ["{"],
+        "after": ["w"]
+      },
+      {
+        "before": ["L"],
+        "after": ["$"]
+      },
+      {
+        "before": ["H"],
+        "after": ["^"]
+      }
+    ],
+    "vim.visualModeKeyBindings": [
+      {
+        "before": [">"],
+        "commands": ["editor.action.indentLines"]
+      },
+      {
+        "before": ["<"],
+        "commands": ["editor.action.outdentLines"]
+      }
+    ],
+    "vim.easymotion": false,
+    "vim.leader": "<space>",
+    "vim.handleKeys": {
+      "<C-c>": false,
+      "<C-v>": false,
+      "<C-d>": false,
+      "<C-a>": false,
+      "<C-f>": false
+    },
+    "vim.statusBarColorControl": false,
+
+    "workbench.colorCustomizations": {
+      "statusBar.background": "#5f0000",
+      "statusBar.noFolderBackground": "#5f0000",
+      "statusBar.debuggingBackground": "#5f0000"
+    },
+    "editor.fontLigatures": null,
+    "cSpell.userWords": ["ahooks", "antd", "Fonsi", "formily"],
+    "cSpell.words": [
+      "formily",
+      "ahooks",
+      "abrv",
+      "accs",
+      "alloc",
+      "antd",
+      "antv",
+      "asyn",
+      "cmpl",
+      "cmpt",
+      "coord",
+      "cust",
+      "disp",
+      "doesnt",
+      "dont",
+      "dyna",
+      "echarts",
+      "horz",
+      "keyof",
+      "nums",
+      "typeof",
+      "unmount"
+    ],
+    "security.workspace.trust.untrustedFiles": "open",
+    "workbench.colorTheme": "Monokai",
+    "emmet.showAbbreviationSuggestions": false,
+    "emmet.showExpandedAbbreviation": "never",
+    "json.maxItemsComputed": 50000,
+    "editor.inlineSuggest.enabled": false,
+    "cSpell.showAutocompleteSuggestions": true,
+  "editor.wordBasedSuggestions": false,
+  "window.zoomLevel": -2,
+  "files.autoSave": "afterDelay",
+  "files.autoSaveDelay": 10000,
+  "terminal.integrated.enableMultiLinePasteWarning": false,
+  "gitlens.currentLine.dateFormat": ""
+
+  }

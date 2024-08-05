@@ -1,0 +1,62 @@
+{
+  "code": 0,
+  "msg": "成功",
+  "serverTime": 1715153528959,
+  "data": [
+      {
+          "createTime": 1713512613000,
+          "creator": "system",
+          "updateTime": 1713512613000,
+          "updator": "system",
+          "id": 956,
+          "vehicleCoordinate": "-48.906,-23.649,0.054",
+          "mapId": 18,
+          "robotId": 10,
+          "sequence": 251,
+          "status": 1,
+          "baseEntityId": 956,
+          "coordinateNumber": [
+              -48.906,
+              -23.649,
+              0.054
+          ]
+      },
+      {
+          "createTime": 1713512658000,
+          "creator": "system",
+          "updateTime": 1713512658000,
+          "updator": "system",
+          "id": 957,
+          "vehicleCoordinate": "-47.371,-23.614,-0.014",
+          "mapId": 18,
+          "robotId": 10,
+          "sequence": 252,
+          "status": 1,
+          "baseEntityId": 957,
+          "coordinateNumber": [
+              -47.371,
+              -23.614,
+              -0.014
+          ]
+      },
+      {
+          "createTime": 1713512688000,
+          "creator": "system",
+          "updateTime": 1713512688000,
+          "updator": "system",
+          "id": 958,
+          "vehicleCoordinate": "-46.096,-23.912,-0.100",
+          "mapId": 18,
+          "robotId": 10,
+          "sequence": 253,
+          "status": 1,
+          "baseEntityId": 958,
+          "coordinateNumber": [
+              -46.096,
+              -23.912,
+              -0.1
+          ]
+      }
+  ],
+  "success": true
+}

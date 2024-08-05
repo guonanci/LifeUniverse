@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Momentjs guide</title>
+    <style>
+        body {
+            font-family: sans-serif;
+        }
+        .greeting {
+            padding-bottom: 40px;
+        }
+        .ele {
+            padding: 20px;
+            width: 100%;
+            height: 1024px;
+            background: #9d9d9e;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="ele">
+        <p class="greeting">Hello, momentjs! </p>
+        <p class="ele-mutability">Mutability: </p>
+    </div>
+
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment.min.js'></script>
+    <script>
+        var momentMutability;
+        var a = moment('2016-01-01');
+        var b = a.add(1, 'week');
+        // The moment object in Momnet.js is mutable. So we can use clone() method.
+        // var b = a.clone().add(1, 'week');
+        a.format();
+        momentMutability = moment('2017-02-10').add(1, 'day').format();
+        var eleMutability = document.getElementsByClassName('ele-mutability')[0];
+        eleMutability.innerHTML += momentMutability;
+
+
+        // Date Math vs Time Math...
+        //Due to daylight saving time and leap years, when we use momentjs-add, add(1, 'day') may not equal to add(24, 'hours') add(1, 'year') not equal to add(365, 'days')...
+
+
+        // Time Zone vs Offset
+
+        // JavaScript Date
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,5 @@
+subscription订阅：表示observable的执行，主要用于取消observable的执行
+
+subscription表示可清理资源的对象，通常是observable的执行
+
+subscription有一个重要的方法，unsubscribe，不需要任何参数，只是用来清理由subscription占用的资源。

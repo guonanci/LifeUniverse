@@ -1,0 +1,76 @@
+.line-camp(@clamp: 2) {
+  text-overflow: -o-ellipsis-lastline;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-flex;
+  -webkit-line-clamp: @clamp;
+  -webkit-box-orient: vertical;
+}
+.font-des-style(@fS, @color, @lH, @tA: left) {
+  font-size: @fS;
+  color: @color;
+  line-height: @lH;
+  text-align: @tA;
+}
+.font-desc {
+  .font-des-style(24px, #fff, 1.5em);
+  .line-camp(2);
+}
+
+
+.line-clamp(@clamp: 2) {
+  text-overflow: -o-ellipsis-lastline;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: @clamp;
+  /*! autoprefixer: off */
+  -webkit-box-orient: vertical;
+  /* autoprefixer: on */
+}
+
+p {
+  text-align: justify;
+  text-align-last: justify;
+}
+
+// import @/global.less
+// src/global.less
+// @primaryColor:#f49900;
+// a.less
+// .main {
+//   display: flex;
+//   flex-direction: column;
+//   height: 100%;
+//   > div {
+//     position: relative;
+//   }
+//   :global {
+//     .ant-tabs-tab-active {
+//       border-color: @primaryColor !important;
+//     }
+//   }
+// }
+// webpack.config.js
+// resolve: {
+//   extensions: ['.js', '.json', '.less'],
+//   modules: ['node_modules'],
+//   alias: {
+//     '@': path.resolve(__dirname, '../src'),
+//   },
+// },
+
+.someDiv {
+  .ellipsis;
+  .pointer-events-none; // great,but need to import common/constant.less, how to import some.less by absolute file path.
+}
+
+// row that aims at fixing merge conflict
+
+// 任何css，less，sass文件都不能有引号 除去@import语句外
+
+// cmptA/index.less 里import src/constants.less还是cmptA/index.ts里通过classNames
+// 组合src/global.less里面的class和cmptA/index.less里面的classNames。
+
+
+// 有关颜色的className命名采用形容词+名词的形式

@@ -1,0 +1,184 @@
+.colors-lab {
+  /* 艾利斯兰爱丽丝蓝 */
+  color: aliceblue;
+  /* 古董白 */
+  color: antiquewhite;
+  /* 浅绿 */
+  color: aqua;
+  /* 碧绿 */
+  color: aquamarine;
+  /* 天蓝 */
+  color: azure;
+  /* 米色 */
+  color: beige;
+  /* 桔黄色 */
+  color: bisque;
+  /* black */
+  color: black;
+  /* 白杏色 */
+  color: blanchedalmond;
+  /* blue */
+  color: blue;
+  /* 紫罗兰 */
+  color: blueviolet;
+  /* 褐色 */
+  color: brown;
+  /* 实木色 */
+  color: burlywood;
+  /* 军兰色 */
+  color: cadetblue;
+  /*  */
+  color: chartreuse;
+  /*  */
+  color: chocolate;
+  /*  */
+  color: coral;
+  /*  */
+  color: cornflowerblue;
+  /*  */
+  color: cornsilk;
+  /*  */
+  color: crimson;
+  /*  */
+  color: cyan;
+  /*  */
+  color: darkblue;
+  /*  */
+  color: darkcyan;
+  /*  */
+  color: darkgoldenrod;
+  /*  */
+  color: darkgray;
+  /*  */
+  color: darkgreen;
+  /*  */
+  color: darkgrey;
+  /*  */
+  color: darkkhaki;
+  /*  */
+  color: darkmagenta;
+  /*  */
+  color: darkolivegreen;
+  /*  */
+  color: darkorange;
+  /*  */
+  color: darkorchid;
+  /*  */
+  color: darkred;
+  /*  */
+  color: darksalmon;
+  /*  */
+  color: darkseagreen;
+  /*  */
+  color: darkslateblue;
+  /*  */
+  color: darkslategray;
+  /*  */
+  color: darkslategrey;
+  /*  */
+  color: darkturquoise;
+  /* 9400d3暗紫罗兰 */
+  color: darkviolet;
+  /* ff1493深粉红 */
+  color: deeppink;
+  /* 00bfff深天蓝 */
+  color: deepskyblue;
+  /*  */
+  color: dimgray;
+  /* 696969暗灰 */
+  color: dimgrey;
+  /* 1e90ff闪兰色 */
+  color: dodgerblue;
+  /* b22222火砖 */
+  color: firebrick;
+  /* fffaf0花白 */
+  color: floralwhite;
+  /* 228b22森林绿 */
+  color: forestgreen;
+  /* ff00ff紫红 */
+  color: fuchsia;
+  /* dcdcdc淡灰色 */
+  color: gainsboro;
+  /* f8f8ff幽灵白 */
+  color: ghostwhite;
+  /* ffd700金 */
+  color: gold;
+  /* daa520金麒麟 */
+  color: goldenrod;
+  /* 808080灰 */
+  color: gray;
+  /* 008000绿 */
+  color: green;
+  /* adff2f黄绿 */
+  color: greenyellow;
+  /* 灰色808080 */
+  color: grey;
+  /* f0fff0蜜色 */
+  color: honeydew;
+  /* ff69b4热粉红色 */
+  color: hotpink;
+  /* cd5c5c */
+  color: indianred;
+  /* 4b0082靛dian青色 */
+  color: indigo;
+  /* fffff0 黄褐色 */
+  color: ivory;
+  /* f0e68c黄褐色 */
+  color: khaki;
+  /* e6e6fa淡紫色 */
+  color: lavender;
+  /* fff0f5淡紫红 */
+  color: lavenderblush;
+  /* 7cfc00草绿色 */
+  color: lawngreen;
+  /* fffacd柠檬绸色 */
+  color: lemonchiffon;
+  /* add8e6亮蓝色 */
+  color: lightblue;
+  /* f08080亮珊瑚色 */
+  color: lightcoral;
+  /* e0ffff亮青色 */
+  color: lightcyan;
+  /*  fafad2亮金黄色*/
+  color: lightgoldenrodyellow;
+  /* d3d3d3亮灰色 */
+  color: lightgray;
+  /* 90ee90 亮绿 */
+  color: lightgreen;
+
+  /* html color keyword */
+  /* black */
+  color: #000;
+  /* green */
+  color: #008000;
+  /* silver */
+  color: #c0c0c0;
+  /* lime酸橙色 */
+  color: #00ff00;
+  /* gray */
+  color: #808080;
+  /* 808000 */
+  color: #808000;
+  /* white */
+  color: #fff;
+  /* yellow */
+  color: #ffff00;
+  /* maroon */
+  color: #800000;
+  /* teal */
+  color: #000080;
+  /* red */
+  color: #ff0000;
+  /* blue */
+  color: #0000ff;
+  /* purple */
+  color: #800080;
+  /* teal */
+  color: #008080;
+  /* fuchsia */
+  color: #ff00ff;
+  /* aqua浅绿 */
+  color: #00ffff;
+}
+
+/* style backgroundColor vs --bgcolor(styled-component) */
