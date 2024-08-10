@@ -23,3 +23,7 @@ typ9-points 在typ6里面的msg的索引3；模拟器上的APP一直打开不了
 Text/Pressable都是一行；
 
 为啥react-native官网执行打包生产命令时，会有关Nox？？要关闭Nox，然后再重新执行`cd android, ./gradlew assembleRelease`。
+
+# version
+
+app/build.gradle 里面可定义APP的版本号

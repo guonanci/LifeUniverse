@@ -2591,8 +2591,190 @@ socket {"data": "{\"type\":0,\"responseId\":\"4ee22da9-aee9-4d4b-b3ad-8a35761f48
 
 WebSocket error: {"isTrusted": false, "message": null}
 WebSocket error: {"isTrusted": false, "message": "CLEARTEXT communication to xllsctb.techxiaoma.com not permitted by network security policy"} https-ws
-techxiaoma.com login-suc;xiaoma.com login-fail;
+techxiaoma.com login-suc;xiaoma.com login-fail;switchChannelWhite宽高;当前设备的显示有问题；
 
+340*500/1600=106.5 0.2125 3.1986,3.2;首页的enums初始化时，有时候出不来。
+
+xAxis: [
+                        {
+                          minInterval: 3600 *24* 1000,
+                          boundaryGap: ['5%', '10%'],
+                          name: '时间',
+                          type: 'time',
+                          axisLine: {
+                            lineStyle: {
+                              color: '#00AFFF',
+                            },
+                          },
+                          nameTextStyle: {
+                            color: '#FFFFFF',
+                            fontSize: '14px',
+                            verticalAlign: 'top',
+                            align: 'right',
+                            padding: [9, 0, 0, 0],
+                          },
+                          axisTick: {
+                            show: false,
+                          },
+                          axisLabel: {
+                            color: '#FFFFFF',
+                            fontSize: '12px',
+                          },
+                          axisPointer: {
+                            label: {
+                              formatter: function (params) {
+                                let date = new Date(params.value)
+                                let day = date.toLocaleString()
+                                return '时间：'+day
+                              },
+                            },
+                          },
+                        },
+                      ],
+                      yAxis: [
+                        {
+                          type: 'value',
+                          boundaryGap: ['0%', '20%'],
+                          show: true,
+                          position: 'left',
+                          alignTicks: true,
+                          axisLine: {
+                            show: true,
+                            lineStyle: {
+                              color: '#00AFFF',
+                            },
+                          },
+                          nameTextStyle: {
+                            color: '#FFFFFF',
+                            fontSize: '14px',
+                            align: 'right',
+                            padding: [0, 8, 0, 0],
+                          },
+                          axisLabel: {
+                            color: '#FFFFFF',
+                            fontSize: '14px',
+                          },
+                          splitLine: {
+                            lineStyle: {
+                              color: 'rgba(24, 161, 240, 0.1)',
+                              type: 'dashed',
+                            },
+                          },
+                        },
+                      ],
+                      series: [
+                        {
+                          type: 'line',
+                          itemStyle:{color:({dataIndex})=>${grades.current}[dataIndex] === 5 ? '#4FE952' : '#FFBB5A'}
+                          areaStyle: {
+                            color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+                              {
+                                offset: 0,
+                                color: '#0083ff',
+                              },
+                              {
+                                offset: 1,
+                                color: '#0013ff',
+                              },
+                            ]),
+                          },
+                          emphasis: {
+                            focus: 'series',
+                          },
+                          showSymbol: false,
+                          smooth: true,
+                          data: ${dataset},
+                        },
+                      ],
+                    },
+                    dataZoom: [{
+                      type: 'slider',
+                      start: 0,
+                      end: 100
+                    }]
+
+                          itemStyle:{color:({data})=>data[2] === 5 ? '#4FE952' : '#FFBB5A'}
+
+areaStyle: {
+                      color: 'linear-gradient(#0083ff,#0013ff)',
+                    },
+
+xAxis: [
+                        {
+                          minInterval: 3600 *24* 1000,
+                          boundaryGap: ['5%', '10%'],
+                          name: '时间',
+                          type: 'time',
+                          axisLine: {
+                            lineStyle: {
+                              color: '#00AFFF',
+                            },
+                          },
+                          nameTextStyle: {
+                            color: '#FFFFFF',
+                            fontSize: '14px',
+                            verticalAlign: 'top',
+                            align: 'right',
+                            padding: [9, 0, 0, 0],
+                          },
+                          axisTick: {
+                            show: false,
+                          },
+                          axisLabel: {
+                            color: '#FFFFFF',
+                            fontSize: '12px',
+                          },
+                          axisPointer: {
+                            label: {
+                              formatter: function (params) {
+                                let date = new Date(params.value)
+                                let day = date.toLocaleString()
+                                return '时间：'+day
+                              },
+                            },
+                          },
+                        },
+                      ],
+                      yAxis: [
+                        {
+                          type: 'value',
+
+                        },
+                      ],
+                      series: [
+                        {
+                          type: 'line',
+                          itemStyle:{color:({data})=> data[2] === 5 ? '#4FE952' : '#FFBB5A'}
+                          areaStyle: {
+                            color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+                              {
+                                offset: 0,
+                                color: '#0083ff',
+                              },
+                              {
+                                offset: 1,
+                                color: '#0013ff',
+                              },
+                            ]),
+                          },
+                          emphasis: {
+                            focus: 'series',
+                          },
+                          showSymbol: false,
+                          smooth: true,
+                          data: ${[[1730509276000,100,5],[1730519276000,200,4],[1730529276000,100,4]]},
+                        },
+                      ],
+                    },
+
+ {"agreement": 1, "ip": "192.168.0.45", "password": "xm123456", "patroldeviceCode": 12, "patroldeviceName": "MG-420-01", "photoType": "可见光", "port": 8000, "username": "admin"} {"data": {"agreement": 1, "ip": "192.168.0.45", "password": "xm123456", "patroldeviceCode": 12, "patroldeviceName": "MG-420-01", "photoType": "可见光", "port": 8000, "username": "admin"}, "dataType": "json", "params": {}}
+
+ <https://xllsctb.techxiaoma.com/sdk/cameraCtrl/voiceIntercom> {"agreement": 1, "ip": "192.168.0.110", "password": "xm123456", "patroldeviceCode": 12, "patroldeviceName": "MG-420-01", "port": 8000, "username": "admin"} {"data": {"agreement": 1, "ip": "192.168.0.110", "password": "xm123456", "patroldeviceCode": 12, "patroldeviceName": "MG-420-01", "port": 8000, "username": "admin"}, "dataType": "json", "params": {}}
+ LOG  interceptors.req af5c67bd-c6d4-4b0b-80dc-28f6cccaefc1 http
+
+ 88 您好，我开发了一个react-native APP，要在页面当中播放公司购买的海康摄像头视频流，有个语音对讲功能，请问这个目前有实现方案吗？安卓sdk的不能集成吧，我看了里面很多安卓代码和配置，不能用在react-native？
+
+ LOG  interceptors.req {"clientId": "af5c67bd-c6d4-4b0b-80dc-28f6cccaefc1", "config": {"credentials": "include", "data": {"id": 15, "value": 0.52}, "dataType": "json", "headers": {"Content-Type": "application/json", "clientId": "af5c67bd-c6d4-4b0b-80dc-28f6cccaefc1"}, "method": "post", "params": {}, "timeout": 60000, "url": "<https://xllsctb.techxiaoma.com/api/equipment-info-imaging/set-focus"}>,
 # 周报
 
 四棵树项目：
@@ -2600,19 +2782,22 @@ techxiaoma.com login-suc;xiaoma.com login-fail;
 模型配置的下发任务标注组件新增img_size参数，传递图片原始宽高
 
 标杆项目：
-修复非首次登录后需手动选择机器人的缺陷
+修复缺陷：优化一键重启按钮二次确认是否重启设备。
+修复缺陷：环境单位错误
 
 标杆APP：
-底层框架调整，websocket消息等区分于滦平APP
-调整APP整体的底部导航、以及首页顶部导航的样式
-开发首页设备状况-环境监测-任务概况Tab组件
-开发首页实时巡检-点位告警-静默巡检Tab组件
-开发控制中心界面
-开发引导页
+APP提测
+调试机器人实时状态信息显示的websocket消息
+调整APP首页、图片弹框组件、以及控制中心的样式
+调整引导页样式和显示逻辑
+机器人地图实时位置渲染和样式调整
+修复缺陷：优化一键重启按钮二次确认是否重启设备。
+修复缺陷：环境单位错误
+
 
 下周计划：
-APP开发
-标杆二期前期准备
+标杆二期开发
+APP缺陷修复
 其他项目的开发和维护
 
 *百度智能云上的JoySSL-techxiaoma.com证书将在2024.08.16过期。*

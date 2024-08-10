@@ -40,3 +40,34 @@ socket 及 websocket的握手过程
 
 
 # 用setInterval来测试websocket消息的发送与接收
+
+# 1006-message:null isTrusted:false
+
+<https://github.com/websockets/ws/issues/1598>
+Ok, so in my case was in nginx config. I am proxying websocket, so ddefault nginx 60 seconds timeout was fired. You need to add this to fix the issue (for example for 6000 seconds):
+
+proxy_read_timeout 6000;
+proxy_send_timeout 6000;
+
+WebSocket有4种消息类型，BinaryMessage，PingMessage，PongMessage，TextMessage
+
+websocket isTrusted false报错
+报错："websocket isTrusted false" 通常表示尝试建立的 WebSocket 连接没有通过同源策略（Same-origin policy）的验证，因此被浏览器拒绝。
+
+解释：
+
+isTrusted 属性是一个只读属性，返回一个布尔值，表示事件是否是由用户行为引起的。在这个上下文中，如果 isTrusted 返回 false，通常意味着事件不是由用户直接触发的，可能是由脚本或其他行为生成的。当 WebSocket 服务器和客户端页面不是同源时（即协议、域名、端口任一不同），由于浏览器的同源策略限制，任何非同源的 WebSocket 握手都会被拦截。
+
+解决方法：
+
+确保 WebSocket 服务器和客户端页面有相同的协议（通常是 ws 用于非加密连接或 wss 用于加密连接）。
+
+确保 WebSocket 服务器和客户端页面有相同的域名。
+
+确保 WebSocket 服务器和客户端页面有相同的端口（如果有一个指定的端口）。
+
+如果控制服务器不方便修改，可以考虑使用 CORS（Cross-Origin Resource Sharing）来允许跨源 WebSocket 连接。
+
+如果是在开发环境中遇到这个问题，可以考虑使用本地或者开发服务器来避免同源策略限制。
+
+在实施解决方案时，请确保遵守安全最佳实践，不要轻易禁用同源策略，否则会增加跨站脚本攻击（XSS）的风险。
