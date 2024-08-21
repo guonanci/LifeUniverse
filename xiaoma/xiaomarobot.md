@@ -2791,21 +2791,82 @@ ipv4子网掩码：255.255.255.0；ipv4默认网关：192.168.20.1、192.168.0.1
 
 在供应链管理中，CTB是"Cost To Build"的缩写，意为制造成本。 这是指生产一个产品所需的所有直接和间接成本的总和，包括原材料、人工、设备折旧等。 这个指标对于企业制定价格策略和产品成本控制非常重要。
 
-首页的实时信息显示暂时搁置；告警消息、媒体中心；点位跑任务调通、点位部署；静默相关的接口都有变动；
+首页的实时信息显示暂时搁置；告警消息、媒体中心；点位跑任务调通、点位部署；静默相关的接口都有变动；部署标注页面没有拍摄照片时给出提示标注容器内的提示文案。部署点位必须严格按步骤填写吗？
+
+标杆APP更新相应的标杆二期内容；
+
+```js
+const annoInfo = {
+  img_size:[1200,800],
+  shapes:[
+    {shape_type:'rect',coor:[[100,100],[200,200]],label:'l_rect',label_cn:'左边框'},
+    {shape_type:'rect',coor:[[300,100],[400,200]],label:'r_rect',label_cn:'右边框'},
+    {shape_type:'line',coor:[[100,100],[100,200]],label:'l_edge',label_cn:'左边缘'},
+    {shape_type:'line',coor:[[200,100],[200,200]],label:'r_edge',label_cn:'右边缘'},
+    {shape_type:'polygon',coor:[[200,100],[200,200]],label:'l_polygon',label_cn:'左多边形'},
+    {shape_type:'polygon',coor:[[200,100],[200,200]],label:'r_polygon',label_cn:'右多边形'},
+    {shape_type:'circle',coor:[100,100],label:'l_point',label_cn:'左圆点'},
+    {shape_type:'circle',coor:[200,100],label:'r_point',label_cn:'右圆点'}
+  ],
+  threshold:6,
+  alarmContent:['水煤','大块煤']
+}
+[
+    {
+        "shape_type":"point",
+        "labels":[
+            {
+                "label_code":"r_min",
+                "label_name":"最小量程"
+            },
+            {
+                "label_code":"r_max",
+                "label_name":"最大量程"
+            },
+            {
+                "label_code":"center",
+                "label_name":"中心点"
+            }
+        ]
+    },
+    {
+        "shape_type":"line",
+        "labels":[
+            {
+                "label_code":"l_rect",
+                "label_name":"左边缘"
+            },
+            {
+                "label_code":"r_rect",
+                "label_name":"右边缘"
+            }
+        ]
+    }
+]
+
+label和label_cn可通过前置接口查询特定识别算法对应的下拉框类别信息，另外可按照不同的识别算法，限定使用不同的标注形状，无法使用限定以外的形状来标注，形状的限定可以和labels一起通过接口返回。
+```
+
+tilt,pan,zoom,focus,recognitionType,recognitionDefect,focus,executeType,oasEnable,oasDistance,corrosion,detectionLine,lineSelection,maxRange
+
+部署标注页面涉及到recognitionType的接口是否都需要改名？
+
+调试部署标注页面和自动标注流程。PointTree组件的改造；全局替换recognitionType；
+
+TaskConfModal-confirm 没反应;LINKAGE_TASK_DETAIL;ImageList;
 # 周报
 *周报要写一两个遇到的问题，和解决方式*
 
 四棵树项目：
-负责新版标注组件前端代码上线;
-模型配置的下发任务标注组件新增img_size参数，传递图片原始宽高
 
 标杆项目：
-二期开发：AI配置管理模块的AI能力配置、算法库管理界面开发
-二期开发：AI配置管理模块的模型库管理、素材库管理界面开发
-海康摄像头的锐度、亮度、饱和度、对比度的查询和修改
+二期开发：后台管理-部署标注流程调试
+标杆项目-二期开发：监控大厅媒体中心的图像记录、视频记录、音频记录的页面开发
+标杆项目-二期开发：控制中心录音、录像功能实现
+标杆项目-二期开发：图片查看器组件ImagePreviewer开发，可查看多张图片
+标杆项目-二期开发：AI配置管理国际化配置
 
 标杆APP：
-海康摄像头的锐度、亮度、饱和度、对比度的查询和修改
 
 
 下周计划：
