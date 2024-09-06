@@ -1206,3 +1206,12 @@ obstacle avoidance避障;
 coal mine煤矿colliery；revoke撤回，撤销；（桥牌、惠斯特等牌戏中）有牌不跟；calibration校准；code comment;meridian子午线；seedling幼苗；柱上三角旗triangular_flag_on_post；dizzy头晕；goal net球门网；wastebasket；adhesive bandage胶布绷带；🧐monocle_face单片眼镜的脸；⚰️coffin棺材；
 
 🧪test_tube试管；👔necktie；🩺stethoscope听诊器；infrastructure基础设施；🧑‍💻technologist技术专家；💸money_with_wings长翅膀的钱；multithreading多线程 并发性 safety_vest🦺安全马甲：一种穿在身上的高可见性马甲，通常用于工地、道路或其他需要提高可见性的场所，以增加工人或行人的安全性；intercom 对讲机；内部通话装置；top bunk；weirder；You have fucking issues.Yes the  fuck you are;boner;pissed;No,it's a you problem.That's on you.I think you're.Year natural my ass.
+
+obsolete ˈɒbsəliːt
+美
+ˌɑːbsəˈliːt
+查看全部
+adj.
+淘汰的，废弃的；（生物特征的一部分）退化的
+vt.
+<美>淘汰（产品），废弃（想法）;

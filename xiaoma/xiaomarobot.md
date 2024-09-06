@@ -2851,27 +2851,47 @@ tilt,pan,zoom,focus,recognitionType,recognitionDefect,focus,executeType,oasEnabl
 
 部署标注页面涉及到recognitionType的接口是否都需要改名？
 
-调试部署标注页面和自动标注流程。PointTree组件的改造；全局替换recognitionType；
+调试部署标注页面和自动标注流程。
 
-TaskConfModal-confirm 没反应;LINKAGE_TASK_DETAIL;ImageList;
+WebSocket error: {"isTrusted": false, "message": "java.security.cert.CertPathValidatorException: Trust anchor for certification path not found."}
+
+zejingit-app\android\app\src\main\res\xml\network_security_config.xml
+
+国际化长单词串纠正工作;LINKAGE_TASK_DETAIL;ImageList;标杆app看不到视频流（222:8004）;模拟器切换页面时有点卡顿；app的审核页面底部的提交按钮，在模拟器上只能看到一部分。
+
+悬浮的两层菜单；
+
+你要是绩效给我打C，我表示不服，我在这一两个礼拜干的活比较多，包括：视频流组件可见光、红外的拍照、录音、录像功能实现；还有后台管理-部署标注；标注组件支持适配不同识别类型的标注要求；AI配置管理国际化配置；图片列表放大查看器；官网二期-在线留言模块开发；告警模块的推送和设置功能；海康摄像头的焦距锐度等信息的查询和修改；
+
+而且前端实现界面时，需要同时考虑主题适配和国际化配置这些细节，我把四棵树代码适配到标杆二期，国际化改动也比较繁琐耗时间。
+
+你说的一些小问题是因为后来自己的代码改动，字符串书写错误导致；或者是认为有的页面想等到能对接口的时候再开发；而且标杆二期的任务量比较大，应该分阶段测试，让测试人员提前介入才行，完全靠开发自测不太靠谱。
+
+工作上的优先级很重要，其他优先级低的细节不要弄，因为还有更重要的东西要弄，没弄完没弄好领导就会吊死你。
+
+标注组件有点卡顿的样子，是否跟robotModel、controlModel有关系？？banner文字的发光效果、还有颜色渐变效果；官网配置接口有关图片的配置；1920-1200-765-375渐进性适配；
+
+官网二期-产品构成的标题切换动画实现；
+
+recognitionResultToCN；defectResult;defectResultImage;recognitionStatusEnum没有出现；Number(recognitionCode) === 37;recognitionCode === 37
+
+学习并熟悉nginx配置前端服务等相关知识
 # 周报
+
 *周报要写一两个遇到的问题，和解决方式*
 
-四棵树项目：
+标杆项目二期开发：调整告警信息、历史信息的识别结果和图片的相关逻辑
 
-标杆项目：
-二期开发：后台管理-部署标注流程调试
-标杆项目-二期开发：监控大厅媒体中心的图像记录、视频记录、音频记录的页面开发
-标杆项目-二期开发：控制中心录音、录像功能实现
-标杆项目-二期开发：图片查看器组件ImagePreviewer开发，可查看多张图片
-标杆项目-二期开发：AI配置管理国际化配置
+官网项目：
+官网二期开发：开发解决方案详情界面：开发智慧电力的智慧电厂、智慧光伏场站、变电站智能巡视系统的解决方案界面，配置界面布局和样式所匹配的模板数据结构
+官网二期开发：开发解决方案详情界面：开发智慧矿山的煤矿智能化解决方案界面，配置界面布局和样式所匹配的模板数据结构
+官网二期开发：开发解决方案详情界面：开发智慧冶金的智慧钢厂解决方案界面，配置界面布局和样式所匹配的模板数据结构
 
-标杆APP：
-
+乌苏四棵树项目:修复模型配置界面，吸烟检测模型的bbox字段null判空问题
 
 下周计划：
-标杆二期开发
-APP缺陷修复
+标杆项目二期开发的联调
+官网项目-二期开发：解决方案子页面
 其他项目的开发和维护
 
-*百度智能云上的JoySSL-techxiaoma.com证书将在2024.08.16过期。*
+*百度智能云上的JoySSL-techxiaoma.com证书将在2024.11.02过期。*
