@@ -2871,11 +2871,15 @@ zejingit-app\android\app\src\main\res\xml\network_security_config.xml
 
 标注组件有点卡顿的样子，是否跟robotModel、controlModel有关系？？banner文字的发光效果、还有颜色渐变效果；官网配置接口有关图片的配置；1920-1200-765-375渐进性适配；
 
-官网二期-产品构成的标题切换动画实现；
 
 recognitionResultToCN；defectResult;defectResultImage;recognitionStatusEnum没有出现；Number(recognitionCode) === 37;recognitionCode === 37
 
-学习并熟悉nginx配置前端服务等相关知识
+学习并熟悉nginx配置前端服务等相关知识;
+
+官网二期-应用场景的dots active状态的样式不知如何实现。。以及borderImage情况下的;`animate__animated animate__fadeInUp`和position-relative-absolute-transform-translate不兼容；告警Notification当中的alarmInfoId怎么传递到告警界面的接口当中去？
+
+要把animate放到border上的话，就把border设置成伪元素；动画只作用在线段和圆点上；
+
 # 周报
 
 *周报要写一两个遇到的问题，和解决方式*

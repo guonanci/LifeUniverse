@@ -113,3 +113,8 @@ This error occurred during the build time and cannot be dismissed.
 # className
 一定不要写成class，要不然会阻断接下来的任何渲染和js逻辑。
 
+原来classnames这个package也可以几乎不用安装了:
+`className={`${styles.productItem} ${useAnimateById(
+                `#productItem${index}`,
+                'animate__animated animate__fadeInUp'
+              )}`}`
