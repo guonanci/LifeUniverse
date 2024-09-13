@@ -655,3 +655,27 @@ const data = [
     ],
   ]
 ```
+
+# gantt-schedule-timeline-calendar
+
+搞明白example-complex，看看到底能否完全满足需求？
+<https://github.com/neuronetio/gantt-schedule-timeline-calendar?tab=readme-ov-file>
+
+## plugins
+
+### movement-plugin
+
+- Item can change row? 更换行号
+- Item can collide with others in the same row? 重叠或碰撞动作是否被允许
+
+### selection-plugin
+
+## 交互
+
+禁止拖拽的时机？还是任何时候都禁止拖拽？
+
+任务条的状态，以及任务状态col的添加？
+
+拖拽
+
+任务状态、任务的实际执行时间段、以及任务的计划时间段；

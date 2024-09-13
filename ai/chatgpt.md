@@ -108,3 +108,6 @@ apply plugin: 'kotlin-android-extensions'
 
 总的来说，`MainActivity.kt` 是与用户界面相关的文件，而 `MainApplication.kt` 则是与整个应用程序相关的文件。在一个典型的 Android 应用程序中，通常只有一个 `MainApplication.kt` 文件，但可以有多个 `Activity`，每个 `Activity` 都有一个对应的 Kotlin 文件，比如 `MainActivity.kt`。
 
+# vs github
+
+有时候ChatGPT并不能给你推荐合适的package，需要自己在github上面搜Keyword。
