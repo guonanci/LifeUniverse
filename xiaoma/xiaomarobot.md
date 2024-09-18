@@ -2914,22 +2914,17 @@ ipcp-dev:<http://192.168.0.222:8060/swagger-ui/index.html?urls.primaryName=servi
 
 *周报要写一两个遇到的问题，和解决方式*
 
-标杆项目：
-二期开发：联调告警推送的链接跳转功能，完善界面内的表格字段
 
 官网项目：
-二期开发：开发解决方案子系统界面，优化桌面端和移动端的所有顶部导航组件
-二期开发：给出和后端的数据对接接口，包括：productList、systemList、jobList、newsList、solutionList等等，确认在线留言接口的数据格式
-二期开发：提测官网二期所有界面的改造，缺陷修复中，进度80%
+二期开发修复缺陷：导航栏背景色和文字样式问题、解决方案首页的路由跳转问题、首页banner内文字的间距调整
+二期开发修复缺陷：AR模拟培训系统的描述文案修正、解决方案详情页的图片居中问题
+二期开发修复缺陷：添加各个边框的圆角，兼容于渐变色的border-image效果
+二期开发修复缺陷：添加子系统锚链接跳转功能
 
 OA项目：
-调研甘特图组件：选定gantt-schedule-timeline-calendar组件，正在熟悉API，改造功能较全面的DEMO，以适应项目需要
-
-okr项目：
-配合后端完成微服务auth+user+okr的改造，联调完毕，已部署上线
+调研甘特图组件：熟悉gantt-schedule-timeline-calendar组件的image、resizing、selection、 movement插件
 
 下周计划：
-官网项目-二期开发：测试完毕，部署上线
 标杆项目二期开发的联调
 其他项目的准备和开发
 
