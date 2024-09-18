@@ -670,6 +670,10 @@ const data = [
 
 ### selection-plugin
 
+```js
+const
+```
+
 ## 交互
 
 禁止拖拽的时机？还是任何时候都禁止拖拽？
