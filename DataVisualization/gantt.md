@@ -674,6 +674,10 @@ const data = [
 const
 ```
 
+### item-image-plugin
+
+### resizing-plugin
+
 ## 交互
 
 禁止拖拽的时机？还是任何时候都禁止拖拽？
