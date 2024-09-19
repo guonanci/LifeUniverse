@@ -2912,10 +2912,12 @@ useAnimate 或者item/index.tsx存在fewer hooks的问题；
 ipcp-dev:<http://192.168.0.222:8060/swagger-ui/index.html?urls.primaryName=service-okr>
 
 从方案详情页到产品中心界面后banner图变形、到首页，看不到所有banner的文字、看不到产品构成的内容文字、等等……
+
+以后只要有峰峰、政樑、张成他们三人中的一人加班，那我也跟着一起加班，一起帮忙。
+
 # 周报
 
 *周报要写一两个遇到的问题，和解决方式*
-
 
 官网项目：
 二期开发修复缺陷：导航栏背景色和文字样式问题、解决方案首页的路由跳转问题、首页banner内文字的间距调整
