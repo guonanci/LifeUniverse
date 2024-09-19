@@ -2910,6 +2910,8 @@ useAnimate 或者item/index.tsx存在fewer hooks的问题；
 <http://192.168.0.222:8848/nacos/index.html#/serviceDetail?name=service-okr&groupName=service>
 
 ipcp-dev:<http://192.168.0.222:8060/swagger-ui/index.html?urls.primaryName=service-okr>
+
+从方案详情页到产品中心界面后banner图变形、到首页，看不到所有banner的文字、看不到产品构成的内容文字、等等……
 # 周报
 
 *周报要写一两个遇到的问题，和解决方式*
