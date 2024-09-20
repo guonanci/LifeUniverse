@@ -2911,7 +2911,7 @@ useAnimate 或者item/index.tsx存在fewer hooks的问题；
 
 ipcp-dev:<http://192.168.0.222:8060/swagger-ui/index.html?urls.primaryName=service-okr>
 
-从方案详情页到产品中心界面后banner图变形、到首页，看不到所有banner的文字、看不到产品构成的内容文字、等等……
+从方案详情页到产品中心界面后banner图变形、到首页，看不到产品构成的内容文字、等等……
 
 以后只要有峰峰、政樑、张成他们三人中的一人加班，那我也跟着一起加班，一起帮忙。
 
@@ -2923,11 +2923,12 @@ ipcp-dev:<http://192.168.0.222:8060/swagger-ui/index.html?urls.primaryName=servi
 二期开发修复缺陷：导航栏背景色和文字样式问题、解决方案首页的路由跳转问题、首页banner内文字的间距调整
 二期开发修复缺陷：AR模拟培训系统的描述文案修正、解决方案详情页的图片居中问题
 二期开发修复缺陷：添加各个边框的圆角，兼容于渐变色的border-image效果
-二期开发修复缺陷：添加子系统锚链接跳转功能
+二期开发修复缺陷：添加子系统锚链接跳转功能；修复banner的动画和绝对定位居中冲突问题；修复二次进入产品中心页面时的banner变形问题
+二期开发修复缺陷：修复移动端解决方案卡片入口处的浮动溢出样式问题、修复解决方案详情页的产品构成二次渲染空白问题
 
-OA项目：
-调研甘特图组件：熟悉gantt-schedule-timeline-calendar组件的image、resizing、selection、 movement插件
+项目部署发布到生产环境
 
+OA项目：调研甘特图组件：熟悉gantt-schedule-timeline-calendar组件的image、resizing、selection、 movement插件;熟悉threejs的创建场景、画线API
 下周计划：
 标杆项目二期开发的联调
 其他项目的准备和开发

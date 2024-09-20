@@ -13,3 +13,7 @@ p {
 https://link.juejin.cn/?target=https%3A%2F%2Fwww.webhek.com%2Fpost%2Fcss3-animation-sniplet-collection%2F%23%2F
 
 https://www.webhek.com/post/css3-animation-sniplet-collection/#/
+
+# animate.css
+
+@keyframes 0%,100%里面的transform经常和绝对定位居中用到的transform-50%,-50%冲突，所以最好不要用绝对定位方式居中，改用flex即可。
