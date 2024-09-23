@@ -678,6 +678,26 @@ const
 
 ### resizing-plugin
 
+```js
+ItemResizing({
+  events:{
+    onStart({items}){
+      console.log('Resizing start',items.after)
+      return items.after
+    },
+    onResize({vido,items}){
+      const filtered = items.after
+      .map((item,i)=>{
+        if(!isItemResizable(item)) return items.before[index]
+        return item
+      })
+      .map((itm,i)=>limitTime(itm,items.before[index]))
+      .map((itm)=>snapToTimeSeparately(itm,vido))
+    }
+  }
+})
+```
+
 ## 交互
 
 禁止拖拽的时机？还是任何时候都禁止拖拽？

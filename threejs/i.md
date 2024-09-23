@@ -266,6 +266,457 @@ renderer.render( scene, camera );
 
 你现在应当已经看到了一个由两条蓝线组成的、指向上的箭头。
 
+# 创建文字
+
+有时候，您可能需要在你的Three.js应用程序中使用到文本，这里有几种方法可以做到。
+
+1. DOM + CSS
+使用HTML通常是最简单、最快速的添加文本的方法，这是大多数的Three.js示例中用于添加描述性叠加文字的方法。
+
+你可以在这里添加内容
+
+<div id="info">Description</div>
+然后使用CSS来将其绝对定位在其它具有z-index的元素之上，尤其是当你全屏运行three.js的时候。
+
+```less
+#info {
+ position: absolute;
+ top: 10px;
+ width: 100%;
+ text-align: center;
+ z-index: 100;
+ display:block;
+}
+```
+
+2. 将文字绘制到画布中，并将其用作Texture（纹理）
+如果你希望在three.js的场景中的平面上轻松地绘制文本，请使用此方法。
+
+3. 在你所喜欢的3D软件里创建模型，并导出给three.js
+如果你更喜欢使用3D建模软件来工作并导出模型到three.js，请使用这种方法。
+
+4. three.js自带的文字几何体
+如果你更喜欢使用纯three.js来工作，或者创建能够由程序改变的、动态的3D文字，你可以创建一个其几何体为THREE.TextGeometry的实例的网格：
+
+```js
+
+new THREE.TextGeometry( text, parameters );
+```
+
+然而，为了使得它能工作，你的TextGeometry需要在其“font”参数上设置一个THREE.Font的实例。
+请参阅 TextGeometry 页面来阅读如何完成此操作的详细信息，以及每一个接收的参数的描述，还有由three.js分发、自带的JSON字体的列表。
+
+示例
+WebGL / geometry / text
+WebGL / shadowmap
+
+如果Typeface已经关闭，或者没有你想使用的字体，这有一个教程:<http://www.jaanga.com/2012/03/blender-to-threejs-create-3d-text-with.html>
+这是一个在blender上运行的python脚本，能够让你将文字导出为Three.js的JSON格式。
+
+5. 位图字体
+BMFonts (位图字体) 可以将字形批处理为单个BufferGeometry。BMFont的渲染支持自动换行、字母间距、字句调整、signed distance fields with standard derivatives、multi-channel signed distance fields、多纹理字体等特性。 详情请参阅 three-mesh-ui 或 three-bmfont-text。
+
+现有库存的字体在项目中同样可用，就像A-Frame Fonts一样， 或者你也可以从任何TTF字体中创建你自己的字体，优化时，只需包含项目中所需字符即可。
+
+这是一些有用的工具：
+
+msdf-bmfont-web (web-based)
+msdf-bmfont-xml (commandline)
+hiero (desktop app)
+
+# 载入3D模型（Loading 3D models）
+
+目前，3D模型的格式有成千上万种可供选择，但每一种格式都具有不同的目的、用途以及复杂性。 虽然 three.js已经提供了多种导入工具， 但是选择正确的文件格式以及工作流程将可以节省很多时间，以及避免遭受很多挫折。某些格式难以使用，或者实时体验效率低下，或者目前尚未得到完全支持。
+
+对大多数用户，本指南向你推荐了一个工作流程，并向你提供了一些当没有达到预期效果时的建议。
+
+## 在开始之前
+
+如果你是第一次运行一个本地服务器，可以先阅读installation。 正确地托管文件，可以避免很多查看3D模型时的常见错误。
+
+## 推荐的工作流程
+
+如果有可能的话，我们推荐使用glTF（gl传输格式）。.GLB和.GLTF是这种格式的两种不同版本，都可以被很好地支持。由于glTF格式专注于在程序运行时呈现三维物体，所以传输效率很高，且加载速度很快。功能方面则包括了网格、材质、纹理、皮肤、骨骼、变形目标、动画、灯光和摄像机。
+
+公共领域的glTF文件可以在网上找到，例如 Sketchfab，或者很多工具包含了glTF的导出功能：
+
+Blender by the Blender Foundation
+Substance Painter by Allegorithmic
+Modo by Foundry
+Toolbag by Marmoset
+Houdini by SideFX
+Cinema 4D by MAXON
+COLLADA2GLTF by the Khronos Group
+FBX2GLTF by Facebook
+OBJ2GLTF by Analytical Graphics Inc
+…and 还有更多（<http://github.khronos.org/glTF-Project-Explorer/）>
+
+倘若你所喜欢的工具不支持glTF格式，请考虑向该工具的作者请求glTF导出功能， 或者在the glTF roadmap thread贴出你的想法。
+
+当glTF不可用的时候，诸如FBX、OBJ或者COLLADA等等其它广受欢迎的格式在Three.js中也是可以使用、并且定期维护的。
+
+## 加载
+
+在three.js中只会内置一部分加载器，如：ObjectLoader，其它的需要在应用中单独引入。
+
+```js
+
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+```
+
+一旦引入了一个加载器，你就已经准备好为场景添加模型了。不同加载器之间可能具有不同语法 —— 当使用其它格式时，请参阅该格式加载器的示例及文档。对于glTF，使用全局script的用法类似：
+
+```js
+
+const loader = new GLTFLoader();
+
+loader.load( 'path/to/model.glb', function ( gltf ) {
+
+ scene.add( gltf.scene );
+
+}, undefined, function ( error ) {
+
+ console.error( error );
+
+} );
+```
+
+请参阅GLTFLoader documentation来深入了解详细信息。
+
+## 故障排除
+
+你花了几小时亲手建了个堪称杰作的模型，现在把它导入到网页中—— 哦，天呐~😭导入后完全失真了、材质贴图丢了、或者说整个模型完全丢失了！
+
+接下来我们按下面的步骤排除故障：
+
+1. 在Javascript的Console中查找错误，并确定当你调用.load()的时候，使用了onError回调函数来输出结果。
+
+2. 请在其它应用程序中查看3D模型。对于glTF格式的模型来说，可以直接在下面的应用程序中进行查看： three.js和 babylon.js。 如果该模型能够在一个或多个应用程序中正确地呈现，请点击这里向three.js提交Bug报告。 如果模型不能在任意一个应用程序里显示，我们强烈鼓励你向我们提交Bug报告，并告知我们你的模型是使用哪款应用程序创建的。
+
+3. 尝试将模型放大或缩小到原来的1000倍。许多模型的缩放比例各不相同，如果摄像机位于模型内，则大型模型将可能不显示。
+
+4. 尝试添加一个光源并改变其位置。模型或许被隐藏在黑暗中。
+
+5. 在网络面板中查找失败的纹理贴图请求，比如说C:\\Path\To\Model\texture.jpg。载入贴图时，请使用相对于模型文件路径，例如 images/texture.jpg —— 这或许需要在文本编辑器中修改模型文件。
+
+## 请求帮助
+
+如果你已经尝试经历了以上故障排除的过程，但是你的模型仍无法工作，寻求正确的方法来获得帮助，将使您更快地获得解决方案。您可以将您的问题发布到three.js forum， 同时，尽可能将你的模型（或者一个简单的、具有相同问题的模型）包含在你能够使用的任何格式中，为其他人提供足够信息，以便快速重现该问题 —— 最好是一个能现场演示的Demo。
+
+# 库和插件
+
+这里列出的是由外部开发的，与three.js相兼容的库和插件。此列表和相关软件包，由社区维护，不保证是最新版本。如果您想更新此列表，请提交 PR！
+
+## 物理引擎/效果（Physics）
+
+Oimo.js
+enable3d
+ammo.js
+cannon-es
+rapier
+Jolt
+
+## 后期处理（Postprocessing）
+
+除了官方的 three.js 后处理特效外，我们还可以通过外部库获得一些额外的特效和框架支持。
+
+postprocessing
+
+## 光线投射性能表现（Intersection and Raycast Performance）
+
+three-mesh-bvh
+
+## 轨迹追踪（Path Tracing）
+
+three-gpu-pathtracer
+
+## 文件格式（File Formats）
+
+除官方的 three.js 加载器外，还可通过外部库支持其他一些格式。
+
+urdf-loader
+3d-tiles-renderer-js
+WebWorker OBJLoader
+IFC.js
+
+## Geometry
+
+THREE.MeshLine
+
+## 3D 文字和布局（3D Text and Layout）
+
+troika-three-text
+three-mesh-ui
+
+## 粒子系统（Particle Systems）
+
+three.quarks
+three-nebula
+
+## 逆向运动学（Inverse Kinematics）
+
+THREE.IK
+fullik
+closed-chain-ik
+
+## 游戏人工智能（Game AI）
+
+yuka
+three-pathfinding
+recast-navigation-js
+
+## 封装器和框架（Wrappers and Frameworks）
+
+A-Frame
+Lume - HTML elements for 3D graphics built on Three.
+react-three-fiber - React components for 3D graphics built on Three.
+threepipe - A versatile 3D viewer framework using three.js for rendering.
+ECSY
+Threlte - Svelte components for 3D graphics built on Three.
+Needle Engine
+tresjs - Vue components for 3D graphics built on Three.
+
+# 常见问题
+
+## 哪种三维物体格式能得到最好地支持？
+
+推荐使用glTF（gl传输格式）来对三维物体进行导入和导出，由于glTF格式专注于在程序运行时呈现三维物体，因此它的传输效率非常高，且加载速度非常快。
+
+three.js同样也为其它广受欢迎的格式（例如FBX、Collada以及OBJ等）提供了载入工具。即便如此，你应当还是首先尝试着在项目中建立一个基于glTF的工作流程。了解更多详细信息，请查看loading 3D models。
+
+为何在示例中会有一些和viewport相关的meta标签？
+<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+这些标签用于在移动端浏览器上控制视口的大小和缩放（页面内容可能会以与可视区域不同的大小来呈现）。
+
+Safari: Using the Viewport
+
+MDN: Using the viewport meta tag
+
+## 如何在窗口调整大小时保持场景比例不变？
+
+我们希望所有物体，无论距离摄像机多远，都能呈现相同尺寸，即使是在窗口被重新调整大小时。解决该问题的关键，是一个很重要的公式：*给定距离，求可见高度*。
+
+```js
+visible_height = 2 *Math.tan( ( Math.PI / 180 )* camera.fov / 2 ) * distance_from_camera;
+
+```
+
+*如果我们以一定的百分比增加了窗口高度，那我们所想要的结果便是，所有距离的可见高度都增加相同的百分比。 这并不能通过改变摄像机的位置来实现，相反，你得改变摄像机的视野角度（FOV）*。这是个示例：Example.
+
+## 为何我的物体的一部分不可见？
+
+这可能是由于面剔除而导致。面具有朝向，该朝向决定了哪边是正面或背面。正常情况下，渲染时会剔除背面。要查看这是不是你遇到的问题，请*将material的side更改为THREE.DoubleSide*。
+
+```js
+
+material.side = THREE.DoubleSide
+```
+
+为何有时候无效输入会让three.js返回奇怪结果？
+出于性能考虑，大多数情况下 three.js 不验证输入。确保所有输入均有效是应用的责任。
+
+# 一些有用的链接（Useful links）
+
+以下是一些学习three.js过程中，可能有所帮助的链接。
+如果你想在此添加内容，或是认为下方某个链接不再相关或无法工作，请随时点击右下角“编辑”按钮来更改。
+
+需注意的是，由于three.js处于快速发展中，很多链接会包含过时信息 —— 如果某个地方不能如你所想，或如链接中所说的正常工作， 请查看浏览器控制台中的警告和报错信息，同时也请参阅相关的文档页面。
+
+## 帮助论坛
+
+Three.js官方使用forum（官方论坛） 和 Stack Overflow来处理帮助请求。如果你需要些帮助，这才是你所要去的地方。请一定不要在GitHub上提issue来寻求帮助。
+
+## 教程以及课程
+
+- three.js入门
+Three.js Fundamentals starting lesson
+Beginning with 3D WebGL by Rachel Smith.
+Animating scenes with WebGL and three.js
+
+- 更广泛、高级的文章与教程
+Discover three.js
+Collection of tutorials by CJ Gammon.
+Glossy spheres in three.js.
+Interactive 3D Graphics - a free course on Udacity that teaches the fundamentals of 3D Graphics, and uses three.js as its coding tool.
+Aerotwist tutorials by Paul Lewis.
+Three.js Bookshelf - Looking for more resources about three.js or computer graphics in general? Check out the selection of literature recommended by the community.
+
+## 新闻与更新
+
+Three.js on Twitter
+Three.js on reddit
+WebGL on reddit
+
+## 示例
+
+three-seed - three.js starter project with ES6 and Webpack
+Professor Stemkoskis Examples - a collection of beginner friendly examples built using three.js r60.
+Official three.js examples - these examples are maintained as part of the three.js repository, and always use the latest version of three.js.
+Official three.js dev branch examples - Same as the above, except these use the dev branch of three.js, and are used to check that everything is working as three.js being is developed.
+
+## 工具
+
+physgl.org - JavaScript front-end with wrappers to three.js, to bring WebGL graphics to students learning physics and math.
+Whitestorm.js – Modular three.js framework with AmmoNext physics plugin.
+Three.js Inspector
+ThreeNodes.js.
+three.quarks - 针对 three.js 高速粒子特效系统
+vscode shader - Syntax highlighter for shader language.
+vscode comment-tagged-templates - Syntax highlighting for tagged template strings using comments to shader language, like: glsl.js.
+WebXR-emulator-extension
+
+## WebGL参考
+
+webgl-reference-card.pdf - Reference of all WebGL and GLSL keywords, terminology, syntax and definitions.
+
+## 较旧的链接
+
+这些链接是出于历史目的而保留的，你或许可以发现它们仍然很有用，它们可能含有和three.js较为早前版本的有关的信息。
+
+AlterQualia at WebGL Camp 3
+Yomotsus Examples - a collection of examples using three.js r45.
+Introduction to Three.js by Ilmari Heikkinen (slideshow).
+WebGL and Three.js by Akihiro Oyamada (slideshow).
+Trigger Rally by jareiko (video).
+ThreeFab - scene editor, maintained up until around three.js r50.
+Max to Three.js workflow tips and tricks by BKcore
+A whirlwind look at Three.js by Paul King
+Animated selective glow in Three.js by BKcore
+Building A Physics Simulation Environment - three.js tutorial in Japanese
+
+# 进阶
+
+## 如何更新场景（How to update things）
+
+默认情况下，所有对象都会自动更新它们的矩阵，如果它们已添加到场景中
+
+```js
+
+const object = new THREE.Object3D();
+scene.add( object );
+// 或者它们是已添加到场景中的另一个对象的子节点:
+const object1 = new THREE.Object3D();
+const object2 = new THREE.Object3D();
+
+object1.add( object2 );
+scene.add( object1 ); // object1 和 object2 会自动更新它们的矩阵
+```
+
+但是，如果你知道对象将是静态的，则可以禁用此选项并在需要时手动更新转换矩阵。
+
+object.matrixAutoUpdate = false;
+object.updateMatrix();
+BufferGeometry
+BufferGeometries 将信息（例如顶点位置，面索引，法线，颜色，uv和任何自定义属性）存储在buffers —— 也就是， typed arrays. 这使得它们通常比标准Geometries更快，缺点是更难用。
+
+关于更新BufferGeometries，最重要的是理解你不能调整 buffers 大小（这种操作开销很大，相当于创建了个新的geometry）。 但你可以更新 buffers的内容。
+
+这意味着如果你知道BufferGeometry的一个属性会增长，比如顶点的数量， 你必须预先分配足够大的buffer来容纳可能创建的任何新顶点。 当然，这也意味着BufferGeometry将有一个最大大小 —— 无法创建一个可以高效地无限扩展的BufferGeometry。
+
+我们以在渲染时扩展的line来示例。我们将分配可容纳500个顶点的空间但起初仅绘制2个，使用 在500个顶点的缓冲区中，但首先只使用 BufferGeometry.drawRange。
+
+const MAX_POINTS = 500;
+
+// geometry
+const geometry = new THREE.BufferGeometry();
+
+// attributes
+const positions = new Float32Array( MAX_POINTS * 3 ); // 3 vertices per point
+geometry.setAttribute( 'position', new THREE.BufferAttribute( positions, 3 ) );
+
+// draw range
+const drawCount = 2; // draw the first 2 points, only
+geometry.setDrawRange( 0, drawCount );
+
+// material
+const material = new THREE.LineBasicMaterial( { color: 0xff0000 } );
+
+// line
+const line = new THREE.Line( geometry, material );
+scene.add( line );
+然后我们随机增加顶点到line中，以这样的一种方式：
+
+const positionAttribute = line.geometry.getAttribute( 'position' );
+
+let x = 0, y = 0, z = 0;
+
+for ( let i = 0; i < positionAttribute.count; i ++ ) {
+
+ positionAttribute.setXYZ( i, x, y, z );
+
+ x += ( Math.random() - 0.5 ) *30;
+ y += ( Math.random() - 0.5 )* 30;
+ z += ( Math.random() - 0.5 ) * 30;
+
+}
+如果要更改第一次渲染后渲染的点数，执行以下操作：
+
+line.geometry.setDrawRange( 0, newValue );
+如果要在第一次渲染后更改position数值，则需要像这样设置needsUpdate标志：
+
+positionAttribute.needsUpdate = true; // 需要加在第一次渲染之后
+这个fiddle展示了一个你可以参考的运动的line。
+
+例子
+WebGL / custom / attributes
+WebGL / buffergeometry / custom / attributes / particles
+
+材质（Materials）
+所有uniforms值都可以自由改变（比如 colors, textures, opacity 等等），这些数值在每帧都发给shader。
+
+GL状态相关参数也可以随时改变（depthTest, blending, polygonOffset 等）。
+
+在运行时无法轻松更改以下属性（一旦material被渲染了一次）：
+
+uniforms的数量和类型
+是否存在
+texture
+fog
+vertex colors
+morphing
+shadow map
+alpha test
+transparent
+这些变化需要建立新的shader程序。你需要设置
+
+material.needsUpdate = true
+请记住，这可能会非常缓慢并导致帧率的波动。（特别是在Windows上，因为shader编译在directx中比opengl慢）。
+
+为了获得更流畅的体验，您可以通过“虚拟”值（如零强度光，白色纹理或零密度雾）在一定程度上模拟这些功能的变化。
+
+您可以自由更改用于几何块的材质，但是无法更改对象如何划分为块（根据面材料）。
+
+如果你需要在运行时使用不同的材料配置：
+如果材料/块的数量很少，您可以事先预先划分物体（例如，人的头发/脸部/身体/上衣/裤子，汽车的前部/侧面/顶部/玻璃/轮胎/内部）。
+
+如果数量很大（例如，每个面可能有所不同），请考虑不同的解决方案，例如使用属性/纹理来驱动不同的每个面部外观。
+
+例子
+WebGL / materials / car
+WebGL / webgl_postprocessing / dof
+
+纹理（Textures）
+如果更改了图像，画布，视频和数据纹理，则需要设置以下标志：
+
+texture.needsUpdate = true;
+渲染对象就会自动更新。
+
+例子
+WebGL / materials / video
+WebGL / rtt
+
+相机（Cameras）
+相机的位置和目标会自动更新。 如果你需要改变
+
+fov
+aspect
+near
+far
+那么你需要重新计算投影矩阵：
+
+camera.aspect = window.innerWidth / window.innerHeight;
+camera.updateProjectionMatrix();
+
 # 参考
 
 ## 动画
@@ -279,3 +730,172 @@ renderer.render( scene, camera );
 ## 音频
 
 `Audio/AudioAnalyser/AudioContext/AudioListener/PositionalAudio`
+
+## 摄像机
+
+`ArrayCamera/Camera/CubeCamera/OrthographicCamera/PerspectiveCamera/StereoCamera`
+
+## 常量
+
+`Animation/Core/CustomBlendingEquation/BufferAttributeUsage/Materials/Renderer/Textures`
+
+## 核心
+
+`BufferAttribute/BufferGeometry/Clock/EventDispatcher/GLBufferAttribute/InstancedBufferGeometry/InstancedInterleavedBuffer/InterleavedBuffer/InterleavedBufferAttribute/Layers/Object3D/Raycaster/Uniform`
+Interleaved:交叉；raycaster：光线投射器
+
+## 核心/BufferAttributes
+
+BufferAttributes Types
+
+## 附件
+
+Controls、DataUtils、Earcut、ImageUtils、PMREMGenerator、ShapeUtils
+
+## 附件/核心
+
+Curve、CurvePath、Interpolations、Path、Shape、ShapePath
+
+## 附件/曲线
+
+ArcCurve、CatmullRomCurve3、CubicBezierCurve、CubicBezierCurve3、EllipseCurve、LineCurve、LineCurve3、QuadraticBezierCurve、QuadraticBezierCurve3、SplineCurve
+
+## 几何体
+
+BoxGeometry、CapsuleGeometry、CircleGeometry、ConeGeometry、CylinderGeometry、DodecahedronGeometry、EdgesGeometry、ExtrudeBeometry、IcosahedronGeometry、LatheGeometry、LatheGeometry、OctahedronGeometry、PlaneGeometry、PolyhedronGeometry、RingGeometry、
+
+ShapeGeometry、SphereGeometry、TetrahedronGeometry、TorusGeometry、TorusKnotGeometry、TubeGeometry、WireframeGeometry、
+
+## 辅助对象
+
+ArrowHelper/AxesHelper/BoxHelper/Box3Helper/CameraHelper/DirectionalLightHelper/GridHelper/PolarGridHelper/HemisphereLightHelper/PlaneHelper/PointLightHelper/SkeletonHelper/SpotLightHelper
+
+## 灯光
+
+AmbientLight/DirectionalLight/HemisphereLight/Light/LightProbe/PointLight/RectAreaLight/SpotLight/
+
+## 灯光/阴影
+
+LightShadow/PointLightShadow/DirectionalLightShadow/SpotLightShadow/
+
+## 加载器
+
+AnimationLoader/AudioLoader/BufferGeometryLoader/Cache/CompressedTextureLoader/CubeTextureLoader/CubeTextureLoader/DataTextureLoader/FileLoader/ImageBitmapLoader/ImageLoader/Loader/LoaderUtils/MaterialLoader/ObjectLoader/TextureLoader/
+
+## 加载器/管理器
+
+DefaultLoadingManager/LoadingManager
+
+## 材质
+
+LineBasicMaterial/LineDashedMaterial/Material/MeshBasicMaterial/MeshDistanceMaterial/MeshLambertMaterial/MeshMatcapMaterial/MeshNormalMaterial/MeshPhongMaterial/MeshPhysicalMaterial/MeshStandardMaterial/MeshToonMaterial/
+
+PointsMaterial/RawShaderMaterial/ShaderMaterial/ShadowMaterial/SpriteMaterial/
+
+## 数学库
+
+Box2/Box3/Color/Cylindrical/Euler/Frustum/Interpolant/Line3/MathUtils/Matrix3/Matrix4/Plane/Quaternion/Ray/Sphere/Spherical/SphericalHarmonics3/Triangle/Vector2/Vector3/Vector4
+
+## 数学库/插值
+
+CubicInterpolant/DiscreteInterpolant/LinearInterpolant/QuaternionLinearInterpolant
+
+## 物体
+
+BatchedMesh/Bone/Group/InstancedMesh/LOD/Mesh/Points/Skeleton/SkinnedMesh/Sprite
+
+## 渲染器
+
+WebGLRenderer/WebGLRenderTarget/WebGLArrayRenderTarget/WebGLCubeRenderTarget/
+
+## 渲染器/着色器
+
+ShaderChunk/ShaderLib/UniformsLib/UniformsUtils
+
+## 渲染器/WebXR
+
+WebXRManager
+
+## 场景
+
+Fog/FogExp2/Scene
+
+## 纹理贴图
+
+CanvasTexture/CompressedTexture/CompressedArrayTexture/CubeTexture/Data3DTexture/DataArrayTexture/DataTexture/DepthTexture/FramebufferTexture/Source/Texture/VideoTexture/
+
+# 附加
+
+## 动画
+
+CCDIKSolver/MMDAnimationHelper/MMDPhysics
+
+## 控制
+
+ArcballControls/DragControls/FirstPersonControls/FlyControls/MapControls/OrbitControls/PointerLockControls/TrackballControls/TransformControls/
+
+## 几何体
+
+ConvexGeometry/DecalGeometry/ParametricGeometry/TeapotGeometry/TextGeometry/SDFGeometryGenerator/
+
+## 辅助对象
+
+LightProbeHelper/PositionalAudioHelper/RectAreaLightHelper/VertexNormalsHelper/VertexTangentsHelper/
+
+## 灯光
+
+LightProbeGenerator
+
+## 加载器
+
+3DMLoader/DRACOLoader/FontLoader/GLTFLoader/KTX2Loader/LDrawLoader/LUT3dlLoader/LUTCubeLoader/MMDLoader/OBJLoader/PCDLoader/PDBLoader/SVGLoader/TGALoader/
+
+## 物体
+
+Lensflare/Sky
+
+## 后期处理
+
+EffectComposer
+
+## 导出器
+
+DRACOExporter/EXRExporter/GLTFExporter/PLYExporter/STLExporter/
+
+## 数学库
+
+LookupTable/MeshSurfaceSampler/OBB
+
+## 修改器
+
+EdgeSplitModifier
+
+## 杂项
+
+Timer
+
+## 凸包
+
+Face/HalfEdge/ConvexHull/VertexNode/VertexList
+
+## 渲染器
+
+CSS2DRenderer/CSS3DRenderer/SVGRenderer/
+
+## 实用工具
+
+BufferGeometryUtils/CameraUtils/SceneUtils/SkeletonUtils
+
+## WebXR
+
+XREstimatedLight
+
+# 开发者参考
+
+## WebGL渲染器
+
+WebGLProgram
+
+# Examples
+
+张成说，threejs没有球体的圆滑感，都是块状的。
