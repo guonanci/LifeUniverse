@@ -2889,49 +2889,51 @@ zejingit-app\android\app\src\main\res\xml\network_security_config.xml
 
 工作上的优先级很重要，其他优先级低的细节不要弄，因为还有更重要的东西要弄，没弄完没弄好领导就会吊死你。
 
-标注组件有点卡顿的样子，是否跟robotModel、controlModel有关系？？banner文字的发光效果、还有颜色渐变效果；官网配置接口有关图片的配置；1920-1200-765-375渐进性适配；
+标注组件有点卡顿的样子，是否跟robotModel、controlModel有关系？？官网配置接口有关图片的配置；1920-1200-765-375渐进性适配；
 
 recognitionResultToCN；defectResult;defectResultImage;recognitionStatusEnum没有出现；Number(recognitionCode) === 37;recognitionCode === 37
 
 学习并熟悉nginx配置前端服务等相关知识;
 
-官网二期-应用场景的dots active状态的样式不知如何实现。。以及borderImage情况下的;`animate__animated animate__fadeInUp`和position-relative-absolute-transform-translate不兼容；告警Notification当中的alarmInfoId怎么传递到告警界面的接口当中去？
+告警Notification当中的alarmInfoId怎么传递到告警界面的接口当中去？
 
-useAnimate 或者item/index.tsx存在fewer hooks的问题；
+新增mock的fetch接口、以及增加useStateData，并设置初始值为相对应的mockData;
 
-新增mock的fetch接口、以及增加useStateData，并设置初始值为相对应的mockData;整理页面内的各种必要List，整理好后发给峰峰（没有配置banner、以及菜单）；
-
-点位告警界面的图片列表滚动查看功能；告警通知的告警类型和标签类型；告警信息表格字段名；首页的‘严重告警’
+告警信息表格字段名；首页的‘严重告警’
 
 甘特图调研，需求是什么样的？简单点还是复杂点，复杂点的版本可能要收费。。 <https://wenku.csdn.net/answer/1u5nvouq22>  甘特图的实际和计划两种情况。
 
-根据思维导图拆解任务；调研一下思维导图组件;borderImage和borderRadius冲突；
+根据思维导图拆解任务；调研一下思维导图组件;
 
 <http://192.168.0.222:8848/nacos/index.html#/serviceDetail?name=service-okr&groupName=service>
 
 ipcp-dev:<http://192.168.0.222:8060/swagger-ui/index.html?urls.primaryName=service-okr>
 
-从方案详情页到产品中心界面后banner图变形、到首页，看不到产品构成的内容文字、等等……
-
 以后只要有峰峰、政樑、张成他们三人中的一人加班，那我也跟着一起加班，一起帮忙。
+
+光纤听诊项目搭建、umi、antd、yarn、nodejs（18）版本都要最高，把Bearer-Authorization的代码搬过去。先不要管页面和布局。
+
+3D地图采用gltf或obj格式的结构组模型文件，配合threejs来弄；echarts的3D地图是完全基于地理坐标系统。而我们的3D地图是厂区地区，不是区县市地图。
+
+之后再看gantt库组件的剩余API细节。<https://github.com/neuronetio/gantt-schedule-timeline-calendar/tree/master/examples/tooltip> <https://gantt-schedule-timeline-calendar.neuronet.io/documentation/configuration/locale>
+
+怎么做到同时安装？？
 
 # 周报
 
 *周报要写一两个遇到的问题，和解决方式*
 
-官网项目：
-二期开发修复缺陷：导航栏背景色和文字样式问题、解决方案首页的路由跳转问题、首页banner内文字的间距调整
-二期开发修复缺陷：AR模拟培训系统的描述文案修正、解决方案详情页的图片居中问题
-二期开发修复缺陷：添加各个边框的圆角，兼容于渐变色的border-image效果
-二期开发修复缺陷：添加子系统锚链接跳转功能；修复banner的动画和绝对定位居中冲突问题；修复二次进入产品中心页面时的banner变形问题
-二期开发修复缺陷：修复移动端解决方案卡片入口处的浮动溢出样式问题、修复解决方案详情页的产品构成二次渲染空白问题
+官网项目-二期开发：变电站智能巡视系统-解决方案的应用场景，凸显每个场景的title，结构调整，亮度提高
+管网项目-二期开发：产品中心添加410机器人
+管网项目-二期开发：项目部署、发布到线上环境
 
-项目部署发布到生产环境
+光纤听诊框架搭建，分开调用authApi、userApi、auscultationApi微服务，升级umi、react、yarn、nodejs等等依赖和环境的版本。
+
+下周计划：
+光纤听诊项目的总体布局搭建、开始布局首页
+其他项目的开发
 
 OA项目：调研甘特图组件：熟悉gantt-schedule-timeline-calendar组件的image、resizing、selection、 movement插件;熟悉threejs的创建场景、画线API
-下周计划：
-标杆项目二期开发的联调
-其他项目的准备和开发
 
 <https://www.ncrcw.com.cn/ngwc/#/index> <https://www.ncrcw.com.cn/ngwc/#/home/content/news-detail?id=1780507803404816385>
 

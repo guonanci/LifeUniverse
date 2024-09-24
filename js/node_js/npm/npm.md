@@ -206,5 +206,15 @@ my-project@1.0.0 /path/to/my-project
 # nrm
 切换镜像源
 
+  npm ---------- <https://registry.npmjs.org/>
+  yarn --------- <https://registry.yarnpkg.com/>
+  tencent ------ <https://mirrors.cloud.tencent.com/npm/>
+  cnpm --------- <https://r.cnpmjs.org/>
+
+- taobao ------- <https://registry.npmmirror.com/>
+  npmMirror ---- <https://skimdb.npmjs.com/registry/>
+  huawei ------- <https://repo.huaweicloud.com/repository/npm/>
+  xiaoma ------- <http://192.168.0.71:4873/>
+
 # commander
 install依赖时用16+，run时用14.
