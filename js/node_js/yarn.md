@@ -72,3 +72,7 @@ unsafeHttpWhitelist: [
 ]
 
 ```
+
+# yarn3-log
+
+ guard@workspace:. couldn't be built successfully (exit code 1, logs can be found here: C:\Users\Administrator\AppData\Local\Temp\xfs-fa21c608\build.log)

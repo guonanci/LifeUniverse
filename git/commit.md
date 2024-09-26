@@ -31,3 +31,7 @@ chmod + x .husky/pre-commit
 chmod + x.git / hooks / pre - commit;
 chmod + x.husky / pre - commit;
 ```
+
+git commit -m "fix(home): style"
+
+*冒号后面一定要有空格*

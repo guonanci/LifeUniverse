@@ -1,3 +1,232 @@
+# 呼图壁输煤廊道光纤听诊
+
+<https://github.com/puxiao/threejs-tutorial/blob/main/23%20Three.js%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E4%B9%8B%E5%8A%A0%E8%BD%BD.obj%E6%A8%A1%E5%9E%8B.md>
+
+## requestAnimationFrame
+
+如果不添加这个的话，初始渲染很慢，其次，导致模型无法旋转。
+
+更改材质颜色时把所有材质都改了
+
+3D建模 数字孪生编辑软件
+<https://www.google.com.hk/search?q=3D%E5%BB%BA%E6%A8%A1+%E6%95%B0%E5%AD%97%E5%AD%AA%E7%94%9F%E7%BC%96%E8%BE%91%E8%BD%AF%E4%BB%B6&oq=3D%E5%BB%BA%E6%A8%A1+%E6%95%B0%E5%AD%97%E5%AD%AA%E7%94%9F%E7%BC%96%E8%BE%91%E8%BD%AF%E4%BB%B6&gs_lcrp=EgZjaHJvbWUyBggAEEUYOdIBBzcxOWowajeoAgCwAgA&sourceid=chrome&ie=UTF-8>
+
+## OBJ/MTL文件
+
+### creo导出obj内部的网格、材质信息
+
+在 Creo 中导出 OBJ 格式时，内部的网格和材质信息可以通过以下步骤进行处理和导出：
+
+### 1. **导出模型为 OBJ 格式**
+
+在 Creo 中，你可以通过以下步骤导出模型：
+
+1. 打开要导出的模型。
+2. 点击菜单中的 **文件** > **导出** > **3D 模型**。
+3. 在文件类型中选择 **OBJ 文件**。
+4. 选择导出选项（如是否包括纹理、坐标等）。
+5. 选择保存路径并导出文件。
+
+### 2. **导出材质信息**
+
+在导出过程中，确保选择了材质和纹理选项。Creo 会生成一个与 OBJ 文件同名的 MTL 文件，其中包含材质信息。
+
+### 3. **检查生成的 OBJ 和 MTL 文件**
+
+导出完成后，检查以下文件：
+
+- **.obj 文件**：包含几何体网格信息。
+- **.mtl 文件**：包含材质定义，包括材质名称、颜色、纹理路径等。
+
+### 4. **内容结构**
+
+- **OBJ 文件结构**：OBJ 文件包含了顶点、纹理坐标、法线和面定义。
+- **MTL 文件结构**：MTL 文件包含了每个材质的属性，例如：
+
+```plaintext
+newmtl MaterialName
+Ka 1.000 1.000 1.000   # 环境光反射
+Kd 1.000 1.000 1.000   # 漫反射
+Ks 0.000 0.000 0.000   # 镜面反射
+map_Kd texture.jpg      # 纹理图像
+```
+
+### 5. **使用其他软件检查**
+
+可以使用 3D 查看工具（如 MeshLab、Blender）打开导出的 OBJ 和 MTL 文件，确认网格和材质信息是否正确。
+
+### 6. **后续处理**
+
+在其他 3D 软件中，你可以进一步编辑材质属性或进行其他处理。
+
+### 总结
+
+通过正确导出和检查 OBJ 和 MTL 文件，您可以确保内部的网格和材质信息都得到了妥善处理。这样可以在其他软件中无缝使用这些信息。
+
+## threejs如何读取obj文件内的网格信息
+
+在 Three.js 中读取 OBJ 文件的网格信息，可以使用 `OBJLoader`。以下是具体步骤和示例代码，帮助你获取 OBJ 文件内的网格信息：
+
+### 1. **安装 Three.js 和 OBJLoader**
+
+确保你已经安装了 Three.js。如果使用 npm，可以这样安装：
+
+```bash
+npm install three
+```
+
+### 2. **使用 OBJLoader 加载 OBJ 文件**
+
+使用 `OBJLoader` 加载你的 OBJ 文件，并遍历加载的对象以获取网格信息。
+
+### 示例代码
+
+```javascript
+import * as THREE from 'three';
+import { OBJLoader } from 'three/examples/jsm/loaders/OBJLoader.js';
+
+// 创建场景、相机和渲染器
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+const renderer = new THREE.WebGLRenderer();
+renderer.setSize(window.innerWidth, window.innerHeight);
+document.body.appendChild(renderer.domElement);
+
+// 加载 OBJ 文件
+const loader = new OBJLoader();
+loader.load('path/to/your/model.obj', (object) => {
+    // 将加载的对象添加到场景中
+    scene.add(object);
+
+    // 遍历对象以获取网格信息
+    object.traverse((child) => {
+        if (child.isMesh) {
+            console.log('网格名称:', child.name); // 输出网格名称
+            console.log('几何体:', child.geometry); // 输出几何体信息
+            console.log('材质:', child.material); // 输出材质信息
+
+            // 例如，获取顶点数据
+            const vertices = child.geometry.attributes.position.array;
+            console.log('顶点数据:', vertices);
+        }
+    });
+});
+
+// 设置相机位置
+camera.position.z = 5;
+
+// 动画循环
+function animate() {
+    requestAnimationFrame(animate);
+    renderer.render(scene, camera);
+}
+animate();
+```
+
+### 3. **解释代码**
+
+- **`OBJLoader`**：用于加载 OBJ 文件。
+- **`object.traverse()`**：遍历加载的对象，检查每个子对象。
+- **`child.isMesh`**：检查子对象是否为网格。
+- **`child.geometry`**：获取网格的几何体信息，包括顶点、法线、UV 坐标等。
+- **`child.material`**：获取网格的材质信息。
+
+### 4. **获取顶点和其他属性**
+
+通过 `child.geometry.attributes` 可以访问更多几何体属性：
+
+- **顶点位置**：`child.geometry.attributes.position`。
+- **法线**：`child.geometry.attributes.normal`。
+- **纹理坐标**：`child.geometry.attributes.uv`。
+
+### 总结
+
+通过 `OBJLoader`，你可以轻松加载 OBJ 文件并访问其中的网格信息，包括几何体和材质数据。这为后续处理、渲染和交互提供了基础。
+
+## threejs修改obj局部样式
+
+在 Three.js 中修改 OBJ 模型的局部样式，通常涉及到调整材质或几何体的特定部分。下面是一些常用的方法来实现这一目标：
+
+### 1. **加载 OBJ 模型**
+
+使用 `OBJLoader` 加载你的 OBJ 模型。
+
+```javascript
+const loader = new THREE.OBJLoader();
+loader.load('path/to/your/model.obj', (object) => {
+    scene.add(object);
+});
+```
+
+### 2. **修改局部材质**
+
+如果你的模型由多个部分（子网格）组成，你可以通过遍历这些部分并修改其材质。
+
+```javascript
+loader.load('path/to/your/model.obj', (object) => {
+    object.traverse((child) => {
+        if (child.isMesh) {
+            // 检查材质并进行修改
+            child.material = new THREE.MeshStandardMaterial({ color: 0xff0000 }); // 修改为红色
+        }
+    });
+    scene.add(object);
+});
+```
+
+### 3. **选择特定子网格**
+
+如果你知道要修改的特定子网格的名称，可以直接访问它。
+
+```javascript
+loader.load('path/to/your/model.obj', (object) => {
+    const specificMesh = object.getObjectByName('MeshName'); // 替换为你的子网格名称
+    if (specificMesh) {
+        specificMesh.material = new THREE.MeshStandardMaterial({ color: 0x00ff00 }); // 修改为绿色
+    }
+    scene.add(object);
+});
+```
+
+### 4. **局部纹理替换**
+
+如果需要替换材质的纹理，可以在设置材质时指定新的纹理。
+
+```javascript
+const textureLoader = new THREE.TextureLoader();
+loader.load('path/to/your/model.obj', (object) => {
+    object.traverse((child) => {
+        if (child.isMesh) {
+            const newTexture = textureLoader.load('path/to/your/texture.jpg');
+            child.material.map = newTexture;
+            child.material.needsUpdate = true; // 需要更新材质
+        }
+    });
+    scene.add(object);
+});
+```
+
+### 5. **动态修改样式**
+
+如果你需要在运行时动态修改样式，可以在动画循环中根据条件调整材质属性。
+
+```javascript
+function animate() {
+    requestAnimationFrame(animate);
+
+    // 条件修改样式
+    if (someCondition) {
+        specificMesh.material.color.set(0x0000ff); // 动态修改为蓝色
+    }
+
+    renderer.render(scene, camera);
+}
+animate();
+```
+
+### 总结
+
+通过遍历模型的子网格并修改其材质，可以轻松实现 OBJ 模型的局部样式修改。你可以使用不同的材质类型、颜色和纹理来达到想要的效果。确保在更改材质后设置 `needsUpdate` 属性，以便 Three.js 知道需要重新渲染。
 # 3DMap
 
 胜利能源智能巡检系统-国家能源集团；
