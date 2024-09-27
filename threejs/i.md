@@ -1,6 +1,9 @@
 # 呼图壁输煤廊道光纤听诊
 
 <https://github.com/puxiao/threejs-tutorial/blob/main/23%20Three.js%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E4%B9%8B%E5%8A%A0%E8%BD%BD.obj%E6%A8%A1%E5%9E%8B.md>
+<https://liukaili.netlify.app/blogs/docs/threejs/3_1_three.js_material.html#%E6%9D%90%E8%B4%A8%E7%A7%8D%E7%B1%BB>
+
+WebGL: INVALID_OPERATION: texImage3D: FLIP_Y or PREMULTIPLY_ALPHA isn't allowed for uploading 3D textures
 
 ## requestAnimationFrame
 
