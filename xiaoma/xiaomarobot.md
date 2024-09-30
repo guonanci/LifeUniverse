@@ -2984,19 +2984,23 @@ ipcp-dev:<http://192.168.0.222:8060/swagger-ui/index.html?urls.primaryName=servi
 
 focusCameraOnObject内部代码导致无法更改材质颜色。
 
+首页运转率transform动画：rotate，跑马灯效果，有分割面。
+
 OA上传大文件：<http://192.168.0.222:8060/swagger-ui/index.html?urls.primaryName=service-store#/FileController/mergeUsingGET>
+
+services;GlobalHeader;pageConf;3D地图局部细节的快捷聚焦放大功能；
 
 # 周报
 
 *周报要写一两个遇到的问题，和解决方式*
 
 官网项目-二期开发：变电站智能巡视系统-解决方案的应用场景，凸显每个场景的title，结构调整，亮度提高
-官网项目-二期开发：产品中心删除MW-210机器人；修复切换页面后，子系统样式覆盖产品中心样式导致的图片样式问题
+官网项目-二期开发：产品中心删除MW-210机器人；更新各个解决方案的产品支撑；修复切换页面后，子系统样式覆盖产品中心样式导致的图片样式问题
 官网项目-二期开发：合作伙伴删除清华大学、中国石油、中国石化，增加智子引擎、华为、中冶赛迪；修复子系统图片未显示全、以及锚链接初始化位置贴顶的问题
 官网项目-二期开发：项目部署、发布到线上环境
 
-光纤听诊框架搭建，分开调用authApi、userApi、auscultationApi微服务，使用umi/max、react18、pnpm9、nodejs18等等依赖和环境的版本。
 光纤听诊threejs 3D模型Demo开发：可根据告警通知，放大聚焦定位到某块材质，并更改其颜色；熟悉光纤听诊的思维导图，了解各个模块
+光纤听诊框架搭建，使用umi/max、react18、pnpm9、nodejs18等等依赖和环境的版本，开发BaseLayout组件，添加utils、services、和基本的依赖包
 
 下周计划：
 光纤听诊项目的总体布局搭建、开始布局首页
