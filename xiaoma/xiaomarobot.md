@@ -2980,7 +2980,12 @@ ipcp-dev:<http://192.168.0.222:8060/swagger-ui/index.html?urls.primaryName=servi
 
             console.log('size',size)
                 console.log('position',event.deltaY,camera.current.position)
-只是初始渲染了一次，只是一次。
+只是初始渲染了一次，只是一次；改成50秒interval后，要隔很久才能渲染第一次，而且不用很久就消失了，之后也是再也不渲染；没有渲染完全；position-NaN-NaN-NaN出现在鼠标拖动时；
+
+focusCameraOnObject内部代码导致无法更改材质颜色。
+
+OA上传大文件：<http://192.168.0.222:8060/swagger-ui/index.html?urls.primaryName=service-store#/FileController/mergeUsingGET>
+
 # 周报
 
 *周报要写一两个遇到的问题，和解决方式*
@@ -2991,7 +2996,7 @@ ipcp-dev:<http://192.168.0.222:8060/swagger-ui/index.html?urls.primaryName=servi
 官网项目-二期开发：项目部署、发布到线上环境
 
 光纤听诊框架搭建，分开调用authApi、userApi、auscultationApi微服务，使用umi/max、react18、pnpm9、nodejs18等等依赖和环境的版本。
-光纤听诊threejs 3D模型调研：可动态更改材质颜色、添加；熟悉光纤听诊的思维导图，了解各个模块
+光纤听诊threejs 3D模型Demo开发：可根据告警通知，放大聚焦定位到某块材质，并更改其颜色；熟悉光纤听诊的思维导图，了解各个模块
 
 下周计划：
 光纤听诊项目的总体布局搭建、开始布局首页

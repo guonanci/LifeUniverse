@@ -5,11 +5,210 @@
 
 WebGL: INVALID_OPERATION: texImage3D: FLIP_Y or PREMULTIPLY_ALPHA isn't allowed for uploading 3D textures
 
+# camera
+
+```js
+camera.position.set // 耗时，涉及到2000多个材质、以及control内部逻辑。
+camera.lookAt // 有个中间过渡画面，显得有点卡顿的样子
+```
+
+# control
+
+功能：放大、缩小；向左向右向上向下旋转3D模型；保存图片、设置背景颜色、设置模型颜色；
+
+## 模型渲染不清晰，有白色部分
+
+在 Three.js 中，如果模型渲染不清晰或出现白色部分，可能是由于材质、光照、纹理或法线方向等问题引起的。以下是一些常见问题及解决方案：
+
+### 1. **光照不足或不正确**
+
+   如果模型出现白色区域或渲染不清晰，通常与光照设置有关。确保你的场景有合适的光源，如环境光 (`AmbientLight`) 和点光源 (`PointLight`)、平行光 (`DirectionalLight`) 或其他类型的灯光。
+
+   ```javascript
+   const ambientLight = new THREE.AmbientLight(0xffffff, 0.5); // 环境光，柔和的整体光照
+   scene.add(ambientLight);
+
+   const directionalLight = new THREE.DirectionalLight(0xffffff, 1); // 平行光，模拟太阳光
+   directionalLight.position.set(10, 10, 10); // 设置光源位置
+   scene.add(directionalLight);
+   ```
+
+### 2. **法线方向错误**
+
+   如果模型的法线（Normals）方向错误，可能会导致模型部分区域渲染成白色或透明，特别是在使用 `MeshStandardMaterial` 或 `MeshPhongMaterial` 等依赖法线的材质时。你可以使用 `geometry.computeVertexNormals()` 方法重新计算法线。
+
+   ```javascript
+   model.geometry.computeVertexNormals(); // 重新计算模型法线
+   ```
+
+### 3. **材质属性不正确**
+
+   如果材质属性设置不当，可能导致模型渲染不清晰或颜色失真。常见问题包括：
+
+- **金属度和粗糙度过高**：如果使用 `MeshStandardMaterial` 或 `MeshPhysicalMaterial`，你可以调整 `metalness` 和 `roughness` 属性。
+
+     ```javascript
+     const material = new THREE.MeshStandardMaterial({
+         color: 0x555555,   // 颜色
+         metalness: 0.3,    // 金属度，值越高越金属化
+         roughness: 0.7     // 粗糙度，值越高越粗糙
+     });
+     model.material = material;
+     ```
+
+- **颜色过亮或过暗**：如果你使用了 `MeshBasicMaterial`，它不受光照影响，可能会导致模型看起来很亮或很暗。你可以尝试其他材质类型，如 `MeshLambertMaterial` 或 `MeshPhongMaterial`。
+
+   ```javascript
+   const material = new THREE.MeshLambertMaterial({ color: 0x00ff00 });
+   model.material = material;
+   ```
+
+### 4. **纹理加载问题**
+
+   如果你为模型应用了纹理，可能纹理没有正确加载或设置。检查你的纹理路径是否正确，并确保纹理的格式和映射方式符合要求。
+
+   ```javascript
+   const textureLoader = new THREE.TextureLoader();
+   textureLoader.load('path/to/texture.jpg', (texture) => {
+       model.material.map = texture;
+       model.material.needsUpdate = true; // 确保材质更新
+   });
+   ```
+
+### 5. **线框模式启用**
+
+   如果你的模型显示为线框模式，会导致渲染不清晰。检查是否意外启用了线框模式。
+
+   ```javascript
+   model.material.wireframe = false; // 禁用线框模式
+   ```
+
+### 6. **Gamma校正和环境光照**
+
+   通过启用渲染器的伽马校正，可以让模型的颜色和光照更加自然。如果你的场景光照过亮或过暗，启用伽马校正可能会有所帮助。
+
+   ```javascript
+   renderer.outputEncoding = THREE.sRGBEncoding;
+   renderer.gammaFactor = 2.2;
+   ```
+
+### 7. **模型自发光 (Emissive) 属性**
+
+   如果模型材质的自发光属性（`emissive`）设置过高，可能会导致模型某些部分看起来过亮或泛白。可以通过调整 `emissive` 的颜色和强度来解决。
+
+   ```javascript
+   model.material.emissive = new THREE.Color(0x000000); // 将自发光设置为黑色（无自发光）
+   ```
+
+### 8. **深度冲突 (Z-Fighting)**
+
+   如果模型的表面出现闪烁或白色区域，可能是深度冲突造成的，尤其是当多个几何体非常接近时。你可以调整相机的 `near` 和 `far` 属性，或使用 `polygonOffset` 来避免这种情况。
+
+   ```javascript
+   model.material.polygonOffset = true;
+   model.material.polygonOffsetFactor = 1;
+   model.material.polygonOffsetUnits = 1;
+   ```
+
+### 9. **相机视角和模型距离**
+
+   如果模型距离相机太近或太远，可能会导致模型渲染失真或不清晰。确保模型在相机的最佳视距内。
+
+   ```javascript
+   camera.position.set(0, 5, 10); // 调整相机位置
+   ```
+
+通过这些方法，你可以逐步排查模型渲染不清晰或出现白色部分的问题。如果问题仍然存在，可能需要检查模型的导入方式、材质格式是否兼容等。
+
+## Cannot read properties of undefined (reading 'computeVertexNormals')
+
+如果你在 Three.js 中遇到 `Cannot read properties of undefined (reading 'computeVertexNormals')` 错误，通常是因为你尝试在一个未定义的几何体上调用 `computeVertexNormals()`。这个问题可能有几种原因和解决办法：
+
+### 1. **确保几何体存在**
+
+   首先，确保你正确加载或创建了几何体。`computeVertexNormals()` 方法是应用在 `BufferGeometry` 或 `Geometry` 对象上的，所以如果几何体不存在或还没有完全加载，调用该方法会导致报错。
+
+   例如，检查几何体是否从模型中正确获取：
+
+   ```javascript
+   if (model.geometry) {
+       model.geometry.computeVertexNormals();
+   } else {
+       console.error("几何体未定义");
+   }
+   ```
+
+### 2. **模型加载时机问题**
+
+   如果你的几何体来自于异步加载的模型（例如通过 `GLTFLoader` 或 `OBJLoader`），你可能在模型还未完全加载之前尝试访问几何体。在这种情况下，确保在模型加载完成的回调函数中操作几何体。
+
+   例如，在加载 GLTF 模型时：
+
+   ```javascript
+   const loader = new THREE.GLTFLoader();
+   loader.load('path/to/model.gltf', (gltf) => {
+       const model = gltf.scene.children[0];
+       if (model.geometry) {
+           model.geometry.computeVertexNormals();
+       } else {
+           console.error("几何体未找到");
+       }
+   });
+   ```
+
+### 3. **嵌套模型**
+
+   如果模型具有嵌套结构（即模型包含多个子对象），`geometry` 可能位于子对象中。你需要递归遍历模型的所有子对象并在找到几何体时计算法线。
+
+   例如，遍历整个场景或模型的所有子节点：
+
+   ```javascript
+   model.traverse((child) => {
+       if (child.isMesh && child.geometry) {
+           child.geometry.computeVertexNormals();
+       }
+   });
+   ```
+
+### 4. **加载的模型没有几何体**
+
+   某些类型的模型文件（如某些 `.gltf` 或 `.fbx` 文件）可能不直接包含几何体，或者几何体在加载后被存储在不同的属性中。如果加载的对象是 `Group` 或 `Scene` 而不是 `Mesh`，你需要确保从中正确提取几何体。
+
+   检查模型结构以确保你正确地引用了几何体。例如：
+
+   ```javascript
+   console.log(gltf.scene); // 输出模型结构，检查 geometry 是否存在
+   ```
+
+### 5. **几何体类型错误**
+
+   `computeVertexNormals()` 方法只能用于 `THREE.Geometry` 或 `THREE.BufferGeometry` 类型的几何体。如果几何体是其他类型，调用该方法会失败。确保你的几何体是 `BufferGeometry` 或 `Geometry` 类型。
+
+   如果你从旧版 Three.js 迁移到新版，请确保你使用的几何体类型是 `BufferGeometry`，因为 `Geometry` 在新版 Three.js 中已逐渐被淘汰。
+
+   ```javascript
+   const geometry = new THREE.BoxGeometry(); // 这是 BufferGeometry 类型
+   geometry.computeVertexNormals();
+   ```
+
+通过这些方法检查你的代码，确保几何体存在并正确使用。通常这个错误是由于几何体未定义或者访问几何体时机不正确引起的。
+
+看不到全貌；旋转不了模型；
+
+```js
+function animate() {
+    requestAnimationFrame(animate);
+    control.current.update(); // 每次渲染前更新控制器
+    renderer.current.render(scene.current, camera.current);
+}
+animate();
+```
+
 ## requestAnimationFrame
 
 如果不添加这个的话，初始渲染很慢，其次，导致模型无法旋转。
 
-更改材质颜色时把所有材质都改了
+更改材质颜色时把所有材质都改了。
 
 3D建模 数字孪生编辑软件
 <https://www.google.com.hk/search?q=3D%E5%BB%BA%E6%A8%A1+%E6%95%B0%E5%AD%97%E5%AD%AA%E7%94%9F%E7%BC%96%E8%BE%91%E8%BD%AF%E4%BB%B6&oq=3D%E5%BB%BA%E6%A8%A1+%E6%95%B0%E5%AD%97%E5%AD%AA%E7%94%9F%E7%BC%96%E8%BE%91%E8%BD%AF%E4%BB%B6&gs_lcrp=EgZjaHJvbWUyBggAEEUYOdIBBzcxOWowajeoAgCwAgA&sourceid=chrome&ie=UTF-8>

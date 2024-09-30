@@ -784,3 +784,7 @@ NormalCompRender.\_useDebounceFn.wait [as current]
 
 # 页面闪烁
 websocket，可用display：none元素逐个排除法来解决闪烁问题。并且当你确定引起闪烁问题的那个元素时，其实宽高是分开闪烁的。还有元素的
+
+# difficult
+
+面对难题时，代码要一点点调试！！不能一下改很多！！
