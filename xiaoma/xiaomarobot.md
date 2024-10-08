@@ -2986,6 +2986,9 @@ focusCameraOnObject内部代码导致无法更改材质颜色。
 
 首页运转率transform动画：rotate，跑马灯效果，有分割面。
 
+官网：MG400A替换为MG410
+呼图壁项目：首页功能开发
+
 OA上传大文件：<http://192.168.0.222:8060/swagger-ui/index.html?urls.primaryName=service-store#/FileController/mergeUsingGET>
 
 services;GlobalHeader;pageConf;3D地图局部细节的快捷聚焦放大功能；
