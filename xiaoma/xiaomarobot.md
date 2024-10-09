@@ -2982,18 +2982,83 @@ ipcp-dev:<http://192.168.0.222:8060/swagger-ui/index.html?urls.primaryName=servi
                 console.log('position',event.deltaY,camera.current.position)
 只是初始渲染了一次，只是一次；改成50秒interval后，要隔很久才能渲染第一次，而且不用很久就消失了，之后也是再也不渲染；没有渲染完全；position-NaN-NaN-NaN出现在鼠标拖动时；
 
-focusCameraOnObject内部代码导致无法更改材质颜色。
 
-首页运转率transform动画：rotate，跑马灯效果，有分割面。
+echarts地图在部分浏览器加载不出来，一直Loading
 
-官网：MG400A替换为MG410
-呼图壁项目：首页功能开发
+Promise.all  Uncaught (in promise) SyntaxError: Unexpected token '<', "<html>;
+
+edge/360jisu加载不出百度地图；
+<h"... is not valid JSON
+Promise.then
+r @ umi.js:1
+s @ umi.js:1
+Promise.then
+r @ umi.js:1
+s @ umi.js:1
+(匿名) @ umi.js:1
+(匿名) @ umi.js:1
+(匿名) @ umi.js:1
+(匿名) @ umi.js:1
+d @ umi.js:1
+(匿名) @ umi.js:1
+(匿名) @ umi.js:1
+x @ umi.js:1
+o @ umi.js:1
+Promise.then
+E @ umi.js:1
+_ @ umi.js:1
+O @ umi.js:1
+x @ umi.js:1
+Tt @ umi.js:1
+T @ umi.js:1
+O @ umi.js:1
+x @ umi.js:1
+o @ umi.js:1
+(匿名) @ umi.js:1
+ge @ umi.js:1
+be @ umi.js:1
+me @ umi.js:1
+(匿名) @ umi.js:1
+n @ umi.js:1
+Hg0r.Mt.s.run @ umi.js:1
+(匿名) @ umi.js:1
+Hg0r.Mn @ umi.js:1
+Hg0r.rr @ umi.js:1
+(匿名) @ umi.js:1
+d @ umi.js:1
+(匿名) @ umi.js:1
+(匿名) @ umi.js:1
+r @ umi.js:1
+s @ umi.js:1
+(匿名) @ umi.js:1
+(匿名) @ umi.js:1
+(匿名) @ umi.js:1
+(匿名) @ umi.js:1
+ws @ umi.js:1
+Xl @ umi.js:1
+(匿名) @ umi.js:1
+oa @ umi.js:1
+Yl @ umi.js:1
+(匿名) @ umi.js:1
+F @ umi.js:1
+(匿名) @ umi.js:1
+
+<http://192.168.0.71:90/zentao/my-bug-assignedTo.html>
 
 OA上传大文件：<http://192.168.0.222:8060/swagger-ui/index.html?urls.primaryName=service-store#/FileController/mergeUsingGET>
 
 services;GlobalHeader;pageConf;3D地图局部细节的快捷聚焦放大功能；
 
+focusCameraOnObject内部代码导致无法更改材质颜色。
+
+首页运转率transform动画：rotate，跑马灯效果，有分割面。
+window.eventBus-undefined问题；threejs 调整相机以聚焦到目标对象；
+
+有没有可能同时触发好几条告警；
+
 # 周报
+官网：MG400A替换为MG410
+呼图壁项目：首页功能开发
 
 *周报要写一两个遇到的问题，和解决方式*
 
