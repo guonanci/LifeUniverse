@@ -1,3 +1,21 @@
+# xyz
+
+x朝右y朝上z朝向你
+AxesHelper
+用于简单模拟3个坐标轴的对象.
+红色代表 X 轴. 绿色代表 Y 轴. 蓝色代表 Z 轴.
+
+代码示例
+const axesHelper = new THREE.AxesHelper( 5 );
+scene.add( axesHelper );
+例子
+WebGL / buffergeometry / compression
+WebGL / geometry / convex
+WebGL / loader / nrrd
+
+构造函数（Constructor）
+AxesHelper( size : Number )
+size -- (可选的) 表示代表轴的线段长度. 默认为 1.
 # 呼图壁输煤廊道光纤听诊
 
 <https://github.com/puxiao/threejs-tutorial/blob/main/23%20Three.js%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E4%B9%8B%E5%8A%A0%E8%BD%BD.obj%E6%A8%A1%E5%9E%8B.md>
