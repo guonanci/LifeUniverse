@@ -3054,8 +3054,9 @@ focusCameraOnObject内部代码导致无法更改材质颜色。
 首页运转率transform动画：rotate，跑马灯效果，有分割面；
 window.eventBus-undefined问题；threejs 调整相机以聚焦到目标对象；有没有可能同时触发好几条告警；彻底掌握threejs的三维信息及其控制；
 
-threejs 鼠标拖框放大局部;2.5D模型，不能旋转；可动态适应的感叹号标志物、或者告警信息透明式弹窗在模型上层的适当位置；raycaster.intersectObjects一直是空数组;
+threejs 鼠标拖框放大局部;2.5D模型，不能旋转；可动态适应的感叹号标志物、或者告警信息透明式弹窗在模型上层的适当位置；raycaster.intersectObjects一直是空数组;设备列表树；
 
+iconfont上的项目图标更新过的话，需要及时更新umi项目里的链接；
 # 周报
 官网：MG400A替换为MG410
 呼图壁项目-3D模型:调整背景色和材质颜色，优化模型交互并添加提示
