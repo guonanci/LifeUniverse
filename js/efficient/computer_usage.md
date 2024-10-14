@@ -517,3 +517,7 @@ rm -rf node_modules(git bash)
 # ls
 
 windows-dir 等效于linux的ls命令
+
+# 风扇
+
+不管春夏秋冬，使用电脑或在家休息时，都必须用一台较大功率的风扇，根据闷热程度使用不同等级的风力！！
