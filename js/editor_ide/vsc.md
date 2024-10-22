@@ -401,3 +401,7 @@ ctrl+k s,ctrl all s,
 ctrl+shift+s
 # 多行复制
 充分利用好这个功能
+
+# autoSaveWhenWindowChange
+
+*简直就是专注神器，必须专注于自己写出来的每一行文字和代码！！不在保存文件动作上浪费任何时间！！*

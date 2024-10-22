@@ -1216,4 +1216,4 @@ adj.
 vt.
 <美>淘汰（产品），废弃（想法）;
 
-fossil fuel ˈfɒs(ə)l fjuːəl化石燃料；
+fossil fuel ˈfɒs(ə)l fjuːəl化石燃料；Orbit Controls 轨道控制；morph 变形 图像合成；
