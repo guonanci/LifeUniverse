@@ -53,3 +53,11 @@ stat filename
 希望这可以帮助你查看文件的修改时间！
 # 文件名包含空格
 引号或者转义符号\ : https://www.51cto.com/article/746071.html
+
+# home-end
+
+这组快捷键很方便
+
+# *
+
+dist*也包括dist这个名字！！，*包含空字符。

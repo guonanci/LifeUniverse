@@ -3,8 +3,11 @@ window.scrollTo,element.scrollTop,element.scrollLeft.
 
 # event
 event.target.scrollTop
-# ScrollToOptioins
+
+# ScrollToOptions
+
 top,left,behavior
+
 ```js
 element.scrollTo({
   top: 100,
@@ -73,4 +76,11 @@ span{
 原文链接：<https://blog.csdn.net/qq_34007408/article/details/114981262>
 
 # css实现上下滚动
+
 <https://juejin.cn/post/6844904165517312014>
+
+# scrollTop&scrollHeight
+
+e.currentTarget.scrollTop
+scrollHeight ：表示内容区域的整个高度，包括溢出的内容区域，即滚动条的高度。 scrollTop ：表示的是滚动条滚动的高度，初始未滚动时的高度为0。
+

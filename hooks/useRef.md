@@ -59,3 +59,5 @@ varObj stateObj refObj
 
 useRef 存储数组的话，容易忘记清除老元素(一般场景下老元素在新 render 时无效)
 React.LegacyRef<Input>, RefObject
+
+怎么写到useEffect的依赖里没调用Effect
