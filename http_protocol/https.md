@@ -86,3 +86,25 @@ https.get('https://example.com', (res) => {
   console.error(e);
 });
 上面的代码使用 Node.js 的 https 模块来发送一个 HTTP GET 请求到 https://example.com。
+
+# joyssl-console.bce.baidu.com
+
+域名techxiaoma.com；主机记录：*；记录类型：TXT记录、CNAME记录；解析线路：默认；记录值：53d6slfd0....;TTL:5分钟；描述：joyssl-techxiaoma;
+
+## console
+
+ls /etc/nginx/cert/
+techxiaoma.com.integrated.crt techxiaoma.com.integrate.crt-old techxiaoma.com.key techxiaoma.com.key-old
+
+upload two files
+
+mv techxiao.com* /etc/nginx/cert/
+
+sudo systemctl restart nginx
+
+检查console.bce.baidu.com的解析记录table，正确操作后可以看到最新的第一条：
+主机记录：_certum;类型：TXT；线路：默认；记录值：53d69...;TTL:5分钟；
+
+清除官网缓存，重新打开chrome。
+
+<https://gqkr4v33tgf.feishu.cn/docx/VbOTdxEgxoayckxK6rmcGu3YnCc>

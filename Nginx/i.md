@@ -140,3 +140,9 @@ http {
     #}
 }
 ```
+
+# restart
+
+sudo systemctl restart nginx
+
+<https://blog.csdn.net/luoganttcc/article/details/113852646>

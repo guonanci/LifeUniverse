@@ -1216,4 +1216,15 @@ adj.
 vt.
 <美>淘汰（产品），废弃（想法）;
 
-fossil fuel ˈfɒs(ə)l fjuːəl化石燃料；Orbit Controls 轨道控制；morph 变形 图像合成；
+fossil fuel ˈfɒs(ə)l fjuːəl化石燃料；Orbit Controls 轨道控制；morph 变形 图像合成；court n.
+法院，法庭；球场；王宫，宫廷；朝臣；全体审判人员；庭院，院子；董事（会），理事（会）；（用于大型宅第和公寓街区的名称中）宅第，公寓大楼
+v.
+奉承，讨好；设法取得，追求；招致，引起（不愉快的事）；谈恋爱，求爱;
+
+温振Temperature vibration；
+
+morph n.
+形素，语素；形态；图像变换
+v.
+（使）图像变形；将（图像）进行合成处理；改变，变化，变形；；
+
