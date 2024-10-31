@@ -661,6 +661,21 @@ const data = [
 搞明白example-complex，看看到底能否完全满足需求？
 <https://github.com/neuronetio/gantt-schedule-timeline-calendar?tab=readme-ov-file>
 
+## style
+
+reset.css
+
+## dayjs
+
+weekOfYear,advancedFormat
+
+## examples
+
+### custom-period
+
+CalendarScrollPlugin,DependencyLinesPlugin,SelectionPlugin,TimelinePointerPlugin,ItemMovementPlugin,ItemResizingPlugin
+
+
 ## plugins
 
 ### movement-plugin

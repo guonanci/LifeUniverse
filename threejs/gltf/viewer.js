@@ -222,5 +222,20 @@ export class Viewer {
   setContent(object, clips) {
     this.clear()
     object.updateMatrixWorld()
+    const box=new Box3().setFromObject(object),size=box.getSize(new Vector3()).length,center=box.getCenter(new Vector3())
+    this.controls.reset()
+    object.position.x-=center.x
+    object.position.y-=center.y
+    object.position.z -= center.z
+
+    this.controls.maxDistance=size*10
+
+    this.defaultCamera.near=size/100
+    this.defaultCamera.far = size * 100
+    this.defaultCamera.updateProjectionMatrix()
+
+    if(this.options.cameraPosition){
+      this.defaultCamera.position.fromArray(this.options.cameraPosition)
+    }
   }
 }
