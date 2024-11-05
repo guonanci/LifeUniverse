@@ -3326,11 +3326,12 @@ cameraPosition:{
     "_order": "XYZ"
 }
 
-19-20,21,177,176a-176b
+window?.getTargetName('Select all') getTargetName('Select all')
 # 周报
 
-呼图壁项目-首页：3D模型--调整告警消息来临时的弹窗位置及模型旋转角度，优化体验；
-呼图壁项目-设备管理：修复缺陷
+呼图壁项目-首页：3D模型--调整告警消息来临时的弹窗位置及模型旋转角度，优化体验；优化F11全屏样式；
+哈密项目-首页：优化机器人选择框样式；
+哈密项目-国际化：简化调用方式的代码；
 呼图壁项目-告警信息: ；
 其他：：https证书管理：techxiaoma域名的免费版https证书延长一个月，到2024/11/29；大文件上传：熟悉读取文件时的创建切片、上传切片时的数据处理、并发请求细节；gantt-schedule-timeline-calendar案例源码研读：熟悉custom-period所用插件及代码组织；
 
