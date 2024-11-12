@@ -3326,7 +3326,59 @@ cameraPosition:{
     "_order": "XYZ"
 }
 
-根据志强提供的阈值接口完善阈值标注组件。曲线切换时间维度后，渲染慢的问题，要不要加loading？
+根据志强提供的阈值接口完善阈值标注组件。add成功，调通通用类的唯一视频流组件。
+
+```js
+records:[
+  {
+    name:'片区A',
+    mapId:1,
+    mapInfo:{
+      shape_type:'rect', // 矩形
+      thresholds:[{
+        alarmType:1,
+        value:[20,30],
+        cn_name:'一氧化碳浓度',
+        name:'co',
+        key:'6',
+        unit:'μmol/mol',
+      },{
+        alarmType:2,
+        value:[20,30],
+        cn_name:'氨气浓度',
+        name:'nh3',
+        key:'7',
+        unit:'μmol/mol',
+      }],
+      coordinate:[[100,100],[200,200]]
+    }
+  },
+  {
+    name:'片区B',
+    mapId:1,
+    mapInfo:{
+      shape_type:'polygon', // 多边形
+      thresholds:[{
+        alarmType:1,
+        value:[20,30],
+        cn_name:'一氧化碳浓度',
+        name:'co',
+        key:'6',
+        unit:'μmol/mol',
+      },{
+        alarmType:2,
+        value:[20,30],
+        cn_name:'氨气浓度',
+        name:'nh3',
+        key:'7',
+        unit:'μmol/mol',
+      }],
+      coordinate:[[110,110],[220,110],[165,180]]
+    }
+  }
+]
+```
+
 # 周报
 
 哈密项目-后台管理：环境阈值管理新增地图片区标注功能；
