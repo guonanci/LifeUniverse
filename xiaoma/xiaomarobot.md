@@ -3329,6 +3329,8 @@ cameraPosition:{
 根据志强提供的阈值接口完善阈值标注组件。add成功，调通通用类的唯一视频流组件。
 
 ```js
+"JSON parse error: Cannot deserialize value of type `java.lang.Integer` from String \"maps/xm02-312cbe19-97/map1.png\": not a valid Integer value; nested exception is com.fasterxml.jackson.databind.exc.InvalidFormatException: Cannot deserialize value of type `java.lang.Integer` from String \"maps/xm02-312cbe19-97/map1.png\": not a valid Integer value\n at [Source: (PushbackInputStream); line: 1, column: 10] (through reference chain: com.xiaoma.guard.pojo.entity.InspectionEquipmentSurrounding[\"mapId\"])"
+
 records:[
   {
     name:'片区A',
@@ -3378,11 +3380,13 @@ records:[
   }
 ]
 ```
+主题设置没有与antd结合好，总是写很多覆盖antd组件的样式代码;环境阈值管理name没保存上、选中不了矩形、重新打开弹窗看不到矩形、绘画多个矩形存在问题、一下删除所有矩形；
 
 # 周报
 
-哈密项目-后台管理：环境阈值管理新增地图片区标注功能；
+哈密项目-后台管理：环境阈值管理新增地图片区标注功能
 哈密项目-后台管理：温振采集管理的实时曲线和历史曲线
+官网-新闻：删除字体侵权的新闻链接，增加最新新闻
 哈密项目-后台管理：3D模型--调整告警消息来临时的弹窗位置及模型旋转角度，优化体验；优化F11全屏样式；
 哈密项目-首页及系统设置：首页：优化机器人选择框样式；国际化：简化调用方式的代码；删除全局告警信息弹窗，已读操作放到告警信息页面；
 ## 下周计划
