@@ -3591,6 +3591,27 @@ records:[
         "zaxisRotation": null
     }
 ]
+
+{
+    "details": "异常： 2024-11-21 13:57:07，设备pdjk230210 ，检测到皮带撕裂，请尽快处理！",
+    "time": "2024-11-21 13:57:07",
+    "channel": "fix_camera",
+    "inspectionEquipmentId": null,
+    "zone": "房间1",
+    "region": "主厂区",
+    "intervals": "A区域",
+    "pointName": null,
+    "pointType": null,
+    "pointMainDeviceName": null,
+    "warningLevel": 1,
+    "pointIntervals": null,
+    "taskItemId": null,
+    "alarmInfoId": 2595,
+    "recognitionCode": "belt_tear",
+    "recognitionName": "皮带撕裂",
+    "whetherSilent": null,
+    "type": 1
+}
 ```
 四棵树服务器密码：123.com
 
@@ -3603,6 +3624,7 @@ records:[
 对于状态类识别，外层长度始终为1，内层标注和四棵树的类似，只是格式改成新订的那种格式
 
 加号就暂时不显示了，也不显示右上角的删除icon了。
+
 # 周报
 
 标杆二期-标注：讨论确定设备识别的标注接口新格式，以同时支持设备识别和状态识别，暂未开发

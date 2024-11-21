@@ -1,4 +1,3 @@
-
 ```json
 [
     {
@@ -41,4 +40,6 @@
         "status": 1
     }
 ]
+
+{"type":7,"requestId":"92701676-84f1-4f91-8155-b312b5f5a3b5","message":{"details":"异常： 2024-11-21 15:55:56，设备pdjk230210 ，检测到皮带撕裂，请尽快处理！","time":"2024-11-21 15:55:56","channel":"fix_camera","inspectionEquipmentId":null,"zone":"房间1","region":"主厂区","intervals":"A区域","pointName":null,"pointType":null,"pointMainDeviceName":null,"warningLevel":1,"pointIntervals":null,"taskItemId":null,"alarmInfoId":2597,"recognitionCode":"belt_tear","recognitionName":"皮带撕裂","whetherSilent":null,"type":1}}
 ```
