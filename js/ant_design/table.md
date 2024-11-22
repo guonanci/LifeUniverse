@@ -98,3 +98,7 @@ header和body都有colgroup
 # ReactReload
 tableRef?.current?.actionRef.current?.reloadAndReset?.()
 tableRef?.current?.tableResetReload()
+
+# scroll
+
+页面container设置minWidth:1000,minHeight:800;scroll的值不要有calc；
