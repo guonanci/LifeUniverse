@@ -525,3 +525,7 @@ windows-dir 等效于linux的ls命令
 # 连不上网络
 
 可以拔下网线后再重新插回去，而不只是按紧网线。
+
+# firefox
+
+清除缓存：设置里面，不在F12里面。也可以在地址栏输入 firefox cache clear
