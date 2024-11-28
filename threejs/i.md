@@ -1348,3 +1348,229 @@ WebGLProgram
 # Examples
 
 张成说，threejs没有球体的圆滑感，都是块状的。
+
+# 怎么操作，以确定三维模型中两点的距离
+
+要确定三维模型中两点的距离，可以使用 **欧几里得距离公式**。在 Three.js 中，如果你有两个点的坐标（假设为 `(x1, y1, z1)` 和 `(x2, y2, z2)`），你可以直接计算它们之间的距离。
+
+### 欧几里得距离公式
+
+在三维空间中，两点之间的距离 \(d\) 可以通过以下公式计算：
+
+\[
+d = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2 + (z_2 - z_1)^2}
+\]
+
+### 使用 Three.js 计算两点间的距离
+
+Three.js 提供了 `Vector3` 类，可以方便地计算两点之间的距离。
+
+假设你有两个 `Vector3` 对象分别代表两点的位置，你可以使用 `distanceTo` 方法来计算它们之间的距离。
+
+#### 示例代码
+
+```javascript
+// 导入 Three.js
+import * as THREE from 'three';
+
+// 定义两个点
+const point1 = new THREE.Vector3(1, 2, 3); // 点1 (x1, y1, z1)
+const point2 = new THREE.Vector3(4, 5, 6); // 点2 (x2, y2, z2)
+
+// 计算两点之间的距离
+const distance = point1.distanceTo(point2);
+
+console.log("两点之间的距离是: " + distance);
+```
+
+### 代码解释
+
+1. **`THREE.Vector3`**：这是 Three.js 中表示三维向量的类。每个点在三维空间中都可以表示为 `Vector3` 对象。
+2. **`distanceTo` 方法**：`distanceTo` 方法可以直接计算当前 `Vector3` 对象与另一个 `Vector3` 对象之间的距离。它会自动使用欧几里得公式进行计算。
+3. **输出**：打印出两点之间的距离。
+
+### 输出示例
+
+对于点 `point1 = (1, 2, 3)` 和 `point2 = (4, 5, 6)`，输出会是：
+
+```
+两点之间的距离是: 5.196152422706632
+```
+
+### 注意事项
+
+- 如果你有两个三维模型的物体，并且你想计算它们的某个具体点之间的距离，你需要获取这些物体的位置。例如，如果你有两个 `Mesh` 对象 `mesh1` 和 `mesh2`，你可以通过 `mesh1.position` 和 `mesh2.position` 获取它们的位置（`Vector3` 对象），然后计算它们之间的距离。
+
+```javascript
+const distance = mesh1.position.distanceTo(mesh2.position);
+```
+
+这种方法可以用来计算任意两点之间的空间距离，适用于三维模型中的节点、物体或任意两点之间的测量。
+
+# 三维模型中的折线距离或两点距离是同一个概念吗
+
+**三维模型中的折线距离和两点距离**是两个不同的概念，尽管它们都涉及到测量空间中的距离，但它们的定义和计算方法有所不同。
+
+### 1. **两点距离（Euclidean Distance）**
+
+- **定义**：两点之间的距离是指在三维空间中，两个点之间的直线距离，也叫欧几里得距离。它是两个点之间的最短路径。
+- **计算**：两点的欧几里得距离可以通过上述的公式计算：
+
+  \[
+  d = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2 + (z_2 - z_1)^2}
+  \]
+
+  在 Three.js 中，计算两点之间的距离可以使用 `Vector3.distanceTo()` 方法。
+
+### 2. **折线距离（Polyline Distance）**
+
+- **定义**：折线距离是指由多个点组成的折线（Polyine）沿路径的总长度。在三维空间中，折线通常由若干个连续的线段组成，每个线段连接两个相邻的点。折线的总距离就是所有这些线段的长度之和。
+- **计算**：折线的总距离可以通过计算每一对相邻点之间的两点距离并累加来得到：
+
+  \[
+  d_{\text{折线}} = d_1 + d_2 + \cdots + d_{n-1}
+  \]
+  其中，\( d_1, d_2, \ldots, d_{n-1} \) 是相邻点之间的两点距离。
+
+  在 Three.js 中，如果你有多个 `Vector3` 点组成的折线，你可以通过遍历所有点对并使用 `distanceTo` 方法来累加计算折线的总距离。
+
+### 折线距离的计算示例
+
+假设我们有一个折线，包含多个点（例如 `point1`, `point2`, `point3` 等），我们想要计算折线的总长度。
+
+```javascript
+import * as THREE from 'three';
+
+// 定义多个点
+const point1 = new THREE.Vector3(0, 0, 0);  // 起点
+const point2 = new THREE.Vector3(1, 2, 0);  // 第二个点
+const point3 = new THREE.Vector3(4, 6, 0);  // 第三个点
+
+// 计算折线总长度
+const points = [point1, point2, point3];
+
+let totalDistance = 0;
+
+for (let i = 0; i < points.length - 1; i++) {
+  totalDistance += points[i].distanceTo(points[i + 1]);
+}
+
+console.log("折线的总距离是: " + totalDistance);
+```
+
+### 输出结果
+
+假设 `point1 = (0, 0, 0)`，`point2 = (1, 2, 0)`，`point3 = (4, 6, 0)`，那么折线的总距离为各段距离的和：
+
+```
+折线的总距离是: 7.6157
+```
+
+### 总结
+
+- **两点距离**：是指两点之间的最短距离，通常是直线距离。
+- **折线距离**：是指多个点连接成折线的总路径长度，通常需要计算每一段相邻点之间的距离并累加。
+
+因此，**两点距离**是折线距离的一个特殊情况，当折线只有两个点时，折线的总距离就是两点之间的距离。
+
+# 计算两点角度
+
+计算三维空间中两点之间的角度，通常指的是计算从一个点到另一个点所形成的**方向角**，或者说是这两个点连线与某个坐标轴（如X轴、Y轴、Z轴）之间的夹角。
+
+根据你的需求，以下是一些常见的角度计算方法：
+
+### 1. **计算两点之间的角度：**
+
+   假设你想计算两点之间的夹角。可以将两点看作是从原点到目标点的向量，然后计算这些向量之间的夹角。
+
+- 给定两点 `point1(x1, y1, z1)` 和 `point2(x2, y2, z2)`，可以得到两点之间的向量：
+
+     \[
+     \vec{A} = (x1, y1, z1) \quad \text{and} \quad \vec{B} = (x2, y2, z2)
+     \]
+
+- 这两个向量之间的夹角 \( \theta \) 可以通过 **点积公式**计算：
+
+     \[
+     \cos(\theta) = \frac{\vec{A} \cdot \vec{B}}{|\vec{A}| |\vec{B}|}
+     \]
+
+     其中：
+  - \( \vec{A} \cdot \vec{B} = x1 \cdot x2 + y1 \cdot y2 + z1 \cdot z2 \) 为点积。
+  - \( |\vec{A}| \) 和 \( |\vec{B}| \) 是向量的模长，计算方式为：
+
+       \[
+       |\vec{A}| = \sqrt{x1^2 + y1^2 + z1^2}, \quad |\vec{B}| = \sqrt{x2^2 + y2^2 + z2^2}
+       \]
+
+     计算结果为：
+
+     \[
+     \theta = \cos^{-1} \left( \frac{\vec{A} \cdot \vec{B}}{|\vec{A}| |\vec{B}|} \right)
+     \]
+
+### 2. **使用 Three.js 计算两点之间的角度：**
+
+在 Three.js 中，你可以通过 `Vector3` 类提供的 `.angleTo()` 方法来计算两个向量之间的夹角。
+
+假设你有两个点 `point1` 和 `point2`，你可以按照以下步骤计算它们之间的夹角：
+
+#### 示例代码
+
+```javascript
+import * as THREE from 'three';
+
+// 定义两个点
+const point1 = new THREE.Vector3(1, 0, 0);  // 点1 (x1, y1, z1)
+const point2 = new THREE.Vector3(0, 1, 0);  // 点2 (x2, y2, z2)
+
+// 计算从点1到原点的向量（point1）
+const vectorA = new THREE.Vector3(1, 0, 0);  // 假设 point1 为 (1, 0, 0)
+const vectorB = point2.clone().sub(point1);  // point2 相对于 point1 的向量
+
+// 计算两个向量之间的夹角（以弧度为单位）
+const angle = vectorA.angleTo(vectorB);
+
+// 将角度转换为度数
+const angleInDegrees = THREE.MathUtils.radToDeg(angle);
+
+console.log("两点之间的角度是: " + angleInDegrees + "°");
+```
+
+### 代码解释
+
+- **`vectorA.angleTo(vectorB)`**：该方法返回两个向量 `vectorA` 和 `vectorB` 之间的夹角，单位是弧度。
+- **`THREE.MathUtils.radToDeg(angle)`**：将弧度转换为度数。
+
+### 输出
+
+如果 `point1 = (1, 0, 0)` 和 `point2 = (0, 1, 0)`，则两点之间的夹角为 90 度，因为它们分别位于 X 和 Y 轴上。
+
+```
+两点之间的角度是: 90°
+```
+
+### 3. **计算两点与坐标轴之间的夹角：**
+
+如果你想计算某个点与 X、Y 或 Z 轴之间的夹角，可以通过与轴向量进行夹角计算。
+
+例如，计算点 `point = (x, y, z)` 与 X 轴（向量 `(1, 0, 0)`）之间的夹角：
+
+```javascript
+const point = new THREE.Vector3(x, y, z);
+const xAxis = new THREE.Vector3(1, 0, 0);
+
+// 计算夹角（弧度）
+const angleWithXAxis = point.angleTo(xAxis);
+
+// 转换为度数
+const angleWithXAxisInDegrees = THREE.MathUtils.radToDeg(angleWithXAxis);
+console.log("与 X 轴的夹角是: " + angleWithXAxisInDegrees + "°");
+```
+
+### 总结
+
+- **计算两点之间的夹角**：使用向量的点积公式或 Three.js 的 `angleTo` 方法计算。
+- **计算两点与坐标轴之间的夹角**：使用向量与轴向量的夹角。
+
+这种角度计算常用于确定三维空间中物体的方向性、旋转角度等应用场景。
