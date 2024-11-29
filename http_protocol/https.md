@@ -89,9 +89,14 @@ https.get('https://example.com', (res) => {
 
 # joyssl-console.bce.baidu.com
 
-域名techxiaoma.com；主机记录：*；记录类型：TXT记录、CNAME记录；解析线路：默认；记录值：53d6slfd0....;TTL:5分钟；描述：joyssl-techxiaoma;
+域名techxiaoma.com；主机记录：*；（不用管_certum）记录类型：TXT记录、CNAME记录；解析线路：默认；记录值：53d6slfd0....;TTL:5分钟；描述：joyssl-techxiaoma;
+
+joyssl的免费版不支持通配符了。。而且主机记录是_certum
+
+公司所在产业园的邮编：330200
 
 ## console
+域名服务-域名管理-解析操作
 
 ls /etc/nginx/cert/
 techxiaoma.com.integrated.crt techxiaoma.com.integrate.crt-old techxiaoma.com.key techxiaoma.com.key-old
@@ -108,3 +113,40 @@ sudo systemctl restart nginx
 清除官网缓存，重新打开chrome。
 
 <https://gqkr4v33tgf.feishu.cn/docx/VbOTdxEgxoayckxK6rmcGu3YnCc>
+
+# CNAME
+
+CNAME 记录简介
+规范名称或 CNAME 记录是一种 DNS 记录，可将别名映射到真实或规范的域名。CNAME 记录通常用于将子域名（如 www 或 mail）映射到托管该子网域内容的网域。例如，CNAME 记录可以将网址 <www.example.com> 映射到 example.com 网域的实际网站。
+
+使用 Google Cloud 服务时，您可能需要将 CNAME 记录添加到您网域的 DNS 设置，以便自定义网址、验证域名所有权或重置管理员密码。请参见下文以了解详情并立即添加 CNAME 记录。
+
+什么时候需要添加 CNAME 记录？
+当您为自己的网域注册 Google Cloud 产品，验证域名所有权时。
+为使用 Google 协作平台构建的网站自定义网址时。
+为 Gmail、Google 日历或其他 Google Cloud 服务自定义服务地址时。
+当您忘记了访问 Google 管理控制台的密码，需要重置管理员密码时。
+需要验证网站所有权以使用 Google 网站站长工具来管理网站时。
+如果您注册帐号时是从 Google 合作伙伴购买的域名，则您无需添加 CNAME 记录来验证域名所有权，因为我们已知晓该域名归您所有。同时，您可能还无需添加 CNAME 记录来自定义网址或服务地址（请点击以上相应链接了解有关详情）。
+
+CNAME 记录的工作原理
+CNAME 记录是存储于您网域 DNS 设置中的一对值。其中一个值确定您为其创建记录的别名，通常为如 www 或 mail 的子域名。另一个值则用于确定该别名应指向的网域。
+
+使用 Google 服务时，一个 CNAME 记录可以将网址 <www.example.com> 定向到 example.com 网域中由 Google 协作平台创建的网站，另一个 CNAME 记录可以将 mail.example.com 定向到 example.com 的 Gmail 登录页面。您还可以为网域的其他服务创建 CNAME 记录。
+
+这样，CNAME 记录可使通过一个 IP 地址运行多个服务变得简单。每个 CNAME 记录将服务与域名（而非物理 IP 地址）相关联。物理 IP 地址由您网域的 A 记录来识别。如果您的 IP 地址发生了更改，您只需更改 A 记录，而不需要更改每个 CNAME 记录。
+
+与所有 DNS 记录一样，CNAME 记录由您的域名托管服务商存储，因此您必须通过托管服务商（而不是 Google 管理控制台）更改 CNAME 记录。
+
+如果您不熟悉“域名系统”(DNS) 或希望进一步了解相关术语，请参阅 DNS 基础知识和域名基础知识。
+
+立即设置 CNAME 记录
+向我显示相关步骤
+我不知道该如何创建 CNAME 记录，所以需要了解创建的相关步骤。
+向我显示 CNAME 记录值即可
+我知道如何通过自己的域名托管服务商创建 CNAME 记录，所以我只需要知道在通过自己的网域使用 Google 服务时需要输入的值。
+验证 CNAME 记录或排查与 CNAME 记录有关的问题
+我已创建 CNAME 记录，想看看其是否正确或已经生效。
+
+# 阿里云免费版ssl证书
+<https://developer.aliyun.com/article/1212043>
