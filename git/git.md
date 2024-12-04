@@ -685,3 +685,13 @@ git remote -v
 # cmd
 
 直接git pull，不用git status，因为git status出的结果经常不正确，有延迟；但是必须先add好commit好。因
+
+# husky
+
+```json
+"husky": {
+    "hooks": {
+      "pre-commit": "npm run lint-staged"
+    }
+  },
+```
