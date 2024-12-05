@@ -134,3 +134,78 @@ flv.js video.js
 
 ## Jessibuca
 <https://github.com/bosscheng/jessibuca-react-demo/tree/v3>
+
+# video.js支持flv吗？
+
+`Video.js`本身并不原生支持FLV（Flash Video）格式。不过，可以通过安装插件来扩展其功能，使其支持FLV视频播放。
+
+有一个常用的插件叫做 [videojs-flvjs](https://github.com/matthew-oates/videojs-flvjs)，它使用 `flv.js` 库来实现 FLV 视频流的播放。`flv.js` 是一个使用 HTML5 `Media Source Extensions` (MSE) 实现的 JavaScript 库，专门用来播放 FLV 格式的视频。
+
+你可以按照以下步骤集成：
+
+1. 安装 `videojs-flvjs` 插件：
+
+   ```bash
+   npm install video.js
+   npm install videojs-flvjs
+   ```
+
+2. 引入和初始化插件：
+
+   ```javascript
+   import videojs from 'video.js';
+   import 'videojs-flvjs';
+
+   const player = videojs('my-video', {
+     techOrder: ['flvjs'],
+   });
+
+   player.src({
+     type: 'video/flv',
+     src: 'your-video-url.flv'
+   });
+   ```
+
+3. 使用 `video.js` 播放器加载 FLV 格式的视频。
+
+这样，你就可以在 `Video.js` 中播放 FLV 格式的视频了。
+
+如果你没有强烈的需求使用 FLV 格式，考虑使用 MP4 或其他更广泛支持的格式，通常能够获得更好的兼容性和性能。
+
+# 安装这个插件后，可以同时支持flv和mp4吗？
+
+是的，安装 `videojs-flvjs` 插件后，你可以同时支持 FLV 和 MP4 格式的视频。`Video.js` 允许你指定多个视频源格式，播放器会根据浏览器的支持和视频格式自动选择合适的解码器。
+
+为了实现这一点，你可以像下面这样配置多个源格式：
+
+```javascript
+import videojs from 'video.js';
+import 'videojs-flvjs';
+
+const player = videojs('my-video', {
+  techOrder: ['html5', 'flvjs'],  // 优先使用 HTML5 播放器，若不支持则使用 flvjs 播放器
+});
+
+player.src([
+  {
+    type: 'video/mp4',
+    src: 'your-video-url.mp4',
+  },
+  {
+    type: 'video/flv',
+    src: 'your-video-url.flv',
+  },
+]);
+
+player.play();
+```
+
+在这个例子中：
+
+1. `techOrder` 配置告诉 `Video.js` 首先尝试使用原生 HTML5 播放器（它支持 MP4 等常见格式），如果该格式不支持（例如浏览器不支持 MP4），则会回退到 `flvjs` 来支持 FLV 格式。
+
+2. `src` 配置中提供了 MP4 和 FLV 的两个视频源。`Video.js` 会根据浏览器的支持自动选择哪个格式进行播放。
+
+这样一来，你就能在同一个播放器实例中同时支持 FLV 和 MP4 格式的视频。
+
+需要注意的是，浏览器的兼容性和性能可能会影响 FLV 播放的效果，因为 FLV 格式相比 MP4 格式较少被现代浏览器原生支持，因此通常需要通过 `flv.js` 或其他 JavaScript 库来实现。

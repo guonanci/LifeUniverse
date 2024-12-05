@@ -18,3 +18,7 @@ this.$refs是一个对象，持有当前组件中注册过ref特性的所有DOM�
 兄弟组件间通信方式：
 https://blog.csdn.net/NineWaited/article/details/126334211
 
+
+# ref&reactive
+
+FormState
