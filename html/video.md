@@ -209,3 +209,6 @@ player.play();
 这样一来，你就能在同一个播放器实例中同时支持 FLV 和 MP4 格式的视频。
 
 需要注意的是，浏览器的兼容性和性能可能会影响 FLV 播放的效果，因为 FLV 格式相比 MP4 格式较少被现代浏览器原生支持，因此通常需要通过 `flv.js` 或其他 JavaScript 库来实现。
+
+# video.js-flv.js
+<https://blog.csdn.net/lilongsy/article/details/128508902>
