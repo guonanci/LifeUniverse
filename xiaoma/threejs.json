@@ -3708,3 +3708,42 @@
     "intervalTime": null
   }
 ]
+
+{
+  "createTime": null,
+  "creator": null,
+  "updateTime": null,
+  "updator": null,
+  "id": 1105,
+  "type": 2,
+  "name": "1700M皮带",
+  "region": "C-1AB:撒煤检测",
+  "bayName": null,
+  "mainDeviceId": null,
+  "mainDeviceName": "皮带",
+  "mainDeviceType": "皮带",
+  "appearanceType": null,
+  "recognitionCode": null,
+  "warning": null,
+  "general": null,
+  "serious": null,
+  "crisis": null,
+  "abnormal": null,
+  "intervals": "拱桥①-拱桥②",
+  "deviceParameter": null,
+  "imageLabelParameter": null,
+  "templateFileType": null,
+  "templateFilePath": null,
+  "deploymentStatus": 0,
+  "navigationId": null,
+  "zoneId": 1,
+  "intervalTime": null,
+  "whetherSilent": null,
+  "deviceId": null,
+  "deviceName": null,
+  "executeType": 1,
+  "executeCount": null,
+  "status": 1,
+  "labelStatus": 0,
+  "zoneName": "哈密"
+}
