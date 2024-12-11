@@ -260,7 +260,7 @@ npm ERR! network request to <https://registry.nlark.com/@types/qs/download/@type
 ### 4. **代理配置**
 
    如果你处于公司网络中，可能需要配置代理才能访问外部资源。如果你的 npm 配置使用了代理，确保代理设置正确。可以通过以下命令查看和设置代理：
-
+xm123456
    查看当前代理设置：
 
    ```bash
@@ -302,3 +302,8 @@ npm ERR! network request to <https://registry.nlark.com/@types/qs/download/@type
 - 如果网络环境受限，尝试使用 Yarn 作为替代。
 
 通过这些方法，你应该能够解决 `ENOTFOUND` 错误。如果仍然无法解决，请提供更多信息，我可以进一步帮助排查问题。
+
+直接去掉
+    "@types/qs": "^6.9.7",
+
+这一行就行。
