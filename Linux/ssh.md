@@ -61,3 +61,13 @@ stat filename
 # *
 
 dist*也包括dist这个名字！！，*包含空字符。
+
+# unzip
+
+unzip覆盖解压原创
+
+CSDN博客
+<https://blog.csdn.net> › article › details
+·
+Translate this page
+Aug 7, 2019 — unzip解压时需要直接覆盖以解压的文件在unzip命令后，增加-o的参数，则不再进行询问，直接覆盖原文件解压缩，节省了很多事儿。 unzip -o fileName.zip.

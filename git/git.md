@@ -225,10 +225,15 @@ git push origin --delete master
 
 如果当前分支与多个主机之间存在追踪关系，则可以使用`-u`选项指定一个默认主机，这样后面就可以不加任何参数使用`git push`了： `git push -u origin master`。不带任何参数的`git push`默认只推送当前分支，叫做 simple 方式，此外还有一种 matching 方式
 ，现在默认使用 simple 方式，如果要修改，采用`git config --global push.default matching/simple`，还有就是不管是否存在对应的远程分支，都会推送到远程主机，需要使用 `--all`选项：`git push --all origin`，如果要推送标签，要加上`--tags`选项：`git push origin --tags`。
+
 ## git 进阶
+
 ### git 特点 ####近乎所有操作都只是本地执行
+
 比如说要浏览项目的历史，git 不需要外联到服务器去获取历史，只需要直接从本地数据库中读取。
+
 #### git 保证完整性
+
 git 中所有数据在存储前都计算校验和，然后以校验和来引用。意味着不可能在 git 不知情时更改文件内容或者目录内容。这个功能构建在 git 底层。是构成 git 哲学不可或缺的部分，如果在传输过程中丢失信息或者损坏文件，git 就能发现。
 git 用以计算校验和的机制叫做 SHA-1 散列（哈希 hash），他是一个由 40 个十六进制字符（0-9 和 a-f）组成字符串，基于 git 中文件的内容或者目录结构计算出来。
 
@@ -249,6 +254,7 @@ windows 上我找到[这篇文章](https://blog.csdn.net/u014027051/article/deta
 如果用命令行的话，推荐`git-bash`，[这里有篇短文](https://www.jianshu.com/p/ac0ea03f731a)，推荐一下。
 
 ## 参考资料
+
 | 书籍 | 文档 | 链接 |
 |:---------- |:----------:| ----------:|
 |progit.zh.pdf | [git-scm.com/book](https://git-scm.com/book/zh/v2) | [阮一峰-常用 git 命令清单](http://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html) |
@@ -671,6 +677,7 @@ error: pathspec 'remove-useless-comment'' did not match any file(s) known to git
 🧵thread add or upd code related to multithreading or concurrency;safety_vest🦺 add or upd code related to validation;
 
 # remove all commits
+
 <https://www.blogdesire.com/how-to-hide-commit-history-on-github/>
 
 ```bash
@@ -695,3 +702,13 @@ git remote -v
     }
   },
 ```
+
+git commit后，如何进行撤销commit操作
+
+掘金
+<https://juejin.cn> › 前端
+·
+Translate this page
+Oct 31, 2022 — 我们可以使用命令： git reset --soft HEAD^ 这样就成功撤销了commit。 使用 git reset --hard HEAD^ 这样连add也撤销了。 *注：reset 命令只能回滚最新的 ...
+
+git reset --soft HEAD~1
