@@ -15,3 +15,5 @@
 Chrome 103 稳定版已经悄然发布，新版本主要新特性包括通过预渲染机制可以显著改善页面加载速度、在 Web Share 中新增对 AVIF 文件的支持、以及支持本地字体访问等。
 
 *f5/f12/ctrl+shift+c/ctrl+shift+d.*
+
+chrome底部的控制台跟随location.href动态变化，所以可以只切换href。
