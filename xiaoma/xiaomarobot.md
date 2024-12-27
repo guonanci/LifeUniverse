@@ -3656,6 +3656,12 @@ OKR需求咨询：没有做resetFields的功能，因为没有做双向绑定表
 
 标注之前需要先勾选一下前面的勾选框，没勾相当于很多空信息进入标注组件，加个阻止逻辑；
 
+<http://192.168.0.222:8005/api/equipment-model/control-robot-send-msg?action=motionControl> {mode:0}（停止） 怎么在 <http://192.168.0.222:8005/api/equipment-model/control-robot-send-msg?action=motionControl>
+ {
+  "mode": 1,
+  "value": "0.2"
+}（前进）  之后呢？？
+
 # 周报
 
 国投罗钾项目：解决设备状态在线监测平台上打开智能点巡检系统的页面白屏问题；
