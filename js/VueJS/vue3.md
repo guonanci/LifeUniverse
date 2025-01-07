@@ -856,7 +856,8 @@ template
 <button @click="state.count++">
   {{ state.count }}
 </button>
-响应式对象是 JavaScript 代理，其行为就和普通对象一样。不同的是，Vue 能够拦截对响应式对象所有属性的访问和修改，以便进行依赖追踪和触发更新。
+
+响应式对象是 JavaScript 代理，其行为就和普通对象一样。不同的是，Vue 能够拦截对响应式对象所有属性的访问和修改，以便依赖追踪和触发更新。
 
 reactive() 将深层地转换对象：当访问嵌套对象时，它们也会被 reactive() 包装。当 ref 的值是一个对象时，ref() 也会在内部调用它。与浅层 ref 类似，这里也有一个 shallowReactive() API 可以选择退出深层响应性。
 
@@ -870,9 +871,10 @@ const proxy = reactive(raw)
 
 // 代理对象和原始对象不是全等的
 console.log(proxy === raw) // false
+
 只有代理对象是响应式的，更改原始对象不会触发更新。因此，使用 Vue 的响应式系统的最佳实践是仅使用你声明对象的代理版本。
 
-为保证访问代理的一致性，对同一个原始对象调用 reactive() 会总是返回同样的代理对象，而对一个已存在的代理对象调用 reactive() 会返回其本身：
+为保证访问代理的一致性，对同一个原始对象调用 reactive() ，总会返回同样的代理对象，而对一个已存在的代理对象调用 reactive() 会返回其本身：
 
 js
 // 在同一个对象上调用 reactive() 会返回相同的代理
@@ -880,6 +882,7 @@ console.log(reactive(raw) === proxy) // true
 
 // 在一个代理上调用 reactive() 会返回它自己
 console.log(reactive(proxy) === proxy) // true
+
 这个规则对嵌套对象也适用。依靠深层响应性，响应式对象内的嵌套对象依然是代理：
 
 js
@@ -889,3 +892,185 @@ const raw = {}
 proxy.nested = raw
 
 console.log(proxy.nested === raw) // false
+
+### reactive() 的局限性​
+
+reactive() API 有一些局限性：
+
+1. 有限的值类型：它只能用于对象类型 (对象、数组和如 Map、Set 这样的集合类型)。它不能持有如 string、number 或 boolean 这样的原始类型。
+
+2. 不能替换整个对象：由于 Vue 的响应式跟踪是通过属性访问实现的，因此我们必须始终保持对响应式对象的相同引用。这意味着我们不能轻易地“替换”响应式对象，因为这样的话与第一个引用的响应性连接将丢失：
+
+js
+let state = reactive({ count: 0 })
+
+// 上面的 ({ count: 0 }) 引用将不再被追踪
+// (响应性连接已丢失！)
+state = reactive({ count: 1 })
+3. 对解构操作不友好：当我们将响应式对象的原始类型属性解构为本地变量时，或者将该属性传递给函数时，我们将丢失响应性连接：
+
+js
+const state = reactive({ count: 0 })
+
+// 当解构时，count 已经与 state.count 断开连接
+let { count } = state
+// 不会影响原始的 state
+count++
+
+// 该函数接收到的是一个普通的数字
+// 并且无法追踪 state.count 的变化
+// 我们必须传入整个对象以保持响应性
+callSomeFunction(state.count)
+由于这些限制，我们建议使用 ref() 作为声明响应式状态的主要 API。
+
+## 额外的 ref 解包细节​
+
+### 作为 reactive 对象的属性​
+
+一个 ref 会在作为响应式对象的属性被访问或修改时自动解包。换句话说，它的行为就像一个普通属性：
+
+js
+const count = ref(0)
+const state = reactive({
+  count
+})
+
+console.log(state.count) // 0
+
+state.count = 1
+console.log(count.value) // 1
+
+如果将一个新的 ref 赋值给一个关联了已有 ref 的属性，那么它会替换掉旧的 ref：
+
+js
+const otherCount = ref(2)
+
+state.count = otherCount
+console.log(state.count) // 2
+// 原始 ref 现在已经和 state.count 失去联系
+console.log(count.value) // 1
+
+只有当嵌套在一个深层响应式对象内时，才会发生 ref 解包。当其作为浅层响应式对象的属性被访问时不会解包。
+
+### 数组和集合的注意事项​
+
+与 reactive 对象不同的是，当 ref 作为响应式数组或原生集合类型 (如 Map) 中的元素被访问时，它不会被解包：
+
+js
+const books = reactive([ref('Vue 3 Guide')])
+// 这里需要 .value
+console.log(books[0].value)
+
+const map = reactive(new Map([['count', ref(0)]]))
+// 这里需要 .value
+console.log(map.get('count').value)
+
+### 在模板中解包的注意事项​
+
+在模板渲染上下文中，只有顶级的 ref 属性才会被解包。
+
+在下面的例子中，count 和 object 是顶级属性，但 object.id 不是：
+
+js
+const count = ref(0)
+const object = { id: ref(1) }
+
+因此，这个表达式按预期工作：
+
+template
+{{ count + 1 }}
+...但这个不会：
+
+template
+{{ object.id + 1 }}
+
+渲染的结果将是 [object Object]1，因为在计算表达式时 object.id 没有被解包，仍然是一个 ref 对象。为了解决这个问题，我们可以将 id 解构为一个顶级属性：
+
+js
+const { id } = object
+template
+{{ id + 1 }}
+现在渲染的结果将是 2。
+
+另一个需要注意的点是，如果 ref 是文本插值的最终计算值 (即 {{ }} 标签)，那么它将被解包，因此以下内容将渲染为 1：
+
+template
+{{ object.id }}
+该特性仅仅是文本插值的一个便利特性，等价于 {{ object.id.value }}。
+
+# 计算属性​
+
+## 基础示例​
+
+模板中的表达式虽然方便，但也只能用于简单操作。如果在模板中写太多逻辑，会让模板变得臃肿，难以维护。比如说，我们有这样一个包含嵌套数组的对象：
+
+js
+const author = reactive({
+  name: 'John Doe',
+  books: [
+    'Vue 2 - Advanced Guide',
+    'Vue 3 - Basic Guide',
+    'Vue 4 - The Mystery'
+  ]
+})
+我们想根据 author 是否已有一些书籍来展示不同的信息：
+
+template
+<p>Has published books:</p>
+<span>{{ author.books.length > 0 ? 'Yes' : 'No' }}</span>
+
+这里的模板看起来有些复杂。我们必须认真看好一会儿才能明白它的计算依赖于 author.books。更重要的是，如果在模板中需要不止一次这样的计算，我们可不想将这样的代码在模板里重复好多遍。
+
+因此我们*推荐使用计算属性来描述依赖响应式状态的复杂逻辑*。这是重构后的示例：
+
+vue
+<script setup>
+import { reactive, computed } from 'vue'
+
+const author = reactive({
+  name: 'John Doe',
+  books: [
+    'Vue 2 - Advanced Guide',
+    'Vue 3 - Basic Guide',
+    'Vue 4 - The Mystery'
+  ]
+})
+
+// 一个计算属性 ref
+const publishedBooksMessage = computed(() => {
+  return author.books.length > 0 ? 'Yes' : 'No'
+})
+</script>
+
+<template>
+  <p>Has published books:</p>
+  <span>{{ publishedBooksMessage }}</span>
+</template>
+在演练场中尝试一下
+
+我们在这里定义了一个计算属性 publishedBooksMessage。computed() 方法期望接收一个 getter 函数，返回值为一个计算属性 ref。和其他一般的 ref 类似，你可以通过 publishedBooksMessage.value 访问计算结果。计算属性 ref 也会在模板中自动解包，因此在模板表达式中引用时无需添加 .value。
+
+Vue 的计算属性会自动追踪响应式依赖。它会检测到 publishedBooksMessage 依赖于 author.books，所以当 author.books 改变时，任何依赖于 publishedBooksMessage 的绑定都会同时更新。
+
+也可参考：为计算属性标注类型
+
+## 计算属性缓存 vs 方法​
+
+你可能注意到我们在表达式中像这样调用一个函数也会获得和计算属性相同的结果：
+
+template
+<p>{{ calculateBooksMessage() }}</p>
+js
+// 组件中
+function calculateBooksMessage() {
+  return author.books.length > 0 ? 'Yes' : 'No'
+}
+若我们将同样的函数定义为一个方法而不是计算属性，两种方式在结果上确实是完全相同的，然而，不同之处在于计算属性值会基于其响应式依赖被缓存。一个计算属性仅会在其响应式依赖更新时才重新计算。这意味着只要 author.books 不改变，无论多少次访问 publishedBooksMessage 都会立即返回先前的计算结果，而不用重复执行 getter 函数。
+
+这也解释了为什么下面的计算属性永远不会更新，因为 Date.now() 并不是一个响应式依赖：
+
+js
+const now = computed(() => Date.now())
+相比之下，方法调用总是会在重渲染发生时再次执行函数。
+
+为什么需要缓存呢？想象一下我们有一个非常耗性能的计算属性 list，需要循环一个巨大的数组并做许多计算逻辑，并且可能也有其他计算属性依赖于 list。没有缓存的话，我们会重复执行非常多次 list 的 getter，然而这实际上没有必要！如果你确定不需要缓存，那么也可以使用方法调用。
