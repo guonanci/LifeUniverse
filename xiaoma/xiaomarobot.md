@@ -3674,7 +3674,7 @@ OKR需求咨询：没有做resetFields的功能，因为没有做双向绑定表
 const res = await API.backCourseSelectCourseDetail({ data: { courseListId } })
 ```
 
-<http://192.168.0.222:9080/view/all/job/x-iis-ctb_web_ii/> <http://192.168.0.71/yangzhengliang/400c/-/blob/dev/src/components/GlobalHeader/RobotSelect.tsx> <http://192.168.0.71:90/zentao/user-login-L3plbnRhby9idWctYnJvd3NlLTIwLmh0bWw=.html> <https://acnp6tmmnnfg.feishu.cn/wiki/ZSNkw5VTMiSz0EkSUJocrVcSnIe>
+<http://192.168.0.222:9080/view/all/job/x-iis-ctb_web_ii/> <http://192.168.0.71/yangzhengliang/400c/-/blob/dev/src/components/GlobalHeader/RobotSelect.tsx> <http://192.168.0.71:90/zentao/user-login-L3plbnRhby9idWctYnJvd3NlLTIwLmh0bWw=.html> <https://acnp6tmmnnfg.feishu.cn/wiki/ZSNkw5VTMiSz0EkSUJocrVcSnIe> <https://cn.vuejs.org/guide/essentials/computed> <https://map.bmcx.com/hutubixian__map/> <http://192.168.20.222:8060/swagger-ui/index.html?urls.primaryName=service-store> <http://three.dtking.cn/start/%E7%AC%AC%E5%9B%9B%E7%AB%A0%20%E4%BD%BF%E7%94%A8%20three.js%20%E6%9D%90%E6%96%99.html>
 
 # 周报
 
