@@ -18,3 +18,5 @@
 ```
 
 learningplatform\public\pdfjs-2.2.228-dist\build\pdf.js
+
+# <https://mozilla.github.io/pdf.js/api/>
