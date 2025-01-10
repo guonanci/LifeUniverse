@@ -3673,7 +3673,8 @@ OKR需求咨询：没有做resetFields的功能，因为没有做双向绑定表
 // return code:500,msg:null
 const res = await API.backCourseSelectCourseDetail({ data: { courseListId } })
 ```
-<http://192.168.0.222:9080/view/all/job/x-iis-ctb_web_ii/> <http://192.168.0.71/yangzhengliang/400c/-/blob/dev/src/components/GlobalHeader/RobotSelect.tsx> <http://192.168.0.71:90/zentao/user-login-L3plbnRhby9idWctYnJvd3NlLTIwLmh0bWw=.html>
+
+<http://192.168.0.222:9080/view/all/job/x-iis-ctb_web_ii/> <http://192.168.0.71/yangzhengliang/400c/-/blob/dev/src/components/GlobalHeader/RobotSelect.tsx> <http://192.168.0.71:90/zentao/user-login-L3plbnRhby9idWctYnJvd3NlLTIwLmh0bWw=.html> <https://acnp6tmmnnfg.feishu.cn/wiki/ZSNkw5VTMiSz0EkSUJocrVcSnIe>
 
 # 周报
 
