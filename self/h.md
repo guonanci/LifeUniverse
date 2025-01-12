@@ -1539,6 +1539,7 @@ kemaowang.org.cn
 每天下楼散步、晒太阳10分钟（只有出晴的那些日子里）
 
 # 脖子上长痘痘
+
 <http://static.nfapp.southcn.com/content/201612/18/c218894.html#:~:text=%E5%9B%A0%E6%AD%A4%EF%BC%8C%E8%84%96%E5%AD%90%E4%B8%8A%E7%9A%84%E6%B7%8B%E5%B7%B4%E7%BB%93,%E5%AE%B9%E6%98%93%E8%82%BF%E5%A4%A7%E7%9A%84%E9%83%A8%E4%BD%8D%E3%80%82&text=%E4%B8%BB%E8%A6%81%E5%8E%9F%E5%9B%A0%EF%BC%9A,%E4%B8%8D%E8%A7%81%E5%BE%97%E5%85%A8%E8%BA%AB%E9%83%BD%E9%95%BF%E3%80%82>
 
 <https://k.sina.com.cn/article_6435972186_17f9d245a00100suue.html?from=health&sudaref=www.google.com&display=0&retcode=0>
@@ -1550,6 +1551,7 @@ kemaowang.org.cn
 我脸上的皮肤很差、到处都是坑坑洼洼、没有一点弹性，但是丝毫不影响我伟大而杰出的思想
 
 # 脸颊两侧长包
+
 <https://zhuanlan.zhihu.com/p/295199324> <https://eladies.sina.cn/beauty/skincare/2014-07-22/doc-iawzunex2756888.d.html?from=wap>
 
 # 皮肤病
@@ -1565,6 +1567,7 @@ kemaowang.org.cn
 红枣一直含在嘴里，有利于修道、减肥（辟谷减肥法）
 
 # 荞麦
+
 <https://zhidao.baidu.com/question/390730555973146925.html>
 
 洗脸、吃食物、刷牙
@@ -1589,12 +1592,15 @@ kemaowang.org.cn
 <https://new.qq.com/rain/a/20210629A06PRU00>
 
 # 白砂糖
+
 <https://m.pingguolv.com/sl/yingyang/169460.html>
 
 # 蚊香
+
 <https://zhidao.baidu.com/question/1046711413515540219.html>
 
 # 洗澡
+
 <https://www.sohu.com/a/140660427_390952> 不要每天洗澡，不要每次都用沐浴露（洗去皮肤上的油脂会加剧皮肤老化），黑泥和白泥 不要用力搓澡（易受伤）、不要和其他人共用沐浴用品、
 
 连续3天不洗澡、不洗脸，只吃东西、刷牙
@@ -1611,9 +1617,11 @@ kemaowang.org.cn
 应用: 烧烤食品必用的上等佐料
 
 # 红薯
+
 <https://zhuanlan.zhihu.com/p/22564332> <https://weibo.com/p/230418dd64a2520102x76v?pids=Pl_Official_CardMixFeedv6__4&feed_filter=2&sudaref=www.google.com> （红薯黑斑、黑点）
 
 # 生食
+
 <https://baike.baidu.com/item/%E7%94%9F%E9%A3%9F/8167875#:~:text=%E7%94%9F%E9%A3%9F%E4%B8%8D%E5%9C%A8%E8%82%A0%E5%86%85%E5%BD%A2%E6%88%90,%E7%9A%84%E6%91%84%E5%8F%96%E4%B9%9F%E5%8D%81%E5%88%86%E5%85%85%E8%B6%B3%E3%80%82>
 
 <https://zhuanlan.zhihu.com/p/110750140>
@@ -1627,6 +1635,7 @@ kemaowang.org.cn
 （8) 生食所含原料数十种，不经过烹饪等加工，可以达到均衡营养的目的，并降低热量摄入。可实现低热量，高营养，低盐，少食。 可以减少胃肠道工作压力，有效恢复被撑大的胃。
 
 # 感冒了能吃鸡肉吗
+
 <https://www.google.com/search?q=%E6%84%9F%E5%86%92%E4%BA%86%E8%83%BD%E5%90%83%E9%B8%A1%E8%82%89%E5%90%97&oq=%E6%84%9F%E5%86%92%E4%BA%86%E8%83%BD%E5%90%83%E9%B8%A1%E8%82%89%E5%90%97&aqs=chrome..69i57.6071j1j1&sourceid=chrome&ie=UTF-8>
 感冒饮食注意： 感冒期间，避免进食或忌多食鸭肉、猪肉、羊肉、狗肉、甲鱼、蚌、醋、柿等食品。
 
@@ -1645,6 +1654,7 @@ kemaowang.org.cn
 我要把体重控制在穿衣服后称上时61KG，要不然就别吃饭
 
 # 胆固醇
+
 <https://k.sina.com.cn/article_5282907681_13ae2c62102000ujvf.html>
 
 <https://www.mayoclinic.org/zh-hans/diseases-conditions/high-blood-cholesterol/in-depth/reduce-cholesterol/art-20045935>
@@ -1819,6 +1829,7 @@ kemaowang.org.cn
 心率受自主神经的控制，交感神经活动增强时，心率增快；迷走神经活动增强时，心率减慢。影响心率的体液因素主要有循环血液中的肾上腺素和去甲肾上腺素，以及甲状腺素。此外，心率受体温的影响，体温升高1℃，心率将增加12～18次。
 
 # 分娩
+
 <https://www.sohu.com/a/310264562_628366> <https://www.zhihu.com/question/449850129>
 
 # 血压
@@ -1931,6 +1942,7 @@ kemaowang.org.cn
 冷热交替的水洗脸分别有哪些好处跟坏处呢？好处就是：先用温热水清洗脸部，再马上换凉水，这样交替几遍，可使毛孔反复扩张收缩，增加皮肤弹性，延缓皱纹生成。坏处是：毛孔并不像门窗一样，想啥时候打开就啥时候打开，想啥时候闭合就啥时候闭合，冷热交替很容易导致面部红血丝现象，对敏感肌的人来说情况可能会加重。
 
 ## 冷水洗脸、温水刷牙、热水洗脚身体好-中国政府门户网站
+
 <https://www.gov.cn/govweb/fwxx/jk/2005-11/01/content_87966.htm#:~:text=%E5%9C%A8%E6%B4%97%E5%86%B7%E6%B0%B4%E8%84%B8%E7%9A%84,%E6%80%A7%E5%A4%B4%E7%97%9B%E6%82%A3%E8%80%85%E4%B9%9F%E6%9C%89%E7%9B%8A%E5%A4%84%E3%80%82>
 
 早晨起床或午休后，头清眼明的感觉，精神也为之振奋。当然，洗脸用的冷水温度也不能太低，高于10℃为宜，这样的温度在寒冷冬季会有一种温热感。资料表明，人的牙齿适宜在35到36.5℃的口腔温度下进行正常新陈代谢，如果经常给牙齿以骤冷骤热的刺激，则可能导致牙龈出血、牙龈痉挛或其他牙病的发生。科学家通过研究认为，用温水刷牙有利于牙齿的健康。
@@ -2052,3 +2064,7 @@ Friends图像来源，Getty Images
 重要的是，笑声是一种社交符号，它意味着友善、热情、与包容。如果没有欢声笑语，这个世界将变得不那么友好，我们可能也很难有安全感。
 
 笑声绝对算得上是喜剧中的金牌。
+
+# 抖腿
+
+坐着抖腿能提升精神兴奋度，保持思考效率；另一方面，可以让久坐时间更长，不让臀部周围神经麻痹，但是每隔一两天还是需要站起来活动下！而且不要让抖腿影响思考，抖腿是偶尔的行为罢了，不能经常性！！
