@@ -387,3 +387,103 @@ para(path1@an1, top)->cond
 para(path2@an2, right)->op1
 para(path3@an3, bottom)->e
 Demonstration
+
+## Directions
+
+The following directions are available and define the direction the connection will leave the node from. If there are more than one specifiers, it is always the last.
+
+All nodes have a default direction making this an optional specification. <direction> will be used to indicate that one of the following should be used in its place.
+
+- left
+- right
+- top
+- bottom
+
+## Node Specific Specifiers by Type
+
+Each node variables has optional specifiers, like direction, and some have special specifiers depending on the node type that are defined below.
+
+Specifiers are added after the variable name in () and separated with , like nodeVar(spec1, spec2).
+
+## start
+
+Optional direction
+`startVar(<direction>)->nextNode`
+
+## end
+
+No specifications because connections only go to the end node and do not leave from it.
+`previousNode->endVar`
+
+## operation
+
+Optional direction
+`operationVar(<direction>)->nextNode`
+
+## inputoutput
+
+Optional direction
+
+inputoutputVar(<direction>)->nextNode
+
+## subroutine
+
+Optional direction
+
+subroutineVar(<direction>)->nextNode
+
+## condition
+
+Required logical specification of yes or no
+
+Optional direction
+
+conditionalVar(yes, <direction>)->nextNode1
+conditionalVar(no,  <direction>)->nextNode2
+
+## parallel
+
+Required path specification of path1, path2, or path3
+
+Optional direction
+
+parallelVar(path1, <direction>)->nextNode1
+parallelVar(path2, <direction>)->nextNode2
+parallelVar(path3, <direction>)->nextNode3
+
+## Links
+
+A external link can be added to a node with the :> operator.
+
+The st node is linked to <http://www.google.com> and will open a new tab because [blank] is at the end of the URL.
+
+The e node is linked to <http://www.yahoo.com> and will cause the page to navigate to that page instead of opening a new tab.
+
+st=>start: Start:><http://www.google.com[blank>]
+e=>end: End:><http://www.yahoo.com>
+
+## Advice
+
+Symbols that should possibly not be used in the text: => and -> and :> and | and @> and :$
+
+If you want to emphasize a specific path in your flowchart, you can additionally define it like this:
+
+st@>op1({"stroke":"Red"})@>cond({"stroke":"Red","stroke-width":6,"arrow-end":"classic-wide-long"})@>c2({"stroke":"Red"})@>op2({"stroke":"Red"})@>e({"stroke":"Red"})
+
+## Custom names for branches
+
+st=>start: Start:><http://www.google.com[blank>]
+e=>end:><http://www.google.com>
+op1=>operation: My Operation
+sub1=>subroutine: My Subroutine
+cond=>condition: linear or polynomial :><http://www.google.com>
+io=>inputoutput: catch something...
+para=>parallel: 3 possibilities
+
+st->op1->cond
+cond(true@linear)->io->e
+cond(false@polynomial)->sub1(right)
+sub1(right)->para
+para(path1@an1, top)->cond
+para(path2@an2, right)->op1
+para(path3@an3, bottom)->e

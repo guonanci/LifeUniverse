@@ -3676,12 +3676,15 @@ const res = await API.backCourseSelectCourseDetail({ data: { courseListId } })
 
 <http://192.168.0.222:9080/view/all/job/x-iis-ctb_web_ii/> <http://192.168.0.71/yangzhengliang/400c/-/blob/dev/src/components/GlobalHeader/RobotSelect.tsx> <http://192.168.0.71:90/zentao/user-login-L3plbnRhby9idWctYnJvd3NlLTIwLmh0bWw=.html> <https://acnp6tmmnnfg.feishu.cn/wiki/ZSNkw5VTMiSz0EkSUJocrVcSnIe> <https://cn.vuejs.org/guide/essentials/computed> <https://map.bmcx.com/hutubixian__map/> <http://192.168.20.222:8060/swagger-ui/index.html?urls.primaryName=service-store> <http://three.dtking.cn/start/%E7%AC%AC%E5%9B%9B%E7%AB%A0%20%E4%BD%BF%E7%94%A8%20three.js%20%E6%9D%90%E6%96%99.html>
 
+流程引擎：偏一些数值计算公式的自定义输入； 年终汇报简要：工作总结、存在问题分析、业绩数据展示、未来发展规划；自我介绍、自我岗位认知、前期工作总结、后期工作规划；工作内容回顾、未来发展规划（没有积极关注群内相关问题，比如没及时部署最新代码到客户现场；）
+
 # 周报
 
-哈密项目：首页和控制中心的‘一键返航’改成‘返航充电’，解决COMMUNICATION_TIMEOUT_TIMEOUT报错；协助解决所有树数据的顶层节点名改为‘中煤哈密’；修复告警信息已选择部分表格行后，依然弹出未选择的提示问题；
+哈密项目：解决‘头部B侧’的预览图片缓存时间问题，是通过手动拍照，更新预览图片缓存的方式；
 哈密项目：协助解决皮带撕裂告警不弹窗的问题；优化首页的现场直播流样式，按客户要求，将可见光和红外统一为一个大框内；简化智能告警的人工审核-确认是否误报的操作，调整样式，删除备注输入框；
-官网2.0：：解决方案首页样式优化：点击分类标签-id变化时，让解决方案卡片完全显示在页面中间；
+邹县项目：
 标杆二期：所有静态资源地址都做归一化处理，如果没有http前缀就添加它，否则不变，大部分为sourceUrl或resultUrl的图片；调整已读数字的样式，具有适当的最小宽度并让数字居中；历史信息-智能告警页面的视频录制和人工审核的浮层样式优化，使得这两个底部按钮立即可见；解决AI能力配置搜索区域的重置按钮点击问题；开发素材导出功能；优化告警信息-智能告警表格样式，增加行高，方便图片悬浮放大相关交互的展示；
+官网2.0：：解决方案首页样式优化：点击分类标签-id变化时，让解决方案卡片完全显示在页面中间；
 标杆二期：各类告警信息未读数量的统计接口unreadCount优化为每隔10秒调用一次，另外在点击各种已读按钮时通过EvenBus触发调用统计接口，提升页面响应速度；日期范围组件适配暗色主题；切换机器人后就重连assetWebsocket；
 学习平台-企业大学：协助志强解决upload/books跨域问题；协助志强解决‘LIMIT=10’数据库查询报错的问题；解决首页个人学习时长、部门学习时长在月份和年份维度上不对的问题；替换登录页系统logo；解决后台管理-方案管理界面内上传pdf接口调用不通的问题；
 
