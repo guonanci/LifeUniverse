@@ -514,6 +514,7 @@ git config --config pull.rebase false
 
 ```bash
 git remote set-url --push origin git@gitlab.magicbi.cn:magicbi/magicbi_web.git
+git remote set-url origin http://192.168.20.6:8090/yangzhengliang/400c.git
 git clone xxx
 git branch -r | grep -v '\->' | while read remote; do git branch --track "${remote#origin/}" "$remote"; done
 git fetch --all
