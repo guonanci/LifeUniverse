@@ -8,4 +8,4 @@ footer-button-style包括哪些属性，可定制度如何。
 
 AutoTable公共组件的使用：initData，setInitData、template的正确配置
 
-isMobileAvaliable
+isMobileAvailable

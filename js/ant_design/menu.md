@@ -1,5 +1,3 @@
-Menu.md
-
 写那么多 transition 样式是为了动画效果？
 
 submenu open&selected 时的 color 保持和 itm 一致（menuHighlightColor）。
