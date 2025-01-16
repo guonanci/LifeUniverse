@@ -9,8 +9,8 @@ v=>handleSelectVChange（v），不是event，没有target.value。
 Table-filters：option
 
 ```TypeScript
-filterOption={(input, option) => {
-                return option?.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
+filterOption={(inputV, option) => {
+                return option?.children.toLowerCase().indexOf(inputV.toLowerCase()) >= 0
               }}
 
 // (property) OptionCoreData.children?: any
@@ -24,7 +24,9 @@ filterOption={(input, option) => {
 # onSelect
 
 mode='tags' 'multiple'时区分比较明显
+
 # name设置成了undefined
+
 ProFormSelect在ProForm不起作用！原来是name没设置好，表面上设置成了undefined了，而且只设置了placeholder！！
 
 get和put也用data属性传参，put一般把id放最后，这样。

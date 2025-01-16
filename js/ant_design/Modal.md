@@ -2,11 +2,11 @@
 
 遮罩层 hover 上去时，需要变成手形。
 
-必须要手动控制显隐，而且正常情况下必须设置为 visible 为 FALSE，不要染，onOk，onCancel 的函数值，一定会带来其他副作用
+必须要手动控制显隐，而且正常情况下必须设置为 visible 为 FALSE，要不然onOk，onCancel 的函数值，一定会带来其他副作用
 
 上次我在这个问题上跪了很久很久：
 
-# Warning: Maximum update depth exceeded. This can happen when a component calls setState inside useEffects, but useEffect either doesn't have a dependency arr, or one of the dependencies changes on every render.
+# Warning: Maximum update depth exceeded. This can happen when a component calls setState inside useEffects, but useEffect either doesn't have a dependency arr, or one of the dependencies changes on every render
 
 ```js
 
@@ -55,7 +55,7 @@ Modal.confirm.onOk 容易形成闭包，缓存，造成 bug
 
 Modal.confirm 会阻碍热刷新，控制不了 visible？(文档有问题，可以控制的)
 
-destroyOnClose 不起作用，这样 ye 不起作用:
+destroyOnClose 不起作用，这样也不起作用:
 
 ```js
 {
@@ -67,12 +67,75 @@ destroyOnClose 不起作用，这样 ye 不起作用:
 
 [光标无法移动](https://codesandbox.io/s/ji-ben-antd-4-17-2-forked-d2s4p?file=/index.js:719-818)
 
+```js
+import React, { useState } from "react";
+import ReactDOM from "react-dom";
+import "antd/dist/antd.css";
+import "./index.css";
+import { Menu, Dropdown, Modal, Input } from "antd";
+import { DownOutlined } from "@ant-design/icons";
 
+const ModalItem = () => {
+  const [isModalVisible, setIsModalVisible] = useState(false);
+
+  const showModal = () => {
+    setIsModalVisible(true);
+  };
+
+  const handleOk = () => {
+    setIsModalVisible(false);
+  };
+
+  const handleCancel = () => {
+    setIsModalVisible(false);
+  };
+
+  return (
+    <>
+      <span onClick={showModal}>Open Modal</span>
+      <Modal
+        title="Basic Modal"
+        visible={isModalVisible}
+        onOk={handleOk}
+        onCancel={handleCancel}
+      >
+        <div
+          onKeyDown={(e) => {
+            e.stopPropagation();
+          }}
+        >
+          <Input />
+        </div>
+      </Modal>
+    </>
+  );
+};
+
+const menu = (
+  <Menu>
+    <Menu.Item>
+      <ModalItem />
+    </Menu.Item>
+  </Menu>
+);
+
+ReactDOM.render(
+  <Dropdown overlay={menu}>
+    <a className="ant-dropdown-link" onClick={(e) => e.preventDefault()}>
+      Hover me <DownOutlined />
+    </a>
+  </Dropdown>,
+  document.getElementById("container")
+);
+
+```
 
 transparent属性和closable
+
 # destroyOnClose
 
 # ModalForm
+
 ## form.resetFields()
 
 Modal.confirm里面涵盖的state没法得到最新值，因为Modal.confirm是通过onClick之类触发的。
