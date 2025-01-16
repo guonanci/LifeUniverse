@@ -1,6 +1,6 @@
 # medium
 
-https://leetcode-cn.com/problems/string-to-integer-atoi/solution/zi-fu-chuan-zhuan-huan-zheng-shu-atoi-by-leetcode-/
+<https://leetcode-cn.com/problems/string-to-integer-atoi/solution/zi-fu-chuan-zhuan-huan-zheng-shu-atoi-by-leetcode-/>
 
 评论排序：最热、最新、最早
 
@@ -13,12 +13,14 @@ https://leetcode-cn.com/problems/string-to-integer-atoi/solution/zi-fu-chuan-zhu
 检查下一个字符（假设还未到字符末尾）为正还是负号，读取该字符（如果有）。 确定最终结果是负数还是正数。 如果两者都不存在，则假定结果为正。
 读入下一个字符，直到到达下一个非数字字符或到达输入的结尾。字符串的其余部分将被忽略。
 将前面步骤读入的这些数字转换为整数（即，"123" -> 123， "0032" -> 32）。如果没有读入数字，则整数为 0 。必要时更改符号（从步骤 2 开始）。
+
 如果整数数超过 32 位有符号整数范围 [−231, 231 − 1] ，需要截断这个整数，使其保持在这个范围内。具体来说，小于 −231 的整数应该被固定为 −231 ，大于 231 − 1 的整数应该被固定为 231 − 1 。
 返回整数作为最终结果。
+
 注意：
 
 本题中的空白字符只包括空格字符 ' ' 。
-除前导空格或数字后的其余字符串外，请勿忽略 任何其他字符。
+除前导空格或数字后的其余字符串外，请勿忽略任何其他字符。
 
 示例 1：
 
@@ -104,9 +106,9 @@ s 由英文字母（大写和小写）、数字（0-9）、' '、'+'、'-' 和 '
 
 字符串处理的题目往往涉及复杂的流程以及条件情况，如果直接上手写程序，一不小心就会写出极其臃肿的代码。
 
-因此，为了有条理地分析每个输入字符的处理方法，我们可以使用自动机这个概念：
+因此，为了有条理地分析每个输入字符的处理方法，我们可以使用*自动机*这个概念：
 
-我们的程序在每个时刻有一个状态 s，每次从序列中输入一个字符 c，并根据字符 c 转移到下一个状态 s'。这样，我们只需要建立一个覆盖所有情况的从 s 与 c 映射到 s' 的表格即可解决题目中的问题。
+我们的程序在每个时刻有一个状态 s，每次从序列中输入一个字符 c，并根据字符 c 转移到下一个状态 s'。这样，我们只需建立一个覆盖所有情况的，从 s 与 c 映射到 s' 的表格，即可解决题目中的问题。
 
 算法
 
@@ -196,7 +198,7 @@ var myAtoi = function (s) {
         // 优化点：
         // 对于一个整数来说，非正即负，
         // 所以正负号的判断，只需要一次。
-        // 故，可以降低其判断的优先级
+        // 所以可以降低其判断的优先级
         this.sign = c == '+' ? 1 : -1
       }
     }
@@ -215,6 +217,7 @@ var myAtoi = function (s) {
 无视整数部分后的字符
 范围在 32 位内（含）
 其他情况返回 0
+
 各位 JSer，你品，你细品，这个转换规则，是不是很眼熟？
 
 谜底揭晓，它就是 JavaScript 世界中的 parseInt()这一 API 的转换规则。
@@ -227,6 +230,7 @@ parseInt(string, radix)：
 string：要被解析的值。如果参数不是一个字符串，则将其转换为字符串。字符串开头的空白符将会被忽略。
 radix（可选）：需要转换的进制，介于 2 到 36。
 返回值： 如果被解析参数的第一个字符无法被转化成数值类型，则返回 NaN。
+
 对比下题意，发现
 
 无视开头空格（满足）
@@ -243,6 +247,7 @@ if (number < Math.pow(-2, 31) || number > Math.pow(2, 31) - 1) {
 return number < Math.pow(-2, 31) ? Math.pow(-2, 31) : Math.pow(2, 31) - 1;
 }
 其他情况返回 0
+
 很显然，API 的返回值如果是 NaN，则说明无法正常转换，所以只需将返回值和 NaN 进行比较即可。
 
 注意，NaN 和 NaN 并不全等，所以各位 JSer 不能使用全等操作符（===），而该使用 isNaN()函数来比较。
@@ -250,6 +255,7 @@ return number < Math.pow(-2, 31) ? Math.pow(-2, 31) : Math.pow(2, 31) - 1;
 if(isNaN(number)) {
 return 0;
 }
+
 小细节
 在使用 parseInt(string, radix)这一 API 时，如果不传入 radix 参数，会有两种特殊情况：
 
@@ -270,7 +276,7 @@ return 0;
 相信我，“自动机”的解法，一定会打开你另一个思路的大门~
 
 作者：gatsby-23
-链接：https://leetcode-cn.com/problems/string-to-integer-atoi/solution/javascripttou-ji-qu-qiao-wu-xu-si-kao-yi-kan-jiu-h/
+链接：<https://leetcode-cn.com/problems/string-to-integer-atoi/solution/javascripttou-ji-qu-qiao-wu-xu-si-kao-yi-kan-jiu-h/>
 来源：力扣（LeetCode）
 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
 
