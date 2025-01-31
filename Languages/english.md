@@ -1229,4 +1229,10 @@ morph n.
 v.
 （使）图像变形；将（图像）进行合成处理；改变，变化，变形；；
 
-seam缝seamless无缝的；simultaneously同时；Specifier说明符；
+seam缝seamless无缝的；simultaneously同时；Specifier说明符；interceptor 英
+ˌɪntəˈseptə(r)
+美
+ˌɪntərˈseptər
+查看全部
+n.
+拦截机；妨碍者；截击机；拦截者，拦截器;

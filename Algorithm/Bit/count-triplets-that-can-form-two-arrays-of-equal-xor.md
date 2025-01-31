@@ -42,6 +42,7 @@ b = arr[j] ^ arr[j + 1] ^ ... ^ arr[k]
 通过次数 7,680 提交次数 10,871
 贡献者
 LeetCode
+
 We are searching for sub-array of length ≥ 2 and we need to split it to 2 non-empty arrays so that the xor of the first array is equal to the xor of the second array. This is equivalent to searching for sub-array with xor = 0.
 Keep the prefix xor of arr in another array, check the xor of all sub-arrays in O(n^2), if the xor of sub-array of length x is 0 add x-1 to the answer.
 
@@ -106,7 +107,7 @@ j
 ​
 ，设 0<i<j0<i<j，有
 
-S*i\oplus S_j=(\textit{arr}\_0\oplus\textit{arr}\_1\oplus\cdots\oplus\textit{arr}*{i-1})\oplus(\textit{arr}_0\oplus\textit{arr}\_1\oplus\cdots\oplus\textit{arr}_{i-1}\oplus\textit{arr}_i\oplus\cdots\oplus\textit{arr}_{j-1}）
+S*i\oplus S_j=(\textit{arr}\_0\oplus\textit{arr}\_1\oplus\cdots\oplus\textit{arr}*{i-1})\oplus(\textit{arr}*0\oplus\textit{arr}\_1\oplus\cdots\oplus\textit{arr}*{i-1}\oplus\textit{arr}*i\oplus\cdots\oplus\textit{arr}*{j-1}）
 S
 i
 ​
@@ -213,7 +214,7 @@ k+1
 ​
 
 作者：LeetCode-Solution
-链接：https://leetcode-cn.com/problems/count-triplets-that-can-form-two-arrays-of-equal-xor/solution/xing-cheng-liang-ge-yi-huo-xiang-deng-sh-jud0/
+链接：<https://leetcode-cn.com/problems/count-triplets-that-can-form-two-arrays-of-equal-xor/solution/xing-cheng-liang-ge-yi-huo-xiang-deng-sh-jud0/>
 来源：力扣（LeetCode）
 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
 

@@ -28,15 +28,15 @@ Type 'undefined' is not assignable to type '{ titleBg: string; titleColor: strin
 分两种枚举类型？没必要
 现在季同比没有实际上的统计意义。
 
-有时候后端定义的数据结构确实不好，嵌套太深。所以前端会 flat obj 或者 arr 后存到 model、store。比如说 getSelectedModels-req
+有时候后端定义的数据结构确实不好，嵌套太深。所以前端会 flat obj 或者 arr 后，存到 model、store。比如说 getSelectedModels-req
 
-排查 bug 需要有理可循，有据可查，不能只靠直觉去排查（因为代码并不是你一个人完成的，所以有些 bug 必须一点点找线索）
+排查 bug 需要有理可循，有据可查，不能只靠直觉去排查（因为代码并非你一个人完成的，所以有些 bug 必须一点点找线索）
 
 # 组件加载失败或该组件不存在
 
 @/local-comp/index.ts 需要注册新组件
 
-# viewDataReqParCollector: collector,
+# viewDataReqParCollector: collector
 
 BlockWithCheck
 
