@@ -1,15 +1,16 @@
-file_upload.md
-https://juejin.cn/post/7177045936298786872?
+<https://juejin.cn/post/7177045936298786872>?
 
 图片转换成base64，buffer流；上传时间久，传输更多的报文，丢包，不允许无限制时间上传，超时
 
 分片上传，一个小文件，每个请求时间缩短，如果某请求发送失败，也不需要全部重新发送
+
 ```html
 <input type="file" id="input">
 <button id="upload">上传</button>
 <!-- 上传进度 -->
 <div style="width: 300px" id="progress"></div>
 ```
+
 ```js
 // 监听input的change事件，当选取了本地文件后，打印事件源可得到文件的一些信息：
 let input = document.getElementById('input')
@@ -22,7 +23,6 @@ input.addEventListener('change', (e) => {
     files = e.target.files[0]
     console.log(files);
 
-    //创建切片
  // 文件的信息包括文件的名字，文件的大小，文件的类型等信息，接下来可以根据文件的大小来进行切片，例如将文件按照1MB或者2MB等大小进行切片操作：
  // 创建切片
 function createChunk(file, size = 2 * 1024 * 1024) {//两个形参：file是大文件，size是切片的大小
@@ -44,16 +44,17 @@ function createChunk(file, size = 2 * 1024 * 1024) {//两个形参：file是大�
 //注意调用位置，不是在全局，而是在读取文件的回调里调用
 chunkList = createChunk(files)
 console.log(chunkList);
+```
 
-// file:Ｂｌｏｂ　
+// file:Ｂｌｏｂ
 
-上传切片的个关键的操作：
-第一、数据处理。需要将切片的数据进行维护成一个包括该文件，文件名，切片名的对象，所以采用FormData对象来进行整理数据。FormData 对象用以将数据编译成键值对,可用于发送带键数据，通过调用它的append()方法来添加字段，FormData.append()方法会将字段类型为数字类型的转换成字符串（字段类型可以是 Blob、File或者字符串：如果它的字段类型不是 Blob 也不是 File，则会被转换成字符串类。
-第二、并发请求。每一个切片都分别作为一个请求，只有当这4个切片都传输给后端了，即四个请求都成功发起，才上传成功，使用Promise.all()保证所有的切片都已经传输给后端。
+*上传切片的两个关键操作：*
 
-第二、并发请求。每一个切片都分别作为一个请求，只有当这4个切片都传输给后端了，即四个请求都成功发起，才上传成功，使用Promise.all()保证所有的切片都已经传输给后端。
+第一、*数据处理*。需要将切片数据维护成一个包括该文件，文件名，切片名的对象，所以采用FormData对象来整理数据。FormData 对象用以将数据编译成键值对,可用于发送带键数据，通过调用它的append()方法来添加字段，FormData.append()方法会将字段类型为数字类型的转换成字符串（字段类型可以是 Blob、File或者字符串：如果它的字段类型不是 Blob 也不是 File，则会被转换成字符串类。
 
+第二、*并发请求*。每一个切片都分别作为一个请求，只有当这4个切片都传输给后端了，即四个请求都成功发起，才上传成功，使用Promise.all()保证所有的切片都已经传输给后端。
 
+```js
 //数据处理
 async function uploadFile(list) {
     const requestList = list.map(({file,fileName,index,chunkName}) => {
@@ -110,15 +111,18 @@ upload.addEventListener('click', () => {
 
 ```
 
-```js
 2、后端
 （1）接收切片
+
 主要工作：
 第一：需要引入multiparty中间件，来解析前端传来的FormData对象数据；
 第二：通过path.resolve()在根目录创建一个文件夹--qiepian，该文件夹将存放另一个文件夹（存放所有的切片）和合并后的文件；
-第三：处理跨域问题。通过setHeader()方法设置所有的请求头和所有的请求源都允许；
+第三：处理跨域问题。通过setHeader()方法设置允许所有请求头和请求源；
+
 第四：解析数据成功后，拿到文件相关信息，并且在qiepian文件夹创建一个新的文件夹${fileName}-chunks，用来存放接收到的所有切片；
 第五：通过fse.move(filePath,fileName)将切片移入${fileName}-chunks文件夹，最后向前端返回上传成功的信息。
+
+```js
 
 //app.js
 const http = require('http')
@@ -171,6 +175,7 @@ server.listen(3000, () => {
 
 （2）合并切片
 第一：前端得到后端返回的上传成功信息后，通知后端合并切片：
+
 ```js
 // 通知后端去做切片合并
 function merge(size, fileName) {
@@ -258,3 +263,9 @@ function resolvePost(req) {
     })
 }
 ```
+
+<https://www.cnblogs.com/wendy12138/p/18346617> 断点续传
+
+# web-worker的基本用法并进行大文件切片上传（附带简易node后端）
+
+<https://juejin.cn/post/7351300892572745764>

@@ -1,11 +1,12 @@
 # mac
+
 ## 连接上显示屏的时候, 要找到 status bar 查看日期, 网络的话...去单击显示屏上的就行,只单击一次就行,还不用浪费时间在屏幕分界线定位上面///多好
+
 ## 不要那么在乎大小写, 统一成小写就行了(当然, 是说 coding 之外)
 
 ## 不要那么在乎截图不截图的,除非特别必要!!!(以后自己一定会用上或者别人看得到)
 
 # 触发角
-
 
 右上角锁屏，右下角调度中心。
 
@@ -16,6 +17,8 @@ use && to concat multiple commands
 # 每次都要自己手动关机，不要没电自动关机或者强制关机
 
 # baidu input百度输入法
+
+能不敲击换行符就不敲击换行符；
 能不切换输入法就不切换输入法（系统英文和百度输入法之间，比如说这样的场景，偶尔在许多中文中插入一点点英文）
 *敲击键盘时每一个字母敲击用力到位，就不用怕电脑反应不过来（当然不要一下子输入那么多字）*
 *原来输入时特别卡是因为百度输入法卡的缘故。稍微把设置简单化许多，就再也不卡了。*
@@ -91,7 +94,7 @@ ctrl+alt+cmd 空格、上下左右、L
 
 # 公司电脑打开 wechat，网易云，企业微信，chrome，预览 app，iTerm
 
-# 自己电脑打开 iTerm，vsc，启动本地服务，chrome；专门用来写代码，自研超级无敌的交叉表和普通表格用的。
+# 自己电脑打开 iTerm，vsc，启动本地服务，chrome；专门用来写代码，自研超级无敌的交叉表和普通表格用的
 
 两台自己名下 Mac 共用同一个 WIFI,都开启蓝牙的话可以共享剪贴板（好像需要登录同一个 apple ID），只有复制文本时，才可以复制到 iPhone 吧；
 
@@ -105,9 +108,9 @@ cmd_shift_5,great~~
 
 cmd_shift_5,great~~
 
-https://zhuanlan.zhihu.com/p/23333042
+<https://zhuanlan.zhihu.com/p/23333042>
 
-# 我自己的电脑只负责 coding 和调试，浏览所有非 localhost 的网页都在公司电脑上进行。
+# 我自己的电脑只负责 coding 和调试，浏览所有非 localhost 的网页都在公司电脑上进行
 
 copy——url 时，多个 url 都放到同一个标签页中。（空格隔开）
 
@@ -209,7 +212,7 @@ ctrl+alt+cmd 空格、上下左右、L
 
 # 公司电脑打开 wechat，网易云，企业微信，chrome，预览 app，iTerm
 
-# 自己电脑打开 iTerm，vsc，启动本地服务，chrome；专门用来写代码，自研超级无敌的交叉表和普通表格用的。
+# 自己电脑打开 iTerm，vsc，启动本地服务，chrome；专门用来写代码，自研超级无敌的交叉表和普通表格用的
 
 两台自己名下 Mac 共用同一个 WIFI,都开启蓝牙的话可以共享剪贴板（好像需要登录同一个 apple ID），只有复制文本时，才可以复制到 iPhone 吧；
 
@@ -224,9 +227,9 @@ cmd_shift_5,great~~
 cmd_shift_5,great~~
 juicy
 
-https://zhuanlan.zhihu.com/p/23333042
+<https://zhuanlan.zhihu.com/p/23333042>
 
-# 我自己的电脑只负责 coding 和调试，浏览所有非 localhost 的网页都在公司电脑上进行。
+# 我自己的电脑只负责 coding 和调试，浏览所有非 localhost 的网页都在公司电脑上进行
 
 copy——url 时，多个 url 都放到同一个标签页中。（空格隔开）
 
@@ -259,7 +262,6 @@ fn+del
 use && to concat multiple commands
 
 # 每次都要自己手动关机，不要没电自动关机或者强制关机
-
 
 # naming
 
@@ -308,7 +310,7 @@ ctrl+alt+cmd 空格、上下左右、L
 
 # 公司电脑打开 wechat，网易云，企业微信，chrome，预览 app，iTerm
 
-# 自己电脑打开 iTerm，vsc，启动本地服务，chrome；专门用来写代码，自研超级无敌的交叉表和普通表格用的。
+# 自己电脑打开 iTerm，vsc，启动本地服务，chrome；专门用来写代码，自研超级无敌的交叉表和普通表格用的
 
 两台自己名下 Mac 共用同一个 WIFI,都开启蓝牙的话可以共享剪贴板（好像需要登录同一个 apple ID），只有复制文本时，才可以复制到 iPhone 吧；
 
@@ -323,9 +325,9 @@ cmd_shift_5,great~~
 cmd_shift_5,great~~
 juicy
 
-https://zhuanlan.zhihu.com/p/23333042
+<https://zhuanlan.zhihu.com/p/23333042>
 
-# 我自己的电脑只负责 coding 和调试，浏览所有非 localhost 的网页都在公司电脑上进行。
+# 我自己的电脑只负责 coding 和调试，浏览所有非 localhost 的网页都在公司电脑上进行
 
 copy——url 时，多个 url 都放到同一个标签页中。（空格隔开）
 
@@ -351,8 +353,8 @@ fn+del
 
 # M1
 
-https://www.zhihu.com/question/430788802
-https://v2ex.com/t/812641
+<https://www.zhihu.com/question/430788802>
+<https://v2ex.com/t/812641>
 
 # 三支拖移
 
@@ -368,21 +370,21 @@ https://v2ex.com/t/812641
 
 # show hidden files
 
-https://nordlocker.com/blog/how-to-show-hidden-files-mac/
+<https://nordlocker.com/blog/how-to-show-hidden-files-mac/>
 
 > defaults write com.apple.Finder AppleShowAllFiles true
 > killall Finder
 
 # macOS 双击拖动或者双击选中文本开启命令
 
-https://macoshome.com/course/6058.html
+<https://macoshome.com/course/6058.html>
 sudo defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Dragging -bool true;
 
 # F12（chrome——devtools）
 
 f12 比 cmd shift c 好用多了；
 
-# 不能用手拿东西吃，要用纸巾包着，要不然还得洗手或者把键盘弄脏。
+# 不能用手拿东西吃，要用纸巾包着，要不然还得洗手或者把键盘弄脏
 
 # hand——off
 
@@ -403,12 +405,12 @@ wifi 信号的强弱取决于
 打汉字时一定要学会省略最后一两个字的韵母，养成这个高效习惯
 打英文时，一定要用好 auto-complete自动补全功能
 
-
 手指敲击在 mbp 自带键盘上会特别不舒服，一定要用带有保护膜的外接键盘好
 
 自带键盘的 t不易敲击，u 容易重复。
 
 # Windows
+
 今日事今日毕，每天电脑都关机，这样的话电脑永远不会死机
 Windows 播放键：Ctrl P
 cd c: 终端不区分大小写
@@ -416,19 +418,21 @@ cd c: 终端不区分大小写
 
 ipconfig /flushdns
 
-https://blog.csdn.net/Gu_fCSDN/article/details/104327423
+<https://blog.csdn.net/Gu_fCSDN/article/details/104327423>
 
 203.208.41.66 translate.google.com
 203.208.41.66 translate.googleapis.com
 paste in terminal:ｓｈｉｆｔ＋ｉｎｓ（ｆｎ＋ｉｎｓｅｒｔ）；ｃｔｒｌ＋ｉｎｓinsｉｎｓins（delete）
 ipconfig /flushdns
 
-
 ctrl+delete 删除光标后一个字符
 
 ## 文件管理器
+
 在顶部地址栏的逐层文件夹下拉icon，进行操作的话可以大幅增加文件夹切换速度。
+
 ## chrome
+
 ctrl (shift) tab
 
 windows7右下角显示桌面，
@@ -436,31 +440,55 @@ windows7右下角显示桌面，
 Typora，markdown利器，全选照片，播放幻灯片。‘：’
 
 # UnrecognizedToken
+
 '@babel' @babel
 
 换行：表格单元格内部这里可能是Alt+enter换行而不是ctrl+enter
+
 # 触摸板
+
 大拇指和手掌部分，不要误碰到触摸板！！手指稍微抬起，才能达到最快速度、最准确的输入
+
 # 鼠标光标
+
 光标能不动就不动，懒，我们应该养成持续转注的习惯，不被任何多余的事物，打扰到脑力活动，被打扰的话心流状态会突然中断，浪费掉许多时间和精力。浪费宝贵人生是很可耻的行为。
+
 # 鼠标滚轮
+
 能不滚动就不滚动，在我的一生中，尽量花最少的时间和精力放在鼠标滚轮上。只在专注于页面底端且十分特别想看下一页的时候，才去滚动滚轮或者触摸板向下滑动.而且每次滚动都是滚动的最大且合理的距离，而不是只滚动一点点。‘激活Windows’有比较小的透明度，可以不用管。
+
 # 重复项
+
 用...代替，可以节约许多coding时间
+
 # 缩放
+
 进入任何需要较长时间浏览的网页，能缩放就缩放，80%（可以节约许多滚动时间）
+
 # 按键
+
 准确度必须特别准确，特别是shift和空格键/右键菜单弹出键，节约生命时间和精力，不要有任何浪费。
+
 # 网盘
+
 同步电脑本地的文件，会导致电脑很卡！！所以配置低的电脑就不要尝试了！！
+
 # 远程共享
+
 Windows file explorer上\\开头+本地ip。
+
 # 切换窗口
+
 会造成旧窗口中的选中文本，丢失选中效果，所以只要切换时是双指按压contextmenu操作，就好了
+
 # 切换应用
+
 ## Windows
+
 alt+tab；alt+f4：弹出关机等选项；
+
 # baidu input
+
 拼音长串也存在home和end，要学会利用这两个快捷键
 输入单个英文单词后，敲击回车而不是空格（避开中英文间隔的空格，尽管前面并没有中文）
 自从禁用 mac 输入法设置里的自动切换到文稿的输入法之后，我就一直徜徉在百度输入法的美好世界里（只需要切换中英输入法，节省了许多工作时间，增加了 10 年的寿命）
@@ -481,32 +509,48 @@ baidu input:皮肤：暗夜精灵+字号：18 查找候选词时效率很高。�
 使用自定义的 snippet 好像会使电脑卡顿，那就 command c+command v（alt +enter)，还有使用 vsc_editor 本身和插件自带的 snippet 吧
 
 为了节约时间，电脑 100 年不关机~开会时永远不要带电脑。
+
 # hosts
+
 ## C:\Windows\System32\drivers\etc\hosts
-127.0.0.1 www.pornhub.com
+
+127.0.0.1 <www.pornhub.com>
 
 ipconfig /displaydns
 ipconfig /flushdns
 
-
 # chrome
+
 alt+方向键，网页历史记录的前进、后退。
+
 # number lock
+
 windows:F9
 
 # terminal
+
 进入D盘：D:
+
 # cmd
+
 用Alt+Enter切换窗口模式和全屏模式。
+
 # 压缩解压缩
+
 Mac-utf-8，Windows-gbk。
+
 # rm -rf
+
 rm -rf node_modules(git bash)
+
 # PowerShell
+
 输入中文会卡住，需要按一下shift。
-# 切换application时可以尽量不用鼠标，能不点鼠标就不点；复制粘贴时，提前聚焦。聚焦点不要随便更改；只最大化最小化一个application，其他程序只是观看。
+
+# 切换application时可以尽量不用鼠标，能不点鼠标就不点；复制粘贴时，提前聚焦。聚焦点不要随便更改；只最大化最小化一个application，其他程序只是观看
 
 # 换行符
+
 原来编辑器里面的换行符也可以被多选
 
 # snipaste截屏软件
@@ -516,3 +560,19 @@ rm -rf node_modules(git bash)
 # ls
 
 windows-dir 等效于linux的ls命令
+
+# 风扇
+
+不管春夏秋冬，使用电脑或在家休息时，都必须用一台较大功率的风扇，根据闷热程度使用不同等级的风力！！
+
+# 连不上网络
+
+可以拔下网线后再重新插回去，而不只是按紧网线。
+
+# firefox
+
+清除缓存：设置里面，不在F12里面。也可以在地址栏输入 firefox cache clear
+
+# windows-切换应用
+
+cmd+windows键+tab；cmd+windows键+tab+shift；

@@ -206,5 +206,104 @@ my-project@1.0.0 /path/to/my-project
 # nrm
 切换镜像源
 
+  npm ---------- <https://registry.npmjs.org/>
+  yarn --------- <https://registry.yarnpkg.com/>
+  tencent ------ <https://mirrors.cloud.tencent.com/npm/>
+  cnpm --------- <https://r.cnpmjs.org/>
+
+- taobao ------- <https://registry.npmmirror.com/>
+  npmMirror ---- <https://skimdb.npmjs.com/registry/>
+  huawei ------- <https://repo.huaweicloud.com/repository/npm/>
+  xiaoma ------- <http://192.168.0.71:4873/>
+
 # commander
 install依赖时用16+，run时用14.
+
+# nlark-error
+
+ENOTFOUND
+npm ERR! syscall getaddrinfo
+npm ERR! errno ENOTFOUND
+npm ERR! network request to <https://registry.nlark.com/@types/qs/download/@types/qs-6.9.7.tgz> failed, reason: getaddrinfo ENOTFOUND registry.nlark.com
+
+这个错误 `ENOTFOUND` 和 `getaddrinfo ENOTFOUND` 表明 npm 无法通过 DNS 解析找到 `registry.nlark.com` 这个域名，导致无法下载包。具体原因可能有几个，以下是一些可能的解决方案：
+
+### 1. **网络连接问题**
+
+- **DNS 问题**：这表明 DNS 解析出现了问题，可能是无法访问 `registry.nlark.com` 或者 DNS 配置错误。
+
+     **解决方法**：
+  - 检查你的网络连接是否正常。
+  - 尝试通过命令 `ping registry.nlark.com` 来检查是否可以访问该域名。如果无法访问，尝试更改 DNS 服务器（例如使用 Google DNS：`8.8.8.8` 和 `8.8.4.4`，或者 Cloudflare DNS：`1.1.1.1`）。
+  - 如果你是在公司网络中，可能会受到防火墙或代理的影响。尝试切换到不同的网络环境。
+
+### 2. **使用默认 npm 注册表**
+
+   你当前的 npm 配置使用的是 `https://registry.nlark.com`，这通常是某些公司或组织的私有 npm 镜像服务。可能这个镜像无法访问，或者配置不正确。
+
+   **解决方法**：
+
+- 你可以将 npm 注册表切换回默认的 npm 公共注册表 `https://registry.npmjs.org/`。使用以下命令切换：
+
+     ```bash
+     npm config set registry https://registry.npmjs.org/
+     ```
+
+### 3. **清除缓存**
+
+   有时，npm 的缓存可能会导致连接问题。尝试清除 npm 缓存并重新安装包：
+
+   ```bash
+   npm cache clean --force
+   ```
+
+### 4. **代理配置**
+
+   如果你处于公司网络中，可能需要配置代理才能访问外部资源。如果你的 npm 配置使用了代理，确保代理设置正确。可以通过以下命令查看和设置代理：
+xm123456
+   查看当前代理设置：
+
+   ```bash
+   npm config get proxy
+   npm config get https-proxy
+   ```
+
+   如果需要设置代理：
+
+   ```bash
+   npm config set proxy http://your-proxy-server:port
+   npm config set https-proxy http://your-proxy-server:port
+   ```
+
+### 5. **检查 npm 配置**
+
+   你可以查看 npm 的配置文件是否有其他与网络相关的设置，比如是否配置了一个自定义的 registry。
+
+   检查当前 npm 配置：
+
+   ```bash
+   npm config list
+   ```
+
+### 6. **尝试使用 Yarn**
+
+   如果上述方法都没有解决问题，尝试使用 [Yarn](https://yarnpkg.com/) 作为包管理器。Yarn 在某些网络环境下可能会更加稳定：
+
+   ```bash
+   npm install -g yarn
+   yarn install
+   ```
+
+### 总结
+
+- 尝试检查和更换 DNS 设置。
+- 将 npm 的 registry 配置切换回默认的 `https://registry.npmjs.org/`。
+- 清除 npm 缓存，并检查代理和网络设置。
+- 如果网络环境受限，尝试使用 Yarn 作为替代。
+
+通过这些方法，你应该能够解决 `ENOTFOUND` 错误。如果仍然无法解决，请提供更多信息，我可以进一步帮助排查问题。
+
+直接去掉
+    "@types/qs": "^6.9.7",
+
+这一行就行。

@@ -1,7 +1,9 @@
-*设计模式是从许多优秀的软件系统中，总结出的成功的、能够实现可维护性、复用的设计方案，使用这些方案可以避免一些重复性工作*。
+*设计模式是从许多优秀的软件系统中，总结出的成功的、能够实现可维护性、复用的设计方案，使用这些方案可避免些重复性工作*。
 
 # 单例
+
 *一个类只能构造出唯一实例，比如弹框*
+
 ```js
 class Single{
   constructor(name){
@@ -25,7 +27,9 @@ console.log(single1 === single2);  // true，name：name1
 ```
 
 # 策略
+
 *根据不同参数命中不同的策略，如表单验证*
+
 ```js
 // 策略对象
 const strategies = {
@@ -62,8 +66,8 @@ const strategies = {
 // 验证类
 class Validator {
   constructor() {
-    this.cache = []; // 存储要验证的方法
-    this.errList = []; // 存储最终的验证结果
+    this.cache = []; // 存储要验证的方法validateFunctions
+    this.errList = []; // 存储最终的验证结果tips
   }
   add(value, rules) {
     for (let i = 0, rule; (rule = rules[i++]); ) {
@@ -122,11 +126,14 @@ let userInfo = {
   password: "1234",
   phoneNumber: "666"
 };
-let errorMsg = validataFunc(userInfo);
+let errorMsg = validateFunc(userInfo);
 console.log(errorMsg); // ['用户名长度不能小于2位', '密码长度不能小于6位', '请输入正确的手机号码格式']
 ```
+
 # 代理模式
+
 *代理对象和本体对象具有相同接口，如图片预加载*
+
 ```js
 // 代理模式
 let relImage = (function() {
@@ -163,7 +170,9 @@ proxyImage.setSrc(
 ```
 
 # decorator装饰者
+
 *在不改变对象自身的基础上，动态的给某个对象添加一些额外的职责，比如在函数执行前后添加新的方法*
+
 ```js
 function fuc() {
   console.log(2);
@@ -198,9 +207,10 @@ fuc();
 
 // 最终打印结果：4 1 2 3
 ```
-# 组合
-*组合模式在对象间形成树形结构，组合模式中基本对象和组合对象被一致对待，无须关心对象有多少层, 调用时只需在根部进行调用*
 
+# 组合
+
+*组合模式在对象间形成树形结构，组合模式中基本对象和组合对象被一致对待，无须关心对象有多少层, 调用时只需在根部调用*
 
 ```js
 class Combine {
@@ -211,21 +221,21 @@ class Combine {
     this.list.push(fn);
     return this; // 链式调用
   }
-  excute() {
+  execute() {
     for (let i = 0; i < this.list.length; i++) {
-      this.list[i].excute();
+      this.list[i].execute();
     }
   }
 }
 let comb1 = new Combine();
 comb1
   .add({
-    excute() {
+    execute() {
       console.log(1);
     }
   })
   .add({
-    excute() {
+    execute() {
       console.log(2);
     }
   });
@@ -233,12 +243,12 @@ comb1
 let comb2 = new Combine();
 comb2
   .add({
-    excute() {
+    execute() {
       console.log(3);
     }
   })
   .add({
-    excute() {
+    execute() {
       console.log(4);
     }
   });
@@ -246,12 +256,12 @@ comb2
 let comb3 = new Combine();
 comb3
   .add({
-    excute() {
+    execute() {
       console.log(5);
     }
   })
   .add({
-    excute() {
+    execute() {
       console.log(6);
     }
   });
@@ -263,7 +273,9 @@ comb4.excute();
 
 // 最终打印结果：1 2 3 4 5 6
 ```
+
 # 工厂
+
 *工厂模式是用来创建对象的最常用设计模式，不暴露创建对象的具体逻辑，而是将逻辑封装在一个函数中，该函数被视为一个工厂，比如jQuery的window.$*
 
 ```js
@@ -292,10 +304,12 @@ let p2 = VehicleFactory.create("bicycle");
 console.log(p1, p1 instanceof Vehicle); // {name: '汽车', color: '白色'} true
 console.log(p2, p2 instanceof Vehicle); // {name: '自行车', color: '黑色'} true
 ```
+
 # 访问者
+
 在不改变该对象的前提下访问其结构中元素的新方法
 
-Babel插件
+*Babel插件*
 
 ```js
 // 元素类
@@ -344,9 +358,11 @@ student.accept(englishTeacher); // 英语60
 ```
 
 # 发布订阅
+
 订阅者订阅相关主题，发布者通过发布主题事件的方式，通知订阅该主题的对象
 
-EventBus
+*EventBus*
+
 ```js
 手写发布订阅
 // 发布订阅模式
@@ -396,10 +412,12 @@ event.emit("change", 1, 2);
 event.emit("change", 2, 3);
 
 ```
-# 观察者
-一个对象有一些列依赖于它的观察者watcher，当对象发生变化时，会通知观察者进行更新
 
-vue双向绑定
+# 观察者
+
+*一个对象有一些列依赖于它的观察者watcher，对象变化时，会通知观察者更新*
+
+*vue双向绑定*
 
 ```js
 let data = {
@@ -425,9 +443,11 @@ console.log(data.name);
 // 依次打印： 更新 → get 佩奇 → 佩奇
 ```
 
-观察者与发布订阅模式的区别
-观察者模式：一个对象有一系列依赖于它的观察者（watcher），当对象发生变化时，会通知观察者进行更新
-发布订阅模式：订阅者订阅相关主题，发布者通过发布主题事件的方式通知订阅该主题的对象，发布订阅模式中可以基于不同的主题去执行不同的自定义事件
+## 观察者与发布订阅模式的区别
 
-https://link.juejin.cn/?target=https%3A%2F%2Fzhuanlan.zhihu.com%2Fp%2F472719016
-https://juejin.cn/post/6844903607452581896
+观察者模式：一个对象有一系列依赖于它的观察者（watcher），对象变化时，会通知观察者更新
+
+*发布订阅模式：订阅者订阅相关主题，发布者通过发布主题事件的方式，通知订阅该主题的对象，发布订阅模式中可以基于不同主题，去执行不同的自定义事件*
+
+<https://link.juejin.cn/?target=https%3A%2F%2Fzhuanlan.zhihu.com%2Fp%2F472719016>
+<https://juejin.cn/post/6844903607452581896>

@@ -500,3 +500,9 @@ export default ImageAnnotator;
 # xiaomarobot-Annotation
 
 currentSelectShape;polygonArrRef.current是一维数组，在Annotation组件内里面，目前不方便维护成二维数组的形式，还不具备绘制多个多边形的功能；
+
+# annotator
+
+```js
+
+```

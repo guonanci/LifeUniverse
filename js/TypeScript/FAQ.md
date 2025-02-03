@@ -176,3 +176,7 @@ structural typing C++, type erasure(var x: SomeInterface, output: var x)
 TypeScript removes type annotations, interfaces, type aliases, and other type system constructs during compilation. This means at run-time, there is no information that says that some variable `x` was declared as being of type `SomeInterface`. The lack of run-time type information can be surprising for programmers who are used to extensively using reflection or other metadata systems. Many questions in this FAQ boil down to 'because types are erased'.
 
 https://juejin.cn/post/6999985372440559624
+
+# a/index.tsx,a/indexl.tsx
+
+Cannot find module '../AlarmModeConf' or its corresponding type declarations.ts(2307)

@@ -61,3 +61,18 @@ yarn remove @react-navigation/material-top-tabs @react-navigation/drawer
 ➤ YN0000: ┌ Link step
 ➤ YN0000: └ Completed in 4s 951ms
 ➤ YN0000: Done with warnings in 13s 183ms
+
+# yarnrc
+
+```yml
+# npmAuditRegistry: "http://192.168.0.71:4873/"
+npmRegistryServer: "http://192.168.0.71:4873/"
+unsafeHttpWhitelist: [
+  "192.168.0.71",
+]
+
+```
+
+# yarn3-log
+
+ guard@workspace:. couldn't be built successfully (exit code 1, logs can be found here: C:\Users\Administrator\AppData\Local\Temp\xfs-fa21c608\build.log)

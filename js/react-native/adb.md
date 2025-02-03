@@ -97,3 +97,7 @@ React Native 开发中常用 `adb` 端口转发来调试应用。例如，如果
 - 端口冲突：确保本地和设备上的端口没有被其他应用占用。
 
 通过使用 `adb` 端口转发命令，你可以轻松调试和测试设备或模拟器上的网络服务，提升开发效率。
+
+# Skipping device '127.0.0.1:62001' (127.0.0.1:62001): Device is OFFLINE
+
+`adb devices;adb kill-server;adb start-server;adb devices;`

@@ -1,7 +1,56 @@
-https://github.com/microsoft/TypeScript/wiki/Performance
+<https://github.com/microsoft/TypeScript/wiki/Performance>
 
 # Optimization-killers
 
-https://github.com/petkaantonov/bluebird/wiki/Optimization-killers
+<https://github.com/petkaantonov/bluebird/wiki/Optimization-killers>
 
 why_did_you_update；
+
+# 页面卡顿怎么定位原因？？
+
+页面卡顿的原因可能有很多，定位时可以从以下几个方面入手：
+
+### 1. **性能分析工具**
+
+   使用浏览器的开发者工具来定位问题。常见的性能分析工具包括：
+
+- **Chrome DevTools**：
+  - 打开 Chrome 浏览器的开发者工具（`F12` 或 `Ctrl+Shift+I`），然后切换到 **Performance** 面板。
+  - 点击 **Record** 开始录制页面性能，进行页面操作或刷新页面。
+  - 停止录制后，查看时间线上的 **帧率**、**主线程**、**JS 执行时间** 等信息，分析哪些操作导致卡顿。
+- **Lighthouse**：
+  - 可以使用 Lighthouse 来分析页面的加载时间、资源利用情况、渲染性能等。
+  - 打开 DevTools -> **Lighthouse**，生成报告查看优化建议。
+
+### 2. **分析 JavaScript 执行**
+
+- **长时间的同步 JavaScript 执行**：如果页面中有很多阻塞主线程的 JavaScript 代码，会导致页面卡顿。检查是否有大量的同步代码在执行（例如循环或重计算）。
+- **异步操作**：确保尽量使用 `setTimeout`、`requestAnimationFrame` 等异步方法来避免阻塞主线程。
+- **内存泄漏**：内存泄漏会导致页面逐渐变慢，使用开发者工具中的 **Memory** 面板查看是否存在内存泄漏或过多的 DOM 节点。
+
+### 3. **检查网络请求**
+
+- **资源加载**：页面卡顿可能是因为资源加载慢，尤其是网络请求、图片、CSS、JavaScript 文件等。
+- 使用浏览器的 **Network** 面板查看资源加载时间，特别是是否有请求等待时间过长。
+- 可以优化请求方式，如使用懒加载、按需加载等，减少页面初始加载的资源量。
+
+### 4. **查看渲染性能**
+
+- 页面渲染性能差可能与 CSS 或布局有关。可以使用 **Layout** 和 **Paint** 时间查看渲染的耗时。
+- 复杂的 CSS 样式和大量的重绘重排（reflow/repaint）会影响性能。使用 `will-change` 提前声明即将变化的元素，减少不必要的重排。
+
+### 5. **检查 DOM 操作**
+
+- **大量的 DOM 操作**：如果页面中有大量频繁的 DOM 操作（例如频繁修改元素样式、增加/删除大量节点等），可能会导致卡顿。
+- **虚拟 DOM**：如果你使用的是 React 或 Vue 等框架，可以检查组件渲染是否有多余的更新，是否能减少不必要的重渲染。
+
+### 6. **硬件加速与 GPU**
+
+- 如果是图形渲染密集型页面（例如使用 Three.js 或其他图形库），可以尝试启用硬件加速。
+- 检查是否有涉及 GPU 渲染的操作，如果有，大量的图形处理可能会导致卡顿，尤其是当设备的 GPU 性能不足时。
+
+### 7. **外部库的性能**
+
+- 使用的外部库或插件是否优化得当？有些库可能没有很好的性能表现，导致页面卡顿。可以使用 **bundle analyzer** 等工具查看项目中是否引入了性能开销较大的依赖。
+
+通过以上方法，你可以逐步缩小问题范围，找出导致页面卡顿的根本原因。

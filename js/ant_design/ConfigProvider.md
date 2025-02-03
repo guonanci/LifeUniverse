@@ -1,3 +1,1 @@
-ConfigProvider.md
-
 prefixCls
