@@ -18,7 +18,7 @@ C: 10, 20
 D: 0, 10 and 10, 20
 答案
 答案: C
-一般的函数在执行之后是不能中途停下的。但是，生成器函数却可以中途 “停下”，之后可以再从停下的地方继续。当生成器遇到yield关键字的时候，会生成yield后面的值。注意，生成器在这种情况下不 返回 (return ) 值，而是 生成 (yield) 值。
+一般的函数在执行后不能中途停下。但生成器函数却可以中途 “停下”，之后可以再从停下的地方继续。当生成器遇到yield关键字时，会生成yield后面的值。注意，生成器在这种情况下不 返回 (return ) 值，而是 生成 (yield) 值。
 
 首先，我们用10作为参数i来初始化生成器函数。然后使用next()方法一步步执行生成器。第一次执行生成器的时候，i的值为10，遇到第一个yield关键字，它要生成i的值。此时，生成器 “暂停”，生成了10。
 
@@ -84,18 +84,19 @@ console.log(two.next().value) // 'b'
 console.log(two.next().value) // 'c'
 console.log(two.next().value) // undefined
 ```
+
 ```js
 async function* range(start, end) {
-	for (let i = start; i <= end; i++) {
-		yield Promise.resolve(i);
-	}
+ for (let i = start; i <= end; i++) {
+  yield Promise.resolve(i);
+ }
 }
 
 (async () => {
-	const gen = range(1, 3);
-	for await (const item of gen) {
-		console.log(item);
-	}
+ const gen = range(1, 3);
+ for await (const item of gen) {
+  console.log(item);
+ }
 })();
 A: Promise {1} Promise {2} Promise {3}
 B: Promise {<pending>} Promise {<pending>} Promise {<pending>}
@@ -109,20 +110,20 @@ D: undefined undefined undefined
 ```js
 选择哪一个？
 const teams = [
-	{ name: "Team 1", members: ["Paul", "Lisa"] },
-	{ name: "Team 2", members: ["Laura", "Tim"] }
+ { name: "Team 1", members: ["Paul", "Lisa"] },
+ { name: "Team 2", members: ["Laura", "Tim"] }
 ];
 
 function* getMembers(members) {
-	for (let i = 0; i < members.length; i++) {
-		yield members[i];
-	}
+ for (let i = 0; i < members.length; i++) {
+  yield members[i];
+ }
 }
 
 function* getTeams(teams) {
-	for (let i = 0; i < teams.length; i++) {
-		// ✨ SOMETHING IS MISSING HERE ✨
-	}
+ for (let i = 0; i < teams.length; i++) {
+  // ✨ SOMETHING IS MISSING HERE ✨
+ }
 }
 
 const obj = getTeams(teams);
@@ -138,6 +139,7 @@ D: return yield getMembers(teams[i].members)
 
 如果我们没有写 yield，return yield 或者 return，整个 Generator 函数不会第一时间 return 当我们调用 next 方法。
 ```
+
 *简述一下Generator函数：*
 传统的编程语言，早有异步编程的解决方案（其实是多任务的解决方案）。其中有一种叫做“协程”（coroutine），意思是多个线程互相协作，完成异步任务。
 
