@@ -582,6 +582,7 @@ dev to test 的 merge 改动文件很多的话，就不要合并，必须经过�
 
 # rebase
 
+`git pull --rebase`,`git config --global pull.rebase true`
 -i interactive
 
 <https://www.jianshu.com/p/4a8f4af4e803>
