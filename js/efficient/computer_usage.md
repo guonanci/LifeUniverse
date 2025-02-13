@@ -557,6 +557,8 @@ rm -rf node_modules(git bash)
 
 截屏快捷键：F1；截屏并复制：Ctrl+F1；贴图快捷键：F3
 
+# ScreenToGif.2.41.1.Setup.x64.msi
+
 # ls
 
 windows-dir 等效于linux的ls命令
