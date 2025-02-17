@@ -526,30 +526,40 @@ data: {
 
 ## 区别于传统 web 开发的注意
 
-你之前可能习惯自由的web开发，但目前各家小程序都有很多限制。 当然限制是为了在框架层更好的优化用户体验，所以小程序的体验要优于web。 并且这些限制只是写法的限制，并不影响功能。 如果你做过微信小程序开发，对这些限制应该已经很了解了。如果没有做过小程序，请仔细阅读本节。
+*你之前可能习惯自由的web开发，但目前各家小程序都有很多限制。当然限制是为了在框架层更好的优化用户体验，所以小程序的体验要优于web。并且这些限制只是写法的限制，并不影响功能*。 如果你做过微信小程序开发，对这些限制应该已经很了解了。如果没有做过小程序，请仔细阅读本节。
 
 JS注意
-非H5端，不能使用浏览器自带对象，比如document、window、localstorage、cookie等，更不能使用jquery等依赖这些浏览器对象的框架。因为各家小程序快应用都不支持这些对象。
-没有这些浏览器自带对象并不影响业务开发，uni提供的api足够完成业务。
-uni的api在编译到web平台运行时，其实也会转为浏览器的js api。
-App端若要使用操作window、document的库，需要通过renderjs来实现。
-uni的api是多端可用的。在条件编译区，每个平台的专有api也可以使用，比如wx.、plus.等api可以分别在微信下和app下使用。
-出于降低小程序向uni-app迁移成本的考虑，wx的api在app里也可以直接运行，比如写wx.request和uni.request是一样的，但仍然建议仅在微信的条件编译区使用wx的api。
+ *非H5端，不能使用浏览器自带对象，比如document、window、localstorage、cookie等，更不能使用jquery等依赖这些浏览器对象的框架*。因为各家小程序快应用都不支持这些对象。
+
+ 没有这些浏览器自带对象并不影响业务开发，uni提供的api足够完成业务。
+ uni的api在编译到web平台运行时，其实也会转为浏览器的js api。
+
+*App端若要使用操作window、document的库，需要通过renderjs来实现*。
+ uni的api是多端可用的。在条件编译区，每个平台的专有api也可以使用，比如wx.、plus.等api可以分别在微信下和app下使用。
+
+ 出于降低小程序向uni-app迁移成本的考虑，wx的api在app里也可以直接运行，比如写wx.request和uni.request是一样的，但仍然建议仅在微信的条件编译区使用wx的api。
+
 Tag注意
-uni-app的tag同小程序的tag，和HTML的tag不一样，比如div要改成view，span要改成text、a要改成navigator。
-出于降低h5应用向uni-app迁移成本的考虑，写成div、span也可以运行在app和小程序上，因为uni-app编译器会把这些HTML标签编译为小程序标签。但仍然建议养成新习惯。
+ *uni-app的tag同小程序的tag，和HTML的tag不同*，比如*div要改成view，span要改成text、a要改成navigator*。
+ 出于降低h5应用向uni-app迁移成本的考虑，写成div、span也可以运行在app和小程序上，因为uni-app编译器会把这些HTML标签编译为小程序标签。但仍然建议养成新习惯。
+
 Css注意
-虽然大部分css样式在微信小程序和app中都可以支持，但推荐使用flex布局模型，这种布局更灵活高效且支持更多平台(比如nvue、快应用只支持flex布局)
-单位方面，uni-app默认为rpx。这是一种可跨端的通用单位 详见
+ 虽然大部分css样式在微信小程序和app中都可以支持，但*推荐使用flex布局模型，这种布局更灵活高效且支持更多平台*(比如*nvue、快应用只支持flex布局*)
+ 单位方面，*uni-app默认为rpx。这是一种可跨端的通用单位* 详见
+
 工程目录注意
-页面文件：放到pages目录下；推荐方案：新建一个页面目录，然后创建一个目录同名的.vue文件，如/pages/list/list.vue，接着在pages.json里完成注册。这与小程序的策略相同。
-自定义组件：放到component目录
-静态资源：如图片，固定放到static目录下。这是webpack的规则
+ 页面文件：放到*pages目录下*；推荐方案：新建一个页面目录，然后创建一个目录同名的.vue文件，如*/pages/list/list.vue*，接着在pages.json里完成注册。这与小程序的策略相同。
+ *自定义组件：放到component目录*
+ *静态资源：如图片，固定放到static目录下。这是webpack的规则*
+
 数据绑定方式的注意
-uni-app 基于Vue 2.0实现，开发者需注意Vue 1.0 -> 2.0 的使用差异，详见从 Vue 1.x 迁移
-每个页面支持使用原生title，首页支持使用原生底部tab，这些是要在pages.json里配置，这些并不是vue页面的一部分。当然vue里的js api也可以动态修改原生title
-虽然使用vue，但在app和小程序里，不是spa而是mpa
-位置坐标系统一为国测局坐标系gcj02，这种坐标系可以被多端支持。老版5+的百度定位和百度地图使用的是百度私有坐标系bd09ll，这种坐标系需要转换。新版uni-app里的百度地图已经默认改为gcj02。高德地图不受影响，一直是gcj02
+ uni-app 基于Vue 2.0实现，开发者需注意Vue 1.0 -> 2.0 的使用差异，详见从 Vue 1.x 迁移
+
+*每个页面支持使用原生title，首页支持使用原生底部tab，这些是要在pages.json里配置，这些并非vue页面的一部分。当然vue里的js api也可以动态修改原生title*
+
+*虽然使用vue，但在app和小程序里，不是spa而是mpa*
+
+*位置坐标系统一为国测局坐标系gcj02，这种坐标系可以被多端支持*。老版5+的百度定位和百度地图使用的是百度私有坐标系bd09ll，这种坐标系需要转换。新版uni-app里的百度地图已经默认改为gcj02。高德地图不受影响，一直是gcj02
 
 ## H5 开发注意
 
@@ -558,7 +568,9 @@ H5 发布到服务器注意：
 配置发行后的路径（发行在网站根目录可不配置），比如发行网站路径是 <www.xxx.com/html5，在> manifest.json 文件内编辑 h5 节点，router 下增加 base 属性为 html5
 
 点击菜单 发行-> H5
+
 在当下项目下的 unpackage/dist/build/web 目录找到出的资源，部署服务器（或者使用本地服务器预览），如需部署到相对路径（Vue2 项目支持本地file协议打开）参考：<https://ask.dcloud.net.cn/article/37432。> 4. 从 HBuilderX 4.06 开始，为了统一概念，编译目录从 h5 调整为 web，开发者的 CI/CD 流程需要同步进行更新。
+
 引用第三方 js 的方式：
 
 通过 npm 引入（通过条件编译，只有是 h5 平台才 import 相应的库）
@@ -590,48 +602,59 @@ H5 校验了更严格的 vue 语法，有些写法不规范会报警，比如：
 
 如果遇到跨域造成js无法联网，注意网络请求（request、uploadFile、downloadFile等）在浏览器存在跨域限制，解决方案有详见：<https://ask.dcloud.net.cn/article/35267>
 
-APP 和小程序的导航栏和 tabbar 均是原生控件，元素区域坐标是不包含原生导航栏和 tabbar 的；而 H5 里导航栏和 tabbar 是 div 模拟实现的，所以元素坐标会包含导航栏和tabbar的高度。为了优雅的解决多端高度定位问题，uni-app 新增了2个css变量：--window-top 和 --window-bottom，这代表了页面的内容区域距离顶部和底部的距离。举个实例，如果你想在原生tabbar 上方悬浮一个菜单，之前写 bottom:0。这样的写法编译到 h5 后，这个菜单会和 tabbar 重叠，位于屏幕底部。而改为使用 bottom:var(--window-bottom)，则不管在 app 下还是在h5下，这个菜单都是悬浮在 tabbar 上浮的。这就避免了写条件编译代码。当然仍然也可以使用 H5 的条件编译处理界面的不同。
+*APP 和小程序的导航栏和 tabbar 均是原生控件，元素区域坐标是不包含原生导航栏和 tabbar 的；而 H5 里导航栏和 tabbar 是 div 模拟实现的，所以元素坐标会包含导航栏和tabbar的高度*。
+
+为了优雅的解决多端高度定位问题，uni-app 新增了2个css变量：*--window-top* 和 --window-bottom，这代表了页面的内容区域距离顶部和底部的距离。举个实例，如果你想在原生tabbar 上方悬浮一个菜单，之前写 bottom:0。
+
+这样的写法编译到 h5 后，这个菜单会和 tabbar 重叠，位于屏幕底部。而改为使用 *bottom:var(--window-bottom)*，则不管在 app 下还是在h5下，这个菜单都是悬浮在 tabbar 上浮的。这就避免了写条件编译代码。当然仍然也可以使用 H5 的条件编译处理界面的不同。
 
 CSS 內使用 vh 单位的时候注意 100vh 包含导航栏，使用时需要减去导航栏和 tabBar 高度，部分浏览器还包含浏览器操作栏高度，使用时请注意。
 
 正常支持 rpx，px 是真实物理像素。暂不支持通过设 manifest.json 的 "transformPx" : true，把 px 当动态单位使用。
 
-使用罗盘、地理位置、加速计等相关接口需要使用 https 协议，本地预览（localhost）可以使用 http 协议。
+*使用罗盘、地理位置、加速计等相关接口需要使用 https 协议*，本地预览（localhost）可以使用 http 协议。
 
 PC 端 Chrome 浏览器模拟器设备测试的时候，获取位置 API 需要连接谷歌服务器。
 
-vue2组件内（页面除外）不支持 onLoad、onShow 等页面生命周期， vue3请使用组合式api监听
+*vue2组件内（页面除外）不支持 onLoad、onShow 等页面生命周期*， vue3请使用组合式api监听
 
-为避免和内置组件冲突，自定义组件请加上前缀（但不能是 u 和 uni）。比如可使用的自定义组件名称：my-view、m-input、we-icon，例如不可使用的自定义组件名称：u-view、uni-input，如果已有项目使用了可能造成冲突的名称，请修改名称，另外微信小程序下自定义组件名称不能以 wx 开头。
+*为避免和内置组件冲突，自定义组件请加上前缀（但不能是 u 和 uni）。比如可使用的自定义组件名称：my-view、m-input、we-icon，例如不可使用的自定义组件名称：u-view、uni-input*。
+
+如果已有项目使用了可能造成冲突的名称，请修改名称，另外*微信小程序下自定义组件名称不能以 wx 开头*。
 
 vue3 开发阶段不会自动处理语法兼容问题，如果在低版本浏览器上运行，需要自行处理，可参考详情。
 
 ## 小程序开发注意
 
-文件命名
-vue3 项目，页面或组件目录下，不能使用与 vue、nvue 同名的 js、ts 文件。
+### 文件命名
+
+*vue3 项目，页面或组件目录下，不能使用与 vue、nvue 同名的 js、ts 文件*。
 小程序端 vue 文件会被编译为同名的 js、json、wxml、wxss 文件，如果存在同名 js、ts 文件，会导致冲突。
 
-各家小程序实现机制不同，可能存在的平台兼容问题
+### 各家小程序实现机制不同，可能存在的平台兼容问题
+
 浏览器内核差异
-各家小程序的浏览器内核不同，可能会造成css兼容性问题，更多细节参考：<https://ask.dcloud.net.cn/article/1318>
+*各家小程序的浏览器内核不同，可能会造成css兼容性问题*，更多细节参考：<https://ask.dcloud.net.cn/article/1318>
 
 自定义组件渲染差异
 微信（可以使用virtualHost配置）/QQ/百度/抖音这四家小程序，自定义组件在渲染时会比App/H5端多一级节点，在写样式时需要注意：
 
-使用flex布局时，直接给自定义组件的父元素设置为display:flex不能影响到自定义组件内部的根节点，需要设置当前自定义组件为display:flex才可以。
-在自定义组件内部设置根元素高度为100%，不能撑满自定义组件父元素。需要同时设置当前自定义组件高度为100%才可以。
+使用flex布局时，直接给自定义组件的父元素设置为display:flex不能影响到自定义组件内部的根节点，需要*设置当前自定义组件为display:flex才可以*。
+
+在自定义组件内部设置根元素高度为100%，不能撑满自定义组件父元素。*需要同时设置当前自定义组件高度为100%才可以*。
+
 支付宝小程序默认启用了virtualHost配置不会插入节点，一般不存在如上问题。
 
-vendor.js 过大的处理方式
+### vendor.js 过大的处理方式
+
 小程序工具提示vendor.js过大，已经跳过es6向es5转换。这个转换问题本身不用理会，因为vendor.js已经是es5的了。
 
 关于体积控制，参考如下：
 
-使用运行时代码压缩
-HBuilderX创建的项目勾选运行-->运行到小程序模拟器-->运行时是否压缩代码
-cli创建的项目可以在package.json中添加参数--minimize，示例："dev:mp-weixin": "cross-env NODE_ENV=development UNI_PLATFORM=mp-weixin vue-cli-service uni-build --watch --minimize"
-使用分包优化，关于分包优化的说明
+- 使用运行时代码压缩
+  - HBuilderX创建的项目勾选‘运行-->运行到小程序模拟器-->运行时是否压缩代码’
+  - cli创建的项目可以在package.json中添加参数--minimize，示例："dev:mp-weixin": "cross-env NODE_ENV=development UNI_PLATFORM=mp-weixin vue-cli-service uni-build --watch --minimize"
+- 使用分包优化，关于分包优化的说明
 
 ### 各家小程序开发工具下载地址
 
