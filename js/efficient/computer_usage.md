@@ -1,3 +1,5 @@
+# huawei-computer
+shift_home:home,shift_end:end.
 # mac
 
 ## 连接上显示屏的时候, 要找到 status bar 查看日期, 网络的话...去单击显示屏上的就行,只单击一次就行,还不用浪费时间在屏幕分界线定位上面///多好
