@@ -1,3 +1,5 @@
+# npm : 无法加载文件 D:\...\nodejs\npm.ps1，因为在此系统上禁止运行脚本
+https://blog.csdn.net/pro_fan/article/details/120457551
 # registry
 
 https://npmmirror.com/
