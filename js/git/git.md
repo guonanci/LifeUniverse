@@ -498,7 +498,7 @@ ai 的 hotfix 命名：hotfix/ai-drillDown-20210922
 
 git pull --no-rebase
 git pull --rebase
-git config --config pull.rebase false
+git config pull.rebase false
 
 # Git is not working after macOS Update (xcrun: error: invalid active developer path (/Library/Developer/CommandLineTools)
 
@@ -561,6 +561,8 @@ error: cannot pull with rebase: You have unstaged changes.
 error: please commit or stash them.
 
 still commit,pull,push suc?
+
+`git stash;git stash apply`
 
 # reset
 

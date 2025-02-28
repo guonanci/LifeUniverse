@@ -405,3 +405,7 @@ ctrl+shift+s
 # autoSaveWhenWindowChange
 
 *简直就是专注神器，必须专注于自己写出来的每一行文字和代码！！不在保存文件动作上浪费任何时间！！*
+
+
+# 翻页
+splitRight后，html在左边，在右边
