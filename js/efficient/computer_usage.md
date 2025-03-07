@@ -1,5 +1,18 @@
+# TTime
+
+<https://ttime.timerecord.cn/introduce.html#%E4%B8%8B%E8%BD%BD>
+TTime是一款翻译软件，主要功能为输入翻译、截图翻译、划词翻译
+
+平时工作或学习中难免会有存在需要翻译的场景，但是又没有一款好用而又简单的翻译工具
+
+为此TTime出现了，它可以帮助我们更好的提高工作和学习效率
+
+Alt+Shift+E静默文字识别
+
 # huawei-computer
+
 shift_home:home,shift_end:end.
+
 # mac
 
 ## 连接上显示屏的时候, 要找到 status bar 查看日期, 网络的话...去单击显示屏上的就行,只单击一次就行,还不用浪费时间在屏幕分界线定位上面///多好
