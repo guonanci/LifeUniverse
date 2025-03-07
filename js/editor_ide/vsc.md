@@ -1,6 +1,13 @@
+# 六、高级工作流优化
+
+1. 多光标编辑
+选中变量 → Ctrl+D 连续选择相同词汇
+
+*列选择模式：Shift+Alt+鼠标拖动*
+
 # terminal
 
-https://github.com/microsoft/vscode/issues/44302
+<https://github.com/microsoft/vscode/issues/44302>
 
 ^[[A(up key)
 
@@ -95,7 +102,7 @@ go to definition
 
 pick definition
 
-## cmd .
+## cmd
 
 quick fix
 **Navigation**
@@ -277,12 +284,15 @@ Controls whether the explorer should automatically reveal and select files when 
 ES6 模板嵌套（代码上可以正常执行，可以 vsc 做不到正确的语法高亮：圆括号花括号中括号正确匹配成功，但是没有 vsc 语法高亮渲染不正确）。
 
 # snippets
+
 script===
+
 ```html
 <script>
 
 </script>
 ```
+
 特别好用！！
 [玛德我的 user-snippet.json 没有同步过来](https://stackoverflow.com/questions/44321000/visual-studio-code-user-snippets-not-working/48119011)
 
@@ -300,10 +310,10 @@ Editor-inline suggest:enabled
 
 # autoReveal
 
-https://stackoverflow.com/questions/41929709/open-current-editing-file-in-explorer-tree
-
+<https://stackoverflow.com/questions/41929709/open-current-editing-file-in-explorer-tree>
 
 # windows
+
 ctrl＋ｅｎｄｅｎｄ tiao转到文件末尾end
 切换全角半角：shift+space
 shift+end 选中至行尾；选中的文字背景色时蓝色；和搜狗输入法等等的全局快捷键冲突了。
@@ -314,8 +324,8 @@ ctrl +ｋｓ 保存全部，
 chrome的报错页面显示的function-name，双击的话可以直接用vscode打开
 
 # plugins
-vscode好用的插件系列
 
+vscode好用的插件系列
 
 git相关插件：gitLens、Git History、Git History Diff
 汉化插件： Chinese (Simplified)
@@ -335,77 +345,72 @@ SVG文件预览：SVG Viewer
 图片预览（在html或者css写地址的时候可直接预览）：Image Preview
 文件依赖分析（如：.vue文件可以通过该插件看到引用了哪些依赖）：Dependency Cruiser Extension
 颜色选择、设置：Color Highlight、Color Picker
-快速生成注释：vscode-fileheader 和 koroFileHeader 
+快速生成注释：vscode-fileheader 和 koroFileHeader
 npm模块导入智能提示： npm Intellisense
 接口请求：REST Client
 
 作者：趴窝熊猫
-链接：https://juejin.cn/post/7187272143657730108
+链接：<https://juejin.cn/post/7187272143657730108>
 来源：稀土掘金
 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
 
 插件：Eslint、Prettier、Code Spell Checker、Auto Close Tag,Auto Import,Auto Rename Tag, ES7 React/Redux snippets,
-https://zhuanlan.zhihu.com/p/347926284
-离线安装插件：https://blog.csdn.net/u012814856/article/details/80684376
-https://www.cnblogs.com/hwy6/p/15930217.html
+<https://zhuanlan.zhihu.com/p/347926284>
+离线安装插件：<https://blog.csdn.net/u012814856/article/details/80684376>
+<https://www.cnblogs.com/hwy6/p/15930217.html>
 方法一、
 
 1、先在可以联网的电脑上下载好插件
 
 2、找到已安装的插件列表文件：路径一般为 C:\用户\用户名\.vscode\extensions
 
-
-
-
-
-
-
 3、将所需要的插件复制到U盘，再拷贝到离线安装的电脑上的 .vscode/extensions 文件夹下即可，重启vscode 即可安装成功。
-
-
 
 方法二、
 
-1、到vscode官网 https://marketplace.visualstudio.com/vscode 搜索需要使用的插件名称
+1、到vscode官网 <https://marketplace.visualstudio.com/vscode> 搜索需要使用的插件名称
 
 2、下载对应的拓展程序文件，下载的文件的后缀是.vslx
 
-
-
-
-
-
-
   3、到vscode中安装
 
-
-
-
-
  4、选择下载的扩展文件进行安装即可
+
 # shortcuts
+
 ctrl+alt+s save_all
+
 # format格式化
+
 格式化工具会帮助我们处理空格问题，所以能空格替换删除键就用空格（节省ATP能量消耗），能不处理空格就不处理空格
 
 ctrl+b可以展开或者隐藏左边功能栏。
+
 # yarn
+
 解决vscode中不能使用yarn命令
 
-https://blog.csdn.net/qq_42114171/article/details/114872700
+<https://blog.csdn.net/qq_42114171/article/details/114872700>
+
 # settings sync
-https://code.visualstudio.com/docs/editor/settings-sync
+<https://code.visualstudio.com/docs/editor/settings-sync>
+
 # save all
+
 ctrl+k s,ctrl all s,
+
 # save as另存为
+
 ctrl+shift+s
+
 # 多行复制
+
 充分利用好这个功能
 
 # autoSaveWhenWindowChange
 
 *简直就是专注神器，必须专注于自己写出来的每一行文字和代码！！不在保存文件动作上浪费任何时间！！*
 
-
 # 翻页
+
 splitRight后，html在左边，在右边
