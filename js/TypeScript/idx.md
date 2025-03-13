@@ -1,3 +1,261 @@
+好的，我现在需要为用户提供TypeScript面试题及其答案的列表。用户之前已经询问过数据大屏前端面试题和TypeScript面试题，现在他们可能希望得到更具体的问题和对应的答案，以便更好地准备面试。
+
+首先，我要回顾之前的回答，确保这次的内容不重复，同时补充更多细节和实际例子。用户可能需要的是直接可以用于面试准备的材料，所以问题需要覆盖基础到进阶，并且答案要简洁明确。
+
+接下来，我需要整理常见的TypeScript面试题，覆盖基本概念、类型系统、泛型、工具类型、类与装饰器、工程化应用以及实战场景。每个问题需要附上清晰易懂的答案，可能还需要代码示例来说明。
+
+需要注意的是，答案不仅要正确，还要解释清楚背后的原理，例如解释interface和type的区别时，要提到声明合并和类型定义的限制。对于泛型的问题，要给出实际的代码例子，并说明如何应用。
+
+此外，用户可能对高级类型和工具类型感兴趣，比如条件类型、映射类型，以及如何自定义工具类型。因此，我需要包括一些高级问题，例如实现DeepReadonly或处理复杂的类型转换。
+
+还要考虑工程化方面的问题，比如tsconfig.json的配置，模块化，以及如何为第三方库编写声明文件。这些问题能展示候选人在实际项目中使用TypeScript的经验。
+
+最后，开放性问题如项目迁移、设计模式的应用，以及性能优化，这些能体现候选人的综合能力和实战经验。需要给出建议性的答案，说明解决思路和最佳实践。
+
+在整理过程中，要确保问题分类清晰，结构合理，答案准确且有深度，帮助用户全面准备TypeScript相关的面试。
+
+
+
+
+以下是常见的 TypeScript 面试题及其答案整理，涵盖基础到高级知识点，助你高效备战：
+
+---
+
+### **一、基础概念与类型系统**
+#### 1. **TypeScript 和 JavaScript 的核心区别是什么？**
+**答案**：
+• TypeScript 是 JavaScript 的超集，添加了**静态类型系统**，支持编译时类型检查，减少运行时错误。
+• 提供**接口、泛型、枚举、装饰器**等高级特性，提升代码可维护性和可读性。
+• 需通过编译器（如 `tsc`）将 TypeScript 转换为 JavaScript 才能在浏览器或 Node.js 中运行。
+
+---
+
+#### 2. **`any`、`unknown` 和 `never` 的区别？**
+**答案**：
+• **`any`**：禁用类型检查，允许任意操作（如调用不存在的方法），慎用。
+• **`unknown`**：表示“未知类型”，需通过类型断言或类型守卫（Type Guard）后才能操作，更安全。
+• **`never`**：表示永远不会发生的值（如抛出错误的函数返回值）。
+
+**示例**：
+```typescript
+let a: any = "hello";
+a.toFixed(); // 编译通过，但运行时报错！
+
+let b: unknown = "world";
+if (typeof b === "string") {
+  console.log(b.length); // 必须通过类型守卫
+}
+
+function error(): never {
+  throw new Error("error");
+}
+```
+
+---
+
+### **二、接口、类型别名与高级类型**
+#### 3. **`interface` 和 `type` 的区别？**
+**答案**：
+• **相同点**：均可定义对象、函数、联合类型等。
+• **不同点**：
+  • **`interface`**：
+    ◦ 支持**声明合并**（多次定义同一接口会合并）。
+    ◦ 更适合描述对象形状（如类实现接口）。
+  • **`type`**：
+    ◦ 可定义更复杂类型（如元组、字面量联合类型 `'A' | 'B'`）。
+    ◦ 不可重复声明。
+
+**示例**：
+```typescript
+// 接口合并
+interface User { name: string; }
+interface User { age: number; }
+const user: User = { name: "Alice", age: 20 };
+
+// 类型别名
+type Status = "success" | "error";
+```
+
+---
+
+#### 4. **如何实现一个 `DeepReadonly<T>` 工具类型？**
+**答案**：
+递归地将所有属性（包括嵌套对象）设置为 `readonly`。
+```typescript
+type DeepReadonly<T> = {
+  readonly [K in keyof T]: T[K] extends object ? DeepReadonly<T[K]> : T[K];
+};
+
+// 测试
+type User = {
+  name: string;
+  address: { city: string };
+};
+type ReadonlyUser = DeepReadonly<User>;
+// 结果：address 也是 readonly
+```
+
+---
+
+### **三、泛型与工具类型**
+#### 5. **泛型的作用是什么？写一个泛型函数示例**
+**答案**：
+泛型用于**创建可复用的组件，支持多种类型而不丢失类型信息**。
+
+**示例**：反转数组
+```typescript
+function reverse<T>(items: T[]): T[] {
+  return items.reverse();
+}
+const nums = reverse([1, 2, 3]); // 类型推断为 number[]
+const strs = reverse(["a", "b"]); // 类型推断为 string[]
+```
+
+---
+
+#### 6. **如何用泛型约束限制参数必须包含 `length` 属性？**
+**答案**：
+使用 `extends` 约束泛型参数。
+```typescript
+interface HasLength {
+  length: number;
+}
+
+function logLength<T extends HasLength>(obj: T): void {
+  console.log(obj.length);
+}
+
+logLength("hello"); // 5
+logLength({ length: 10, value: "test" }); // 10
+```
+
+---
+
+### **四、类与装饰器**
+#### 7. **抽象类和接口的区别？**
+**答案**：
+• **抽象类**：
+  • 可以包含具体方法和抽象方法（`abstract` 标记）。
+  • 通过 `extends` 继承，一个类只能继承一个抽象类。
+• **接口**：
+  • 仅定义方法签名和属性，无具体实现。
+  • 通过 `implements` 实现，一个类可实现多个接口。
+
+**示例**：
+```typescript
+abstract class Animal {
+  abstract move(): void;
+  eat() { console.log("eating"); }
+}
+
+interface Flyable {
+  fly(): void;
+}
+
+class Bird extends Animal implements Flyable {
+  move() { console.log("flying"); }
+  fly() { console.log("flapping wings"); }
+}
+```
+
+---
+
+#### 8. **如何用装饰器实现方法执行时间的日志打印？**
+**答案**：
+使用**方法装饰器**拦截方法调用，记录执行时间。
+```typescript
+function logTime(target: any, methodName: string, descriptor: PropertyDescriptor) {
+  const originalMethod = descriptor.value;
+  descriptor.value = function (...args: any[]) {
+    const start = Date.now();
+    const result = originalMethod.apply(this, args);
+    const end = Date.now();
+    console.log(`${methodName} 执行时间：${end - start}ms`);
+    return result;
+  };
+}
+
+class Calculator {
+  @logTime
+  add(a: number, b: number) {
+    for (let i = 0; i < 1e6; i++) {} // 模拟耗时操作
+    return a + b;
+  }
+}
+```
+
+---
+
+### **五、工程化与配置**
+#### 9. **如何为第三方库编写类型声明文件？**
+**答案**：
+在 `.d.ts` 文件中使用 `declare module` 扩展类型。
+
+**示例**：为未提供类型的库 `myLib` 添加声明
+```typescript
+// myLib.d.ts
+declare module "myLib" {
+  export function greet(name: string): string;
+}
+```
+
+---
+
+#### 10. **`tsconfig.json` 中 `strictNullChecks` 的作用？**
+**答案**：
+启用后（`true`），TypeScript 会严格检查 `null` 和 `undefined`，防止意外访问可能为 `null` 的值。
+
+**示例**：
+```typescript
+let a: number = null; // 报错（若 strictNullChecks 为 true）
+let b: number | null = null; // 正确
+```
+
+---
+
+### **六、实战场景与开放问题**
+#### 11. **如何设计一个类型安全的 API 请求层？**
+**答案**：
+• 使用泛型封装请求函数，约束请求参数和响应类型。
+• 示例：
+```typescript
+interface ApiResponse<T> {
+  code: number;
+  data: T;
+  message: string;
+}
+
+async function request<T>(url: string, params: any): Promise<ApiResponse<T>> {
+  const response = await fetch(url, { body: JSON.stringify(params) });
+  return response.json();
+}
+
+// 使用
+interface User { id: number; name: string; }
+const result = await request<User>("/api/user", { id: 1 });
+```
+
+---
+
+#### 12. **迁移 JavaScript 项目到 TypeScript 的关键步骤？**
+**答案**：
+1. 重命名文件为 `.ts`，逐步修复类型错误。
+2. 配置 `tsconfig.json`（如开启 `allowJs` 兼容旧代码）。
+3. 为第三方库添加类型声明（或安装 `@types` 包）。
+4. 优先迁移核心模块，逐步覆盖工具函数和组件。
+
+---
+
+### **附：学习资源**
+• **官方文档**：[TypeScript Handbook](https://www.typescriptlang.org/docs/handbook/)
+• **类型挑战**：[type-challenges](https://github.com/type-challenges/type-challenges)（提升类型编程能力）
+• **在线练习**：[TypeScript Playground](https://www.typescriptlang.org/play)（实时测试类型逻辑）
+
+掌握这些知识点后，结合项目中的实际应用案例，能大幅提升面试通过率！ 🚀
+
+
+
+
 JS=解释型，只能在运行时发现错误；是弱类型语言，没有静态类型选项；
 TS-可以在编译期间发现并纠正错误；是强类型语言，支持静态和动态类型、以及函数重载；
 

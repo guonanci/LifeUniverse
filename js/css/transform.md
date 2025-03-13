@@ -17,3 +17,10 @@ div {
 }
 ```
 stacking context，containing block
+
+
+https://developer.mozilla.org/zh-CN/docs/Web/CSS/transform
+
+当给一个元素加上transform属性的时候，这个元素就会具有relative的特性,所以若一个元素的父元素拥有tranform属性，那么子元素在使用定位属性的时候要注意。
+
+
