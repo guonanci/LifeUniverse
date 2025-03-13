@@ -154,7 +154,7 @@ Countdown.init("", "2016,12,19 17:34:44", "countdown1");
 单例模式，简单方便，缺点就是每次 init 都会拿一个新定时器，性能不好，继承和扩展能力一般，无法获取实例属性，导致执行状态不可见。
 
 ```js
-fucntion Countdown(startTime, endTime, ele) {
+function Countdown(startTime, endTime, ele) {
     this.ele = ele;
     this.startTime = (new Date(startTime).getTime()) ? (new Date(startTime).getTime()) : (new Date().getTime());
     this.endTime = new Date(endTime).getTime();
@@ -172,7 +172,7 @@ test.setTime();
 
 ```js
 var countdown = {};
-coutndown.leftPad = function (n, len) {};
+countdown.leftPad = function (n, len) {};
 countdown.timeToSecond = function (t) {};
 // 倒计时工厂
 // @param {[object]} obj 倒计时配置信息
@@ -246,7 +246,7 @@ $.countdown = function (deadline, domParam) {
         leftPad: function (n) {},
         // 计算差
         // @return {{sec: str, mini: str, hour: str, day: str, month: str, year: str}}
-        caculate: function () {},
+        calculate: function () {},
         // 刷新 dom
         refresh: function () {}
     };
@@ -259,7 +259,7 @@ $.countdown = function (deadline, domParam) {
         // 若当前毫秒数大于 MILLS_OFFSET 15，则修正延时数值与系统时间同步
         mills = new Date().getMilliseconds();
         timer = setTimeout(arguments.callee, first? (1000 - mills) : (mills > MILLS_OFFSET ? (1000 - mills) : 1000));
-        console.log(new Date().getMillseconds());
+        console.log(new Date().getMilliseconds());
     }
 
     // dom 结构和样式与 js 分离，这里指定倒计时的 dom 节点信息作为配置
