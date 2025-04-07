@@ -1,3 +1,243 @@
+```js
+uni.previewImage({
+					current: image_index,
+					urls: urls,
+				})
+
+uni.showModal({
+						content: "还没有输入内容哦!",
+						showCancel: false
+					})
+that.pubititle = '今日首次发布评论奖励5个谱币';
+							that.coinIf = true;
+```
+
+```html
+<!-- D:\projects\zupu\components\tsp-video\tsp-video\tsp-video-list\video-v.vue -->
+<view class="vodPlayer">
+							<video :style="{width:videoStyle.width}" style="height: 99.5vh;" :src="item.vodUrl"
+								:controls="false" :enable-progress-gesture="false" :show-loading="false"
+
+								:show-play-btn="false" :show-center-play-btn="false" :show-fullscreen-btn="false"
+								:vslide-gesture-in-fullscreen="false" :show-progress="false"
+								:object-fit="item.object_fit" :http-cache="true" :loop="loopPlay"
+								:muted="  (index == vodIndex && !muteSetup) ? false : true"
+								:id="'myVideo'+index+swId"
+								@play="startPlay(index)" @waiting="bufferVod(index)"
+								@timeupdate="timeupdateVod($event,index)" @error="errVod(index)"
+								@ended="endedVod(index)">
+							</video>
+
+<!-- 视频封面 -->
+						<view class="vodPause-img" v-if="item.coverShow">
+							<image :src="item.coverImg" :mode="item.object_fit == 'cover'?'aspectFill':'widthFix'"
+								class="cover-img"
+								:style="{opacity:item.coverOpacity?1:0,width:videoStyle.width,height:item.object_fit == 'cover'?videoStyle.height:0}">
+							</image>
+						</view>
+						<!-- 暂停图标 -->
+						<view class="vodPause-img" v-if="item.pauseShow">
+							<image src="https://oss.yanhuangernv.com/zpupload/static/new/vod-play.png"
+								class="vodPauseImage"></image>
+						</view>
+						<view @click="handClick($event,index)" @longpress="longpress(item)" class="vodPlayView"
+							:style="videoStyle" @touchstart="vodViewStart($event)" @touchmove="vodViewMove($event)"
+							@touchend="vodViewEnd($event)"></view>
+```
+```js
+// 无需登录的api common/config.js
+	noNeedLogin: [
+		'/api/sms/send',
+		'/addons/fastim/api.user/login',
+		'/addons/fastim/api.user/register',
+		'/addons/fastim/api.user/captchaPre',
+		'/addons/fastim/api.user/forgetPassword'
+	],
+
+   // #ifdef APP-PLUS || H5
+
+
+// 开始链接 ws
+		that.socketTask = uni.connectSocket({
+			// url: that.buildUrl('ws'),
+			url: 'wss://zyswoole.yanhuangernv.com:2089',
+			header: {
+				'content-type': 'application/json'
+			},
+			complete: res => {
+
+				console.log('wss结束的回调函数:',res)
+			},
+			success:res=>{
+					console.log('wss接口调用成功:',res)
+			},
+			fail:res=>{
+					console.log('wss接口调用失败',res)
+			}
+		});
+		that.socketTask.onOpen(function(res) {
+			// console.log("open:",res)
+			that.socketOpen = true
+			that.currentReconnectCount = 0;
+			that.needReconnect = true;
+			that.pageThat.commonTips = ''
+			if (that.timer != null) {
+				clearInterval(that.timer);
+			}
+			that.timer = setInterval(function() {
+				that.send({
+					c: 'ImBase',
+					a: 'ping'
+				})
+			}, 4750); //定时发送心跳
+		});
+
+   send: function(message) {
+		var that = this
+		if (!message) {
+			return;
+		}
+
+		let noNeedLogin = [
+			'ImBaselogin'
+		];
+
+		if (!noNeedLogin.includes(message.c + message.a) && !that.ready) {
+			uni.showToast({
+				title: '您网络信号有点差,网络连接成功后再试哦~',
+				icon: 'none',
+				mask: true
+			})
+			return;
+		}
+
+		if (that.socketTask && that.socketOpen) {
+			that.socketTask.send({
+				data: JSON.stringify(message),
+				fail: res => {
+					that.errorMsg.push(message);
+				}
+			});
+		} else {
+			that.errorMsg.push(message);
+		}
+	},
+
+
+imSession: function(data, pageThat, moveTop = true) {
+		// message页数据保障
+		var currentSessionIndex = -1;
+		if (data.sessionInfo.top) {
+			for (let m in pageThat.sessionListTop) {
+				if (pageThat.sessionListTop[m].id == data.sessionInfo.id) {
+					currentSessionIndex = m;
+					pageThat.sessionListTop[m].unreadMessagesNumber = (data.unreadMessagesNumber !== false) ? data.unreadMessagesNumber:pageThat.sessionListTop[m].unreadMessagesNumber
+					if (data.unreadMessagesNumber === 0) {
+						pageThat.sessionListTop[m].unread_fixed_msg = ''
+					}
+					if (data.lastMessage) {
+						pageThat.sessionListTop[m].last_time = data.lastMessage.last_time
+						pageThat.sessionListTop[m].last_message = data.lastMessage.last_message
+						pageThat.sessionListTop[m].unread_fixed_msg = data.lastMessage.unread_fixed_msg ? data.lastMessage.unread_fixed_msg.message:''
+					}
+					break;
+				}
+			}
+		} else {
+			for (let m in pageThat.sessionList) {
+				if (pageThat.sessionList[m].id == data.sessionInfo.id) {
+					currentSessionIndex = m;
+					pageThat.sessionList[m].unreadMessagesNumber = (data.unreadMessagesNumber !== false) ? data.unreadMessagesNumber:pageThat.sessionList[m].unreadMessagesNumber
+					if (data.unreadMessagesNumber === 0) {
+						pageThat.sessionList[m].unread_fixed_msg = ''
+					}
+					if (data.lastMessage) {
+						pageThat.sessionList[m].last_time = data.lastMessage.last_time
+						pageThat.sessionList[m].last_message = data.lastMessage.last_message
+						pageThat.sessionList[m].unread_fixed_msg = data.lastMessage.unread_fixed_msg ? data.lastMessage.unread_fixed_msg.message:''
+					}
+					break;
+				}
+			}
+		}
+
+		// 使用 `splice` 操作数组，会造成数据渲染异常/重复
+		// 改用 `filter`、`unshift`来调整会话顺序
+
+		if (currentSessionIndex !== -1) {
+
+			if (moveTop) {
+				if (data.sessionInfo.top) {
+					let currentSessionTemp = pageThat.sessionListTop[currentSessionIndex]
+					pageThat.sessionListTop = pageThat.sessionListTop.filter(item => {
+						return item.id != data.sessionInfo.id;
+					})
+					pageThat.sessionListTop.unshift(currentSessionTemp);
+				} else {
+					let currentSessionTemp = pageThat.sessionList[currentSessionIndex]
+					pageThat.sessionList = pageThat.sessionList.filter(item => {
+						return item.id != data.sessionInfo.id;
+					})
+					pageThat.sessionList.unshift(currentSessionTemp);
+				}
+			}
+		} else {
+			// 组装会话资料,建立会话
+			let sessionItem = {}
+			if (data.sessionInfo.type == 'single') {
+				if (data.sessionInfo.pushUser.status) {
+					let statusValue = parseInt(data.sessionInfo.pushUser.status.value)
+					if (statusValue == 0) {
+						sessionItem.avatar_gray = 'im-img-gray'
+						sessionItem.user_status = '[离线]'
+					} else if (statusValue == 2) {
+						sessionItem.avatar_gray = ''
+						sessionItem.user_status = '[忙碌]'
+					} else {
+						sessionItem.avatar_gray = ''
+						sessionItem.user_status = ''
+					}
+				}
+			}
+
+			sessionItem.id = data.sessionInfo.id
+			sessionItem.type = data.sessionInfo.type
+			sessionItem.chat_id = data.sessionInfo.chat_id
+			sessionItem.avatar = this.imgUrl(data.sessionInfo.pushUser.avatar)
+			sessionItem.nickname = data.sessionInfo.pushUser.nickname
+			sessionItem.top = data.sessionInfo.top ? 'session-top' : ''
+			sessionItem.last_time = data.lastMessage.last_time
+			sessionItem.last_message = data.lastMessage.last_message
+			sessionItem.shield = data.shield
+			sessionItem.unreadMessagesNumber = data.unreadMessagesNumber
+
+			if (data.sessionInfo.top) {
+				pageThat.sessionListTop.unshift(sessionItem);
+			} else {
+				// 将会话移动到非置顶会话的第一位
+				pageThat.sessionList.unshift(sessionItem);
+			}
+
+			this.pageRefresh.addressList = true
+		}
+	},
+
+   @touchmove.stop.prevent
+
+   // 组件通信
+   provide(){
+			let  that = this;
+		    return {
+				 fatherMethod:that.fatherMethod,
+				 xiaMethod:that.xiaMethod,
+				 shangMethod:that.shangMethod,
+				 openspousepeooufun:that.openspousepeooufun,
+				 zuobiao:that.zuobiao,
+				 openspousepeooufun1:that.openspousepeooufun1
+		    }
+		  },
+```
+
 uni-app 是一个使用 Vue.js 开发所有前端应用的框架，开发者编写一套代码，可发布到iOS、Android、Web（响应式）、以及各种小程序（微信/支付宝/百度/头条/飞书/QQ/快手/钉钉/淘宝）、快应用等多个平台。
 
 DCloud公司拥有900万开发者、数百万应用、12亿手机端月活用户、数千款uni-app插件、70+微信/qq群。阿里小程序工具官方内置uni-app（详见），腾讯课堂官方为uni-app录制培训课程（详见），开发者可以放心选择。
