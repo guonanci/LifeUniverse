@@ -3,8 +3,6 @@
 static目录里的图片总体积为137KB；网络波动的提示；点击左侧导航可以快速跳转到最左边吗？
 
 认认真真记录技术和产品层面遇到的任何不懂的地方，要做记录
-# 产品架构
-AIGC数字家谱+宗亲基因库+数字永生人
 # 技术架构
 
 Maxon Cinema 4D 2023（1.74G）已经被卸载掉了。
@@ -505,29 +503,171 @@ sendMsg(msg,type,sessionId){
   message_id:messageId,identity:initilizeData.userinfo.identity}})
 },
 fotmatMsg(data){
+  let msg=''
+  if(data.type=='image') msg='[图片]'
+  else if data.type=='audio' msg='[音频]'
+  else if data.type=='voice' msg='[语音消息]'
+  else if data.type=='video' msg='[视频]'
+  else if data.type=='file' msg='[文件]'
+  else if data.type=='link' msg='[链接]'
+  else if data.type=='kbs_list' msg=data.message.title
+  else
+    msg=data.message.replace(/<img.*?title="(.+?)".*?>/g, "[$1]")
+    msg = msg.replace(/<img.*?src="(.+?)".*?>/g, "[图片]");
+  return msg
+},
+imSession(data,pageThat,moveTop=true){
+  msg页数据保障
+  var currentSessionI=-1
+  if data.sessionInfo.top
+    for let m in pageThat.sessionListTop
+      if pageThat.sessionListTop[m].id==data.sessionInfo.id
+        currentSessionI=m
+        pageThat.sessionListTop[m].unreadMessagesNumber=(data.unreadMessagesNumber!==false)?data.unreadMessagesNumber
+        :pageThat.sessionListTop[m].unreadMessagesNumber
+        if data.unreadMessagesNumber==0 pageThat.sessionListTop[m].unread_fixed_msg=''
+        if data.lastMessage
+          pageThat.sessionListTop[m].last_time=data.lastMessage.last_time
+          pageThat.sessionListTop[m].last_msg=data.lastMessage.last_msg
+          pageThat.sessionListTop[m].unread_fixed_msg=data.lastMessage.unread_fixed_msg?.msg||''
+        break
+  else
+    for let m in pageThat.sessionList
+      if pageThat.sessionList[m].id==data.sessionInfo.id
+        currentSessionI=m
+        pageThat.sessionList[m].unreadMessagesNumber=data.unreadMessagesNumber!==false?data.unreadMessagesNumber:pageThat.sessionList[m].unreadMessagesNumber
+        if data.unreadMessagesNumber==0 pageThat.sessionList[m].unread_fixed_msg=''
+        if data.lastMsg
+          pageThat.sessionList[m].last_time=data.lastMsg.last_time
+          pageThat.sessionList[m].last_msg=data.lastMsg.last_msg
+          pageThat.sessionList[m].unread_fixed_msg=data.lastMsg.unread_fixed_msg?.msg||''
+        break
+  使用‘splice’操作数组，会造成数据渲染异常/重复；改用filter、unshift未调整会话顺序
+  if currentSessionI!==-1
+    if moveTop
+      if data.sessionInfo.top
+        let currentSessionTemp=pageThat.sessionListTop[currentSessionI]
+        pageThat.sessionListTop=pageThat.sessionListTop.filter(itm=>itm.id!=data.sessionInfo.id)
+        pageThat.sessionListTop.unshift(currentSessionTemp)
+      else
+        ..
+  else
+    组装会话资料，建立会话
+    let sessionItm={}
+    if data.sessionInfo.typ=='single'
+      if !data.sessionInfo.pushUser.status return
+      let statusV=parseInt(data.sessionInfo.pushUser.status.value)
+      if statusV==0
+        sessionItm.avatar_gray='im-img-gray'
+        sessionItm.user_status='[离线]'
+      else if statusV==2
+        sessionItm.avatar_gray==''
+        sessionItm.user_status='[忙碌]'
+      else
+        sessionItm.avatar_gray=''
+        sessionItm.user_status=''
+    sessionItm.id=data.sessionInfo.id
+    sessionItm.type=data.sessionInfo.typ
+    sessionItm.chat_id=data.sessionInfo.chat_id
+    sessionItm.avatar=imgUrl(data.sessionInfo.pushUser.avatar)
+    sessionItm.nickname=data.sessionInfo.pushUser.nickname
+    sessionItm.top=data.sessionInfo.top?'session-top':''
 
+    sessionItm.last_time=data.lastMsg.last_time,last_msg=data.lastMsg.last_msg,shield=data.shield,unreadMessagesNumber=data.unreadMessagesNumber
+
+    if data.sessionInfo.top pageThat.sessionListTop.unshift(sessionItem)
+    else 将会话移动到非置顶会话的第一位
+
+    pageRefresh.addressList=true
+
+},
+newMsgNotice(nickname,lastMsg,noticeAvatar,ringing=true){
+  新消息通知
+  if(parseInt(that.initilizeData.config.user_config.new_message_shake)==1) uni.vibrateLong({})
+  铃声
+  if ringing && parseInt(..new_msg_sound)==1 newMsgRinging
+},
+newMsgRinging(){
+  if this.innerAudioCxt
+    innerAudioCxt.play()
+    setTimeout innerAudioCxt.stop() 1500
+  else console.error('来信提示音播放失败！')
+},
+pushCid(type='save'){
+  if parseInt(initi..cfg.uni.push_switch)==0 return false
+  // #ifdef APP-PLUS
+  var cb=info=>{
+    send({c:'User',a:'pushCid',data:{clientid:info.clientid,platform:userPlatform,type}})
+  }
+  let info=plus.push.getClientInfo()
+  if info?.clientid cb(info)
+  else
+    var obtainingCIDTimer=setInterval(()=>{
+      info=plus.push.getClientInfo()
+      if info?.clientid
+        cb(info)
+        clearInterval(obtaingCIDTimer)
+    },50)
 }
 }
 
 ws://localhost:9527/webSocket/ ws://192.168.0.43:9527/webSocket/token
 {
-  "toUserId": 6, 用户id
+  event:'forward_message', // pick-user后，前端给后端发送forward-action：pickuser'1,2,3'；type:forward_type='message',message_ids：'';session_id:'' 一次只能转发一条消息，还可转发视频和收藏
+  之后后端给前端发送{event:'forward_message',data:{message:[{message:'1',type:'message'}],session_ids:['11']}}
+
+  "toUserId": 6, 用户id sessionId
+  action/type:'loadSession/readMsg',
   "content": "今晚一起吃饭吗？", 发送的聊天
   "timestamp": 1714281600000  时间戳
 }
+
+toUserId非必传是吧，有必要放到外层吗，不放在data里面吗；还有完全套用以前的数据结构，咋样？代码的执行逻辑有变动吗，从PHP到JAVA，数据结构和代码的执行逻辑可以做到克隆效果吗？
+
 转账密码888888
 
 模拟登录，js逆向，AI大模型无法做到API调用。
+# 产品架构
+AIGC数字家谱+宗亲基因库+数字永生人
 
+## 短视频、社交服务
+自媒体管理
+视频上传/转码，热门推荐
+广场热门，点赞评论的存储，推荐搜索
+视频模块点赞，评论，新增视频和热点
+消息聊天和添加好友
+## 文件服务
+图片/视频的存储
+apk包从阿里云拿到服务器，从服务器直接获取
+## 监控服务
+接口性能监控、异常告警、日志聚合
+## 家谱服务
+家谱树的生成增删改查，数据处理
+寻根模块
+名人堂增删改查，数据处理
+名人堂内排行榜
+ai传记支持新增上传，查询，排行，删除，修改
+百家姓查询，数据处理
+我的宗祠新增，线上祭祀，祭拜支付对接，寄哀留言
+## 特殊成员后台管理功能
+## 订单支付（用户、订单、支付、转账、提现）
+## 传承人模块（财务统计、升级、挂载、分佣、权限）
+
+pageRefresh：msg/sessionInfo/addressList;pageFun(this.pageDataLoad)
+				that.pageThat.pageDataLoad()
 # 日报
 ## 今日
-确认‘回到自己’的功能，是通过认证后接口就会返回peouserid，界面就会正常显示该按钮。无需改动。
-和子骏大致讨论长连接的聊天功能改动，确认新的接口格式，请求他的本地地址，转账或红包支付完后，回到聊天界面生成红包样式的聊天消息。
-阅读聊天消息界面message.vue的源码，查看部分长连接common/websocket.js的源码。
+开发A组B组共同确认了，我和子骏对接的是消息、广场、视频的接口，之后忙的话让广睿再一起对接。另外，共同确认了首页家谱轮播样式，让UI调整好消息的搜索样式，并设计好转账消息的样式
+梳理common/websocket.js;pagesim/session-info.vue,pick-user.vue的逻辑。
 
+确认转账逻辑为一条‘已转账xxx元’的消息样式，这一点和微信不同。
 
+和子骏确认好我发给他的长连接消息格式，以及他发给我的消息格式。
+
+安装雷电模拟器，在电脑上调整APP样式和交互，开始按照UI设计图调整消息列表界面的样式
 ## 明日
-继续阅读长连接消息源码的逻辑
+继续调整消息模块的APP样式，开发3.0版本的广场界面。
+
 
 
 仁苇，这两天经过和曾广睿、罗田浩、李子骏、以及其他同事的沟通。目前发现了一些前端项目框架上的问题，以及一些bug，并作出一些总结：
