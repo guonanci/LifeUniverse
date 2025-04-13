@@ -1,3 +1,5 @@
+# 电源线、钥匙
+电源线插到适当深度、钥匙插入适当深度才可以通电或解锁，并不一定是最深位置。
 # TTime
 
 <https://ttime.timerecord.cn/introduce.html#%E4%B8%8B%E8%BD%BD>
