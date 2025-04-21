@@ -673,6 +673,8 @@ pageRefresh：msg/sessionInfo/addressList;pageFun(this.pageDataLoad)
 开发家谱介绍页
 
 ## 明日
+继续开发家谱介绍页，开发新建普文页和家谱介绍-简介页
+
 # 周报
 上周主要是开发广场动态页的热门话题、动态列表项的样式和交互；开发视频页，全屏显示，显示作者和发布内容，更换图标；
 

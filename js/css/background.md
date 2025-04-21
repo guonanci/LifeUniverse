@@ -1,3 +1,19 @@
+background简写属性的顺序：是background-color，background-image，background-repeat，background-attachment，background-position，background-size。
+
+body
+{
+background: #ff0000 url(/i/eg_bg_03.gif) no-repeat fixed center/100% 100%;
+}
+注意：如果用background-size,一定要用/分隔
+————————————————
+
+                            版权声明：本文为博主原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接和本声明。
+
+原文链接：https://blog.csdn.net/m0_57033755/article/details/132457282
+
+
+
+
 # background-size
 
 图片可以保留原有尺寸，或者拉伸到新尺寸，或者在保持其原有比例的同时，缩放到元素的可用空间的尺寸。
