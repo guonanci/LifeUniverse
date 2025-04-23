@@ -662,15 +662,89 @@ pageRefresh：msg/sessionInfo/addressList;pageFun(this.pageDataLoad)
 更改广场推荐页的年龄、城市、行业、在线状态的mock。
 
 测试各个页面的真机的键盘弹出。
+
+```js
+{
+    "tokens": {
+        "im_tourists_token": "70764|8640000|1753951145|e50908d79375a789fb24e9ddc8aef736"
+    },
+    "userinfo": {
+        "id": 70764,
+        "type": "user",
+        "gongxiantype": "0",
+        "user_id": 7717,
+        "admin_id": 0,
+        "avatar": "https://oss.yanhuangernv.com/zpupload/20230911/bfc12ff4011731d7b4.jpeg",
+        "nickname": "郭南赐",
+        "email": "",
+        "status": 0,
+        "identity": "imuser"
+    },
+    "config": {
+        "theme": "default",
+        "wss_switch": "1",
+        "websocket_port": "2089",
+        "max_connections": "9144",
+        "ringing": "/assets/addons/fastim/audio/ringing.mp3",
+        "__CDN__": "",
+        "user_config": {
+            "login_status": "0",
+            "busy_reply": "你好，我现在有事不在，一会儿再和你联系~",
+            "send_message_key": "0",
+            "ecs_exit": "1",
+            "new_message_shake": "1",
+            "new_message_sound": "1",
+            "new_message_push_notice": "1",
+            "window_display_push_notice": "0",
+            "verify_method": "0",
+            "add_my_way": "0,1,2,3",
+            "temp_session": "1",
+            "input_status": "1",
+            "mobile_privacy": "1",
+            "email_privacy": "1",
+            "age_privacy": "1",
+            "occupation_privacy": "1",
+            "company_privacy": "1"
+        },
+        "upload": {
+            "cdnurl": false,
+            "uploadurl": "https://api.yanhuangernv.com/addons/fastim/index/upload",
+            "bucket": "local",
+            "maxsize": "10mb",
+            "mimetype": "jpg,png,bmp,jpeg,gif,webp,zip,rar,wav,mp4,mp3,webm",
+            "chunking": false,
+            "chunksize": 2097152,
+            "savekey": "/{year}{mon}{day}/{filemd5}{.suffix}",
+            "multipart": [],
+            "multiple": false,
+            "fullmode": false,
+            "thumbstyle": "",
+            "storage": "local"
+        },
+        "im_name": "FastIm",
+        "h5_url": "/h5",
+        "open_csr": "1",
+        "new_user_tip": "您准备好体验企业IM客服系统了吗？",
+        "distribution_group_select": "1",
+        "distribution_type": "2",
+        "welcome_new_user_msg": "欢迎访问！",
+        "no_csr_tip": "您好，人工客服工作时间为：上午8:00至下午18:00。请在工作时间联系人工客服哦~您也可以选择：1、使用不同的关键词询问智能客服。2、点击左下角菜单内的问题反馈给我们留言，我们会尽快与您联系~",
+        "uni_push_switch": "0",
+        "uni_push_appid": "",
+        "uni_push_appkey": "",
+        "uni_push_master_secret": "",
+        "package_name_android": ""
+    }
+}
+```
 # 日报
 ## 今日
 
-继续开发家谱介绍页，开发家谱介绍-新建谱文页、家谱介绍-简介页，告知佩琪更换家谱介绍模块的公共顶部背景图
+联调发送短信接口、登录接口，全局更改公共接口res.code==1更换成res.code==200的逻辑，修复res.data可能为null的判空异常
 
-通过‘hello uni-app’加深了解canvas/cover-view等组件的使用
-
+和子骏对接消息模块的接口：删除initialize和msg_prompt接口，避免没必要的请求，不设置消息提示音；
 ## 明日
-和子骏对接消息模块的接口、长消息连接的消息格式
+和子骏继续对接消息模块的接口、长消息连接的消息格式
 
 # 周报
 上周主要是开发：
