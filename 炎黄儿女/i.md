@@ -769,6 +769,30 @@ pick-user: serach 已废弃；被new-contact的searchNewContact替代；
 new-contact:openSession
 pick-user forward
 
+distributionGroupSelect啥意思？？--distributionCsr
+loadKbs 客服代表分组、联系人工客服
+
+OPEN_SESSION打开会话；DISTRIBUTION_CSR客服代表分组的选择操作，打开已有的客服对话或者新建客服对话；LOAD_KBS加载客服分组；GROUP_CHAT_NOTICE_OPT查看群公告详情；
+
+INFO_DETAIL查看用户详情；LOAD_CONTACT获取好友数量和群数量；LOAD_SESSION_LIST加载会话列表；SESSION_OPERATION会话操作（置顶、取消置顶、删删除）
+
+SEND_ORDER查看合同；
+
+infoDetial info-detail(ws.js Line887) getUploadMultipart(edit-info.vue);
+
+familytrees.vue;
+
+address-list：新的朋友、常用联系人、群聊
+
+个人搜索+群聊搜索+外面大搜索（xhr），添加好友申请与确认同意（socket） ；
+
+socket搜索出所有sessions对话列表，session页面的操作，比如：置顶和取消置顶、删除会话、发送消息（图片+视频+收藏+语音） 、转发消息给多个好友；
+
+查看用户主页内的信息（xhr）；
+
+群聊设置，设置管理员，管理员权限管理
+
+
 top-contacts: loadContact top-friend取消置顶
 {"c":"User","a":"sessionOperation","data":{"id":12442,"action":"session-top","source":"uni-app"}}
 
@@ -779,20 +803,20 @@ top-contacts: loadContact top-friend取消置顶
 {"event":"load_session_list","data":{"session":[{"sessionInfo":{"id":12442,"type":"single","user_one":70042,"user_two":70764,"chat_id":0,"createtime":1744349975,"deleteuser":0,"aiid":0,"gc_chat_id":null,"gc_history_message":null,"jointime":null,"m_createtime":1744349975,"top":1,"pushUser":{"id":70042,"type":"user","gongxiantype":"2","avatar":"zpupload\/image\/touxiang\/42.jpg","nickname":"\u5f20\u6167\u7433","status":{"value":0,"chinese":"\u79bb\u7ebf"},"bio":"\u8fd9\u5bb6\u4f19\u5f88\u61d2\uff0c\u4ec0\u4e48\u4e5f\u6ca1\u5199\uff01","gender":{"chinese":"\u5973","value":"female"},"welcome_msg":null,"fu_user_id":7042,"group":"all_friends","friend":true,"remark":"","nickname_origin":"\u5f20\u6167\u7433"},"searchContinue":true},"lastMessage":{"last_time":"1\u5468\u524d","last_message":"\u6211\u4eec\u5df2\u7ecf\u662f\u597d\u53cb\u4e86~","unread_fixed_msg":""},"unreadMessagesNumber":0},{"sessionInfo":{"id":11793,"type":"service","user_one":70764,"user_two":0,"chat_id":3,"createtime":1743164936,"deleteuser":0,"aiid":0,"gc_chat_id":null,"gc_history_message":null,"jointime":null,"m_createtime":1745393789,"top":null,"searchContinue":false,"pushUser":{"nickname":"\u5ba2\u670d\u5c0f\u708e","avatar":"\/assets\/addons\/fastim\/img\/csr.png","id":3,"bio":"\u63a5\u53d7\u5ba2\u670d\u670d\u52a1\u6d88\u606f"}},"lastMessage":{"last_time":"2\u5468\u524d","last_message":"22","unread_fixed_msg":""},"unreadMessagesNumber":0},{"sessionInfo":{"id":12262,"type":"service","user_one":70764,"user_two":0,"chat_id":1,"createtime":1743991461,"deleteuser":0,"aiid":0,"gc_chat_id":null,"gc_history_message":null,"jointime":null,"m_createtime":1745392474,"top":null,"searchContinue":false,"pushUser":{"nickname":"\u65b0\u670b\u53cb","avatar":"\/assets\/addons\/fastim\/img\/new_friends.png","id":1,"bio":"\u63a5\u53d7\u65b0\u597d\u53cb\u9a8c\u8bc1\u6d88\u606f"}},"lastMessage":{"last_time":"15:14","last_message":"\u7533\u8bf7\u6dfb\u52a0Jun\u4e3a\u597d\u53cb","unread_fixed_msg":""},"unreadMessagesNumber":0},{"sessionInfo":{"id":12350,"type":"service","user_one":70764,"user_two":0,"chat_id":2,"createtime":1744187860,"deleteuser":0,"aiid":0,"gc_chat_id":null,"gc_history_message":null,"jointime":null,"m_createtime":1744961575,"top":null,"searchContinue":false,"pushUser":{"nickname":"\u7fa4\u901a\u77e5","avatar":"data:image\/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgaGVpZ2h0PSIxMDAiIHdpZHRoPSIxMDAiPjxyZWN0IGZpbGw9InJnYigyNTUsMTc1LDgxKSIgeD0iMCIgeT0iMCIgd2lkdGg9IjEwMCIgaGVpZ2h0PSIxMDAiPjwvcmVjdD48dGV4dCB4PSI1MCIgeT0iNTAiIGZvbnQtc2l6ZT0iNTAiIHRleHQtY29weT0iZmFzdCIgZmlsbD0iI2ZmZmZmZiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgdGV4dC1yaWdodHM9ImFkbWluIiBkb21pbmFudC1iYXNlbGluZT0iY2VudHJhbCI+576kPC90ZXh0Pjwvc3ZnPg==","id":2,"bio":"\u63a5\u53d7\u7fa4\u804a\u901a\u77e5\u6d88\u606f"}},"lastMessage":{"last_time":"5\u5929\u524d","last_message":"\u674e\u5b50\u9a8f\u9000\u51fa\u4e86\u7fa4\u804a\u90ed\u6c0f\u5bb6\u8c31","unread_fixed_msg":""},"unreadMessagesNumber":1},{"sessionInfo":{"id":12440,"type":"single","user_one":70045,"user_two":70764,"chat_id":0,"createtime":1744349964,"deleteuser":0,"aiid":0,"gc_chat_id":null,"gc_history_message":null,"jointime":null,"m_createtime":1744349964,"top":null,"pushUser":{"id":70045,"type":"user","gongxiantype":"2","avatar":"zpupload\/image\/touxiang\/45.jpg","nickname":"\u6797\u7433","status":{"value":0,"chinese":"\u79bb\u7ebf"},"bio":"\u8fd9\u5bb6\u4f19\u5f88\u61d2\uff0c\u4ec0\u4e48\u4e5f\u6ca1\u5199\uff01","gender":{"chinese":"\u5973","value":"female"},"welcome_msg":null,"fu_user_id":7045,"group":"all_friends","friend":true,"remark":"","nickname_origin":"\u6797\u7433"},"searchContinue":true},"lastMessage":{"last_time":"1\u5468\u524d","last_message":"\u6211\u4eec\u5df2\u7ecf\u662f\u597d\u53cb\u4e86~","unread_fixed_msg":""},"unreadMessagesNumber":0},{"sessionInfo":{"id":12438,"type":"single","user_one":70070,"user_two":70764,"chat_id":0,"createtime":1744349927,"deleteuser":0,"aiid":0,"gc_chat_id":null,"gc_history_message":null,"jointime":null,"m_createtime":1744349927,"top":null,"pushUser":{"id":70070,"type":"user","gongxiantype":"2","avatar":"zpupload\/image\/touxiang\/70.jpg","nickname":"\u80e1\u8431","status":{"value":0,"chinese":"\u79bb\u7ebf"},"bio":"\u8fd9\u5bb6\u4f19\u5f88\u61d2\uff0c\u4ec0\u4e48\u4e5f\u6ca1\u5199\uff01","gender":{"chinese":"\u5973","value":"female"},"welcome_msg":null,"fu_user_id":7070,"group":"all_friends","friend":true,"remark":"","nickname_origin":"\u80e1\u8431"},"searchContinue":true},"lastMessage":{"last_time":"1\u5468\u524d","last_message":"\u6211\u4eec\u5df2\u7ecf\u662f\u597d\u53cb\u4e86~","unread_fixed_msg":""},"unreadMessagesNumber":0},{"sessionInfo":{"id":12437,"type":"single","user_one":70096,"user_two":70764,"chat_id":0,"createtime":1744349806,"deleteuser":0,"aiid":0,"gc_chat_id":null,"gc_history_message":null,"jointime":null,"m_createtime":1744349806,"top":null,"pushUser":{"id":70096,"type":"user","gongxiantype":"2","avatar":"zpupload\/image\/touxiang\/96.jpg","nickname":"\u5f20\u9759\u8431","status":{"value":0,"chinese":"\u79bb\u7ebf"},"bio":"\u8fd9\u5bb6\u4f19\u5f88\u61d2\uff0c\u4ec0\u4e48\u4e5f\u6ca1\u5199\uff01","gender":{"chinese":"\u5973","value":"female"},"welcome_msg":null,"fu_user_id":7096,"group":"all_friends","friend":true,"remark":"","nickname_origin":"\u5f20\u9759\u8431"},"searchContinue":true},"lastMessage":{"last_time":"1\u5468\u524d","last_message":"\u6211\u4eec\u5df2\u7ecf\u662f\u597d\u53cb\u4e86~","unread_fixed_msg":""},"unreadMessagesNumber":1},{"sessionInfo":{"id":12436,"type":"single","user_one":70093,"user_two":70764,"chat_id":0,"createtime":1744349788,"deleteuser":0,"aiid":0,"gc_chat_id":null,"gc_history_message":null,"jointime":null,"m_createtime":1744349788,"top":null,"pushUser":{"id":70093,"type":"user","gongxiantype":"2","avatar":"zpupload\/image\/touxiang\/93.jpg","nickname":"\u738b\u6615","status":{"value":0,"chinese":"\u79bb\u7ebf"},"bio":"\u8fd9\u5bb6\u4f19\u5f88\u61d2\uff0c\u4ec0\u4e48\u4e5f\u6ca1\u5199\uff01","gender":{"chinese":"\u5973","value":"female"},"welcome_msg":null,"fu_user_id":7093,"group":"all_friends","friend":true,"remark":"","nickname_origin":"\u738b\u6615"},"searchContinue":true},"lastMessage":{"last_time":"1\u5468\u524d","last_message":"\u6211\u4eec\u5df2\u7ecf\u662f\u597d\u53cb\u4e86~","unread_fixed_msg":""},"unreadMessagesNumber":1},{"sessionInfo":{"id":12353,"type":"group","user_one":70764,"user_two":0,"chat_id":742,"createtime":1744188197,"deleteuser":0,"aiid":0,"gc_chat_id":742,"gc_history_message":0,"jointime":1744188197,"m_createtime":1744188197,"top":null,"searchContinue":true,"pushUser":{"nickname":"\u5f00\u53d1B\u7ec4","avatar":"data:image\/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgaGVpZ2h0PSIxMDAiIHdpZHRoPSIxMDAiPjxyZWN0IGZpbGw9InJnYigyMjksMTYwLDIyOSkiIHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIj48L3JlY3Q+PHRleHQgeD0iNTAiIHk9IjUwIiBmb250LXNpemU9IjUwIiB0ZXh0LWNvcHk9ImZhc3QiIGZpbGw9IiNmZmZmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiIHRleHQtcmlnaHRzPSJhZG1pbiIgZG9taW5hbnQtYmFzZWxpbmU9ImNlbnRyYWwiPuW8gDwvdGV4dD48L3N2Zz4=","id":742,"bio":"B","history_message":0},"shield":false},"lastMessage":{"last_time":"1\u5468\u524d","last_message":"\u4f60\u5df2\u7ecf\u662f\u7fa4\u6210\u5458\u4e86\uff0c\u548c\u5927\u5bb6\u6253\u4e2a\u62db\u547c\u5427~","unread_fixed_msg":""},"unreadMessagesNumber":0},{"sessionInfo":{"id":12310,"type":"single","user_one":70764,"user_two":2266,"chat_id":0,"createtime":1744098857,"deleteuser":0,"aiid":0,"gc_chat_id":null,"gc_history_message":null,"jointime":null,"m_createtime":1744187618,"top":null,"pushUser":{"id":2266,"type":"user","gongxiantype":"0","avatar":"https:\/\/oss.yanhuangernv.com\/zpupload\/20240920\/a5796b41c9bf306aa0.jpg","nickname":"\u66fe\u5e7f\u777f","status":{"value":1,"chinese":"\u5728\u7ebf"},"bio":"\u8fd9\u5bb6\u4f19\u5f88\u61d2\uff0c\u4ec0\u4e48\u4e5f\u6ca1\u5199\uff01","gender":{"chinese":"\u4fdd\u5bc6","value":"secrecy"},"welcome_msg":null,"fu_user_id":3349,"group":"all_friends","friend":true,"remark":"","nickname_origin":"\u66fe\u5e7f\u777f"},"searchContinue":true},"lastMessage":{"last_time":"1\u5468\u524d","last_message":"1","unread_fixed_msg":""},"unreadMessagesNumber":0},{"sessionInfo":{"id":12263,"type":"single","user_one":70764,"user_two":70556,"chat_id":0,"createtime":1743991535,"deleteuser":0,"aiid":0,"gc_chat_id":null,"gc_history_message":null,"jointime":null,"m_createtime":1744186860,"top":null,"pushUser":{"id":70556,"type":"user","gongxiantype":"0","avatar":"https:\/\/oss.yanhuangernv.com\/zpupload\/20230911\/bfc12ff4011731d7b4.jpeg","nickname":"\u674e\u5b50\u9a8f","status":{"value":1,"chinese":"\u5728\u7ebf"},"bio":"\u8fd9\u5bb6\u4f19\u5f88\u61d2\uff0c\u4ec0\u4e48\u4e5f\u6ca1\u5199\uff01","gender":{"chinese":"\u4fdd\u5bc6","value":"secrecy"},"welcome_msg":null,"fu_user_id":7526,"group":"all_friends","friend":true,"remark":"","nickname_origin":"\u674e\u5b50\u9a8f"},"searchContinue":true},"lastMessage":{"last_time":"1\u5468\u524d","last_message":"[\u89c6\u9891]","unread_fixed_msg":""},"unreadMessagesNumber":0},{"sessionInfo":{"id":12319,"type":"group","user_one":70764,"user_two":0,"chat_id":736,"createtime":1744106031,"deleteuser":0,"aiid":0,"gc_chat_id":736,"gc_history_message":0,"jointime":1744106031,"m_createtime":1744106031,"top":null,"searchContinue":true,"pushUser":{"nickname":"\u90ed\u6c0f\u5bb6\u8c31","avatar":"data:image\/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgaGVpZ2h0PSIxMDAiIHdpZHRoPSIxMDAiPjxyZWN0IGZpbGw9InJnYigxODMsMjI5LDE2MCkiIHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIj48L3JlY3Q+PHRleHQgeD0iNTAiIHk9IjUwIiBmb250LXNpemU9IjUwIiB0ZXh0LWNvcHk9ImZhc3QiIGZpbGw9IiNmZmZmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiIHRleHQtcmlnaHRzPSJhZG1pbiIgZG9taW5hbnQtYmFzZWxpbmU9ImNlbnRyYWwiPumDrTwvdGV4dD48L3N2Zz4=","id":736,"bio":"","history_message":0},"shield":false},"lastMessage":{"last_time":"2\u5468\u524d","last_message":"\u90ed\u5357\u8d50:\u6b22\u8fce\u52a0\u5165\u90ed\u6c0f\u5bb6\u8c31\u5927\u5bb6\u5ead","unread_fixed_msg":""},"unreadMessagesNumber":0}],"data":{"refresh":"","method":"load"}}}
 {"event":"load_to_do","data":{"count":0,"data":{"method":"get-all-count"}}}
 
+前端代码不能随意改。不然曾总动不动就说‘跑路’。。
+
+
 # 日报
 ## 今日
-去除消息模块的登录弹窗；修复全局提示‘请稍后’为‘请稍候’；去除user页面的‘前往登录’弹窗；
+修复http.interceptor.js当中httpsSwitch设置出错，导致登录页无法发送验证码的问题
+开发搜索炎黄儿女所有用户界面的接口对接工作，和子骏对接搜索用户和群聊，对接中；
 
-对接LOADSESSIONLIST的消息发送和接收，暂时去除用不上的消息类型，比如LOADTODO。
+确认部分消息格式：
+OPEN_SESSION打开会话；DISTRIBUTION_CSR客服代表分组的选择操作，打开已有的客服对话或者新建客服对话；LOAD_KBS加载客服分组；GROUP_CHAT_NOTICE_OPT查看群公告详情；
 
-和子骏确认，消息模块按照操作流程来对接口和消息的数据格式：
-个人搜索+群聊搜索+外面大搜索（xhr），添加好友申请与确认同意（socket） ；
+INFO_DETAIL查看用户详情；LOAD_CONTACT获取好友数量和群数量；LOAD_SESSION_LIST加载会话列表；SESSION_OPERATION会话操作（置顶、取消置顶、删删除）
 
-socket搜索出所有sessions对话列表，session页面的操作，比如：置顶和取消置顶、删除会话、发送消息（图片+视频+收藏+语音） 、转发消息给多个好友；
-
-查看用户主页内的信息（xhr）；
-
-群聊设置，设置管理员，管理员权限管理
+SEND_ORDER查看合同；以及部分infoDetail的格式
 ## 明日
 和子骏继续按im系统的使用流程对接，消息模块的接口、长连接的消息格式
 
