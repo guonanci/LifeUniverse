@@ -805,18 +805,46 @@ top-contacts: loadContact top-friend取消置顶
 
 前端代码不能随意改。不然曾总动不动就说‘跑路’。。
 
+info.vue/pick-user.vue 跳转到edit-info.vue
 
+{"event":"info-detail","data":{"info":{"id":70764,"type":"user","gongxiantype":"0","avatar":"https:\/\/oss.yanhuangernv.com\/zpupload\/20230911\/bfc12ff4011731d7b4.jpeg","nickname":"\u90ed\u5357\u8d50","mobile":"18201949282","email":null,"age":0,"birthday":false,"occupation":0,"company":"","bio":"\u8fd9\u5bb6\u4f19\u5f88\u61d2\uff0c\u4ec0\u4e48\u4e5f\u6ca1\u5199\uff01","gender":{"chinese":"\u4fdd\u5bc6","value":"secrecy"},"status":{"value":1,"chinese":"\u5728\u7ebf"},"welcome_msg":null,"fu_user_id":7717,"friend":true,"remark":"","nickname_origin":"\u90ed\u5357\u8d50","groups":[{"id":"common","name":"\u5e38\u7528\u8054\u7cfb\u4eba"},{"id":"all_friends","name":"\u5168\u90e8\u597d\u53cb"}],"occupationData":["\u4fdd\u5bc6","\u8ba1\u7b97\u673a\/\u4e92\u8054\u7f51\/\u901a\u4fe1","\u751f\u4ea7\/\u5de5\u827a\/\u5236\u9020","\u533b\u7597\/\u62a4\u7406\/\u5236\u836f","\u91d1\u878d\/\u94f6\u884c\/\u6295\u8d44\/\u4fdd\u9669","\u5546\u4e1a\/\u670d\u52a1\u4e1a\/\u4e2a\u4f53\u7ecf\u8425","\u6587\u5316\/\u5e7f\u544a\/\u4f20\u5a92","\u5a31\u4e50\/\u827a\u672f\/\u8868\u6f14","\u5f8b\u5e08\/\u6cd5\u52a1","\u6559\u80b2\/\u57f9\u8bad","\u516c\u52a1\u5458\/\u884c\u653f\/\u4e8b\u4e1a\u5355\u4f4d","\u6a21\u7279","\u7a7a\u59d0","\u5b66\u751f","\u5176\u4ed6"]},"data":{"id":"70764","type":"user","method":"user-edit"}}}
+
+{"event":"session-setting","data":{"session_info":{"id":12353,"type":"group","user_one":70764,"user_two":0,"chat_id":742,"createtime":1744188197,"deleteuser":0,"aiid":0,"sessionUser":{"id":742,"leader":70764,"avatar":"data:image\/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgaGVpZ2h0PSIxMDAiIHdpZHRoPSIxMDAiPjxyZWN0IGZpbGw9InJnYigyMjksMTYwLDIyOSkiIHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIj48L3JlY3Q+PHRleHQgeD0iNTAiIHk9IjUwIiBmb250LXNpemU9IjUwIiB0ZXh0LWNvcHk9ImZhc3QiIGZpbGw9IiNmZmZmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiIHRleHQtcmlnaHRzPSJhZG1pbiIgZG9taW5hbnQtYmFzZWxpbmU9ImNlbnRyYWwiPuW8gDwvdGV4dD48L3N2Zz4=","nickname":"\u5f00\u53d1B\u7ec4","bio":"B","max_user_count":5000,"add_mode":0,"invite_join_group":0,"speak":0,"history_message":0,"retrieval_settings":0,"createtime":1744188197,"deletetime":null,"family_id":null,"qun_id":0,"user_count":2},"user":{"id":70764,"type":"user","gongxiantype":"0","avatar":"https:\/\/oss.yanhuangernv.com\/zpupload\/20230911\/bfc12ff4011731d7b4.jpeg","nickname":"\u90ed\u5357\u8d50","status":{"value":1,"chinese":"\u5728\u7ebf"},"bio":"\u8fd9\u5bb6\u4f19\u5f88\u61d2\uff0c\u4ec0\u4e48\u4e5f\u6ca1\u5199\uff01","gender":{"chinese":"\u4fdd\u5bc6","value":"secrecy"},"welcome_msg":null,"fu_user_id":7717,"friend":false,"remark":"","nickname_origin":"\u90ed\u5357\u8d50"},"top":false,"block_messages":false,"nickname":"","isLeader":true,"notice":"0\u6761"}}}
+
+{"event":"group_chat_member","data":{"data":{"id":"742","method":"get","limit":"11"},"group_member":[{"nickname":"","speaktime":"2\u5468\u524d","jointime":1744188197,"id":70764,"avatar":"https:\/\/oss.yanhuangernv.com\/zpupload\/20230911\/bfc12ff4011731d7b4.jpeg","status":1,"is_friend":true,"nickname_origin":"\u90ed\u5357\u8d50"},{"nickname":"","speaktime":"2\u5468\u524d","jointime":1744188197,"id":70556,"avatar":"https:\/\/oss.yanhuangernv.com\/zpupload\/20230911\/bfc12ff4011731d7b4.jpeg","status":0,"is_friend":70764,"nickname_origin":"\u674e\u5b50\u9a8f"}],"info":{"id":742,"leader":70764,"avatar":"data:image\/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgaGVpZ2h0PSIxMDAiIHdpZHRoPSIxMDAiPjxyZWN0IGZpbGw9InJnYigyMjksMTYwLDIyOSkiIHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIj48L3JlY3Q+PHRleHQgeD0iNTAiIHk9IjUwIiBmb250LXNpemU9IjUwIiB0ZXh0LWNvcHk9ImZhc3QiIGZpbGw9IiNmZmZmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiIHRleHQtcmlnaHRzPSJhZG1pbiIgZG9taW5hbnQtYmFzZWxpbmU9ImNlbnRyYWwiPuW8gDwvdGV4dD48L3N2Zz4=","nickname":"\u5f00\u53d1B\u7ec4","bio":"B","max_user_count":5000,"add_mode":0,"invite_join_group":0,"speak":0,"history_message":0,"retrieval_settings":0,"createtime":1744188197,"deletetime":null,"family_id":null,"qun_id":0,"user_count":2}}}
+
+{"event":"info-detail","data":{"info":{"id":742,"leader":{"id":70764,"type":"user","gongxiantype":"0","avatar":"https:\/\/oss.yanhuangernv.com\/zpupload\/20230911\/bfc12ff4011731d7b4.jpeg","nickname":"\u90ed\u5357\u8d50","mobile":"18201949282","email":null,"age":0,"birthday":"","occupation":0,"company":"","bio":"\u8fd9\u5bb6\u4f19\u5f88\u61d2\uff0c\u4ec0\u4e48\u4e5f\u6ca1\u5199\uff01","gender":{"chinese":"\u4fdd\u5bc6","value":"secrecy"},"status":{"value":1,"chinese":"\u5728\u7ebf"},"welcome_msg":null,"fu_user_id":7717,"friend":true,"remark":"","nickname_origin":"\u90ed\u5357\u8d50"},"avatar":"data:image\/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgaGVpZ2h0PSIxMDAiIHdpZHRoPSIxMDAiPjxyZWN0IGZpbGw9InJnYigyMjksMTYwLDIyOSkiIHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIj48L3JlY3Q+PHRleHQgeD0iNTAiIHk9IjUwIiBmb250LXNpemU9IjUwIiB0ZXh0LWNvcHk9ImZhc3QiIGZpbGw9IiNmZmZmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiIHRleHQtcmlnaHRzPSJhZG1pbiIgZG9taW5hbnQtYmFzZWxpbmU9ImNlbnRyYWwiPuW8gDwvdGV4dD48L3N2Zz4=","nickname":"\u5f00\u53d1B\u7ec4","bio":"B","max_user_count":5000,"add_mode":0,"invite_join_group":0,"speak":0,"history_message":0,"retrieval_settings":0,"createtime":"2\u5468\u524d","deletetime":null,"family_id":null,"qun_id":0,"user_count":2,"isLeader":true,"groupMember":742,"group":"all_group","groups":[{"id":"all_group","name":"\u5168\u90e8\u7fa4\u804a"}]},"data":{"method":"get","type":"group","id":"742","requestor":"70764","refresh":""}}}
+
+{"event":"load_session","data":{"message":[{"datetime":"2\u5468\u524d","data":[{"id":14623,"type":"system","group_id":742,"session_id":0,"sender_id":70764,"recipient_id":0,"message":{"message":"\u4f60\u5df2\u7ecf\u662f\u7fa4\u6210\u5458\u4e86\uff0c\u548c\u5927\u5bb6\u6253\u4e2a\u62db\u547c\u5427~","display_user":"all"},"read_number":0,"status":0,"createtime":1744188197,"deleteuser":null,"content":null,"sender":"me","userInfo":{"id":70764,"type":"user","gongxiantype":"0","avatar":"https:\/\/oss.yanhuangernv.com\/zpupload\/20230911\/bfc12ff4011731d7b4.jpeg","nickname":"\u90ed\u5357\u8d50","status":{"value":1,"chinese":"\u5728\u7ebf"},"bio":"\u8fd9\u5bb6\u4f19\u5f88\u61d2\uff0c\u4ec0\u4e48\u4e5f\u6ca1\u5199\uff01","gender":{"chinese":"\u4fdd\u5bc6","value":"secrecy"},"welcome_msg":null,"fu_user_id":7717,"friend":true,"remark":"","nickname_origin":"\u90ed\u5357\u8d50"}}]}],"info":{"id":12353,"type":"group","user_one":70764,"user_two":0,"chat_id":742,"createtime":1744188197,"deleteuser":0,"aiid":0,"sessionUser":{"id":742,"leader":70764,"avatar":"data:image\/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgaGVpZ2h0PSIxMDAiIHdpZHRoPSIxMDAiPjxyZWN0IGZpbGw9InJnYigyMjksMTYwLDIyOSkiIHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIj48L3JlY3Q+PHRleHQgeD0iNTAiIHk9IjUwIiBmb250LXNpemU9IjUwIiB0ZXh0LWNvcHk9ImZhc3QiIGZpbGw9IiNmZmZmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiIHRleHQtcmlnaHRzPSJhZG1pbiIgZG9taW5hbnQtYmFzZWxpbmU9ImNlbnRyYWwiPuW8gDwvdGV4dD48L3N2Zz4=","nickname":"\u5f00\u53d1B\u7ec4","bio":"B","max_user_count":5000,"add_mode":0,"invite_join_group":0,"speak":0,"history_message":0,"retrieval_settings":0,"createtime":1744188197,"deletetime":null,"family_id":null,"qun_id":0,"user_count":2},"user":{"id":70764,"type":"user","gongxiantype":"0","avatar":"https:\/\/oss.yanhuangernv.com\/zpupload\/20230911\/bfc12ff4011731d7b4.jpeg","nickname":"\u90ed\u5357\u8d50","status":{"value":1,"chinese":"\u5728\u7ebf"},"bio":"\u8fd9\u5bb6\u4f19\u5f88\u61d2\uff0c\u4ec0\u4e48\u4e5f\u6ca1\u5199\uff01","gender":{"chinese":"\u4fdd\u5bc6","value":"secrecy"},"welcome_msg":null,"fu_user_id":7717,"friend":false,"remark":"","nickname_origin":"\u90ed\u5357\u8d50"},"top":null,"windowType":"message"},"nextpage":false,"data":{"session_id":"12353","page":1},"lastMessage":{"last_time":"2\u5468\u524d","last_message":"\u4f60\u5df2\u7ecf\u662f\u7fa4\u6210\u5458\u4e86\uff0c\u548c\u5927\u5bb6\u6253\u4e2a\u62db\u547c\u5427~","unread_fixed_msg":""},"unreadFixedMsg":false}}
+
+{"event":"info-detail","data":{"info":{"id":742,"leader":{"id":70764,"type":"user","gongxiantype":"0","avatar":"https:\/\/oss.yanhuangernv.com\/zpupload\/20230911\/bfc12ff4011731d7b4.jpeg","nickname":"\u90ed\u5357\u8d50","mobile":"18201949282","email":null,"age":0,"birthday":"","occupation":0,"company":"","bio":"\u8fd9\u5bb6\u4f19\u5f88\u61d2\uff0c\u4ec0\u4e48\u4e5f\u6ca1\u5199\uff01","gender":{"chinese":"\u4fdd\u5bc6","value":"secrecy"},"status":{"value":1,"chinese":"\u5728\u7ebf"},"welcome_msg":null,"fu_user_id":7717,"friend":true,"remark":"","nickname_origin":"\u90ed\u5357\u8d50"},"avatar":"data:image\/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgaGVpZ2h0PSIxMDAiIHdpZHRoPSIxMDAiPjxyZWN0IGZpbGw9InJnYigyMjksMTYwLDIyOSkiIHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIj48L3JlY3Q+PHRleHQgeD0iNTAiIHk9IjUwIiBmb250LXNpemU9IjUwIiB0ZXh0LWNvcHk9ImZhc3QiIGZpbGw9IiNmZmZmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiIHRleHQtcmlnaHRzPSJhZG1pbiIgZG9taW5hbnQtYmFzZWxpbmU9ImNlbnRyYWwiPuW8gDwvdGV4dD48L3N2Zz4=","nickname":"\u5f00\u53d1B\u7ec4","bio":"B","max_user_count":5000,"add_mode":0,"invite_join_group":0,"speak":0,"history_message":0,"retrieval_settings":0,"createtime":"2\u5468\u524d","deletetime":null,"family_id":null,"qun_id":0,"user_count":2,"isLeader":true,"groupMember":742,"group":"all_group","groups":[{"id":"all_group","name":"\u5168\u90e8\u7fa4\u804a"}]},"data":{"id":"742","type":"group","method":"group-edit"}}}
+
+{
+    "total": 1,
+    "rows": [
+        {
+            "id": 6,
+            "avatar": "",
+            "nickName": "大头",
+            "status": "0",
+            "bio": null,
+            "gender": null,
+            "is_friend": false,
+            "remark": null
+        }
+    ],
+    "code": 200,
+    "msg": "查询成功"
+}
+
+family_id1449 jiapu/category jiapu/index/index?family_id=1449
+
+谱书页：有页数统计吗？
 # 日报
 ## 今日
-修复http.interceptor.js当中httpsSwitch设置出错，导致登录页无法发送验证码的问题
-开发搜索炎黄儿女所有用户界面的接口对接工作，和子骏对接搜索用户和群聊，对接中；
+开发谱书页的新样式和交互
 
-确认部分消息格式：
-OPEN_SESSION打开会话；DISTRIBUTION_CSR客服代表分组的选择操作，打开已有的客服对话或者新建客服对话；LOAD_KBS加载客服分组；GROUP_CHAT_NOTICE_OPT查看群公告详情；
-
-INFO_DETAIL查看用户详情；LOAD_CONTACT获取好友数量和群数量；LOAD_SESSION_LIST加载会话列表；SESSION_OPERATION会话操作（置顶、取消置顶、删删除）
-
-SEND_ORDER查看合同；以及部分infoDetail的格式
+和子骏对接完搜索好友和群聊的接口和界面交互，继续对接添加好友和同意申请的ws消息
 ## 明日
 和子骏继续按im系统的使用流程对接，消息模块的接口、长连接的消息格式
 
