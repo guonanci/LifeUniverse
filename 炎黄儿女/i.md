@@ -836,15 +836,325 @@ info.vue/pick-user.vue 跳转到edit-info.vue
     "code": 200,
     "msg": "查询成功"
 }
+[
+    {
+        "sessionInfo": {
+            "id": 11524,
+            "type": "service",
+            "userOne": 6,
+            "userTwo": 1,
+            "chatId": 0,
+            "createtime": 1745630766,
+            "deleteuser": 0,
+            "aiid": 0,
+            "gcChatId": null,
+            "gcHistoryMessage": null,
+            "jointime": null,
+            "top": null,
+            "searchContinue": null,
+            "pushUser": {
+                "nickname": "炎黄儿女系统",
+                "avatar": "http://8.136.127.105:9000/ruoyi/2024/11/09/1e8e3b155a304887929505c4ac22fdec.png",
+                "id": null,
+                "bio": null
+            },
+            "mcreatetime": null
+        },
+        "lastMessage": {
+            "lastTime": "过去了2883439周",
+            "lastMessage": null,
+            "unreadFixedMsg": null
+        },
+        "unreadMessagesNumber": 0
+    },
+    {
+        "sessionInfo": {
+            "id": 11525,
+            "type": "service",
+            "userOne": 6,
+            "userTwo": 1,
+            "chatId": 0,
+            "createtime": 1745630766,
+            "deleteuser": 0,
+            "aiid": 0,
+            "gcChatId": null,
+            "gcHistoryMessage": null,
+            "jointime": null,
+            "top": null,
+            "searchContinue": null,
+            "pushUser": {
+                "nickname": "炎黄儿女系统",
+                "avatar": "http://8.136.127.105:9000/ruoyi/2024/11/09/1e8e3b155a304887929505c4ac22fdec.png",
+                "id": null,
+                "bio": null
+            },
+            "mcreatetime": null
+        },
+        "lastMessage": {
+            "lastTime": "过去了2883439周",
+            "lastMessage": null,
+            "unreadFixedMsg": null
+        },
+        "unreadMessagesNumber": 0
+    },
+    {
+        "sessionInfo": {
+            "id": 11526,
+            "type": "service",
+            "userOne": 6,
+            "userTwo": 1,
+            "chatId": 0,
+            "createtime": 1745630766,
+            "deleteuser": 0,
+            "aiid": 0,
+            "gcChatId": null,
+            "gcHistoryMessage": null,
+            "jointime": null,
+            "top": null,
+            "searchContinue": null,
+            "pushUser": {
+                "nickname": "炎黄儿女系统",
+                "avatar": "http://8.136.127.105:9000/ruoyi/2024/11/09/1e8e3b155a304887929505c4ac22fdec.png",
+                "id": null,
+                "bio": null
+            },
+            "mcreatetime": null
+        },
+        "lastMessage": {
+            "lastTime": "过去了2883439周",
+            "lastMessage": null,
+            "unreadFixedMsg": null
+        },
+        "unreadMessagesNumber": 0
+    },
+    {
+        "sessionInfo": {
+            "id": 11527,
+            "type": "service",
+            "userOne": 6,
+            "userTwo": 1,
+            "chatId": 0,
+            "createtime": 1745630766,
+            "deleteuser": 0,
+            "aiid": 0,
+            "gcChatId": null,
+            "gcHistoryMessage": null,
+            "jointime": null,
+            "top": null,
+            "searchContinue": null,
+            "pushUser": {
+                "nickname": "炎黄儿女系统",
+                "avatar": "http://8.136.127.105:9000/ruoyi/2024/11/09/1e8e3b155a304887929505c4ac22fdec.png",
+                "id": null,
+                "bio": null
+            },
+            "mcreatetime": null
+        },
+        "lastMessage": {
+            "lastTime": "过去了2883439周",
+            "lastMessage": null,
+            "unreadFixedMsg": null
+        },
+        "unreadMessagesNumber": 0
+    },
+    {
+        "sessionInfo": {
+            "id": 11528,
+            "type": "service",
+            "userOne": 6,
+            "userTwo": 1,
+            "chatId": 0,
+            "createtime": 1745630766,
+            "deleteuser": 0,
+            "aiid": 0,
+            "gcChatId": null,
+            "gcHistoryMessage": null,
+            "jointime": null,
+            "top": null,
+            "searchContinue": null,
+            "pushUser": {
+                "nickname": "炎黄儿女系统",
+                "avatar": "http://8.136.127.105:9000/ruoyi/2024/11/09/1e8e3b155a304887929505c4ac22fdec.png",
+                "id": null,
+                "bio": null
+            },
+            "mcreatetime": null
+        },
+        "lastMessage": {
+            "lastTime": "过去了2883439周",
+            "lastMessage": null,
+            "unreadFixedMsg": null
+        },
+        "unreadMessagesNumber": 0
+    },
+    {
+        "sessionInfo": {
+            "id": 11529,
+            "type": "service",
+            "userOne": 6,
+            "userTwo": 1,
+            "chatId": 0,
+            "createtime": 1745630766,
+            "deleteuser": 0,
+            "aiid": 0,
+            "gcChatId": null,
+            "gcHistoryMessage": null,
+            "jointime": null,
+            "top": null,
+            "searchContinue": null,
+            "pushUser": {
+                "nickname": "炎黄儿女系统",
+                "avatar": "http://8.136.127.105:9000/ruoyi/2024/11/09/1e8e3b155a304887929505c4ac22fdec.png",
+                "id": null,
+                "bio": null
+            },
+            "mcreatetime": null
+        },
+        "lastMessage": {
+            "lastTime": "过去了2883439周",
+            "lastMessage": null,
+            "unreadFixedMsg": null
+        },
+        "unreadMessagesNumber": 0
+    },
+    {
+        "sessionInfo": {
+            "id": 11530,
+            "type": "service",
+            "userOne": 6,
+            "userTwo": 1,
+            "chatId": 0,
+            "createtime": 1745630766,
+            "deleteuser": 0,
+            "aiid": 0,
+            "gcChatId": null,
+            "gcHistoryMessage": null,
+            "jointime": null,
+            "top": null,
+            "searchContinue": null,
+            "pushUser": {
+                "nickname": "炎黄儿女系统",
+                "avatar": "http://8.136.127.105:9000/ruoyi/2024/11/09/1e8e3b155a304887929505c4ac22fdec.png",
+                "id": null,
+                "bio": null
+            },
+            "mcreatetime": null
+        },
+        "lastMessage": {
+            "lastTime": "过去了2883439周",
+            "lastMessage": null,
+            "unreadFixedMsg": null
+        },
+        "unreadMessagesNumber": 0
+    },
+    {
+        "sessionInfo": {
+            "id": 11531,
+            "type": "service",
+            "userOne": 6,
+            "userTwo": 1,
+            "chatId": 0,
+            "createtime": 1745630766,
+            "deleteuser": 0,
+            "aiid": 0,
+            "gcChatId": null,
+            "gcHistoryMessage": null,
+            "jointime": null,
+            "top": null,
+            "searchContinue": null,
+            "pushUser": {
+                "nickname": "炎黄儿女系统",
+                "avatar": "http://8.136.127.105:9000/ruoyi/2024/11/09/1e8e3b155a304887929505c4ac22fdec.png",
+                "id": null,
+                "bio": null
+            },
+            "mcreatetime": null
+        },
+        "lastMessage": {
+            "lastTime": "过去了2883439周",
+            "lastMessage": null,
+            "unreadFixedMsg": null
+        },
+        "unreadMessagesNumber": 0
+    },
+    {
+        "sessionInfo": {
+            "id": 11534,
+            "type": "service",
+            "userOne": 11,
+            "userTwo": 6,
+            "chatId": 0,
+            "createtime": 1745630864,
+            "deleteuser": 0,
+            "aiid": 0,
+            "gcChatId": null,
+            "gcHistoryMessage": null,
+            "jointime": null,
+            "top": null,
+            "searchContinue": null,
+            "pushUser": {
+                "nickname": "大头",
+                "avatar": "",
+                "id": null,
+                "bio": null
+            },
+            "mcreatetime": null
+        },
+        "lastMessage": {
+            "lastTime": "过去了2883439周",
+            "lastMessage": null,
+            "unreadFixedMsg": null
+        },
+        "unreadMessagesNumber": 0
+    },
+    {
+        "sessionInfo": {
+            "id": 11532,
+            "type": "single",
+            "userOne": 6,
+            "userTwo": 1,
+            "chatId": 0,
+            "createtime": 1745630864,
+            "deleteuser": 0,
+            "aiid": 0,
+            "gcChatId": null,
+            "gcHistoryMessage": null,
+            "jointime": null,
+            "top": null,
+            "searchContinue": null,
+            "pushUser": {
+                "nickname": "炎黄儿女系统",
+                "avatar": "http://8.136.127.105:9000/ruoyi/2024/11/09/1e8e3b155a304887929505c4ac22fdec.png",
+                "id": null,
+                "bio": null
+            },
+            "mcreatetime": null
+        },
+        "lastMessage": {
+            "lastTime": "过去了2883439周",
+            "lastMessage": null,
+            "unreadFixedMsg": null
+        },
+        "unreadMessagesNumber": 0
+    }
+]
+
 
 family_id1449 jiapu/category jiapu/index/index?family_id=1449
 
 谱书页：有页数统计吗？
+
+onMessageCallBack失效？？ 18146611487
+
+ws.js imSession({..}) getUploadMultipart无用？？  center/general-sesstings updateUserConfig?
+聊天的头像都是后端返的avatar字段； msg.data.type == 'single'/group/service
 # 日报
 ## 今日
-开发谱书页的新样式和交互
+添加好友的信息填写页，更改前后端交互逻辑，改成前端从上一个页面获取所需信息，不调用接口或者通过WebSocket消息；
 
-和子骏对接完搜索好友和群聊的接口和界面交互，继续对接添加好友和同意申请的ws消息
+和子骏对接添加好友和同意申请的ws消息，目前处于LOAD_SESSION消息格式对接中，处于新朋友列表页
+
+确认两个默认的头像为熊猫款和炎黄儿女款，上传到oss服务器上
 ## 明日
 和子骏继续按im系统的使用流程对接，消息模块的接口、长连接的消息格式
 

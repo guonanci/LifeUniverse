@@ -1,0 +1,335 @@
+{
+  "event": "load_session",
+  "data": {
+    "message": [
+      {
+        "datetime": "13\u5206\u949f\u524d",
+        "data": [
+          {
+            "id": 16022,
+            "type": "friend_apply",
+            "group_id": 0,
+            "session_id": 12262,
+            "sender_id": 70556,
+            "recipient_id": 70764,
+            "message": {
+              "remark": "",
+              "group": 0,
+              "note": "",
+              "source": "\u641c\u7d22\u597d\u53cb",
+              "result": "pending",
+              "method": "apply"
+            },
+            "read_number": 0,
+            "status": 1,
+            "createtime": 1745656855,
+            "deleteuser": null,
+            "content": null,
+            "userInfo": {
+              "id": 70764,
+              "type": "user",
+              "gongxiantype": "0",
+              "avatar": "https:\/\/oss.yanhuangernv.com\/zpupload\/20230911\/bfc12ff4011731d7b4.jpeg",
+              "nickname": "\u90ed\u5357\u8d50",
+              "status": {
+                "value": 1,
+                "chinese": "\u5728\u7ebf"
+              },
+              "bio": "\u8fd9\u5bb6\u4f19\u5f88\u61d2\uff0c\u4ec0\u4e48\u4e5f\u6ca1\u5199\uff01",
+              "gender": {
+                "chinese": "\u4fdd\u5bc6",
+                "value": "secrecy"
+              },
+              "welcome_msg": null,
+              "fu_user_id": 7717,
+              "friend": false,
+              "remark": "",
+              "nickname_origin": "\u90ed\u5357\u8d50"
+            },
+            "friendship": null
+          }
+        ]
+      },
+      {
+        "datetime": "23\u5c0f\u65f6\u524d",
+        "data": [
+          {
+            "id": 15971,
+            "type": "friend_apply",
+            "group_id": 0,
+            "session_id": 12262,
+            "sender_id": 70556,
+            "recipient_id": 70764,
+            "message": {
+              "remark": "",
+              "group": 0,
+              "note": "1",
+              "source": "\u641c\u7d22\u597d\u53cb",
+              "result": "pending",
+              "method": "apply"
+            },
+            "read_number": 0,
+            "status": 1,
+            "createtime": 1745571581,
+            "deleteuser": null,
+            "content": null,
+            "userInfo": {
+              "id": 70764,
+              "type": "user",
+              "gongxiantype": "0",
+              "avatar": "https:\/\/oss.yanhuangernv.com\/zpupload\/20230911\/bfc12ff4011731d7b4.jpeg",
+              "nickname": "\u90ed\u5357\u8d50",
+              "status": {
+                "value": 1,
+                "chinese": "\u5728\u7ebf"
+              },
+              "bio": "\u8fd9\u5bb6\u4f19\u5f88\u61d2\uff0c\u4ec0\u4e48\u4e5f\u6ca1\u5199\uff01",
+              "gender": {
+                "chinese": "\u4fdd\u5bc6",
+                "value": "secrecy"
+              },
+              "welcome_msg": null,
+              "fu_user_id": 7717,
+              "friend": false,
+              "remark": "",
+              "nickname_origin": "\u90ed\u5357\u8d50"
+            },
+            "friendship": null
+          },
+          {
+            "id": 15967,
+            "type": "friend_apply",
+            "group_id": 0,
+            "session_id": 891,
+            "sender_id": 70556,
+            "recipient_id": 2266,
+            "message": {
+              "remark": "",
+              "group": 0,
+              "note": "1",
+              "source": "\u641c\u7d22\u597d\u53cb",
+              "result": "agree",
+              "method": "apply"
+            },
+            "read_number": 0,
+            "status": 1,
+            "createtime": 1745571224,
+            "deleteuser": null,
+            "content": null,
+            "userInfo": {
+              "id": 2266,
+              "type": "user",
+              "gongxiantype": "0",
+              "avatar": "https:\/\/oss.yanhuangernv.com\/zpupload\/20240920\/a5796b41c9bf306aa0.jpg",
+              "nickname": "\u66fe\u5e7f\u777f",
+              "status": {
+                "value": 1,
+                "chinese": "\u5728\u7ebf"
+              },
+              "bio": "\u8fd9\u5bb6\u4f19\u5f88\u61d2\uff0c\u4ec0\u4e48\u4e5f\u6ca1\u5199\uff01",
+              "gender": {
+                "chinese": "\u4fdd\u5bc6",
+                "value": "secrecy"
+              },
+              "welcome_msg": null,
+              "fu_user_id": 3349,
+              "friend": false,
+              "remark": "",
+              "nickname_origin": "\u66fe\u5e7f\u777f"
+            },
+            "friendship": null
+          }
+        ]
+      },
+      {
+        "datetime": "3\u5929\u524d",
+        "data": [
+          {
+            "id": 15746,
+            "type": "friend_apply",
+            "group_id": 0,
+            "session_id": 3880,
+            "sender_id": 70556,
+            "recipient_id": 3112,
+            "message": {
+              "remark": "",
+              "group": 0,
+              "note": "",
+              "source": "\u641c\u7d22\u597d\u53cb",
+              "result": "agree",
+              "method": "apply"
+            },
+            "read_number": 0,
+            "status": 1,
+            "createtime": 1745392415,
+            "deleteuser": null,
+            "content": null,
+            "userInfo": {
+              "id": 3112,
+              "type": "user",
+              "gongxiantype": "0",
+              "avatar": "https:\/\/oss.yanhuangernv.com\/zpupload\/20240903\/a0e5502b6d6255b376.jpg",
+              "nickname": "\u4f59\u6d77\u71d5",
+              "status": {
+                "value": 0,
+                "chinese": "\u79bb\u7ebf"
+              },
+              "bio": "\u8fd9\u5bb6\u4f19\u5f88\u61d2\uff0c\u4ec0\u4e48\u4e5f\u6ca1\u5199\uff01",
+              "gender": {
+                "chinese": "\u4fdd\u5bc6",
+                "value": "secrecy"
+              },
+              "welcome_msg": null,
+              "fu_user_id": 4123,
+              "friend": false,
+              "remark": "",
+              "nickname_origin": "\u4f59\u6d77\u71d5"
+            },
+            "friendship": 70556
+          }
+        ]
+      },
+      {
+        "datetime": "2\u5468\u524d",
+        "data": [
+          {
+            "id": 14216,
+            "type": "friend_apply",
+            "group_id": 0,
+            "session_id": 12262,
+            "sender_id": 70556,
+            "recipient_id": 70764,
+            "message": {
+              "remark": "",
+              "group": 0,
+              "note": "\u8c22\u8c22",
+              "source": "\u641c\u7d22\u597d\u53cb",
+              "result": "agree",
+              "method": "apply"
+            },
+            "read_number": 0,
+            "status": 1,
+            "createtime": 1743991480,
+            "deleteuser": null,
+            "content": null,
+            "userInfo": {
+              "id": 70764,
+              "type": "user",
+              "gongxiantype": "0",
+              "avatar": "https:\/\/oss.yanhuangernv.com\/zpupload\/20230911\/bfc12ff4011731d7b4.jpeg",
+              "nickname": "\u90ed\u5357\u8d50",
+              "status": {
+                "value": 1,
+                "chinese": "\u5728\u7ebf"
+              },
+              "bio": "\u8fd9\u5bb6\u4f19\u5f88\u61d2\uff0c\u4ec0\u4e48\u4e5f\u6ca1\u5199\uff01",
+              "gender": {
+                "chinese": "\u4fdd\u5bc6",
+                "value": "secrecy"
+              },
+              "welcome_msg": null,
+              "fu_user_id": 7717,
+              "friend": false,
+              "remark": "",
+              "nickname_origin": "\u90ed\u5357\u8d50"
+            },
+            "friendship": null
+          },
+          {
+            "id": 14215,
+            "type": "friend_apply",
+            "group_id": 0,
+            "session_id": 12262,
+            "sender_id": 70556,
+            "recipient_id": 70764,
+            "message": {
+              "remark": "",
+              "group": 0,
+              "note": "",
+              "source": "\u641c\u7d22\u597d\u53cb",
+              "result": "agree",
+              "method": "apply"
+            },
+            "read_number": 0,
+            "status": 1,
+            "createtime": 1743991461,
+            "deleteuser": null,
+            "content": null,
+            "userInfo": {
+              "id": 70764,
+              "type": "user",
+              "gongxiantype": "0",
+              "avatar": "https:\/\/oss.yanhuangernv.com\/zpupload\/20230911\/bfc12ff4011731d7b4.jpeg",
+              "nickname": "\u90ed\u5357\u8d50",
+              "status": {
+                "value": 1,
+                "chinese": "\u5728\u7ebf"
+              },
+              "bio": "\u8fd9\u5bb6\u4f19\u5f88\u61d2\uff0c\u4ec0\u4e48\u4e5f\u6ca1\u5199\uff01",
+              "gender": {
+                "chinese": "\u4fdd\u5bc6",
+                "value": "secrecy"
+              },
+              "welcome_msg": null,
+              "fu_user_id": 7717,
+              "friend": false,
+              "remark": "",
+              "nickname_origin": "\u90ed\u5357\u8d50"
+            },
+            "friendship": null
+          }
+        ]
+      }
+    ],
+    "info": {
+      "id": 11441,
+      "type": "service",
+      "user_one": 70556,
+      "user_two": 0,
+      "chat_id": 1,
+      "createtime": 1742199968,
+      "deleteuser": 0,
+      "aiid": 0,
+      "sessionUser": {
+        "id": 1,
+        "avatar": "\/assets\/addons\/fastim\/img\/new_friends.png",
+        "nickname": "\u65b0\u670b\u53cb",
+        "bio": "\u63a5\u53d7\u65b0\u597d\u53cb\u9a8c\u8bc1\u6d88\u606f"
+      },
+      "user": {
+        "id": 70556,
+        "type": "user",
+        "gongxiantype": "0",
+        "avatar": "https:\/\/oss.yanhuangernv.com\/zpupload\/20230911\/bfc12ff4011731d7b4.jpeg",
+        "nickname": "\u674e\u5b50\u9a8f",
+        "status": {
+          "value": 1,
+          "chinese": "\u5728\u7ebf"
+        },
+        "bio": "\u8fd9\u5bb6\u4f19\u5f88\u61d2\uff0c\u4ec0\u4e48\u4e5f\u6ca1\u5199\uff01",
+        "gender": {
+          "chinese": "\u4fdd\u5bc6",
+          "value": "secrecy"
+        },
+        "welcome_msg": null,
+        "fu_user_id": 7526,
+        "friend": false,
+        "remark": "",
+        "nickname_origin": "\u674e\u5b50\u9a8f"
+      },
+      "top": null,
+      "windowType": "new_friends_message"
+    },
+    "nextpage": false,
+    "data": {
+      "page": 1,
+      "session_id": "11441",
+      "refresh": ""
+    },
+    "lastMessage": {
+      "last_time": "16:40",
+      "last_message": "\u7533\u8bf7\u6dfb\u52a0\u90ed\u5357\u8d50\u4e3a\u597d\u53cb",
+      "unread_fixed_msg": ""
+    }
+  }
+}
