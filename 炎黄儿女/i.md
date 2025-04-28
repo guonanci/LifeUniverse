@@ -1148,13 +1148,17 @@ onMessageCallBack失效？？ 18146611487
 
 ws.js imSession({..}) getUploadMultipart无用？？  center/general-sesstings updateUserConfig?
 聊天的头像都是后端返的avatar字段； msg.data.type == 'single'/group/service
+
+App.vue Lne98 that isnt defined
+
+6月份：java的自动对账；在线祭祀界面，要增加动效（烟花）、增加祭品品类；
 # 日报
 ## 今日
-添加好友的信息填写页，更改前后端交互逻辑，改成前端从上一个页面获取所需信息，不调用接口或者通过WebSocket消息；
+和子骏对接短视频、社交服务的接口，把已有接口的地址、请求体、返回体发给他。
 
-和子骏对接添加好友和同意申请的ws消息，目前处于LOAD_SESSION消息格式对接中，处于新朋友列表页
+开发谱书制作页的样式和交互，接口待对接
 
-确认两个默认的头像为熊猫款和炎黄儿女款，上传到oss服务器上
+开始编写2025.5的月度分享飞书文档《App3.0分享-2025.5.5》
 ## 明日
 和子骏继续按im系统的使用流程对接，消息模块的接口、长连接的消息格式
 
@@ -1166,6 +1170,7 @@ ws.js imSession({..}) getUploadMultipart无用？？  center/general-sesstings u
 开发家谱介绍页、
 
 # 月报
+开发内容：
 ## 202505分享
 前后端联调完3.0版本的JAVA接口，按照新版UI设计实现界面；功能性测试、兼容性测试界面的内容；
 ### 加快首页和树谱图的页面初始化打开速度，减少100毫秒左右的等待时间；
