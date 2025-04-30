@@ -1150,16 +1150,23 @@ ws.js imSession({..}) getUploadMultipart无用？？  center/general-sesstings u
 聊天的头像都是后端返的avatar字段； msg.data.type == 'single'/group/service
 
 全家福详情界面上方还有内容，要不要显示，还有删除按钮；序言界面的路由是哪个？
+"此谱不是您创建"1447--1449是对的；
+
+http://localhost:8080/h5/#/pages/zupu/puwen/wen_info/wen_info?article_id=217&family_id=1449&column_id=1
+
+http://localhost:8080/h5/#/pages/zupu/puwen/wen_info/wen_info?article_id=218&family_id=1449&column_id=8
+
 6月份：java的自动对账；在线祭祀界面，要增加动效（烟花）、增加祭品品类；
+
 # 日报
 ## 今日
-开发家谱介绍-全家福界面
+开发家谱介绍-序言界面和传记页面
 
 编写2025.5的月度分享飞书文档《App3.0分享-2025.5.5》
 ## 明日
 和子骏继续按im系统的使用流程对接，消息模块的接口、长连接的消息格式
 
-开发家谱介绍-全家福界面和序言界面
+和子骏对接短视频、广场模块的接口
 # 周报
 上周主要是开发：
 开发广场的动态详情页和推荐页、消息页、消息聊天页；
@@ -1192,6 +1199,7 @@ ws.js imSession({..}) getUploadMultipart无用？？  center/general-sesstings u
 
 APP端的测试，也要在排期中。佩琪比较闲的时候，拿自己手机到佩琪那里测试，看看有啥意见。
 
+wifi密码：pj88888888
 
 仁苇，这两天经过和曾广睿、罗田浩、李子骏、以及其他同事的沟通。目前发现了一些前端项目框架上的问题，以及一些bug，并作出一些总结：
 
