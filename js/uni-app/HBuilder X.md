@@ -81,3 +81,33 @@ App平台 新增 API uni.getVideoInfo uni.compressVideo 支持返回文件字节
 App平台 新增 CSS var变量 --status-bar-height 支持动态更新 文档 https://issues.dcloud.net.cn/pages/issues/detail?id=16070
 App平台 新增 CSS justify-content 支持 space-evenly 文档 https://issues.dcloud.net.cn/pages/issues/detail?id=13351
 App平台 新增 CSS rpx 长度单位统一在排版引擎层计算，解决在应用窗口大小发生变化时可能显示不正确的问题 文档 https://issues.dcloud.net.cn/pages/issues/detail?id=16115
+
+App平台 新增 DOM API UniElement 支持 requestFullscreen 请求全屏显示功能 文档 https://issues.dcloud.net.cn/pages/issues/detail?id=14131
+App平台 新增 组件 web-view 支持 bounces 配置是否开启回弹效果 文档 https://issues.dcloud.net.cn/pages/issues/detail?id=15066
+App平台 修复 组件 nested-scroll-header 不能动态自适应内容高度 详情
+App平台 新增 组件 web-view 支持获取内容高度及内容高度变化事件 文档 https://issues.dcloud.net.cn/pages/issues/detail?id=16625
+App平台 修复 API uni.createInnerAudioContext、uni.getBackgroundAudioManager无法播放m3u8音频直播源 详情
+App平台 修复 DOM API UniElement takeSnapshot 截屏时会阻塞UI 详情
+Android平台、iOS平台 新增 API uni.makePhoneCall 支持拨打电话 文档 https://issues.dcloud.net.cn/pages/issues/detail?id=16592
+Android平台、iOS平台 修复 4.51版本引发的 API uni.showActionSheet 主题监听导致内存泄漏问题 详情
+Android平台 新增 pages.json 支持 androidThreeButtonNavigationStyle 配置系统虚拟导航栏前景色 文档 https://issues.dcloud.net.cn/pages/issues/detail?id=15762
+Android平台 新增 组件 web-view 支持 android-nested-scroll 属性配置嵌套滚动行为 文档 https://issues.dcloud.net.cn/pages/issues/detail?id=16675
+Android平台 新增 API uni.connectEventSource 支持 header 设置请求头 文档 https://issues.dcloud.net.cn/pages/issues/detail?id=15956
+Android平台 新增 UniPage API getAndroidActivity 获取安卓平台Activity对象 文档
+
+Android平台 修复 vue 响应式 Array 调用 reverse 后结果不正确 详情
+Android平台 修复 vue 组件:style绑定<script setup>中定义的非响应式数据运行时报类型不兼容错误 详情
+Android平台 修复 4.51版本引发的 vue script setup对外导出属性的getter、setter命名函数可能调用失败 详情
+Android平台 修复 vue inject在指定了默认值时仍告警not found 详情
+Android平台 修复 pages.json androidThreeButtonNavigationTranslucent 设置为 false 时，通过 backgroundColorContent 修改虚拟按键区域颜色无效 详情
+Android平台 修复 pages.json 横屏、分屏模式下页面默认导航栏高度可能不正确 详情
+Android平台 修复 组件 Touch 事件 设置 transform 为 rotate 后 touch 事件返回的坐标信息不正确 详情
+Android平台 修复 组件 Touch 事件 设置 scale 后触摸修改 translate 会引起闪烁 详情
+Android平台 修复 组件 scroll-view 嵌套 web-view 后，操作 web-view 无法滚动 scroll-view 详情
+Android平台 修复 组件 scroll-view 组件无法动态调整宽高 详情
+Android平台 修复 组件 swiper 组件设置 border-radius 不生效 详情
+Android平台 修复 组件 list-view 开启下拉刷新后 sticky-header 动态加载的数据导致无法吸顶 详情
+Android平台 修复 组件 list-view 父容器设置 overflow 为 visible 时导致自定义下拉刷新样式无法隐藏 详情
+Android平台 修复 组件 list-item 内元素绑定 longpress 事件，list-view 滚动几页后部分 list-item 内 longpress 事件不触发 详情
+Android平台 修复 4.51版本引发的 组件 sticky-header 反复切换显示后停靠位置可能异常 详情
+Android平台 修复 组件 sticky-header 父容器内容高度发生变化 sticky-header 未能及时更新停靠位置

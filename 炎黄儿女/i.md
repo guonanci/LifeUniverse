@@ -1156,19 +1156,19 @@ http://localhost:8080/h5/#/pages/zupu/puwen/wen_info/wen_info?article_id=217&fam
 
 http://localhost:8080/h5/#/pages/zupu/puwen/wen_info/wen_info?article_id=218&family_id=1449&column_id=8
 
-6月份：java的自动对账；在线祭祀界面，要增加动效（烟花）、增加祭品品类；
-
+6月份：java的自动对账；在线祭祀界面，要增加动效（烟花）、增加祭品品类；uni-app的微信sdk；
 # 日报
 ## 今日
-总结月度工作,修改月度分享文档
+阅读广睿这段时间提交的部分代码；讨论在线祭祀新增祭品和祭祀动效的需求实现，同时计划要修复iOS不播放声音的问题
 
-阅读uni-app的request API，阅读zupu项目
+完善APP端二级评论功能的弹窗样式；全家福详情页的正文内容的样式调整；
+
+manifest.json的app-plus节点，新增webp图片格式的支持配置
 ## 明日
 和子骏继续按im系统的使用流程对接，消息模块的接口、长连接的消息格式
 
 和子骏对接短视频、广场模块的接口
 
-总结月度工作
 # 周报
 上周主要是开发：
 开发广场的动态详情页和推荐页、消息页、消息聊天页；
@@ -1176,6 +1176,8 @@ http://localhost:8080/h5/#/pages/zupu/puwen/wen_info/wen_info?article_id=218&fam
 将项目备份文件打包到飞书文档，减小项目体积；
 开发家谱介绍页、
 # codeReview
+- gongxianbang.vue
+image mode='aspectFill'
 # 月报
 对接长连接消息模块，缩减公共的WebSocket js文件大小，将部分消息类型改为接口调用；
 
