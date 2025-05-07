@@ -1139,7 +1139,16 @@ info.vue/pick-user.vue 跳转到edit-info.vue
     }
 ]
 
+# 口号-使命-愿景-品牌
+江西祖炎信息科技有限公司
+口号:
+血脉不改华之夏，祖姓不变炎与黄
 
+使命:守住民族根，传承中华魂
+
+愿景:打造全球华人家族历史互动平台
+
+品牌:炎黄儿女
 family_id1449 jiapu/category jiapu/index/index?family_id=1449
 
 谱书页：有页数统计吗？
@@ -1157,13 +1166,10 @@ http://localhost:8080/h5/#/pages/zupu/puwen/wen_info/wen_info?article_id=217&fam
 http://localhost:8080/h5/#/pages/zupu/puwen/wen_info/wen_info?article_id=218&family_id=1449&column_id=8
 
 6月份：java的自动对账；在线祭祀界面，要增加动效（烟花）、增加祭品品类；uni-app的微信sdk；
+videofun；权限；验证码变灰（读秒时）；发送验证码后，toast出验证码？？
 # 日报
 ## 今日
-阅读广睿这段时间提交的部分代码；讨论在线祭祀新增祭品和祭祀动效的需求实现，同时计划要修复iOS不播放声音的问题
-
-完善APP端二级评论功能的弹窗样式；全家福详情页的正文内容的样式调整；
-
-manifest.json的app-plus节点，新增webp图片格式的支持配置
+和子骏对接广场列表接口和热门话题接口；去除videofun测试性接口；
 ## 明日
 和子骏继续按im系统的使用流程对接，消息模块的接口、长连接的消息格式
 
