@@ -134,3 +134,28 @@ iOS平台 新增 API uni.request 支持 ArrayBuffer 数据 文档 https://issues
 iOS平台 新增 API uni.chooseFile 选择文件 文档 https://issues.dcloud.net.cn/pages/issues/detail?id=15672
 iOS平台 新增 API uni.getFileSystemManager 支持在UTS插件中调用，补齐之前未支持的 readFileSync、writeFileSync 等API 文档 https://issues.dcloud.net.cn/pages/issues/detail?id=15551
 iOS平台 新增 API uni.connectEventSource 支持SSE 文档 https://issues.dcloud.net.cn/pages/issues/detail?id=15664
+
+iOS平台 新增 运行调试 CocoaPods 仓储支持配置自定义source 文档 https://issues.dcloud.net.cn/pages/issues/detail?id=16671
+iOS平台 新增 发行 uts插件支持原生iOS Extension 文档 https://issues.dcloud.net.cn/pages/issues/detail?id=4949
+iOS平台 修复 pages.json 非刘海屏设备上隐藏状态栏导致导航栏显示异常 详情
+iOS平台 修复 4.25版本引发的 组件 list-view 宽度动态变化时引起子组件 list-item 复用时显示异常 详情
+iOS平台 修复 组件 list-item CSS 设置 margin 为负数时可能引起应用闪退 详情
+iOS平台 修复 组件 rich-text 嵌入 list-item 中可能引起应用闪退 详情
+iOS平台 修复 组件 input 设置 selection-start、selection-end 在某些场景失效 详情
+iOS平台 修复 组件 input placeholder-style 设置 background-color 无效 详情
+iOS平台 修复 组件 textarea CSS 设置 line-height 无效 详情
+iOS平台 修复 组件 textarea 设置 hold-keyboard 为 true，scroll-view 滚动时软键盘还是会收起 详情
+iOS平台 修复 组件 textarea 在 class 中设置 width、height 无效 详情
+iOS平台 修复 组件 textarea 使用v-model 修改文本内容时光标位置会被重置到最后一行 详情
+iOS平台 修复 组件 textarea 同时设置auto-height与max-height，内容高度大于max-height时视图无法滚动 详情
+iOS平台 修复 4.55版本引发的 组件 text selectable 文本可选效果可能无效 详情
+iOS平台 修复 4.25版本引发的 组件 list-view scroll-into-view 属性可能无效 详情
+iOS平台 修复 组件 waterflow scroll-into-view 属性可能无效 详情
+iOS平台 修复 组件 input 某些场景下 hold-keyboard 设置为 true 滑动 scroll-view 依然隐藏软键盘 详情
+iOS平台 修复 组件 web-view web页面中 a 标签 target 属性值为 _blank 时点击无法跳转 详情
+iOS平台 修复 4.51版本引发的 组件 web-view evaLJS 注入localstorage 数据没有在页面加载前生效，导致一开始获取不到token 详情
+iOS平台 修复 API uni.getProviderSync 返回属性providerObject: Array不支持JSON.stringify()的问题 详情
+iOS平台 修复 API uni.reLaunch relaunch后跳转到新页面 还能侧滑返回到tabbar页面 原因是relaunch没有关闭tabbar页面 详情
+iOS平台 修复 API uni.compressImage 压缩compressImg_开头的文件会覆盖 详情
+iOS平台 修复 API uni.requestPayment 微信支付跳转微信失败且没有返回错误码的bug 详情
+iOS平台 修复 CSS transition transform 同时应用多个变换时效果可能不正确的Bug
