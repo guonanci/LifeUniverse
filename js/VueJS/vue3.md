@@ -1,3 +1,8 @@
+全局信息的存储；app.vue-onShow调用接口请求全局信息存入pinia。
+
+
+
+
 嗯，用户问的是Vue3的面试题，我需要整理一下相关的资料。首先看看搜索结果里的内容，各个文档都提到了Vue3的核心特性，比如响应式系统、Composition API、性能优化这些。
 
 网页1里详细讲了Vue3相比Vue2的改进，比如Proxy替代Object.defineProperty，还有Composition API的优势。应该把响应式原理和Proxy的区别作为重点，这些都是常见的面试题。
