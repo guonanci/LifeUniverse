@@ -1960,4 +1960,70 @@ const p={
         }
     }
 }
+
+{
+    "1": {
+        "1": {
+            "30": {
+                "children": 2,
+                "sex": "男",
+                "name": "郭璞",
+                "x": 30,
+                "infopage": 2,
+                "page": null,
+                "type": 0,
+                "winth": 0
+            }
+        },
+        "2": {
+            "30": {
+                "children": 2,
+                "sex": "男",
+                "name": "郭子仪",
+                "x": 30,
+                "infopage": 2,
+                "page": null,
+                "type": 1,
+                "winth": 0
+            },
+            "60": {
+                "children": 2,
+                "sex": "女",
+                "name": "郭女1",
+                "x": 60,
+                "infopage": 2,
+                "page": null,
+                "type": 3,
+                "winth": 30
+            }
+        },
+        "3": {
+            "30": {
+                "children": 1,
+                "sex": "男",
+                "name": "郭子",
+                "x": 30,
+                "infopage": 2,
+                "page": null,
+                "type": 0,
+                "winth": 0
+            },
+            "60": {
+                "children": 1,
+                "sex": "男",
+                "name": "郭子33",
+                "x": 60,
+                "infopage": 2,
+                "page": null,
+                "type": 0,
+                "winth": 0
+            }
+        },
+        "4": {},
+        "5": {},
+        "6": {}
+    }
+}
 ```
+
+暂时不实现世系图，需要有children递归结构。
