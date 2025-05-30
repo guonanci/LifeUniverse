@@ -1320,9 +1320,9 @@ application\admin\view\layout\default.html <div class="content"> height:850,widt
 屏蔽消息和取消屏蔽的功能走接口，查询群聊消息、创建群聊、获取服务号信息、更改在线状态、
 获取聊天设置的信息的功能走WebSocket消息类型
 
-开发APP端谱书界面的世系图，试用uni-app插件和AI给的代码，发现效果不理想，所以还是手写了一遍，调试好了连接线
+按照谱书里的世系图，编写谱书界面，在限定框内可滚动和自由滑动
 
-编写长连接消息模块的pick-user.vue、address-list.vue、group-chat.vue、top-contacts.vue的前端代码，待对接
+编写长连接消息模块的collection.vue的前端代码，待对接
 
 ## 明日
 整理im用户、im群、im服务号界面的增删改查接口的代码逻辑，理清数据结构；梳理建立群聊的接口逻辑
