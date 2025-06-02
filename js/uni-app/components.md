@@ -1,3 +1,18 @@
+# uni-app递归渲染family-node组件时，H5端显示正常，微信小程序只显示第一代
+```js
+import FamilyNode from './family-node.vue' // 必须显式导入自身
+export default {
+  name: 'family-node',
+  components: { FamilyNode }, // 注册自身组件
+  options: {
+    virtualHost: true, // 消除多余容器[2,4](@ref)
+    styleIsolation: 'shared' // 样式隔离[3](@ref)
+  },
+  props: {
+    node: Object
+  }
+}
+```
 # image
 https://uniapp.dcloud.net.cn/component/image.html#image
 

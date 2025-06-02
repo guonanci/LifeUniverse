@@ -1324,7 +1324,13 @@ application\admin\view\layout\default.html <div class="content"> height:850,widt
 
 编写长连接消息模块的collection.vue的前端代码，待对接
 
+增加谱书目录、世系图、行传图的左侧标题栏，显示谱书标题、章节、和地址；解决微信小程序端不显示family-node递归渲染时，不显示children的问题；修复检索表在APP端不显示的样式问题
+
+参加月会，分享APP端谱书谱图的代码实现，了解现有fg-tree组件的缩放问题
+
 ## 明日
+修复世系图在小程序端的样式兼容性问题；调研、开发家谱图缩放问题
+
 整理im用户、im群、im服务号界面的增删改查接口的代码逻辑，理清数据结构；梳理建立群聊的接口逻辑
 
 
@@ -1335,10 +1341,6 @@ application\admin\view\layout\default.html <div class="content"> height:850,widt
 上周主要工作包括：
 开发谱书模块：包括目录、世系图、行传；开发谱图界面，谱图是世系图
 
-编写长连接消息模块的一些页面和组件的前端代码，等待和子骏对接
-# codeReview
-- gongxianbang.vue
-image mode='aspectFill'
 # 月报
 开发3.0仅UI更新版本的代码，同时完善已知的样式问题到正式的3.0版本当中。
 对接社交服务和短视频模块的接口，对接长连接消息模块的各种接口和消息类型。
@@ -1353,6 +1355,10 @@ image mode='aspectFill'
 
 接下来，继续对接社交服务和视频模块的接口，以及聊天模块的消息格式，现在已经对接到LOAD-SESSION消息类型
 
+编写长连接消息模块的一些页面和组件的前端代码，等待和子骏对接
+# codeReview
+- gongxianbang.vue
+image mode='aspectFill'
 **每次月会都还不错，必须录音，并且认真聆听他人的发言，同时自己也要认真发言！！进步很重要！**
 ## 202505分享
 前后端联调完3.0版本的JAVA接口，按照新版UI设计实现界面；功能性测试、兼容性测试界面的内容；
