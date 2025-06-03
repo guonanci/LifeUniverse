@@ -1313,6 +1313,13 @@ ws.pageFun,ws.showMsgCallback的含义？
 #myDiagramDiv height800px,overflow:hidden;
 
 application\admin\view\layout\default.html <div class="content"> height:850,width1700
+
+// width: `${treeWidth}px`, height: `${treeHeight}px`,
+					// 'width': `${width}rpx`,
+					// 'height': `${height}rpx`,
+					// 'marginLeft': `-${width / 2 + 180}px`,
+					// 'marginTop': rotateState ?
+					// `-${height / 2 + 180 - viewHeight }px` : `-${height / 2 + 180}px`,
 # 日报
 ## 今日
 和子骏确定更新群公告、更新群备注、置顶群聊、屏蔽群消息、查询群成员、搜索群成员、获取用户详情、
@@ -1328,7 +1335,10 @@ application\admin\view\layout\default.html <div class="content"> height:850,widt
 
 参加月会，分享APP端谱书谱图的代码实现，了解现有fg-tree组件的缩放问题
 
+调研uni-app的movable-area、movable-view组件，开发家谱树组件的缩放和滑动功能
 ## 明日
+开发家谱树组件的缩放和滑动功能
+
 修复世系图在小程序端的样式兼容性问题；调研、开发家谱图缩放问题
 
 整理im用户、im群、im服务号界面的增删改查接口的代码逻辑，理清数据结构；梳理建立群聊的接口逻辑
