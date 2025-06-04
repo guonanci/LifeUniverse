@@ -1320,6 +1320,16 @@ application\admin\view\layout\default.html <div class="content"> height:850,widt
 					// 'marginLeft': `-${width / 2 + 180}px`,
 					// 'marginTop': rotateState ?
 					// `-${height / 2 + 180 - viewHeight }px` : `-${height / 2 + 180}px`,
+    margin-left: -747.2px;
+    margin-top: -273.6px;
+// width:'99vw',height:'96vh',
+					// width:'2000px',height:'2000px',
+					// 'width': `${width}px`, 'height': `${height}px`,
+					// 'marginLeft': `-${width / 6 * 1.48 }px`,
+					// 'marginTop': `-${height / 6 * 1.48 }px`,
+					// marginTop:'-80px'
+					// 'marginTop': rotateState ? `-${height / 2 -80 - viewHeight }px` :
+					//  `-${height / 2 -80}px`,
 # 日报
 ## 今日
 和子骏确定更新群公告、更新群备注、置顶群聊、屏蔽群消息、查询群成员、搜索群成员、获取用户详情、
@@ -1327,15 +1337,13 @@ application\admin\view\layout\default.html <div class="content"> height:850,widt
 屏蔽消息和取消屏蔽的功能走接口，查询群聊消息、创建群聊、获取服务号信息、更改在线状态、
 获取聊天设置的信息的功能走WebSocket消息类型
 
-按照谱书里的世系图，编写谱书界面，在限定框内可滚动和自由滑动
-
 编写长连接消息模块的collection.vue的前端代码，待对接
 
 增加谱书目录、世系图、行传图的左侧标题栏，显示谱书标题、章节、和地址；解决微信小程序端不显示family-node递归渲染时，不显示children的问题；修复检索表在APP端不显示的样式问题
 
 参加月会，分享APP端谱书谱图的代码实现，了解现有fg-tree组件的缩放问题
 
-调研uni-app的movable-area、movable-view组件，开发家谱树组件的缩放和滑动功能
+采用uni-app的movable-area、movable-view组件，开发家谱树组件的缩放和滑动功能，会存在滑动问题，改用手动设置transform-scale方案来实现
 ## 明日
 开发家谱树组件的缩放和滑动功能
 
