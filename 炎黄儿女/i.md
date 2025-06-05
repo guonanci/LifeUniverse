@@ -1341,13 +1341,14 @@ application\admin\view\layout\default.html <div class="content"> height:850,widt
 
 增加谱书目录、世系图、行传图的左侧标题栏，显示谱书标题、章节、和地址；解决微信小程序端不显示family-node递归渲染时，不显示children的问题；修复检索表在APP端不显示的样式问题
 
-参加月会，分享APP端谱书谱图的代码实现，了解现有fg-tree组件的缩放问题
+ws.init userinfo
+修复世系图在小程序端的样式兼容性问题；（没平铺开）
 
-采用uni-app的movable-area、movable-view组件，开发家谱树组件的缩放和滑动功能，会存在滑动问题，改用手动设置transform-scale方案来实现
+采用手动设置transform-scale方案来实现家谱图的缩放功能，卡顿问题已优化
+
+修复世系图在APP端的样式兼容性问题；
 ## 明日
-开发家谱树组件的缩放和滑动功能
-
-修复世系图在小程序端的样式兼容性问题；调研、开发家谱图缩放问题
+修复世系图的连接线样式问题
 
 整理im用户、im群、im服务号界面的增删改查接口的代码逻辑，理清数据结构；梳理建立群聊的接口逻辑
 
