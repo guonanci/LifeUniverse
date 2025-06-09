@@ -1348,9 +1348,9 @@ ws.init userinfo；首页getUserInfo-storage。
 
 pdf.js，font.js，设置为模板、素材（现代头像、古代头像32个、方形边框、圆形边框）、上传完谱文图片后分组-新建分组；
 
-谱文编辑器：层级、
+谱文编辑器：层级、；quanjiafu.vue Line167；uploadPic.vue Line112shuziren_pay；inheritorpay.vue-Line380userinfo.inheritor_fee；homepages.vue-userinfo改到这了;世系图和谱图不显示配偶了吧，我看百家有谱也不显示！
 
-学习百家有谱家谱编修平台修谱入门课程，包括生成谱书、生成挂图家谱、生成卷轴家谱部分；体验百家有谱谱文模块的产品功能
+体验百家有谱谱文模块的产品功能；和浩哥对接数据清洗后的首页接口请求；优化APP，利用前端storage缓存，减少重复的getUserInfo请求；
 ## 明日
 整理im用户、im群、im服务号界面的增删改查接口的代码逻辑，理清数据结构；梳理建立群聊的接口逻辑
 
