@@ -1339,14 +1339,16 @@ application\admin\view\layout\default.html <div class="content"> height:850,widt
 
 编写长连接消息模块的collection.vue的前端代码，待对接
 
-增加谱书目录、世系图、行传图的左侧标题栏，显示谱书标题、章节、和地址；解决微信小程序端不显示family-node递归渲染时，不显示children的问题；修复检索表在APP端不显示的样式问题
+和浩哥调试洗数据后的接口请求
 
-ws.init userinfo
+ws.init userinfo；首页getUserInfo-storage。
 修复世系图在小程序端的样式兼容性问题；（没平铺开）
 
 点击消息、广场发布，需要打开登录弹窗，首页、广场、视频不需要弹出来
 
-pdf.js，font.js，
+pdf.js，font.js，设置为模板、素材（现代头像、古代头像32个、方形边框、圆形边框）、上传完谱文图片后分组-新建分组；
+
+谱文编辑器：层级、
 
 学习百家有谱家谱编修平台修谱入门课程，包括生成谱书、生成挂图家谱、生成卷轴家谱部分；体验百家有谱谱文模块的产品功能
 ## 明日
