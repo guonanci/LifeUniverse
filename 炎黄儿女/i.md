@@ -1350,9 +1350,16 @@ pdf.js，font.js，设置为模板、素材（现代头像、古代头像32个�
 
 谱文编辑器：层级、；quanjiafu.vue Line167；uploadPic.vue Line112shuziren_pay；inheritorpay.vue-Line380userinfo.inheritor_fee；homepages.vue-userinfo改到这了;世系图和谱图不显示配偶了吧，我看百家有谱也不显示！
 
+NODE_OPTIONS=--openssl-legacy-provider；必须调通同意好友申请！！
+
 体验百家有谱谱文模块的产品功能；和浩哥对接数据清洗后的首页接口请求；优化APP，利用前端storage缓存，减少重复的getUserInfo请求；
+
+new_friends_message；msg.content&msg.data
+
+联调新朋友的通知列表；参加家谱后台系统需求预评审会议，观摩各类家谱的活字印刷样式
 ## 明日
 整理im用户、im群、im服务号界面的增删改查接口的代码逻辑，理清数据结构；梳理建立群聊的接口逻辑
+
 
 继续做谱系图的排版预览、谱文编辑界面的技术调研工作
 # code-review
