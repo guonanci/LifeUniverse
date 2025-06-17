@@ -1312,33 +1312,20 @@ ws.pageFun,ws.showMsgCallback的含义？
 
 #myDiagramDiv height800px,overflow:hidden;
 
+https://api.yanhuangernv.com/zyYiwHOtqPza.php/inheritor/inheritorimg?ref=addtabs
+
 application\admin\view\layout\default.html <div class="content"> height:850,width1700
 
-// width: `${treeWidth}px`, height: `${treeHeight}px`,
-					// 'width': `${width}rpx`,
-					// 'height': `${height}rpx`,
-					// 'marginLeft': `-${width / 2 + 180}px`,
-					// 'marginTop': rotateState ?
-					// `-${height / 2 + 180 - viewHeight }px` : `-${height / 2 + 180}px`,
-    margin-left: -747.2px;
-    margin-top: -273.6px;
-// width:'99vw',height:'96vh',
-					// width:'2000px',height:'2000px',
-					// 'width': `${width}px`, 'height': `${height}px`,
-					// 'marginLeft': `-${width / 6 * 1.48 }px`,
-					// 'marginTop': `-${height / 6 * 1.48 }px`,
-					// marginTop:'-80px'
-					// 'marginTop': rotateState ? `-${height / 2 -80 - viewHeight }px` :
-					//  `-${height / 2 -80}px`,
+/comments commentDetail;7717 is me;
 # 日报
 ## 今日
+
 和子骏确定更新群公告、更新群备注、置顶群聊、屏蔽群消息、查询群成员、搜索群成员、获取用户详情、
 编辑用户资料、置顶好友，取消置顶、设置为常用联系人，取消设置、解散群聊、退出群聊、删除好友、
 屏蔽消息和取消屏蔽的功能走接口，查询群聊消息、创建群聊、获取服务号信息、更改在线状态、
 获取聊天设置的信息的功能走WebSocket消息类型
 
 
-ws.init userinfo；首页getUserInfo-storage。
 修复世系图在小程序端的样式兼容性问题；（没平铺开）
 
 点击消息、广场发布，需要打开登录弹窗，首页、广场、视频不需要弹出来
@@ -1353,7 +1340,9 @@ NODE_OPTIONS=--openssl-legacy-provider；必须调通同意好友申请！！
 
 new_friends_message；msg.content&msg.data
 
-联调添加好友时收不到通知的问题，联调同意好友申请；确认智能家谱编修系统V1.0的改进意见：姓氏分组世系导出支持区间、造字、多个版式等等。
+参加会议，确认智能家谱编修系统V1.0的项目排期；确认选择好友创建群聊、创建群聊、搜索好友或群聊、查询群公告、获取包含群公告的群聊消息、加载包含视频的对话消息列表，等等的ws消息格式；确认发送两遍同样群聊消息的问题（原因在于发送了两遍同样的sendMessage消息）；
+
+开发后台的传承人图谱界面，解决放大到一定倍数后无法拖动的问题
 ## 明日
 整理im用户、im群、im服务号界面的增删改查接口的代码逻辑，理清数据结构；梳理建立群聊的接口逻辑
 
