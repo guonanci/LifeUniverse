@@ -1312,7 +1312,7 @@ ws.pageFun,ws.showMsgCallback的含义？
 
 #myDiagramDiv height800px,overflow:hidden;
 
-https://api.yanhuangernv.com/zyYiwHOtqPza.php/inheritor/inheritorimg?ref=addtabs
+https://api.yanhuangernv.com/zyYiwHOtqPza.php/inheritor/inheritorimg?ref=addtabs https://gojs.net/latest/samples/familyTree.html
 
 application\admin\view\layout\default.html <div class="content"> height:850,width1700
 
@@ -1340,9 +1340,7 @@ NODE_OPTIONS=--openssl-legacy-provider；必须调通同意好友申请！！
 
 new_friends_message；msg.content&msg.data
 
-参加会议，确认智能家谱编修系统V1.0的项目排期；确认选择好友创建群聊、创建群聊、搜索好友或群聊、查询群公告、获取包含群公告的群聊消息、加载包含视频的对话消息列表，等等的ws消息格式；确认发送两遍同样群聊消息的问题（原因在于发送了两遍同样的sendMessage消息）；
-
-开发后台的传承人图谱界面，解决放大到一定倍数后无法拖动的问题
+联调推荐好友列表界面，还差城市的显示；
 ## 明日
 整理im用户、im群、im服务号界面的增删改查接口的代码逻辑，理清数据结构；梳理建立群聊的接口逻辑
 
