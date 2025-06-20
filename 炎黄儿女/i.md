@@ -1340,7 +1340,7 @@ NODE_OPTIONS=--openssl-legacy-provider；必须调通同意好友申请！！
 
 new_friends_message；msg.content&msg.data
 
-联调推荐好友列表界面，还差城市的显示；
+联调推荐好友列表界面；联调长连接消息的im聊天模块
 ## 明日
 整理im用户、im群、im服务号界面的增删改查接口的代码逻辑，理清数据结构；梳理建立群聊的接口逻辑
 
