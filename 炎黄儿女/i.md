@@ -1337,10 +1337,14 @@ pdf.js，font.js，设置为模板、素材（现代头像、古代头像32个�
 NODE_OPTIONS=--openssl-legacy-provider；必须调通同意好友申请！！
 
 体验百家有谱谱文模块的产品功能；和浩哥对接数据清洗后的首页接口请求；优化APP，利用前端storage缓存，减少重复的getUserInfo请求；
+https://oxoyo.co/X-Flowchart-Vue/；https://github.com/OXOYO/X-Flowchart-Vue
 
-new_friends_message；msg.content&msg.data
 
-联调推荐好友列表界面；联调长连接消息的im聊天模块
+new_friends_message；msg.content&msg.data;按照百家有谱的截图，调研基于vue3和typescript的可以编辑谱文的富文本编辑器，有表格，字数统计，缩放页面功能，页面属性的技术方案；插入层级、文本框（添加默认的标题和正文样式，及其内容）、字体、字号、世系、形状、边框（设置当前元素的边框颜色、样式）；自动分页。
+
+联调长连接消息的im聊天模块的同意好友申请
+
+调研编辑谱文的富文本编辑器，基本确定为TinyMCE，确认其配置宋体、黑体、华文仿宋等字体，12px、五号、二号、80px等字号的配置；阅读炎黄云谱系统的需求文档。
 ## 明日
 整理im用户、im群、im服务号界面的增删改查接口的代码逻辑，理清数据结构；梳理建立群聊的接口逻辑
 

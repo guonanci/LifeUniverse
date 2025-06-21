@@ -1,3 +1,79 @@
+# TinyMCE
+```js
+tinymce.init({
+  selector: '#mytextarea',
+  plugins: 'fontselect fontsizeselect', // 启用字体和字号插件
+  toolbar: 'fontselect fontsizeselect', // 工具栏显示控件
+  // 中文字体配置
+  font_formats: "宋体='宋体';黑体='黑体';仿宋='仿宋';楷体='楷体';标楷体='标楷体';华文仿宋='华文仿宋';华文宋体='华文宋体';新宋体='新宋体';华文楷体='华文楷体';新细明体='新细明体';华文行楷='华文行楷'",
+  // 字号配置（含像素值和中文印刷字号）
+  fontsize_formats: "10.5px 12px 15px 16px 18px 22px 24px 26px 36px 42px 64px 80px 96px 128px 五号=10.5px 小四=12px 小三=15px 三号=16px 小二=18px 二号=22px 小一=24px 一号=26px 小初=36px 初号=42px",
+  // 设置编辑区默认样式
+  content_style: "body { font-family: '宋体'; font-size: 12px; }",
+  // 其他配置
+  menubar: false,
+  branding: false // 隐藏右下角品牌标识
+});
+
+const useDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+const isSmallScreen = window.matchMedia('(max-width: 1023.5px)').matches;
+
+tinymce.init({language:'zh_CN',
+  selector: 'textarea#open-source-plugins',
+  plugins: 'autoresize preview importcss searchreplace autolink autosave save directionality code visualblocks visualchars fullscreen image link media codesample table charmap pagebreak nonbreaking anchor insertdatetime advlist lists wordcount help charmap quickbars emoticons accordion',
+  editimage_cors_hosts: ['picsum.photos'],
+  menubar: 'file edit view insert format tools table help',
+  toolbar: "undo redo | accordion accordionremove | blocks fontfamily fontsize | bold italic underline strikethrough | align numlist bullist | link image | table media | lineheight outdent indent| forecolor backcolor removeformat | charmap emoticons | code fullscreen preview | save print | pagebreak anchor codesample | ltr rtl",
+  autosave_ask_before_unload: true,
+  autosave_interval: '30s',
+  autosave_prefix: '{path}{query}-{id}-',
+  autosave_restore_when_empty: false,
+  autosave_retention: '2m',
+  image_advtab: true,
+  link_list: [
+    { title: 'My page 1', value: 'https://www.tiny.cloud' },
+    { title: 'My page 2', value: 'http://www.moxiecode.com' }
+  ],
+  image_list: [
+    { title: 'My page 1', value: 'https://www.tiny.cloud' },
+    { title: 'My page 2', value: 'http://www.moxiecode.com' }
+  ],
+  image_class_list: [
+    { title: 'None', value: '' },
+    { title: 'Some class', value: 'class-name' }
+  ],
+  importcss_append: true,
+  file_picker_callback: (callback, value, meta) => {
+    /* Provide file and text for the link dialog */
+    if (meta.filetype === 'file') {
+      callback('https://www.google.com/logos/google.jpg', { text: 'My text' });
+    }
+
+    /* Provide image and alt text for the image dialog */
+    if (meta.filetype === 'image') {
+      callback('https://www.google.com/logos/google.jpg', { alt: 'My alt text' });
+    }
+
+    /* Provide alternative source and posted for the media dialog */
+    if (meta.filetype === 'media') {
+      callback('movie.mp4', { source2: 'alt.ogg', poster: 'https://www.google.com/logos/google.jpg' });
+    }
+  },
+  height: 600,
+  image_caption: true,
+  quickbars_selection_toolbar: 'bold italic | quicklink h2 h3 blockquote quickimage quicktable',
+  noneditable_class: 'mceNonEditable',
+  toolbar_mode: 'sliding',
+  contextmenu: 'link image table',
+  skin: useDarkMode ? 'oxide-dark' : 'oxide',
+  content_css: useDarkMode ? 'dark' : 'default',
+  content_style: 'body { writing-mode: vertical-rl !important; text-orientation: mixed; font-family:Helvetica,Arial,sans-serif; font-size:16px }'
+});
+
+```
+
+
+
 # wangeditor
 
 <https://www.wangeditor.com/>
