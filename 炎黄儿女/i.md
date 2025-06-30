@@ -1348,9 +1348,9 @@ new_friends_message；msg.content&msg.data;按照百家有谱的截图，调研�
 热门话题详情接口没对接；
 点赞帖子后再次查询点赞数还是原来的，没有加1；
 
-是否已点赞fabulousShow；关注跳转界面，是否已关注的字段（是否互为好友）；
+是否已点赞fabulousShow；关注跳转界面，是否已关注的字段（是否互为好友）；sessionList,sessionListTop;
 
-联调消息聊天的聊天列表接口
+联调消息聊天的聊天列表接口;简化组装session的逻辑
 ## 明日
 联调消息聊天模块
 
