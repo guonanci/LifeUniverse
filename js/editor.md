@@ -216,6 +216,176 @@ tinymce.init({
 > 若需完整拖拽、缩放等交互，可参考 TinyMCE 官方案例：[自定义 UI 组件](https://www.tiny.cloud/docs/ui-components/custom-toolbar-button/)。
 
 
+
+要在TinyMCE编辑器的**同一个`<textarea>`内实现标题和内容分区显示不同的placeholder**（如标题区提示"请输入标题"，内容区提示"请输入正文"），可通过以下两种方案实现：
+
+---
+
+### ⚙️ **方案一：使用`tinymce-placeholder`插件（推荐）**
+此插件支持在编辑器内部创建独立占位符，需配合自定义内容结构实现分区效果。
+
+#### **实现步骤：**
+1. **安装插件**
+   ```bash
+   npm install tinymce-placeholder-attribute  # 或通过Bower/Yarn安装
+   ```
+   或直接引入插件脚本：
+   ```html
+   <script src="path/to/tinymce-placeholder-plugin.js"></script>
+   ```
+
+2. **初始化编辑器配置**
+   在初始化时设置占位符文本和样式：
+   ```javascript
+   tinymce.init({
+     selector: '#myeditor',
+     plugins: 'placeholder',  // 启用插件
+     // 初始内容：标题和正文分区结构
+     init_instance_callback: (editor) => {
+       editor.setContent(`
+         <div class="title-placeholder" data-placeholder="请输入标题"></div>
+         <div class="content-placeholder" data-placeholder="请输入正文"></div>
+       `);
+     },
+     // 自定义占位符样式
+     placeholder_attrs: {
+       style: {
+         color: '#999',
+         'font-style': 'italic',
+         padding: '10px'
+       }
+     }
+   });
+   ```
+
+3. **CSS样式区分标题与正文**
+   ```css
+   /* 标题占位符 */
+   .title-placeholder[data-placeholder]:empty::before {
+     content: attr(data-placeholder);
+     color: #333;
+     font-weight: bold;
+     font-size: 18px;
+   }
+   /* 正文占位符 */
+   .content-placeholder[data-placeholder]:empty::before {
+     content: attr(data-placeholder);
+     color: #666;
+     font-size: 14px;
+   }
+   ```
+
+4. **事件处理（防误存占位符）**
+   在提交前过滤占位符元素：
+   ```javascript
+   const content = editor.getContent().replace(/<div[^>]*data-placeholder[^>]*><\/div>/g, '');
+   ```
+
+---
+
+### 🧩 **方案二：手动管理占位符（无插件）**
+通过TinyMCE事件API动态控制分区占位符的显示/隐藏。
+
+#### **实现步骤：**
+1. **初始化内容结构**
+   ```javascript
+   tinymce.init({
+     selector: '#myeditor',
+     init_instance_callback: (editor) => {
+       editor.setContent(`
+         <div id="title-section" class="mce-placeholder">请输入标题</div>
+         <div id="content-section" class="mce-placeholder">请输入正文</div>
+       `);
+     }
+   });
+   ```
+
+2. **事件监听与切换逻辑**
+   ```javascript
+   setup: (editor) => {
+     // 焦点事件：清空占位符
+     editor.on('focus', (e) => {
+       const target = e.target;
+       if (target.id === 'title-section' && target.innerHTML === '请输入标题') {
+         target.innerHTML = '';
+         target.classList.remove('mce-placeholder');
+       } else if (target.id === 'content-section' && target.innerHTML === '请输入正文') {
+         target.innerHTML = '';
+         target.classList.remove('mce-placeholder');
+       }
+     });
+
+     // 失焦事件：恢复占位符
+     editor.on('blur', (e) => {
+       const titleSection = editor.dom.get('title-section');
+       const contentSection = editor.dom.get('content-section');
+       if (titleSection.innerHTML.trim() === '') {
+         titleSection.innerHTML = '请输入标题';
+         titleSection.classList.add('mce-placeholder');
+       }
+       if (contentSection.innerHTML.trim() === '') {
+         contentSection.innerHTML = '请输入正文';
+         contentSection.classList.add('mce-placeholder');
+       }
+     });
+   }
+   ```
+
+3. **CSS样式定制**
+   ```css
+   #title-section.mce-placeholder {
+     color: #333; font-weight: bold; border-bottom: 1px dashed #ddd; padding: 10px 0;
+   }
+   #content-section.mce-placeholder {
+     color: #666; padding-top: 15px;
+   }
+   ```
+
+---
+
+### ⚠️ **关键注意事项**
+1. **模式兼容性**
+   `tinymce-placeholder`插件仅支持**经典模式**（非内联模式）[citation:6]，若使用内联模式需手动实现方案二。
+
+2. **样式作用域**
+   编辑器内部样式需通过`content_css`配置注入：
+   ```javascript
+   content_css: '/path/to/editor-styles.css'
+   ```
+
+3. **移动端适配**
+   添加视口元标签确保移动端正常显示：
+   ```html
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   ```
+
+4. **内容安全过滤**
+   提交前需移除占位符元素，避免存储无效数据：
+   ```javascript
+   const cleanContent = editor.getContent()
+     .replace(/<div[^>]*class="mce-placeholder"[^>]*>.*?<\/div>/g, '');
+   ```
+
+---
+
+### 💎 **两种方案对比**
+| **特性**               | **插件方案**                          | **手动方案**                     |
+|------------------------|-------------------------------------|--------------------------------|
+| **开发复杂度**         | 低（配置即用）                       | 高（需自定义事件逻辑）            |
+| **兼容性**             | 仅经典模式                          | 全模式支持                      |
+| **维护性**             | 高（官方维护插件）                  | 中（需自行维护事件逻辑）          |
+| **分区样式灵活性**     | 高（CSS直接控制）                   | 高（CSS直接控制）               |
+
+---
+
+**推荐场景**：
+- 若项目使用**经典模式** → 优先选择**方案一**（插件），开发效率更高[citation:6][citation:8]。
+- 若需**内联模式**或高度定制 → 选择**方案二**（手动管理），灵活性更强。
+
+> 完整代码示例可参考 [GitHub - tinymce-placeholder](https://github.com/3014zhangshuo/tinymce-placeholder) 或 [TinyMCE官方文档](https://www.tiny.cloud/docs/)。
+
+
+
 # wangeditor
 
 <https://www.wangeditor.com/>
