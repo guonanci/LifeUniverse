@@ -1348,9 +1348,11 @@ new_friends_message；msg.content&msg.data;按照百家有谱的截图，调研�
 热门话题详情接口没对接；
 点赞帖子后再次查询点赞数还是原来的，没有加1；
 
-是否已点赞fabulousShow；关注跳转界面，是否已关注的字段（是否互为好友）；address-list常用联系人；aichat;that.info.sessionUser.gongxiantype == 2 indexmessagefun();测试屏蔽功能；
+是否已点赞fabulousShow；关注跳转界面，是否已关注的字段（是否互为好友）；address-list常用联系人；aichat;that.info.sessionUser.gongxiantype == 2 indexmessagefun();群聊天设置；群聊天信息；转发消息、查询群成员；回显表情包；
 
-联调消息聊天的消息免打扰接口、通知声音和振动;联调好友列表接口
+pagesim/center/info；谱图样式；修改家谱简介的回显；短视频二级评论回显；
+
+联调消息聊天的常用联系人、群聊列表、邀请入群、编辑群资料等等
 ## 明日
 联调消息聊天模块
 
