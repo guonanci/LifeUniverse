@@ -1350,9 +1350,9 @@ new_friends_message；msg.content&msg.data;按照百家有谱的截图，调研�
 
 是否已点赞fabulousShow；关注跳转界面，是否已关注的字段（是否互为好友）；address-list常用联系人；aichat;that.info.sessionUser.gongxiantype == 2 indexmessagefun();群聊天设置；群聊天信息；转发消息、查询群成员；回显表情包；
 
-pagesim/center/info；app视频的二级评论-清除按钮；
+pagesim/center/info；app视频的二级评论-清除按钮；家谱树的两个缩放按钮，点击后没反应。
 
-联调广场动态列表、动态评论和二级评论；联调谱图页样式；
+联调广场动态列表、和APP端视频页的评论列表；
 ## 明日
 联调消息聊天模块
 

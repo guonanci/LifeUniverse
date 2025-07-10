@@ -1,3 +1,12 @@
+# uni-popup
+```js
+@tap="e=>replyClick(e,item)"
+
+replyClick(){
+  e.stopPropagation
+}
+```
+
 # uni-app递归渲染family-node组件时，H5端显示正常，微信小程序只显示第一代
 ```js
 import FamilyNode from './family-node.vue' // 必须显式导入自身
