@@ -1352,9 +1352,11 @@ new_friends_message；msg.content&msg.data;按照百家有谱的截图，调研�
 
 pagesim/center/info；app视频的二级评论-清除按钮；家谱树的两个缩放按钮，点击后没反应。
 
-联调广场动态列表、和APP端视频页的评论列表；
+GROUP_CHAT兼容视频和图片消息类型。
+
+修复消息聊天、谱书谱图等等界面的bug；
 ## 明日
-联调消息聊天模块
+修复APP3.0的bug
 
 
 继续做谱系图的排版预览、谱文编辑界面的技术调研工作
