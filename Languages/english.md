@@ -1,4 +1,4 @@
-
+snail蜗牛；
 bliss 幸福 极乐，天赐之福；天堂，乐园;diabetes糖尿病；stargazer看星星的人gaze凝视 余光里的星星在向我眨眼，旁边的朋友也在微笑，微笑着看天微笑着看我  ————余光里的星星与微笑； nigger黑鬼；chink清朝虫；pong乒乓球 恶臭 难闻的气味;friction摩擦力；Dissolve the group chat解散群聊；Bearer(Authorization) 交易场所经常有啤酒，所以这个单词跟Bear啤酒有关？
 持票人；[建] 承木；[机] 托架；送信人；搬运工人；不记名（债券，股票等）
 
