@@ -1,5 +1,5 @@
 snail蜗牛；
-relentlessly坚韧地，不屈不挠地；残酷无情地；不停地；未减轻地 事无巨细；bliss 幸福 极乐，天赐之福；天堂，乐园;diabetes糖尿病；stargazer看星星的人gaze凝视 余光里的星星在向我眨眼，旁边的朋友也在微笑，微笑着看天微笑着看我  ————余光里的星星与微笑； nigger黑鬼；chink清朝虫；pong乒乓球 恶臭 难闻的气味;friction摩擦力；Dissolve the group chat解散群聊；Bearer(Authorization) 交易场所经常有啤酒，所以这个单词跟Bear啤酒有关？
+relentlessly坚韧地，不屈不挠地；残酷无情地；不停地；未减轻地 事无巨细；mentality心态，思维方式；智力，智能；naysayer摇头族（指那些说某事成不了、经常否定、拒绝或者反对一些事情的人）；bliss 幸福 极乐，天赐之福；天堂，乐园;diabetes糖尿病；stargazer看星星的人gaze凝视 余光里的星星在向我眨眼，旁边的朋友也在微笑，微笑着看天微笑着看我  ————余光里的星星与微笑； nigger黑鬼；chink清朝虫；pong乒乓球 恶臭 难闻的气味;friction摩擦力；Dissolve the group chat解散群聊；Bearer(Authorization) 交易场所经常有啤酒，所以这个单词跟Bear啤酒有关？
 持票人；[建] 承木；[机] 托架；送信人；搬运工人；不记名（债券，股票等）
 
 blabbermouth 长舌;self-service 代替 self-help(自救自立互助) 自助（服务）；eval 英 [ɪ'væl] 美 [ɪ'væl] abbr. 评估，评价（evaluation）n. （Eval）（美、巴）埃瓦尔（人名）;scheme 英 [skiːm] 美 [skiːm]
