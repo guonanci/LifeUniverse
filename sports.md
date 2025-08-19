@@ -11,7 +11,25 @@ There's one thing that all great shooters have in common, and that's complete co
 
 Being great in competition means relentlessly事无巨细 focusing on the small things. In this class, I'm going to show you my mechanics, and how I structure the work that I do.
 
-You have to get in the gym and put a ball in your hands, and work on your mechanics every single day. If you can commit to doing that, you can be as great as you want to be.
+You have to get in the gym and put a ball in your hands, and work on your mechanics every single day. If you can commit to doing that, you can be as great as you want to be.That was my work.
+
+STEPHEN CURRY'S MASTERCLASS 【斯蒂芬-库里教你打篮球】
+
+Introduction: Write Your Own Story
+
+Growing up, I was always the littlest guy on my team. Even now, I think I still am. And so when I speak to those undersized小个 guys that are trying to find out, how they can make an impact on the team, how they can be vocal leaders.
+
+要系统提升篮球水平，需从技术、体能、战术、心理等多维度综合训练。以下为科学训练框架及具体方法：
+
+🏀 ​​一、基本功强化（技术基石）
+1. 运球控制
+   - 核心要点：**保持低重心（膝盖弯曲），用指尖控球而非掌心，球高度控制在膝盖以下**
+   - 进阶训练：
+      - 变向运球：胯下、背后、转身运球组合练习，每天10分钟
+      - 实战模拟：设置障碍物进行‘8字运球上篮’，提升行进间控球能力
+2. 投篮稳定性：
+   - 标准姿势：投篮手肘部与身体呈45°，辅助手轻扶球侧，出手后手腕下压（跟随动作保持2秒）
+   - 训练计划：
 # badminton
 黄色羽毛球与白色羽毛球在羽毛球的运动中都是常用选择，但两者在视觉适应性、使用场景、传统习惯及心理感受上存在显著差异。以下是综合对比分析：
 
