@@ -2,6 +2,16 @@
 
 早上跑完步后要去洗脸然后听下歌就不困了，继续用 Mac
 
+
+# basketball篮球
+
+## 【NBA巨星-斯蒂芬.库里 教篮球大师课（中英字幕）-哔哩哔哩】 https://b23.tv/YsA6pxY
+
+There's one thing that all great shooters have in common, and that's complete control over their mechanics机制. That's not sth you're born with. You have to practice it.
+
+Being great in competition means relentlessly事无巨细 focusing on the small things. In this class, I'm going to show you my mechanics, and how I structure the work that I do.
+
+You have to get in the gym and put a ball in your hands, and work on your mechanics every single day. If you can commit to doing that, you can be as great as you want to be.
 # badminton
 黄色羽毛球与白色羽毛球在羽毛球的运动中都是常用选择，但两者在视觉适应性、使用场景、传统习惯及心理感受上存在显著差异。以下是综合对比分析：
 
