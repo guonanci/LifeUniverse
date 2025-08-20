@@ -25,6 +25,16 @@ That underdog失败者 kind of thought process思维模式, is sth that drove me
 
 But mostly, it's all based on the confidence, that you have in yourself. You don't listen to what anybody says you can't do, because you know that you can.
 
+It might be tough. You might have to overcome a lot more than the next guy next to you, but thats what makes it all worth
+
+You can impact people by how you approach your every day. And that sth that I still try to do. There ware two huge turning points in my life when I kind of understood a lot about myself, and the certain decisions that I made
+
+I didnt necessarily regret them, but it exposed me to my own kind of confidence and thought process. And when I was a freshman, I didnt take a chance at trying out for the varsity team
+
+I felt a little scaled, a little nervous. And I think I took the easy way out trying to play JV and not really put myself out(Junior Varsity:相当于是校队Varsity的培养团，门槛更低) there and shoot for the moon.
+
+And about halfway through my JV season, I really regretted that decision because I felt like, I was good enough to play on the next level. But I didnt really have that belief to put that into action, when the time mattered
+
 
 
 
