@@ -20,20 +20,6 @@ ci.sh;package.json;project.config.json;sitemap.json;
 
 ## 优化点
 
--Denv=dev
--DcachePath=/var/folders/tomcatCache
--DSERVER_IP=127.0.0.1
-http://shuhe.sit.caijj.net/inneroamgr/#/home
-前端多多分享，code review 希望大家可以更积极一些；也可以多分享一些大牛 blog、自己的博客，尝试升级框架版本用上新特性，避免最少的踩坑的话需要多关
-注一些技术生态圈，最佳实践规范；
-迭代：需求的中途变更，
-toJS, fromJS 语句太多
-http://b.sit.lattebank.com/directmarketingmgr/#/reportForm
-主任：pengzhuren/111111；分总：pengshanghai/111111；总部：zongbu/1qaz@WSX
-业务，代码层面尽快、竭尽全力做到完全脱离毅泽、master 曹；开发质量、速度很重要，优化也很重要
-直销 H5 sit 手机号：18955550065
-通过分析@lattebank node_modules 源码来修改 DEV_PORT，这点挺佩服毅泽的
-建阳，昨天你说的 outter
 
 # 上海数禾信息科技有限公司
 
