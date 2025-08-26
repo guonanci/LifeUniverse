@@ -35,7 +35,7 @@ I felt a little scaled, a little nervous. And I think I took the easy way out tr
 
 And about halfway through my JV season, I really regretted that decision because I felt like, I was good enough to play on the next level. But I didnt really have that belief to put that into action, when the time mattered
 
-
+And so I told myself I would never be timid胆怯 about anything.
 
 
 要系统提升篮球水平，需从技术、体能、战术、心理等多维度综合训练。以下为科学训练框架及具体方法：
