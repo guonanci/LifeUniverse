@@ -35,7 +35,52 @@ I felt a little scaled, a little nervous. And I think I took the easy way out tr
 
 And about halfway through my JV season, I really regretted that decision because I felt like, I was good enough to play on the next level. But I didnt really have that belief to put that into action, when the time mattered
 
-And so I told myself I would never be timid胆怯 about anything.
+And so I told myself I would never be timid胆怯 about anything, like that ever again. And then fast forward to my senior year in high school, I wasnt getting recruited as heavily as I thought I was supposed to
+
+The waiting process trying to get recruited was really stressful. It really nagged at me pretty much every day. It drove me to work hard. But then when I didnt have any patience then
+
+I was getting frustrated with the process because I felt like that, the time that I put in and my own belief in my game after that point, wasnt being reflected in the scholarship offers, and the attention from the big-time division 1 schools
+
+And none of it worked out. So it wasnt a great feeling. But when I was able to pick a school in Davidson-- it was in a real small school, Nobody knew about them from a basketball standpoint, that I was able to create my own journey and my own story
+
+and understand the power and the beauty in that and embracing it. It taught me patience. It taught me to appreciate珍惜 opportunity you have, and that everything happens for a reason
+
+and to embrace whatever your story it. And the rest is history. I'm Stephen Curry, and this is my MasterClass大师课
+
+## 投篮：姿势、瞄准、方式
+SHOOTING投篮:STANCE姿势,ALIGNMENT瞄准,AND MECHANICS方式
+
+I've been playing basketball since I was five. And there's obviously an evolution to the game, and trying to get better, and kind of staying ahead of the curve when it comes to elevating your game for each level of competition
+
+And there was a point in high school, where I had to really look at my form, and see how I can improve so that I could be ready to play at that time, on the varsity level in high school
+
+Up until my freshman year in high school高一, I used to shoot kin of like a catapult, where I wasn't always the strongest kid. I was usually the shortest kid on my team.
+
+So in order for me to shoot from further out, I kind of had to sling it from basically below my waist, and king of just basically catapult it as hard as I could
+
+I naturally had a pretty good touch, pretty good aim, and pretty good rhythm with it, but my release point, was entirely too low for me, to really be effective on that varsity level with taller defenders, taller guys trying to guard me
+
+And so there came a time between my freshman and sophomore year高二, where me and my dad kind of talked about, breaking down my form from the ground up, so that I could really raise my release point出手点, to where it is right now
+
+So that I didn't get my shot blocked on the varsity floor in high school. So the change was tough. It was probably one of the most frustrating summers of my life basketball-wise.
+
+It took thousands and thousands of reps, to really change my form from that catapult shooting from here, from my waist to bringing the ball above my  head where I shoot now
+
+But, obviously, in the end, it was all worth it. So there was a time there I basically for three months in the summer, I didn't I couldn't leave the paint to really work, on the mechanics of my shot, the rhythm of my shot, getting stronger, so that I could repeat that form every single time
+
+And you had to be patient. And so that's sth that really helped become a better basketball player, a better shooter, and be ready for that next level of competition on the varsity level
+
+Shoot From the Ground Up从脚开始投篮
+
+There are so many different shots, you can take on the court, whether it's catch and shoot off the dribble, catching on the move
+
+Everything is very similar then it comes to your form and your mechanics, because it all starts from the ground up. So if your balance is straight and you're squared up to the rim篮筐 as best you can, you're going to have a lot more consistency with your jump shot
+
+So we always try to teach 10 toes to the rim. So no matter where you are on the court, no matter how you get into that shot, right before you're ready to release, you should have your 10 toes facing squared up to the rim
+
+Naturally, for me what feels comfortable is a slight twist to the left. So i'm not perfectly square to the basket. I usually have my feet about 10 to 15 degrees pointed to the left
+
+But they're all pointing in the same direction
 
 
 要系统提升篮球水平，需从技术、体能、战术、心理等多维度综合训练。以下为科学训练框架及具体方法：
