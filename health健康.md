@@ -1,3 +1,9 @@
+
+
+
+
+
+
 根据多个权威媒体报道及周杰伦本人公开信息，**周杰伦确实患有强直性脊柱炎（Ankylosing Spondylitis, AS）**，且病史已超过20年[citation:2][citation:3][citation:5][citation:6]。以下是综合信息的要点梳理：
 
 ---
