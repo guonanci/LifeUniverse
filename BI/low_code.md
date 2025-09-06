@@ -1,1 +1,0 @@
-https://copilot.github.com/

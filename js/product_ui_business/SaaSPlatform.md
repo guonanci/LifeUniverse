@@ -1,1 +1,0 @@
-SAP,ERP,WMS,CRM
