@@ -80,7 +80,15 @@ So we always try to teach 10 toes to the rim. So no matter where you are on the 
 
 Naturally, for me what feels comfortable is a slight twist to the left. So i'm not perfectly square to the basket. I usually have my feet about 10 to 15 degrees pointed to the left
 
-But they're all pointing in the same direction
+But they're all pointing in the same direction, I don't have one foot going this way, one foot going that way. I try to stay as square as possible, 10 toes facing the same direction.
+
+But they're a little off center to the left. That's just natural for me, and my body, and my mechanics, and my shot
+
+And for you, finding what that balance is, is something that you need to get out on the floor, and just see what feels comfortable
+
+But the consistent thing across the board with all great shooters, is those 10 toes facing the same direction
+
+From there, your hips and your chest
 
 
 要系统提升篮球水平，需从技术、体能、战术、心理等多维度综合训练。以下为科学训练框架及具体方法：
