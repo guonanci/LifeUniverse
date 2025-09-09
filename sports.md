@@ -88,8 +88,11 @@ And for you, finding what that balance is, is something that you need to get out
 
 But the consistent thing across the board with all great shooters, is those 10 toes facing the same direction
 
-From there, your hips and your chest
+From there, your hips and your chest are going to follow that same pattern, and be facing right at the basket where you want to shoot
 
+Load Your Lower Body下半身发力
+
+All the greatest shooters are great at using their legs, as the foundation for their shot, they don't shoot with their arms
 
 要系统提升篮球水平，需从技术、体能、战术、心理等多维度综合训练。以下为科学训练框架及具体方法：
 
