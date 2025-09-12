@@ -92,7 +92,14 @@ From there, your hips and your chest are going to follow that same pattern, and 
 
 Load Your Lower Body下半身发力
 
-All the greatest shooters are great at using their legs, as the foundation for their shot, they don't shoot with their arms
+All the greatest shooters are great at using their legs, as the foundation for their shot, they don't shoot with their arms, they shoot with their legs first
+
+So they get that energy, that flow, and that motion, and that power through their jump shot. And everything else is kind of a flow from there
+
+So the best way to get into that position--obviously, we talked about 10 toes to the rim. Loading our hips, our backside, and getting into this good shooting position
+
+This good well-balanced athletic position is key. We don't want to have our knees bent in
+
 
 要系统提升篮球水平，需从技术、体能、战术、心理等多维度综合训练。以下为科学训练框架及具体方法：
 
