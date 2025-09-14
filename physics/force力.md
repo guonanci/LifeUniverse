@@ -1,3 +1,4 @@
+
 力是流体空间的压强差作用。
 到目前为止，力的本质，是信息的传递。 所有存在的物体都有最舒适的运动状态（或者生活状态），它们会自然的向这个方向靠近，在这个运动的过程中会受到外界的刺激，而抵抗外界的这种自发的行为就叫做力。https://www.zhihu.com/question/34548966#:~:text=%E5%8A%9B%E6%98%AF%E6%B5%81%E4%BD%93%E7%A9%BA%E9%97%B4%E7%9A%84%E5%8E%8B%E5%BC%BA%E5%B7%AE%E4%BD%9C%E7%94%A8%E3%80%82&text=%E5%88%B0%E7%9B%AE%E5%89%8D%E4%B8%BA%E6%AD%A2%EF%BC%8C%E5%8A%9B%E7%9A%84%E6%9C%AC%E8%B4%A8%EF%BC%8C%E6%98%AF%E4%BF%A1%E6%81%AF%E7%9A%84%E4%BC%A0%E9%80%92%E3%80%82&text=%E5%B0%8F%E9%81%93%E7%A3%8A-,%E6%89%80%E6%9C%89%E5%AD%98%E5%9C%A8%E7%9A%84%E7%89%A9%E4%BD%93%E9%83%BD%E6%9C%89%E6%9C%80%E8%88%92%E9%80%82%E7%9A%84%E8%BF%90%E5%8A%A8,%E7%9A%84%E8%A1%8C%E4%B8%BA%E5%B0%B1%E5%8F%AB%E5%81%9A%E5%8A%9B%E3%80%82 https://www.163.com/dy/article/GAMEDLCN0532MQZP.html http://www.cqvip.com/qk/97196a/20201/7100755965.html https://www.sohu.com/a/284064857_99978147
 # 引力
