@@ -1,4 +1,3 @@
-communication.md
 https://m.maigoo.com/top/417890.html
 https://www.jianshu.com/p/315469f24cf1 (10 本沟通类书籍 总结了 10 大沟通原则)
 https://www.managerreads.com/3367.html

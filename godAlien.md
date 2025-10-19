@@ -60,7 +60,7 @@ https://www.163.com/dy/article/FUT0L6B70537A7KH.html
 现如今地球上的大部分氧气都是蓝藻产生的
 活化石,植物活化石-银杏树 2.7 亿年前化石中的银杏跟现在一模一样
 
-# Hell
+# Hell地狱
 
 [俄罗斯宇航员拍到地域](https://www.360kuai.com/pc/98564b87f49cfc69a?cota=3&kuai_so=1&sign=360_e39369d1)
 
@@ -122,14 +122,11 @@ https://www.zhihu.com/question/480037679/answer/2124977678
 
 # 小涵哥来了
 
-你只是一位科普人员，决定不了什么，认识不到宇宙的本质，也改变不了宇宙。我也是这样（但是我的目标是当一个最长寿的人，所以我必须相当自律，我把所有的精力和想象力、创造力都放在工作上、健康保持、生命力保持上面去）
 
 https://www.ixigua.com/home/575767829031044/?is_new_connect=0&is_new_user=0
 
 https://www.youtube.com/watch?v=iP5oyvNJYiY
 
 https://www.youtube.com/channel/UCvoBl4rnVsetDKA_Tdk-jeA/videos
-
-目前来讲，人类起源，从我的认知并证实的渠道而言，我觉得人类就是猴子进化来的，人类并没有什么智慧，只是会说话，慢慢地使用一些有用的工具、语言、数学、物理、数据结构和算法 罢了（很多人类的智商都是不合格的，只是靠房子这类固定资产存活于世上，但是他们并没有什么智慧）。
 
 [木内鹤彦的濒死体验](https://www.zhihu.com/question/342062421)
